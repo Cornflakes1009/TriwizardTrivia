@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="ParryHotter.ttf">
+            <string>ParryHotter</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="HarryPotterTriviaNight" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clouds" translatesAutoresizingMaskIntoConstraints="NO" id="Sar-Ka-Gck">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Triwizard Trivia" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ljX-3I-641">
+                                <rect key="frame" x="20" y="44" width="374" height="114.5"/>
+                                <fontDescription key="fontDescription" name="ParryHotter" family="Parry Hotter" pointSize="48"/>
+                                <color key="textColor" red="0.93333333330000001" green="0.71372549019999998" blue="0.27058823529999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleAspectFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="s6Q-qq-Lhe">
+                                <rect key="frame" x="16" y="326" width="382" height="460"/>
+                                <subviews>
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dAI-nJ-Twm">
+                                        <rect key="frame" x="0.0" y="0.0" width="382" height="84"/>
+                                        <color key="backgroundColor" red="0.49019607843137253" green="0.098039215686274508" blue="0.082352941176470587" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="ParryHotter" family="Parry Hotter" pointSize="30"/>
+                                        <state key="normal" title="Gryffindor">
+                                            <color key="titleColor" red="0.92156862745098034" green="0.75294117647058822" blue="0.25882352941176467" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="10"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="houseButtonTapped:forEvent:" destination="BYZ-38-t0r" eventType="touchUpInside" id="a2c-wL-pwx"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CwJ-AB-eeC">
+                                        <rect key="frame" x="0.0" y="94" width="382" height="84"/>
+                                        <color key="backgroundColor" red="0.93333333333333335" green="0.71372549019607845" blue="0.27058823529411763" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="ParryHotter" family="Parry Hotter" pointSize="30"/>
+                                        <state key="normal" title="Hufflepuff">
+                                            <color key="titleColor" red="0.078640736639499664" green="0.077745310962200165" blue="0.13762009143829346" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="10"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="houseButtonTapped:forEvent:" destination="BYZ-38-t0r" eventType="touchUpInside" id="M3i-Zc-gPg"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MkE-po-SN4">
+                                        <rect key="frame" x="0.0" y="188" width="382" height="84"/>
+                                        <color key="backgroundColor" red="0.10196078431372549" green="0.10588235294117647" blue="0.29803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="ParryHotter" family="Parry Hotter" pointSize="30"/>
+                                        <state key="normal" title="Ravenclaw">
+                                            <color key="titleColor" red="0.7803921568627451" green="0.7803921568627451" blue="0.81568627450980391" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="10"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="houseButtonTapped:forEvent:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7Yr-wF-tqU"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A4N-gJ-eQf">
+                                        <rect key="frame" x="0.0" y="282" width="382" height="84"/>
+                                        <color key="backgroundColor" red="0.21176470588235294" green="0.46274509803921571" blue="0.29411764705882354" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="ParryHotter" family="Parry Hotter" pointSize="30"/>
+                                        <state key="normal" title="Slytherin">
+                                            <color key="titleColor" red="0.72941176470588232" green="0.72549019607843135" blue="0.76470588235294112" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="10"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="houseButtonTapped:forEvent:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YQL-vU-uq7"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5bJ-YD-x4o">
+                                        <rect key="frame" x="0.0" y="376" width="382" height="84"/>
+                                        <color key="backgroundColor" red="0.078640736639499664" green="0.077745310962200165" blue="0.13762009143829346" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="ParryHotter" family="Parry Hotter" pointSize="30"/>
+                                        <state key="normal" title="Begin!">
+                                            <color key="titleColor" red="0.93333333330000001" green="0.71372549019999998" blue="0.27058823529999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="10"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="beginButtonSegue:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uTj-Hb-gK5"/>
+                                            <segue destination="OiL-pc-QoR" kind="presentation" identifier="startGame" modalTransitionStyle="partialCurl" id="nUR-kf-NSe"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n6W-LB-VfM" customClass="GADBannerView">
+                                <rect key="frame" x="47" y="836" width="320" height="45"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select at least two houses." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sgi-IJ-5pZ">
+                                <rect key="frame" x="36" y="282" width="342.5" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Sar-Ka-Gck" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="2cI-Q6-8DT"/>
+                            <constraint firstItem="s6Q-qq-Lhe" firstAttribute="top" secondItem="Sgi-IJ-5pZ" secondAttribute="bottom" constant="8" id="4Og-6T-cBH"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="n6W-LB-VfM" secondAttribute="trailing" constant="47" id="4cP-Zt-g99"/>
+                            <constraint firstItem="Sar-Ka-Gck" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="DHx-Jz-cpb"/>
+                            <constraint firstItem="Sar-Ka-Gck" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Dbx-zq-oDs"/>
+                            <constraint firstAttribute="bottom" secondItem="Sar-Ka-Gck" secondAttribute="bottom" id="J18-mO-pni"/>
+                            <constraint firstItem="n6W-LB-VfM" firstAttribute="centerX" secondItem="Sar-Ka-Gck" secondAttribute="centerX" id="JuJ-ik-xwc"/>
+                            <constraint firstItem="n6W-LB-VfM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="47" id="KHB-Th-xiu"/>
+                            <constraint firstAttribute="bottom" secondItem="n6W-LB-VfM" secondAttribute="bottom" constant="15" id="Okr-4l-Dci"/>
+                            <constraint firstItem="n6W-LB-VfM" firstAttribute="centerX" secondItem="Sgi-IJ-5pZ" secondAttribute="centerX" id="RRG-vA-BS3"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ljX-3I-641" secondAttribute="trailing" constant="20" id="Rrm-9N-3TT"/>
+                            <constraint firstItem="ljX-3I-641" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="TvM-Rf-vtk"/>
+                            <constraint firstItem="n6W-LB-VfM" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="836" id="VdI-iX-jHb"/>
+                            <constraint firstItem="ljX-3I-641" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="WUQ-yZ-a3p"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="s6Q-qq-Lhe" secondAttribute="trailing" constant="16" id="g4F-0g-B1C"/>
+                            <constraint firstItem="n6W-LB-VfM" firstAttribute="top" secondItem="s6Q-qq-Lhe" secondAttribute="bottom" constant="50" id="gSV-8q-8Yh"/>
+                            <constraint firstItem="s6Q-qq-Lhe" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="q6Q-iW-uDs"/>
+                            <constraint firstItem="n6W-LB-VfM" firstAttribute="centerX" secondItem="ljX-3I-641" secondAttribute="centerX" id="q6v-Vs-QXH"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="bannerView" destination="n6W-LB-VfM" id="qpc-o2-fIG"/>
+                        <outlet property="beginButton" destination="5bJ-YD-x4o" id="oWu-0T-k3N"/>
+                        <outlet property="directionsLabel" destination="Sgi-IJ-5pZ" id="bur-Od-8A4"/>
+                        <outlet property="headlineLabel" destination="ljX-3I-641" id="MHY-hT-U8w"/>
+                        <outletCollection property="teamButtons" destination="dAI-nJ-Twm" collectionClass="NSMutableArray" id="4aS-yd-nWL"/>
+                        <outletCollection property="teamButtons" destination="CwJ-AB-eeC" collectionClass="NSMutableArray" id="rQr-ZJ-Yzq"/>
+                        <outletCollection property="teamButtons" destination="MkE-po-SN4" collectionClass="NSMutableArray" id="Kpv-Du-xyr"/>
+                        <outletCollection property="teamButtons" destination="A4N-gJ-eQf" collectionClass="NSMutableArray" id="nEW-B2-CFp"/>
+                        <outletCollection property="teamButtons" destination="5bJ-YD-x4o" collectionClass="NSMutableArray" id="lgS-Sc-sJL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="144.92753623188406" y="132.58928571428572"/>
+        </scene>
+        <!--Question View Controller-->
+        <scene sceneID="rWW-ae-Wfl">
+            <objects>
+                <viewController id="OiL-pc-QoR" customClass="QuestionViewController" customModule="HarryPotterTriviaNight" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ud7-T5-FBQ" customClass="question">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clouds" translatesAutoresizingMaskIntoConstraints="NO" id="CeI-aF-GBe">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Question Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tPn-QS-3ze">
+                                <rect key="frame" x="20" y="207" width="374" height="94"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" red="0.78039215689999997" green="0.78039215689999997" blue="0.81568627449999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KEV-nM-U94">
+                                <rect key="frame" x="20" y="691" width="374" height="99"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="ParryHotter" family="Parry Hotter" pointSize="30"/>
+                                <state key="normal" title="Next Question!">
+                                    <color key="titleColor" red="0.93333333330000001" green="0.71372549019999998" blue="0.27058823529999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="10"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="nextQuestionTapped:" destination="OiL-pc-QoR" eventType="touchUpInside" id="w0X-s6-IDf"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qhx-qt-i9l">
+                                <rect key="frame" x="224" y="441" width="170" height="83"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.023529411764705882" green="0.63921568627450975" blue="0.015686274509803921" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <size key="titleShadowOffset" width="0.0" height="1"/>
+                                <state key="normal" title="Correct">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="10"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="correctTapped:" destination="OiL-pc-QoR" eventType="touchUpInside" id="3CP-qh-wkK"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Answer Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NDf-WP-dYG">
+                                <rect key="frame" x="20" y="309" width="374" height="56"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" red="0.78039215689999997" green="0.78039215689999997" blue="0.81568627449999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rIx-U8-MDh">
+                                <rect key="frame" x="20" y="442" width="170" height="83"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.72156862745098038" green="0.0" blue="0.015686274509803921" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <size key="titleShadowOffset" width="0.0" height="1"/>
+                                <state key="normal" title="Incorrect">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" red="0.078640736639499664" green="0.077745310962200165" blue="0.13762009143829346" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="10"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="incorrectTapped:" destination="OiL-pc-QoR" eventType="touchUpInside" id="nm4-j6-gEg"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Team Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KFm-43-TGQ">
+                                <rect key="frame" x="20" y="76" width="374" height="123"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="ParryHotter" family="Parry Hotter" pointSize="60"/>
+                                <color key="textColor" red="0.93333333330000001" green="0.71372549019999998" blue="0.27058823529999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lbI-SX-wO3" customClass="GADBannerView">
+                                <rect key="frame" x="47" y="836" width="320" height="50"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="320" id="fVU-q6-YAN"/>
+                                    <constraint firstAttribute="height" constant="50" id="r9X-PD-zAd"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="CeI-aF-GBe" firstAttribute="trailing" secondItem="pcM-qD-uVh" secondAttribute="trailing" id="2gQ-LA-Zjb"/>
+                            <constraint firstItem="lbI-SX-wO3" firstAttribute="leading" secondItem="pcM-qD-uVh" secondAttribute="leading" constant="47" id="Y5a-zw-1dP"/>
+                            <constraint firstItem="CeI-aF-GBe" firstAttribute="top" secondItem="Ud7-T5-FBQ" secondAttribute="top" id="bpY-db-dMd"/>
+                            <constraint firstAttribute="bottom" secondItem="lbI-SX-wO3" secondAttribute="bottom" constant="10" id="cFw-DJ-5L8"/>
+                            <constraint firstItem="CeI-aF-GBe" firstAttribute="leading" secondItem="Ud7-T5-FBQ" secondAttribute="leading" id="e1D-fB-U9e"/>
+                            <constraint firstItem="pcM-qD-uVh" firstAttribute="trailing" secondItem="lbI-SX-wO3" secondAttribute="trailing" constant="47" id="ekc-kc-g8v"/>
+                            <constraint firstAttribute="bottom" secondItem="CeI-aF-GBe" secondAttribute="bottom" id="x3l-3k-EOY"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="pcM-qD-uVh"/>
+                    </view>
+                    <connections>
+                        <outlet property="answerLabel" destination="NDf-WP-dYG" id="F8Z-uj-0JW"/>
+                        <outlet property="bannerView" destination="lbI-SX-wO3" id="B90-eP-8qQ"/>
+                        <outlet property="correctButton" destination="qhx-qt-i9l" id="Ds8-ea-d07"/>
+                        <outlet property="incorrectButton" destination="rIx-U8-MDh" id="Vdd-CZ-w7p"/>
+                        <outlet property="nextQuestionButton" destination="KEV-nM-U94" id="hxu-VY-Ns3"/>
+                        <outlet property="questionLabel" destination="tPn-QS-3ze" id="aMe-gS-EAB"/>
+                        <outlet property="teamLabel" destination="KFm-43-TGQ" id="Wip-Ux-cQK"/>
+                        <outletCollection property="buttons" destination="qhx-qt-i9l" collectionClass="NSMutableArray" id="KPp-IP-oJQ"/>
+                        <outletCollection property="buttons" destination="rIx-U8-MDh" collectionClass="NSMutableArray" id="4L9-WZ-RdL"/>
+                        <outletCollection property="buttons" destination="KEV-nM-U94" collectionClass="NSMutableArray" id="s0k-b8-9x1"/>
+                        <segue destination="LwB-7M-TyR" kind="presentation" identifier="showResults" modalTransitionStyle="partialCurl" id="CCY-H8-OVq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Lhc-IL-5sD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="924.63768115942037" y="132.58928571428572"/>
+        </scene>
+        <!--Results View Controller-->
+        <scene sceneID="MBg-UC-Pmn">
+            <objects>
+                <viewController id="LwB-7M-TyR" customClass="ResultsViewController" customModule="HarryPotterTriviaNight" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="YJe-cW-5my">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="clouds" translatesAutoresizingMaskIntoConstraints="NO" id="dxc-oH-xVn">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ql5-0a-ul1" customClass="GADBannerView">
+                                <rect key="frame" x="47" y="802" width="320" height="50"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="GH6-Hq-Mg5"/>
+                                    <constraint firstAttribute="width" constant="320" id="fF0-4n-DnP"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Team Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GdK-MD-vPW">
+                                <rect key="frame" x="20" y="86" width="374" height="123"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="ParryHotter" family="Parry Hotter" pointSize="60"/>
+                                <color key="textColor" red="0.93333333330000001" green="0.71372549019999998" blue="0.27058823529999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="l3W-ez-XM9" firstAttribute="trailing" secondItem="Ql5-0a-ul1" secondAttribute="trailing" constant="47" id="ExR-m9-i6O"/>
+                            <constraint firstItem="l3W-ez-XM9" firstAttribute="bottom" secondItem="Ql5-0a-ul1" secondAttribute="bottom" constant="10" id="plO-Yc-edH"/>
+                            <constraint firstItem="Ql5-0a-ul1" firstAttribute="leading" secondItem="l3W-ez-XM9" secondAttribute="leading" constant="47" id="zmf-yi-WRu"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="l3W-ez-XM9"/>
+                    </view>
+                    <connections>
+                        <outlet property="bannerView" destination="Ql5-0a-ul1" id="Xmw-nn-YMP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TDF-UB-awM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1742" y="133"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="clouds" width="5456" height="3632"/>
+    </resources>
+</document>
