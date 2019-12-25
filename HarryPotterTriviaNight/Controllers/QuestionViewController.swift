@@ -79,9 +79,13 @@ class QuestionViewController: UIViewController {
     }
     
     func updateUI() {
-        if(questionIndex == (teams.count * 15)) {
+        if(questionIndex == (5)) { // teams.count * 15
+
+            //performSegue(withIdentifier: "showResults", sender: nil)
             
-            performSegue(withIdentifier: "showResults", sender: nil)
+            let vc = self.storyboard?.instantiateViewController(identifier: "ResultsStoryboard") as! ResultsViewController
+            self.navigationController?.pushViewController(vc, animated: true)
+            
         } else {
             if(teams.count == currentTeam + 1) {
                 currentTeam = 0

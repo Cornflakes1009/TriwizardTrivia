@@ -1907,8 +1907,33 @@
     },
     {
         "category": "Harry Potter",
-        "question": "",
-        "answer": ""
+        "question": "What is the name of the group of bandits that work for the Death Eaters once they take over the Ministry?",
+        "answer": "Snatchers"
+    },
+    {
+        "category": "Harry Potter",
+        "question": "Who was the headmaster of Hogwarts when the Chamber of Secrets was first opened?",
+        "answer": "Dippet"
+    },
+    {
+        "category": "Harry Potter",
+        "question": "What is the name of the effect when twin wand cores dual?",
+        "answer": "Priori Incantatem"
+    },
+    {
+        "category": "Harry Potter",
+        "question": "Where does Mundungus steal the locket from?",
+        "answer": "Grimamuld Place"
+    },
+    {
+        "category": "Harry Potter",
+        "question": "Alongside whom does Harry first apparate?",
+        "answer": "Dumbledore"
+    },
+    {
+        "category": "Harry Potter",
+        "question": "Whom are the dementors searching for when they board the Hogwarts Express?",
+        "answer": "Sirius Black"
     },
     {
         "category": "Harry Potter",
@@ -1917,178 +1942,153 @@
     },
     {
         "category": "Harry Potter",
-        "question": "",
-        "answer": ""
+        "question": "Who poisons Slughorn's mead in attempt to poison Dumbledore?",
+        "answer": "Draco Malfoy"
     },
     {
         "category": "Harry Potter",
-        "question": "",
-        "answer": ""
+        "question": "What medicine regrows bones?",
+        "answer": "Skele-Gro"
     },
     {
         "category": "Harry Potter",
-        "question": "",
-        "answer": ""
+        "question": "What is the final object that the Triwizard Champions must collect?",
+        "answer": "The Triwizard Cup"
     },
     {
         "category": "Harry Potter",
-        "question": "",
-        "answer": ""
+        "question": "Who does Mundungus accompany when escorting Harry to the safe house?",
+        "answer": "Mad-Eye Moody"
     },
     {
         "category": "Harry Potter",
-        "question": "",
-        "answer": ""
+        "question": "What is the name of the cat that Harry, Ron, and Hermione find petrified?",
+        "answer": "Mrs. Norris"
     },
     {
         "category": "Harry Potter",
-        "question": "",
-        "answer": ""
+        "question": "When Dumbledore puts on the cursed Marvolo Gaunt's ring, how long does Snape say he has to live?",
+        "answer": "A year"
     },
     {
         "category": "Harry Potter",
-        "question": "",
-        "answer": ""
+        "question": "What word is written on the paper that Harry finds in Hermione's petrified hand?",
+        "answer": "Pipes"
     },
     {
         "category": "Harry Potter",
-        "question": "",
-        "answer": ""
+        "question": "What spell does Malfoy use to petrify Harry after he catches him spying on him on the train?",
+        "answer": "Petrificus Totalus"
     },
     {
         "category": "Harry Potter",
-        "question": "",
-        "answer": ""
+        "question": "What object does Aberforth use to keep an eye on Harry and his friends?",
+        "answer": "A mirror"
     },
     {
         "category": "Harry Potter",
-        "question": "",
-        "answer": ""
+        "question": "Who is the Head of Muggle-born Registration Commission?",
+        "answer": "Dolores Umbridge"
     },
     {
         "category": "Harry Potter",
-        "question": "",
-        "answer": ""
+        "question": "What does Hagrid buy Harry for his 11th birthday?",
+        "answer": "The snowy owl Hedwig"
     },
     {
         "category": "Harry Potter",
-        "question": "",
-        "answer": ""
+        "question": "Which Hogwarts professor does Voldemort levitate above a table?",
+        "answer": "Charity Burbage"
     },
     {
         "category": "Harry Potter",
-        "question": "",
-        "answer": ""
+        "question": "Who conducts the school choir?",
+        "answer": "Professor Flitwick"
     },
     {
         "category": "Harry Potter",
-        "question": "",
-        "answer": ""
+        "question": "What spell does Hermione use to fix Harry's glasses?",
+        "answer": "Oculus Reparo"
     },
     {
         "category": "Harry Potter",
-        "question": "",
-        "answer": ""
+        "question": "What is special about Slughorn's hourglass?",
+        "answer": "The sand flows in accordance with how interesting the conversation is"
     },
     {
         "category": "Harry Potter",
-        "question": "",
-        "answer": ""
+        "question": "What is Grindelwald's first name?",
+        "answer": "Gellert"
     },
     {
         "category": "Harry Potter",
-        "question": "",
-        "answer": ""
+        "question": "In the book, how does Ron make the spider boggart funny?",
+        "answer": "He removes the legs"
     },
     {
         "category": "Harry Potter",
-        "question": "",
-        "answer": ""
+        "question": "In the movie, how does Ron make the spider boggart funny?",
+        "answer": "He gives it roller skates"
     },
     {
         "category": "Harry Potter",
-        "question": "",
-        "answer": ""
+        "question": "Which Horcrux did Voldemort create unintentionally?",
+        "answer": "Harry"
     },
     {
         "category": "Harry Potter",
-        "question": "",
-        "answer": ""
+        "question": "How long do the Triwizard champions have to complete the second task?",
+        "answer": "One hour"
     },
     {
         "category": "Harry Potter",
-        "question": "",
-        "answer": ""
+        "question": "What happens when Hermione casts Oppugno on the birds that she conjured?",
+        "answer": "They attack Ron"
     },
     {
         "category": "Harry Potter",
-        "question": "",
-        "answer": ""
+        "question": "What complication does Voldemort say prevents him from killing Harry with his own wand?",
+        "answer": "They share cores"
     },
     {
         "category": "Harry Potter",
-        "question": "",
-        "answer": ""
+        "question": "In the movies, whom does Harry save from the Room of Requirement when it's on fire?",
+        "answer": "Blaise Zabini and Draco Malfoy"
     },
     {
         "category": "Harry Potter",
-        "question": "",
-        "answer": ""
+        "question": "What creature does Trelawney see in Harry's tea leaves?",
+        "answer": "The Grim"
     },
     {
         "category": "Harry Potter",
-        "question": "",
-        "answer": ""
+        "question": "Who kills Bellatrix Lestrange?",
+        "answer": "Molly Weasley"
     },
     {
         "category": "Harry Potter",
-        "question": "",
-        "answer": ""
+        "question": "While feeling the effects of Felix Felicis, what does Harry catch Slughorn doing?",
+        "answer": "Cutting venemous tentacula leaves"
     },
     {
         "category": "Harry Potter",
-        "question": "",
-        "answer": ""
+        "question": "What spell does Hermione use on the pixies?",
+        "answer": "Immobilus"
     },
     {
         "category": "Harry Potter",
-        "question": "",
-        "answer": ""
+        "question": "What do Harry and Hermione use to go back in time?",
+        "answer": "A Time Turner"
     },
     {
         "category": "Harry Potter",
-        "question": "",
-        "answer": ""
+        "question": "What position does the captain Oliver Wood play on the Gryffindor quidditch team?",
+        "answer": "Keeper"
     },
     {
         "category": "Harry Potter",
-        "question": "",
-        "answer": ""
-    },
-    {
-        "category": "Harry Potter",
-        "question": "",
-        "answer": ""
-    },
-    {
-        "category": "Harry Potter",
-        "question": "",
-        "answer": ""
-    },
-    {
-        "category": "Harry Potter",
-        "question": "",
-        "answer": ""
-    },
-    {
-        "category": "Harry Potter",
-        "question": "",
-        "answer": ""
-    },
-    {
-        "category": "Harry Potter",
-        "question": "",
-        "answer": ""
+        "question": "What form of patronous led Harry to the Sword of Gryffindor?",
+        "answer": "A doe"
     },
     {
         "category": "Harry Potter",

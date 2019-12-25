@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -115,8 +115,8 @@
 			isa = PBXGroup;
 			children = (
 				D945B90022B9C9740087E171 /* Fonts */,
-				D945B8EE22B6E91B0087E171 /* AppDelegate.swift */,
 				D945B8F222B6E91B0087E171 /* Main.storyboard */,
+				D945B8EE22B6E91B0087E171 /* AppDelegate.swift */,
 				D945B8F722B6E91D0087E171 /* LaunchScreen.storyboard */,
 				D9069DE1230A1F6E008BE435 /* Controllers */,
 				D945B8F522B6E91D0087E171 /* Assets.xcassets */,
@@ -170,11 +170,12 @@
 				TargetAttributes = {
 					D945B8EA22B6E91B0087E171 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1100;
 					};
 				};
 			};
 			buildConfigurationList = D945B8E622B6E91B0087E171 /* Build configuration list for PBXProject "HarryPotterTriviaNight" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 11.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -419,13 +420,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 82G9R7QR7M;
 				INFOPLIST_FILE = HarryPotterTriviaNight/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.harolddavidson.HarryPotterTriviaNight;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -438,13 +440,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 82G9R7QR7M;
 				INFOPLIST_FILE = HarryPotterTriviaNight/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.harolddavidson.HarryPotterTriviaNight;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

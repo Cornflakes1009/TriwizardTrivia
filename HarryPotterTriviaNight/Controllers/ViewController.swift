@@ -45,6 +45,9 @@ class ViewController: UIViewController {
     @IBAction func houseButtonTapped(_ sender: UIButton, forEvent event: UIEvent) {
         switch sender.tag {
         case 1:
+            
+
+            
             if(gryffindorButtonSelected) {
                 gryffindorButtonSelected = false
                 sender.setTitleColor(#colorLiteral(red: 0.9215686275, green: 0.7529411765, blue: 0.2588235294, alpha: 1), for: .normal)
@@ -125,6 +128,8 @@ class ViewController: UIViewController {
     
 
     @IBAction func beginButtonSegue(_ sender: Any) {
+        let vc = self.storyboard?.instantiateViewController(identifier: "QuestionStoryboard") as! QuestionViewController
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     func setColors(button: UIButton) {
