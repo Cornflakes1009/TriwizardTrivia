@@ -80,8 +80,6 @@ class QuestionViewController: UIViewController {
     
     func updateUI() {
         if(questionIndex == (5)) { // teams.count * 15
-
-            //performSegue(withIdentifier: "showResults", sender: nil)
             
             let vc = self.storyboard?.instantiateViewController(identifier: "ResultsStoryboard") as! ResultsViewController
             self.navigationController?.pushViewController(vc, animated: true)

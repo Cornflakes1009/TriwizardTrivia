@@ -32,88 +32,125 @@
             <objects>
                 <viewController storyboardIdentifier="PickTeamsStoryboard" id="BYZ-38-t0r" customClass="ViewController" customModule="HarryPotterTriviaNight" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="381" height="858"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clouds" translatesAutoresizingMaskIntoConstraints="NO" id="cF4-E3-1G7">
-                                <rect key="frame" x="0.0" y="-44" width="381" height="936"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oHk-sO-8Ro">
-                                <rect key="frame" x="0.0" y="-44" width="381" height="936"/>
+                            <stackView opaque="NO" contentMode="scaleAspectFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="KwJ-CL-tdP" userLabel="Outer Stack View">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Triwizard Trivia" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ljX-3I-641">
-                                        <rect key="frame" x="20" y="44" width="341" height="114.5"/>
-                                        <fontDescription key="fontDescription" name="ParryHotter" family="Parry Hotter" pointSize="48"/>
-                                        <color key="textColor" red="0.93333333330000001" green="0.71372549019999998" blue="0.27058823529999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select at least two houses." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sgi-IJ-5pZ">
-                                        <rect key="frame" x="19.5" y="282" width="342.5" height="36"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                        <color key="textColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <stackView opaque="NO" contentMode="scaleAspectFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="s6Q-qq-Lhe">
-                                        <rect key="frame" x="16" y="326" width="349" height="460"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kr2-d7-w0M" userLabel="top view">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="128"/>
                                         <subviews>
-                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dAI-nJ-Twm">
-                                                <rect key="frame" x="0.0" y="0.0" width="349" height="84"/>
-                                                <color key="backgroundColor" red="0.49019607843137253" green="0.098039215686274508" blue="0.082352941176470587" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <fontDescription key="fontDescription" name="ParryHotter" family="Parry Hotter" pointSize="30"/>
-                                                <state key="normal" title="Gryffindor">
-                                                    <color key="titleColor" red="0.92156862745098034" green="0.75294117647058822" blue="0.25882352941176467" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                </state>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="10"/>
-                                                </userDefinedRuntimeAttributes>
-                                                <connections>
-                                                    <action selector="houseButtonTapped:forEvent:" destination="BYZ-38-t0r" eventType="touchUpInside" id="a2c-wL-pwx"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CwJ-AB-eeC">
-                                                <rect key="frame" x="0.0" y="94" width="349" height="84"/>
-                                                <color key="backgroundColor" red="0.93333333333333335" green="0.71372549019607845" blue="0.27058823529411763" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <fontDescription key="fontDescription" name="ParryHotter" family="Parry Hotter" pointSize="30"/>
-                                                <state key="normal" title="Hufflepuff">
-                                                    <color key="titleColor" red="0.078640736639499664" green="0.077745310962200165" blue="0.13762009143829346" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                </state>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="10"/>
-                                                </userDefinedRuntimeAttributes>
-                                                <connections>
-                                                    <action selector="houseButtonTapped:forEvent:" destination="BYZ-38-t0r" eventType="touchUpInside" id="M3i-Zc-gPg"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MkE-po-SN4">
-                                                <rect key="frame" x="0.0" y="188" width="349" height="84"/>
-                                                <color key="backgroundColor" red="0.10196078431372549" green="0.10588235294117647" blue="0.29803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <fontDescription key="fontDescription" name="ParryHotter" family="Parry Hotter" pointSize="30"/>
-                                                <state key="normal" title="Ravenclaw">
-                                                    <color key="titleColor" red="0.7803921568627451" green="0.7803921568627451" blue="0.81568627450980391" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                </state>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="10"/>
-                                                </userDefinedRuntimeAttributes>
-                                                <connections>
-                                                    <action selector="houseButtonTapped:forEvent:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7Yr-wF-tqU"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A4N-gJ-eQf">
-                                                <rect key="frame" x="0.0" y="282" width="349" height="84"/>
-                                                <color key="backgroundColor" red="0.21176470588235294" green="0.46274509803921571" blue="0.29411764705882354" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <fontDescription key="fontDescription" name="ParryHotter" family="Parry Hotter" pointSize="30"/>
-                                                <state key="normal" title="Slytherin">
-                                                    <color key="titleColor" red="0.72941176470588232" green="0.72549019607843135" blue="0.76470588235294112" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                </state>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="10"/>
-                                                </userDefinedRuntimeAttributes>
-                                                <connections>
-                                                    <action selector="houseButtonTapped:forEvent:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YQL-vU-uq7"/>
-                                                </connections>
-                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Triwizard Trivia" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ljX-3I-641">
+                                                <rect key="frame" x="24" y="7" width="327.5" height="114.5"/>
+                                                <fontDescription key="fontDescription" name="ParryHotter" family="Parry Hotter" pointSize="48"/>
+                                                <color key="textColor" red="0.93333333330000001" green="0.71372549019999998" blue="0.27058823529999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="ljX-3I-641" firstAttribute="centerX" secondItem="kr2-d7-w0M" secondAttribute="centerX" id="HKZ-n1-2BR"/>
+                                            <constraint firstItem="ljX-3I-641" firstAttribute="centerY" secondItem="kr2-d7-w0M" secondAttribute="centerY" id="hVK-7m-ht9"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jfq-KF-HEp" userLabel="directions view">
+                                        <rect key="frame" x="0.0" y="129" width="375" height="56"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select at least two houses." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sgi-IJ-5pZ">
+                                                <rect key="frame" x="16.5" y="10" width="342.5" height="36"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                <color key="textColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="Sgi-IJ-5pZ" firstAttribute="centerY" secondItem="Jfq-KF-HEp" secondAttribute="centerY" id="oTv-hI-gS3"/>
+                                            <constraint firstItem="Sgi-IJ-5pZ" firstAttribute="centerX" secondItem="Jfq-KF-HEp" secondAttribute="centerX" id="u9d-Ur-2dH"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QJe-qc-frz" userLabel="teams view">
+                                        <rect key="frame" x="0.0" y="186" width="375" height="282"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleAspectFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="s6Q-qq-Lhe">
+                                                <rect key="frame" x="8" y="10" width="359" height="270"/>
+                                                <subviews>
+                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dAI-nJ-Twm">
+                                                        <rect key="frame" x="0.0" y="0.0" width="359" height="60"/>
+                                                        <color key="backgroundColor" red="0.49019607843137253" green="0.098039215686274508" blue="0.082352941176470587" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" name="ParryHotter" family="Parry Hotter" pointSize="20"/>
+                                                        <state key="normal" title="Gryffindor">
+                                                            <color key="titleColor" red="0.92156862745098034" green="0.75294117647058822" blue="0.25882352941176467" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="10"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="houseButtonTapped:forEvent:" destination="BYZ-38-t0r" eventType="touchUpInside" id="a2c-wL-pwx"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CwJ-AB-eeC">
+                                                        <rect key="frame" x="0.0" y="70" width="359" height="60"/>
+                                                        <color key="backgroundColor" red="0.93333333333333335" green="0.71372549019607845" blue="0.27058823529411763" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" name="ParryHotter" family="Parry Hotter" pointSize="20"/>
+                                                        <state key="normal" title="Hufflepuff">
+                                                            <color key="titleColor" red="0.078640736639499664" green="0.077745310962200165" blue="0.13762009143829346" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="10"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="houseButtonTapped:forEvent:" destination="BYZ-38-t0r" eventType="touchUpInside" id="M3i-Zc-gPg"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MkE-po-SN4">
+                                                        <rect key="frame" x="0.0" y="140" width="359" height="60"/>
+                                                        <color key="backgroundColor" red="0.10196078431372549" green="0.10588235294117647" blue="0.29803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" name="ParryHotter" family="Parry Hotter" pointSize="20"/>
+                                                        <state key="normal" title="Ravenclaw">
+                                                            <color key="titleColor" red="0.7803921568627451" green="0.7803921568627451" blue="0.81568627450980391" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="10"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="houseButtonTapped:forEvent:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7Yr-wF-tqU"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A4N-gJ-eQf">
+                                                        <rect key="frame" x="0.0" y="210" width="359" height="60"/>
+                                                        <color key="backgroundColor" red="0.21176470588235294" green="0.46274509803921571" blue="0.29411764705882354" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" name="ParryHotter" family="Parry Hotter" pointSize="20"/>
+                                                        <state key="normal" title="Slytherin">
+                                                            <color key="titleColor" red="0.72941176470588232" green="0.72549019607843135" blue="0.76470588235294112" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="10"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="houseButtonTapped:forEvent:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YQL-vU-uq7"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="s6Q-qq-Lhe" secondAttribute="bottom" constant="10" id="9il-nV-N3h"/>
+                                            <constraint firstItem="s6Q-qq-Lhe" firstAttribute="leading" secondItem="QJe-qc-frz" secondAttribute="leading" constant="8" id="otZ-jG-LAs"/>
+                                            <constraint firstAttribute="trailing" secondItem="s6Q-qq-Lhe" secondAttribute="trailing" constant="8" id="snb-uV-Smh"/>
+                                            <constraint firstItem="s6Q-qq-Lhe" firstAttribute="top" secondItem="QJe-qc-frz" secondAttribute="top" constant="10" id="tY8-C6-mtI"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aDm-YD-uea" userLabel="begin view">
+                                        <rect key="frame" x="0.0" y="469" width="375" height="198"/>
+                                        <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5bJ-YD-x4o">
-                                                <rect key="frame" x="0.0" y="376" width="349" height="84"/>
+                                                <rect key="frame" x="8" y="57" width="359" height="84"/>
                                                 <color key="backgroundColor" red="0.078640736639499664" green="0.077745310962200165" blue="0.13762009143829346" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="ParryHotter" family="Parry Hotter" pointSize="30"/>
                                                 <state key="normal" title="Begin!">
@@ -128,64 +165,63 @@
                                                 </connections>
                                             </button>
                                         </subviews>
-                                    </stackView>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n6W-LB-VfM" customClass="GADBannerView">
-                                        <rect key="frame" x="47" y="836" width="287" height="45"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="45" id="EfE-it-cTo"/>
+                                            <constraint firstItem="5bJ-YD-x4o" firstAttribute="leading" secondItem="aDm-YD-uea" secondAttribute="leading" constant="8" id="BhO-QI-kiB"/>
+                                            <constraint firstAttribute="trailing" secondItem="5bJ-YD-x4o" secondAttribute="trailing" constant="8" id="Mna-c3-OIQ"/>
+                                            <constraint firstItem="5bJ-YD-x4o" firstAttribute="centerX" secondItem="aDm-YD-uea" secondAttribute="centerX" id="ZkX-k9-a84"/>
+                                            <constraint firstItem="5bJ-YD-x4o" firstAttribute="centerY" secondItem="aDm-YD-uea" secondAttribute="centerY" id="uYG-ZK-l4z"/>
                                         </constraints>
                                     </view>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="n6W-LB-VfM" firstAttribute="leading" secondItem="oHk-sO-8Ro" secondAttribute="leading" constant="47" id="12x-I3-Gdk"/>
-                                    <constraint firstItem="ljX-3I-641" firstAttribute="top" secondItem="oHk-sO-8Ro" secondAttribute="top" constant="44" id="9YC-yS-oUv"/>
-                                    <constraint firstItem="Sgi-IJ-5pZ" firstAttribute="top" secondItem="ljX-3I-641" secondAttribute="bottom" constant="123.33333333333334" id="HjR-bW-SZQ"/>
-                                    <constraint firstAttribute="trailing" secondItem="n6W-LB-VfM" secondAttribute="trailing" constant="47" id="Ks3-YH-wTf"/>
-                                    <constraint firstItem="s6Q-qq-Lhe" firstAttribute="leading" secondItem="oHk-sO-8Ro" secondAttribute="leading" constant="16" id="Li9-f9-oJY"/>
-                                    <constraint firstItem="ljX-3I-641" firstAttribute="centerX" secondItem="oHk-sO-8Ro" secondAttribute="centerX" id="UuT-gI-ARG"/>
-                                    <constraint firstAttribute="trailing" secondItem="s6Q-qq-Lhe" secondAttribute="trailing" constant="16" id="dtV-KF-wqj"/>
-                                    <constraint firstItem="n6W-LB-VfM" firstAttribute="top" secondItem="s6Q-qq-Lhe" secondAttribute="bottom" constant="50" id="hUH-tH-48Z"/>
-                                    <constraint firstItem="s6Q-qq-Lhe" firstAttribute="top" secondItem="Sgi-IJ-5pZ" secondAttribute="bottom" constant="8" id="mdR-7D-eDq"/>
-                                    <constraint firstItem="ljX-3I-641" firstAttribute="leading" secondItem="oHk-sO-8Ro" secondAttribute="leading" constant="20" id="nPc-aW-XsX"/>
-                                    <constraint firstAttribute="bottom" secondItem="n6W-LB-VfM" secondAttribute="bottom" constant="15" id="uhL-OK-UFf"/>
-                                    <constraint firstAttribute="trailing" secondItem="ljX-3I-641" secondAttribute="trailing" constant="20" id="v81-Gw-uAY"/>
-                                    <constraint firstItem="Sgi-IJ-5pZ" firstAttribute="centerX" secondItem="oHk-sO-8Ro" secondAttribute="centerX" id="vFf-ov-Vd5"/>
+                                    <constraint firstItem="Jfq-KF-HEp" firstAttribute="top" secondItem="kr2-d7-w0M" secondAttribute="bottom" constant="1" id="0Fg-ld-QtQ"/>
+                                    <constraint firstItem="aDm-YD-uea" firstAttribute="leading" secondItem="KwJ-CL-tdP" secondAttribute="leading" id="0p4-94-KHL"/>
+                                    <constraint firstAttribute="trailing" secondItem="aDm-YD-uea" secondAttribute="trailing" id="1Ro-cC-9oh"/>
+                                    <constraint firstAttribute="trailing" secondItem="Jfq-KF-HEp" secondAttribute="trailing" id="3Hh-ll-66Z"/>
+                                    <constraint firstItem="kr2-d7-w0M" firstAttribute="leading" secondItem="KwJ-CL-tdP" secondAttribute="leading" id="4cw-OU-E9r"/>
+                                    <constraint firstItem="QJe-qc-frz" firstAttribute="leading" secondItem="KwJ-CL-tdP" secondAttribute="leading" id="6RX-4C-yqp"/>
+                                    <constraint firstItem="QJe-qc-frz" firstAttribute="top" secondItem="Jfq-KF-HEp" secondAttribute="bottom" constant="1" id="9P3-bG-CgU"/>
+                                    <constraint firstItem="Jfq-KF-HEp" firstAttribute="leading" secondItem="KwJ-CL-tdP" secondAttribute="leading" id="J2I-5E-Skt"/>
+                                    <constraint firstItem="Jfq-KF-HEp" firstAttribute="top" secondItem="kr2-d7-w0M" secondAttribute="bottom" constant="1" id="Ji4-ez-5AB"/>
+                                    <constraint firstAttribute="trailing" secondItem="kr2-d7-w0M" secondAttribute="trailing" id="Nk1-oR-djR"/>
+                                    <constraint firstItem="kr2-d7-w0M" firstAttribute="top" secondItem="KwJ-CL-tdP" secondAttribute="top" id="Pdy-bz-kTO"/>
+                                    <constraint firstItem="QJe-qc-frz" firstAttribute="top" secondItem="Jfq-KF-HEp" secondAttribute="bottom" constant="1" id="SoD-yk-gfL"/>
+                                    <constraint firstAttribute="bottom" secondItem="aDm-YD-uea" secondAttribute="bottom" id="Vt3-x7-tpZ"/>
+                                    <constraint firstItem="aDm-YD-uea" firstAttribute="top" secondItem="QJe-qc-frz" secondAttribute="bottom" constant="1" id="aGA-st-UAh"/>
+                                    <constraint firstItem="aDm-YD-uea" firstAttribute="top" secondItem="QJe-qc-frz" secondAttribute="bottom" constant="1" id="sNz-al-f0P"/>
+                                    <constraint firstAttribute="trailing" secondItem="QJe-qc-frz" secondAttribute="trailing" id="wHA-J2-Avh"/>
                                 </constraints>
-                                <viewLayoutGuide key="contentLayoutGuide" id="0x9-iU-MrB"/>
-                                <viewLayoutGuide key="frameLayoutGuide" id="49r-5n-CoC"/>
-                            </scrollView>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="cF4-E3-1G7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="0Ig-Uy-08L"/>
-                            <constraint firstItem="oHk-sO-8Ro" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="EK4-wb-iIR"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cF4-E3-1G7" secondAttribute="trailing" id="cup-en-f0D"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="oHk-sO-8Ro" secondAttribute="trailing" id="cwc-Tz-KXa"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="top" secondItem="oHk-sO-8Ro" secondAttribute="top" constant="44" id="dz4-eI-aMD"/>
-                            <constraint firstItem="oHk-sO-8Ro" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="34" id="fFo-AA-sV3"/>
-                            <constraint firstItem="cF4-E3-1G7" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="34" id="llX-Z1-Q3f"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="top" secondItem="cF4-E3-1G7" secondAttribute="top" constant="44" id="ohO-R7-QeY"/>
+                            <constraint firstItem="KwJ-CL-tdP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="0Eg-ee-LoL"/>
+                            <constraint firstAttribute="bottom" secondItem="cF4-E3-1G7" secondAttribute="bottom" id="4A3-fL-xtN"/>
+                            <constraint firstItem="cF4-E3-1G7" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Oav-zu-LdK"/>
+                            <constraint firstItem="KwJ-CL-tdP" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="SM0-0S-gbo"/>
+                            <constraint firstItem="cF4-E3-1G7" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="eUl-2m-TV9"/>
+                            <constraint firstItem="KwJ-CL-tdP" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="gZE-zD-YQl"/>
+                            <constraint firstItem="KwJ-CL-tdP" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="glr-8B-Pzf"/>
+                            <constraint firstAttribute="trailing" secondItem="cF4-E3-1G7" secondAttribute="trailing" id="w7p-cv-3W6"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="Z0P-9i-EDr"/>
-                    <size key="freeformSize" width="381" height="858"/>
                     <connections>
-                        <outlet property="bannerView" destination="n6W-LB-VfM" id="qpc-o2-fIG"/>
                         <outlet property="beginButton" destination="5bJ-YD-x4o" id="oWu-0T-k3N"/>
                         <outlet property="directionsLabel" destination="Sgi-IJ-5pZ" id="bur-Od-8A4"/>
                         <outlet property="headlineLabel" destination="ljX-3I-641" id="MHY-hT-U8w"/>
-                        <outletCollection property="teamButtons" destination="dAI-nJ-Twm" collectionClass="NSMutableArray" id="4aS-yd-nWL"/>
-                        <outletCollection property="teamButtons" destination="5bJ-YD-x4o" collectionClass="NSMutableArray" id="lgS-Sc-sJL"/>
-                        <outletCollection property="teamButtons" destination="A4N-gJ-eQf" collectionClass="NSMutableArray" id="nEW-B2-CFp"/>
                         <outletCollection property="teamButtons" destination="CwJ-AB-eeC" collectionClass="NSMutableArray" id="rQr-ZJ-Yzq"/>
                         <outletCollection property="teamButtons" destination="MkE-po-SN4" collectionClass="NSMutableArray" id="Kpv-Du-xyr"/>
+                        <outletCollection property="teamButtons" destination="A4N-gJ-eQf" collectionClass="NSMutableArray" id="nEW-B2-CFp"/>
+                        <outletCollection property="teamButtons" destination="dAI-nJ-Twm" collectionClass="NSMutableArray" id="4aS-yd-nWL"/>
+                        <outletCollection property="teamButtons" destination="5bJ-YD-x4o" collectionClass="NSMutableArray" id="lgS-Sc-sJL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="144.92753623188406" y="132.58928571428572"/>
+            <point key="canvasLocation" x="144.80000000000001" y="131.78410794602701"/>
         </scene>
         <!--Question View Controller-->
         <scene sceneID="rWW-ae-Wfl">
@@ -315,7 +351,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lhc-IL-5sD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="924" y="131.78410794602701"/>
+            <point key="canvasLocation" x="914" y="133"/>
         </scene>
         <!--Results View Controller-->
         <scene sceneID="MBg-UC-Pmn">
@@ -328,10 +364,13 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clouds" translatesAutoresizingMaskIntoConstraints="NO" id="dxc-oH-xVn">
                                 <rect key="frame" x="0.0" y="-44" width="375" height="745"/>
                             </imageView>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ql5-0a-ul1" customClass="GADBannerView">
-                                <rect key="frame" x="35" y="570" width="280" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ql5-0a-ul1" customClass="GADBannerView">
+                                <rect key="frame" x="47" y="607" width="281" height="50"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="281" id="JYj-0H-rTp"/>
+                                    <constraint firstAttribute="height" constant="50" id="bkW-aK-KdU"/>
+                                </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Team Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GdK-MD-vPW">
                                 <rect key="frame" x="16" y="20" width="343" height="139"/>
@@ -357,6 +396,7 @@
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fe6-sa-VFN">
                                                     <rect key="frame" x="22" y="-3" width="50" height="50"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="tintColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ylp-56-E3S">
                                                     <rect key="frame" x="80" y="-3" width="45" height="60"/>
@@ -380,13 +420,28 @@
                                     <outlet property="delegate" destination="LwB-7M-TyR" id="oQ6-Xf-xOU"/>
                                 </connections>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fsy-oJ-GHj">
+                                <rect key="frame" x="156" y="547" width="63" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Restart">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="restartTapped:" destination="LwB-7M-TyR" eventType="touchUpInside" id="wwu-DZ-Pah"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="dxc-oH-xVn" firstAttribute="leading" secondItem="l3W-ez-XM9" secondAttribute="leading" id="3o7-YJ-K9O"/>
+                            <constraint firstItem="Ql5-0a-ul1" firstAttribute="top" secondItem="Fsy-oJ-GHj" secondAttribute="bottom" constant="24" id="7Mg-n4-h6U"/>
                             <constraint firstItem="dxc-oH-xVn" firstAttribute="bottom" secondItem="l3W-ez-XM9" secondAttribute="bottom" constant="34" id="C9e-ZA-6wc"/>
+                            <constraint firstItem="l3W-ez-XM9" firstAttribute="bottom" secondItem="Ql5-0a-ul1" secondAttribute="bottom" constant="10" id="H1J-6e-KoA"/>
                             <constraint firstItem="l3W-ez-XM9" firstAttribute="trailing" secondItem="dxc-oH-xVn" secondAttribute="trailing" id="RhS-da-bAy"/>
+                            <constraint firstItem="l3W-ez-XM9" firstAttribute="trailing" secondItem="Ql5-0a-ul1" secondAttribute="trailing" constant="47" id="WDJ-8N-BFK"/>
+                            <constraint firstItem="Ql5-0a-ul1" firstAttribute="leading" secondItem="l3W-ez-XM9" secondAttribute="leading" constant="47" id="XRK-iT-aHH"/>
                             <constraint firstItem="l3W-ez-XM9" firstAttribute="top" secondItem="dxc-oH-xVn" secondAttribute="top" constant="44" id="aiL-wU-PiB"/>
+                            <constraint firstItem="Fsy-oJ-GHj" firstAttribute="centerX" secondItem="YJe-cW-5my" secondAttribute="centerX" id="aoy-fm-7rB"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="l3W-ez-XM9"/>
                     </view>

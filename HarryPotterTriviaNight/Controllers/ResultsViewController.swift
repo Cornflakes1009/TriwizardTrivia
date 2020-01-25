@@ -24,7 +24,7 @@ class ResultsViewController: UIViewController, UITableViewDelegate, UITableViewD
         cell.houseLabel?.sizeToFit()
         
         if(indexPath.row == 0) {
-            cell.trophyImage?.image = UIImage(named: "trophy")
+            cell.trophyImage?.image = UIImage(systemName: "rosette")
         } else {
             
         }
@@ -39,6 +39,18 @@ class ResultsViewController: UIViewController, UITableViewDelegate, UITableViewD
 
     @IBOutlet weak var bannerView: GADBannerView!
     
+    // clearing out the game and sending back to home screen
+    @IBAction func restartTapped(_ sender: Any) {
+        questionList.removeAll()
+        teams.removeAll()
+        questionIndex = 0
+        
+        
+        let vc = self.storyboard?.instantiateViewController(identifier: "PickTeamsStoryboard") as! ViewController
+        self.navigationController?.pushViewController(vc, animated: true)
+//        performSegue(withIdentifier: "restartGameSegue", sender: nil)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -50,12 +62,14 @@ class ResultsViewController: UIViewController, UITableViewDelegate, UITableViewD
         // removing white space at end of table view
         self.resultsTableView.tableFooterView = UIView()
         
-        // sorting teams
+        // sorting teams by score
         teams = teams.sorted(by: {$0.score > $1.score})
     }
     
-    // added to prevent the segue added from partial curl
-    override func viewDidAppear(_ animated: Bool) {
-    self.view.gestureRecognizers?.removeAll()
-    }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.identifier == "restartGameSegue" {
+//            //performSegue(withIdentifier: "restartGameSegue", sender: self)
+//            print("hit segue")
+//        }
+//    }
 }

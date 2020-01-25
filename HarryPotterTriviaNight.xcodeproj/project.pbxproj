@@ -97,6 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				D945B8ED22B6E91B0087E171 /* HarryPotterTriviaNight */,
+				D945B90022B9C9740087E171 /* Fonts */,
 				D945B8EC22B6E91B0087E171 /* Products */,
 				BC810405BA339D95CBD380E0 /* Pods */,
 				5E4B3FC0EBA3D4F6D53B68FB /* Frameworks */,
@@ -114,7 +115,6 @@
 		D945B8ED22B6E91B0087E171 /* HarryPotterTriviaNight */ = {
 			isa = PBXGroup;
 			children = (
-				D945B90022B9C9740087E171 /* Fonts */,
 				D945B8F222B6E91B0087E171 /* Main.storyboard */,
 				D945B8EE22B6E91B0087E171 /* AppDelegate.swift */,
 				D945B8F722B6E91D0087E171 /* LaunchScreen.storyboard */,

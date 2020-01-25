@@ -31,23 +31,21 @@ class ViewController: UIViewController {
         }
         
         // adjusting font to fit
-        headlineLabel.adjustsFontSizeToFitWidth = true
+        //headlineLabel.adjustsFontSizeToFitWidth = true
         directionsLabel.adjustsFontSizeToFitWidth = true
         
         // starting ads on the bannerview
-        bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
-        bannerView.rootViewController = self
-        bannerView.load(GADRequest())
+//        bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
+//        bannerView.rootViewController = self
+//        bannerView.load(GADRequest())
         
-        beginButton.isHidden = true
+        //beginButton.isHidden = true
+        beginButton.isEnabled = false
     }
 
     @IBAction func houseButtonTapped(_ sender: UIButton, forEvent event: UIEvent) {
         switch sender.tag {
         case 1:
-            
-
-            
             if(gryffindorButtonSelected) {
                 gryffindorButtonSelected = false
                 sender.setTitleColor(#colorLiteral(red: 0.9215686275, green: 0.7529411765, blue: 0.2588235294, alpha: 1), for: .normal)
@@ -120,10 +118,11 @@ class ViewController: UIViewController {
         
         
         if(teams.count > 1) {
-            beginButton.isHidden = false
+            //beginButton.isHidden = false
+            beginButton.isEnabled = true
         } else {
-            beginButton.isHidden = true
-        }
+            //beginButton.isHidden = true
+            beginButton.isEnabled = false        }
     }
     
 
