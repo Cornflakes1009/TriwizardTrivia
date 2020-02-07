@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import GoogleMobileAds
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -19,13 +20,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         // initialize firebase
-        FirebaseApp.configure()
+        //FirebaseApp.configure()
         
         // initialize admob - production
         //GADMobileAds.configure(withApplicationID: "ca-app-pub-6504174477930496~5244166860")
         
         // initialize admob - development
-        GADMobileAds.configure(withApplicationID: "ca-app-pub-3940256099942544/2934735716")
+        //GADMobileAds.configure(withApplicationID: "ca-app-pub-3940256099942544/2934735716")
+        
+        
+        GADMobileAds.sharedInstance().start(completionHandler: nil)
         return true
     }
 

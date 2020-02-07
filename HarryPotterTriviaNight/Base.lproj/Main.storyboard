@@ -38,172 +38,121 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clouds" translatesAutoresizingMaskIntoConstraints="NO" id="cF4-E3-1G7">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleAspectFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="KwJ-CL-tdP" userLabel="Outer Stack View">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Triwizard Trivia" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ljX-3I-641">
+                                <rect key="frame" x="8" y="20" width="359" height="114.5"/>
+                                <fontDescription key="fontDescription" name="ParryHotter" family="Parry Hotter" pointSize="48"/>
+                                <color key="textColor" red="0.93333333330000001" green="0.71372549019999998" blue="0.27058823529999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select at least two houses." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sgi-IJ-5pZ">
+                                <rect key="frame" x="8" y="154.5" width="359" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleAspectFill" axis="vertical" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="s6Q-qq-Lhe">
+                                <rect key="frame" x="8" y="200.5" width="359" height="303"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kr2-d7-w0M" userLabel="top view">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="128"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Triwizard Trivia" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ljX-3I-641">
-                                                <rect key="frame" x="24" y="7" width="327.5" height="114.5"/>
-                                                <fontDescription key="fontDescription" name="ParryHotter" family="Parry Hotter" pointSize="48"/>
-                                                <color key="textColor" red="0.93333333330000001" green="0.71372549019999998" blue="0.27058823529999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstItem="ljX-3I-641" firstAttribute="centerX" secondItem="kr2-d7-w0M" secondAttribute="centerX" id="HKZ-n1-2BR"/>
-                                            <constraint firstItem="ljX-3I-641" firstAttribute="centerY" secondItem="kr2-d7-w0M" secondAttribute="centerY" id="hVK-7m-ht9"/>
-                                        </constraints>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jfq-KF-HEp" userLabel="directions view">
-                                        <rect key="frame" x="0.0" y="129" width="375" height="56"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select at least two houses." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sgi-IJ-5pZ">
-                                                <rect key="frame" x="16.5" y="10" width="342.5" height="36"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                                <color key="textColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstItem="Sgi-IJ-5pZ" firstAttribute="centerY" secondItem="Jfq-KF-HEp" secondAttribute="centerY" id="oTv-hI-gS3"/>
-                                            <constraint firstItem="Sgi-IJ-5pZ" firstAttribute="centerX" secondItem="Jfq-KF-HEp" secondAttribute="centerX" id="u9d-Ur-2dH"/>
-                                        </constraints>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QJe-qc-frz" userLabel="teams view">
-                                        <rect key="frame" x="0.0" y="186" width="375" height="282"/>
-                                        <subviews>
-                                            <stackView opaque="NO" contentMode="scaleAspectFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="s6Q-qq-Lhe">
-                                                <rect key="frame" x="8" y="10" width="359" height="270"/>
-                                                <subviews>
-                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dAI-nJ-Twm">
-                                                        <rect key="frame" x="0.0" y="0.0" width="359" height="60"/>
-                                                        <color key="backgroundColor" red="0.49019607843137253" green="0.098039215686274508" blue="0.082352941176470587" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <fontDescription key="fontDescription" name="ParryHotter" family="Parry Hotter" pointSize="20"/>
-                                                        <state key="normal" title="Gryffindor">
-                                                            <color key="titleColor" red="0.92156862745098034" green="0.75294117647058822" blue="0.25882352941176467" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        </state>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="10"/>
-                                                        </userDefinedRuntimeAttributes>
-                                                        <connections>
-                                                            <action selector="houseButtonTapped:forEvent:" destination="BYZ-38-t0r" eventType="touchUpInside" id="a2c-wL-pwx"/>
-                                                        </connections>
-                                                    </button>
-                                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CwJ-AB-eeC">
-                                                        <rect key="frame" x="0.0" y="70" width="359" height="60"/>
-                                                        <color key="backgroundColor" red="0.93333333333333335" green="0.71372549019607845" blue="0.27058823529411763" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <fontDescription key="fontDescription" name="ParryHotter" family="Parry Hotter" pointSize="20"/>
-                                                        <state key="normal" title="Hufflepuff">
-                                                            <color key="titleColor" red="0.078640736639499664" green="0.077745310962200165" blue="0.13762009143829346" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        </state>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="10"/>
-                                                        </userDefinedRuntimeAttributes>
-                                                        <connections>
-                                                            <action selector="houseButtonTapped:forEvent:" destination="BYZ-38-t0r" eventType="touchUpInside" id="M3i-Zc-gPg"/>
-                                                        </connections>
-                                                    </button>
-                                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MkE-po-SN4">
-                                                        <rect key="frame" x="0.0" y="140" width="359" height="60"/>
-                                                        <color key="backgroundColor" red="0.10196078431372549" green="0.10588235294117647" blue="0.29803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <fontDescription key="fontDescription" name="ParryHotter" family="Parry Hotter" pointSize="20"/>
-                                                        <state key="normal" title="Ravenclaw">
-                                                            <color key="titleColor" red="0.7803921568627451" green="0.7803921568627451" blue="0.81568627450980391" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        </state>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="10"/>
-                                                        </userDefinedRuntimeAttributes>
-                                                        <connections>
-                                                            <action selector="houseButtonTapped:forEvent:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7Yr-wF-tqU"/>
-                                                        </connections>
-                                                    </button>
-                                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A4N-gJ-eQf">
-                                                        <rect key="frame" x="0.0" y="210" width="359" height="60"/>
-                                                        <color key="backgroundColor" red="0.21176470588235294" green="0.46274509803921571" blue="0.29411764705882354" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <fontDescription key="fontDescription" name="ParryHotter" family="Parry Hotter" pointSize="20"/>
-                                                        <state key="normal" title="Slytherin">
-                                                            <color key="titleColor" red="0.72941176470588232" green="0.72549019607843135" blue="0.76470588235294112" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        </state>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="10"/>
-                                                        </userDefinedRuntimeAttributes>
-                                                        <connections>
-                                                            <action selector="houseButtonTapped:forEvent:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YQL-vU-uq7"/>
-                                                        </connections>
-                                                    </button>
-                                                </subviews>
-                                            </stackView>
-                                        </subviews>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="bottom" secondItem="s6Q-qq-Lhe" secondAttribute="bottom" constant="10" id="9il-nV-N3h"/>
-                                            <constraint firstItem="s6Q-qq-Lhe" firstAttribute="leading" secondItem="QJe-qc-frz" secondAttribute="leading" constant="8" id="otZ-jG-LAs"/>
-                                            <constraint firstAttribute="trailing" secondItem="s6Q-qq-Lhe" secondAttribute="trailing" constant="8" id="snb-uV-Smh"/>
-                                            <constraint firstItem="s6Q-qq-Lhe" firstAttribute="top" secondItem="QJe-qc-frz" secondAttribute="top" constant="10" id="tY8-C6-mtI"/>
-                                        </constraints>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aDm-YD-uea" userLabel="begin view">
-                                        <rect key="frame" x="0.0" y="469" width="375" height="198"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5bJ-YD-x4o">
-                                                <rect key="frame" x="8" y="57" width="359" height="84"/>
-                                                <color key="backgroundColor" red="0.078640736639499664" green="0.077745310962200165" blue="0.13762009143829346" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <fontDescription key="fontDescription" name="ParryHotter" family="Parry Hotter" pointSize="30"/>
-                                                <state key="normal" title="Begin!">
-                                                    <color key="titleColor" red="0.93333333330000001" green="0.71372549019999998" blue="0.27058823529999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="10"/>
-                                                </userDefinedRuntimeAttributes>
-                                                <connections>
-                                                    <action selector="beginButtonSegue:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uTj-Hb-gK5"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstItem="5bJ-YD-x4o" firstAttribute="leading" secondItem="aDm-YD-uea" secondAttribute="leading" constant="8" id="BhO-QI-kiB"/>
-                                            <constraint firstAttribute="trailing" secondItem="5bJ-YD-x4o" secondAttribute="trailing" constant="8" id="Mna-c3-OIQ"/>
-                                            <constraint firstItem="5bJ-YD-x4o" firstAttribute="centerX" secondItem="aDm-YD-uea" secondAttribute="centerX" id="ZkX-k9-a84"/>
-                                            <constraint firstItem="5bJ-YD-x4o" firstAttribute="centerY" secondItem="aDm-YD-uea" secondAttribute="centerY" id="uYG-ZK-l4z"/>
-                                        </constraints>
-                                    </view>
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dAI-nJ-Twm">
+                                        <rect key="frame" x="0.0" y="0.0" width="359" height="64"/>
+                                        <color key="backgroundColor" red="0.49019607843137253" green="0.098039215686274508" blue="0.082352941176470587" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="ParryHotter" family="Parry Hotter" pointSize="20"/>
+                                        <state key="normal" title="Gryffindor">
+                                            <color key="titleColor" red="0.92156862745098034" green="0.75294117647058822" blue="0.25882352941176467" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="10"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="houseButtonTapped:forEvent:" destination="BYZ-38-t0r" eventType="touchUpInside" id="a2c-wL-pwx"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CwJ-AB-eeC">
+                                        <rect key="frame" x="0.0" y="80" width="359" height="63.5"/>
+                                        <color key="backgroundColor" red="0.93333333333333335" green="0.71372549019607845" blue="0.27058823529411763" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="ParryHotter" family="Parry Hotter" pointSize="20"/>
+                                        <state key="normal" title="Hufflepuff">
+                                            <color key="titleColor" red="0.078640736639499664" green="0.077745310962200165" blue="0.13762009143829346" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="10"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="houseButtonTapped:forEvent:" destination="BYZ-38-t0r" eventType="touchUpInside" id="M3i-Zc-gPg"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MkE-po-SN4">
+                                        <rect key="frame" x="0.0" y="159.5" width="359" height="64"/>
+                                        <color key="backgroundColor" red="0.10196078431372549" green="0.10588235294117647" blue="0.29803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="ParryHotter" family="Parry Hotter" pointSize="20"/>
+                                        <state key="normal" title="Ravenclaw">
+                                            <color key="titleColor" red="0.7803921568627451" green="0.7803921568627451" blue="0.81568627450980391" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="10"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="houseButtonTapped:forEvent:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7Yr-wF-tqU"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A4N-gJ-eQf">
+                                        <rect key="frame" x="0.0" y="239.5" width="359" height="63.5"/>
+                                        <color key="backgroundColor" red="0.21176470588235294" green="0.46274509803921571" blue="0.29411764705882354" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="ParryHotter" family="Parry Hotter" pointSize="20"/>
+                                        <state key="normal" title="Slytherin">
+                                            <color key="titleColor" red="0.72941176470588232" green="0.72549019607843135" blue="0.76470588235294112" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="10"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="houseButtonTapped:forEvent:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YQL-vU-uq7"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstItem="Jfq-KF-HEp" firstAttribute="top" secondItem="kr2-d7-w0M" secondAttribute="bottom" constant="1" id="0Fg-ld-QtQ"/>
-                                    <constraint firstItem="aDm-YD-uea" firstAttribute="leading" secondItem="KwJ-CL-tdP" secondAttribute="leading" id="0p4-94-KHL"/>
-                                    <constraint firstAttribute="trailing" secondItem="aDm-YD-uea" secondAttribute="trailing" id="1Ro-cC-9oh"/>
-                                    <constraint firstAttribute="trailing" secondItem="Jfq-KF-HEp" secondAttribute="trailing" id="3Hh-ll-66Z"/>
-                                    <constraint firstItem="kr2-d7-w0M" firstAttribute="leading" secondItem="KwJ-CL-tdP" secondAttribute="leading" id="4cw-OU-E9r"/>
-                                    <constraint firstItem="QJe-qc-frz" firstAttribute="leading" secondItem="KwJ-CL-tdP" secondAttribute="leading" id="6RX-4C-yqp"/>
-                                    <constraint firstItem="QJe-qc-frz" firstAttribute="top" secondItem="Jfq-KF-HEp" secondAttribute="bottom" constant="1" id="9P3-bG-CgU"/>
-                                    <constraint firstItem="Jfq-KF-HEp" firstAttribute="leading" secondItem="KwJ-CL-tdP" secondAttribute="leading" id="J2I-5E-Skt"/>
-                                    <constraint firstItem="Jfq-KF-HEp" firstAttribute="top" secondItem="kr2-d7-w0M" secondAttribute="bottom" constant="1" id="Ji4-ez-5AB"/>
-                                    <constraint firstAttribute="trailing" secondItem="kr2-d7-w0M" secondAttribute="trailing" id="Nk1-oR-djR"/>
-                                    <constraint firstItem="kr2-d7-w0M" firstAttribute="top" secondItem="KwJ-CL-tdP" secondAttribute="top" id="Pdy-bz-kTO"/>
-                                    <constraint firstItem="QJe-qc-frz" firstAttribute="top" secondItem="Jfq-KF-HEp" secondAttribute="bottom" constant="1" id="SoD-yk-gfL"/>
-                                    <constraint firstAttribute="bottom" secondItem="aDm-YD-uea" secondAttribute="bottom" id="Vt3-x7-tpZ"/>
-                                    <constraint firstItem="aDm-YD-uea" firstAttribute="top" secondItem="QJe-qc-frz" secondAttribute="bottom" constant="1" id="aGA-st-UAh"/>
-                                    <constraint firstItem="aDm-YD-uea" firstAttribute="top" secondItem="QJe-qc-frz" secondAttribute="bottom" constant="1" id="sNz-al-f0P"/>
-                                    <constraint firstAttribute="trailing" secondItem="QJe-qc-frz" secondAttribute="trailing" id="wHA-J2-Avh"/>
-                                </constraints>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5bJ-YD-x4o">
+                                <rect key="frame" x="8" y="563" width="359" height="84"/>
+                                <color key="backgroundColor" red="0.078640736639499664" green="0.077745310962200165" blue="0.13762009143829346" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="84" id="MNV-Od-5Uz"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ParryHotter" family="Parry Hotter" pointSize="30"/>
+                                <state key="normal" title="Begin!">
+                                    <color key="titleColor" red="0.93333333330000001" green="0.71372549019999998" blue="0.27058823529999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="10"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="beginButtonSegue:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uTj-Hb-gK5"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="KwJ-CL-tdP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="0Eg-ee-LoL"/>
-                            <constraint firstAttribute="bottom" secondItem="cF4-E3-1G7" secondAttribute="bottom" id="4A3-fL-xtN"/>
-                            <constraint firstItem="cF4-E3-1G7" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Oav-zu-LdK"/>
-                            <constraint firstItem="KwJ-CL-tdP" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="SM0-0S-gbo"/>
-                            <constraint firstItem="cF4-E3-1G7" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="eUl-2m-TV9"/>
-                            <constraint firstItem="KwJ-CL-tdP" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="gZE-zD-YQl"/>
-                            <constraint firstItem="KwJ-CL-tdP" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="glr-8B-Pzf"/>
-                            <constraint firstAttribute="trailing" secondItem="cF4-E3-1G7" secondAttribute="trailing" id="w7p-cv-3W6"/>
+                            <constraint firstItem="ljX-3I-641" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="4BV-t1-JIB"/>
+                            <constraint firstItem="Sgi-IJ-5pZ" firstAttribute="top" secondItem="ljX-3I-641" secondAttribute="bottom" constant="20" id="5eX-DN-rp4"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Sgi-IJ-5pZ" secondAttribute="trailing" constant="8" id="5l9-hE-6yS"/>
+                            <constraint firstItem="cF4-E3-1G7" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="9dU-Hn-Pll"/>
+                            <constraint firstItem="cF4-E3-1G7" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="DMu-fU-WFT"/>
+                            <constraint firstItem="s6Q-qq-Lhe" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="G6f-V3-J8N"/>
+                            <constraint firstItem="5bJ-YD-x4o" firstAttribute="top" secondItem="s6Q-qq-Lhe" secondAttribute="bottom" constant="59.5" id="M3a-pO-UKO"/>
+                            <constraint firstItem="s6Q-qq-Lhe" firstAttribute="top" secondItem="Sgi-IJ-5pZ" secondAttribute="bottom" constant="10" id="RQE-3J-u56"/>
+                            <constraint firstItem="ljX-3I-641" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="TxT-J8-ZDP"/>
+                            <constraint firstItem="s6Q-qq-Lhe" firstAttribute="centerX" secondItem="cF4-E3-1G7" secondAttribute="centerX" id="WoM-cD-Jjq"/>
+                            <constraint firstItem="cF4-E3-1G7" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="aFg-0u-SvW"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="s6Q-qq-Lhe" secondAttribute="trailing" constant="8" id="bB5-YY-U8i"/>
+                            <constraint firstAttribute="bottom" secondItem="cF4-E3-1G7" secondAttribute="bottom" id="bNP-eV-rX3"/>
+                            <constraint firstItem="5bJ-YD-x4o" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="cYc-Dx-91G"/>
+                            <constraint firstItem="Sgi-IJ-5pZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="d0p-Zu-hAC"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ljX-3I-641" secondAttribute="trailing" constant="8" id="eFq-Bi-pfZ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="5bJ-YD-x4o" secondAttribute="trailing" constant="8" id="jMj-oO-cFb"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="5bJ-YD-x4o" secondAttribute="bottom" constant="20" id="lZo-wg-FRp"/>
+                            <constraint firstItem="cF4-E3-1G7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="vP4-ng-Yp4"/>
+                            <constraint firstAttribute="trailing" secondItem="cF4-E3-1G7" secondAttribute="trailing" id="wSR-h7-tGL"/>
+                            <constraint firstItem="cF4-E3-1G7" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="x7i-X8-i6G"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -212,10 +161,10 @@
                         <outlet property="beginButton" destination="5bJ-YD-x4o" id="oWu-0T-k3N"/>
                         <outlet property="directionsLabel" destination="Sgi-IJ-5pZ" id="bur-Od-8A4"/>
                         <outlet property="headlineLabel" destination="ljX-3I-641" id="MHY-hT-U8w"/>
-                        <outletCollection property="teamButtons" destination="CwJ-AB-eeC" collectionClass="NSMutableArray" id="rQr-ZJ-Yzq"/>
-                        <outletCollection property="teamButtons" destination="MkE-po-SN4" collectionClass="NSMutableArray" id="Kpv-Du-xyr"/>
                         <outletCollection property="teamButtons" destination="A4N-gJ-eQf" collectionClass="NSMutableArray" id="nEW-B2-CFp"/>
+                        <outletCollection property="teamButtons" destination="CwJ-AB-eeC" collectionClass="NSMutableArray" id="rQr-ZJ-Yzq"/>
                         <outletCollection property="teamButtons" destination="dAI-nJ-Twm" collectionClass="NSMutableArray" id="4aS-yd-nWL"/>
+                        <outletCollection property="teamButtons" destination="MkE-po-SN4" collectionClass="NSMutableArray" id="Kpv-Du-xyr"/>
                         <outletCollection property="teamButtons" destination="5bJ-YD-x4o" collectionClass="NSMutableArray" id="lgS-Sc-sJL"/>
                     </connections>
                 </viewController>

@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "67603F737F929F040243B2AE0990AE47"
+               BlueprintIdentifier = "AA7A10BAC8946323F1094642FE582FD6"
                BuildableName = "Pods_HarryPotterTriviaNight.framework"
                BlueprintName = "Pods-HarryPotterTriviaNight"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -40,15 +40,6 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "67603F737F929F040243B2AE0990AE47"
-            BuildableName = "Pods_HarryPotterTriviaNight.framework"
-            BlueprintName = "Pods-HarryPotterTriviaNight"
-            ReferencedContainer = "container:Pods.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"

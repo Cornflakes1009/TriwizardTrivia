@@ -4,7 +4,6 @@ import GoogleMobileAds
 class ViewController: UIViewController {
 
     @IBOutlet var teamButtons: [UIButton]!
-    @IBOutlet weak var bannerView: GADBannerView!
     @IBOutlet weak var headlineLabel: UILabel!
     @IBOutlet weak var directionsLabel: UILabel!
     @IBOutlet weak var beginButton: UIButton!
@@ -21,29 +20,30 @@ class ViewController: UIViewController {
             
             button.titleEdgeInsets = UIEdgeInsets.init(top: 7, left: 0, bottom: 0, right: 0)
             // adjusting text size
+            //button.titleLabel?.font = UIFont(name: "ParryHotter", size: 40)
             button.titleLabel?.adjustsFontSizeToFitWidth = true
+            button.titleLabel?.numberOfLines = 1
+            button.titleLabel?.minimumScaleFactor = 0.1
+            button.clipsToBounds = true
             
             // adding shadow
             button.layer.shadowColor = UIColor.black.cgColor
             button.layer.shadowOffset = CGSize(width: 5, height: 5)
             button.layer.shadowRadius = 5
             button.layer.shadowOpacity = 1.0
+            
         }
         
         // adjusting font to fit
-        //headlineLabel.adjustsFontSizeToFitWidth = true
+        headlineLabel.adjustsFontSizeToFitWidth = true
         directionsLabel.adjustsFontSizeToFitWidth = true
         
-        // starting ads on the bannerview
-//        bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
-//        bannerView.rootViewController = self
-//        bannerView.load(GADRequest())
-        
-        //beginButton.isHidden = true
+        beginButton.isHidden = true
         beginButton.isEnabled = false
     }
 
     @IBAction func houseButtonTapped(_ sender: UIButton, forEvent event: UIEvent) {
+        // switching on which house button clicked and if button was already selected
         switch sender.tag {
         case 1:
             if(gryffindorButtonSelected) {
@@ -114,17 +114,15 @@ class ViewController: UIViewController {
             break
             
         }
-
-        
         
         if(teams.count > 1) {
-            //beginButton.isHidden = false
+            beginButton.isHidden = false
             beginButton.isEnabled = true
         } else {
-            //beginButton.isHidden = true
-            beginButton.isEnabled = false        }
+            beginButton.isHidden = true
+            beginButton.isEnabled = false
+        }
     }
-    
 
     @IBAction func beginButtonSegue(_ sender: Any) {
         let vc = self.storyboard?.instantiateViewController(identifier: "QuestionStoryboard") as! QuestionViewController
