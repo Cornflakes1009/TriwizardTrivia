@@ -46,8 +46,6 @@ class QuestionViewController: UIViewController {
         bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
         bannerView.rootViewController = self
         bannerView.load(GADRequest())
-        
-        
     }
     
     // added to prevent the segue added from partial curl
@@ -79,7 +77,7 @@ class QuestionViewController: UIViewController {
     }
     
     func updateUI() {
-        if(questionIndex == (5)) { // teams.count * 15
+        if(questionIndex == (3)) { // teams.count * 15
             
             let vc = self.storyboard?.instantiateViewController(identifier: "ResultsStoryboard") as! ResultsViewController
             self.navigationController?.pushViewController(vc, animated: true)
@@ -90,13 +88,12 @@ class QuestionViewController: UIViewController {
             } else {
                 currentTeam += 1
             }
-
+            questionIndex += 1
             teamLabel.text = teams[currentTeam].name
             questionLabel.text = "Question: \(questionList[questionIndex].question)"
             answerLabel.text = "Answer: \(questionList[questionIndex].answer)"
             correctButton.backgroundColor = #colorLiteral(red: 0.02352941176, green: 0.6392156863, blue: 0.01568627451, alpha: 1)
             incorrectButton.backgroundColor = #colorLiteral(red: 0.7215686275, green: 0, blue: 0.01568627451, alpha: 1)
-            questionIndex += 1
         }
     }
 }

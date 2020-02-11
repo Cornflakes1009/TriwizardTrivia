@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CreditsViewController" customModule="HarryPotterTriviaNight" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Credits" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xii-hE-5fW">
+                    <rect key="frame" x="20" y="0.0" width="335" height="36"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                    <color key="textColor" red="0.96078431369999995" green="0.95686274510000002" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="K4D-JT-UeI">
+                    <rect key="frame" x="20" y="41" width="335" height="606"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <string key="text">I'd like to give a special thanks to the following people:
+
+My girlfriend Cheng for making the app icon.
+
+My former boss, Angie for telling me that I should make this app.
+
+My long-term friend and roommate, Tim for his design criticisms and helpful input.
+
+Shiva for nagging me into finally completing this app. 
+
+Thank you all and don't think you won't have to help with my next app!</string>
+                    <color key="textColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="Xii-hE-5fW" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="6HS-b6-o3Y"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="K4D-JT-UeI" secondAttribute="trailing" constant="20" id="B5q-bw-lot"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="K4D-JT-UeI" secondAttribute="bottom" constant="20" id="O1s-Ke-Bgt"/>
+                <constraint firstItem="Xii-hE-5fW" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="SAK-9r-D4S"/>
+                <constraint firstItem="Xii-hE-5fW" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="fQ1-4m-R3F"/>
+                <constraint firstItem="K4D-JT-UeI" firstAttribute="top" secondItem="Xii-hE-5fW" secondAttribute="bottom" constant="5" id="jy5-Oa-2tR"/>
+                <constraint firstItem="K4D-JT-UeI" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="kIA-sh-rfn"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Xii-hE-5fW" secondAttribute="trailing" constant="20" id="wbe-4b-lhl"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="139" y="153"/>
+        </view>
+    </objects>
+</document>

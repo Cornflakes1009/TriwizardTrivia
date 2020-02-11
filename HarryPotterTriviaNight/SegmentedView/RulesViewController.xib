@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RulesViewController" customModule="HarryPotterTriviaNight" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rules" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XlO-zD-yKA">
+                    <rect key="frame" x="20" y="0.0" width="335" height="36"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="b5U-7n-gMK">
+                    <rect key="frame" x="20" y="46" width="335" height="601"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <mutableString key="text">TriwizardTrivia is a team-based trivia game.      
+
+Each house represents a team. 
+
+A team can be 1 or many players.
+
+The trivia master holds the device and selects the players' houses. The first team selected goes first. 
+
+Once each team is selected, the questions are randomly selected and each team will be cycled through with one question each. 
+
+The trivia master must ask the question out loud and each member of the respective team whose turn it is can collaborate and provide one answer to the trivia master.
+
+The trivia master tell the teams what the correct answer is and mark whether the team ansered correctly or not. 
+
+Each team has 15 questions to answer. 
+
+The results will be displayed after each team answers their 15 questions.
+</mutableString>
+                    <color key="textColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="XlO-zD-yKA" secondAttribute="trailing" constant="20" id="Ivn-8w-kxP"/>
+                <constraint firstItem="XlO-zD-yKA" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Klw-5C-gMV"/>
+                <constraint firstItem="b5U-7n-gMK" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="L4h-ys-e4k"/>
+                <constraint firstItem="XlO-zD-yKA" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="RgM-vi-2Tk"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="b5U-7n-gMK" secondAttribute="trailing" constant="20" id="RvV-O6-pa9"/>
+                <constraint firstItem="XlO-zD-yKA" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="Vke-EC-msC"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="b5U-7n-gMK" secondAttribute="bottom" constant="20" id="arY-gy-prt"/>
+                <constraint firstItem="b5U-7n-gMK" firstAttribute="top" secondItem="XlO-zD-yKA" secondAttribute="bottom" constant="10" id="g2K-AT-xvH"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="138.40000000000001" y="152.47376311844079"/>
+        </view>
+    </objects>
+</document>
