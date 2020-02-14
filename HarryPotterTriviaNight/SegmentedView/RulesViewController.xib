@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RulesViewController" customModule="HarryPotterTriviaNight" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RulesViewController" customModule="TriwizardTrivia" customModuleProvider="target">
             <connections>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -23,8 +23,8 @@
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="b5U-7n-gMK">
-                    <rect key="frame" x="20" y="46" width="335" height="601"/>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b5U-7n-gMK">
+                    <rect key="frame" x="20" y="41" width="335" height="606"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <mutableString key="text">TriwizardTrivia is a team-based trivia game.      
 
@@ -45,7 +45,7 @@ Each team has 15 questions to answer.
 The results will be displayed after each team answers their 15 questions.
 </mutableString>
                     <color key="textColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
             </subviews>
@@ -58,10 +58,10 @@ The results will be displayed after each team answers their 15 questions.
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="b5U-7n-gMK" secondAttribute="trailing" constant="20" id="RvV-O6-pa9"/>
                 <constraint firstItem="XlO-zD-yKA" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="Vke-EC-msC"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="b5U-7n-gMK" secondAttribute="bottom" constant="20" id="arY-gy-prt"/>
-                <constraint firstItem="b5U-7n-gMK" firstAttribute="top" secondItem="XlO-zD-yKA" secondAttribute="bottom" constant="10" id="g2K-AT-xvH"/>
+                <constraint firstItem="b5U-7n-gMK" firstAttribute="top" secondItem="XlO-zD-yKA" secondAttribute="bottom" constant="5" id="g2K-AT-xvH"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <point key="canvasLocation" x="138.40000000000001" y="152.47376311844079"/>
+            <point key="canvasLocation" x="136.875" y="152.11267605633802"/>
         </view>
     </objects>
 </document>

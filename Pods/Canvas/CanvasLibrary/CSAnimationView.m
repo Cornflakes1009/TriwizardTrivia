@@ -10,11 +10,11 @@
 
 @implementation CSAnimationView
 
-- (void)awakeFromNib {
-    if (self.type && self.duration && ! self.pauseAnimationOnAwake) {
-        [self startCanvasAnimation];
-    }
-}
+//- (void)awakeFromNib {
+//    if (self.type && self.duration && ! self.pauseAnimationOnAwake) {
+//        [self startCanvasAnimation];
+//    }
+//}
 
 - (void)startCanvasAnimation {
     

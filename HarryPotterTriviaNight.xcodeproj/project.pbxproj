@@ -38,7 +38,7 @@
 		D916452723F146E500CCBD71 /* RulesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RulesViewController.xib; sourceTree = "<group>"; };
 		D916452B23F1471F00CCBD71 /* CreditsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsViewController.swift; sourceTree = "<group>"; };
 		D916452C23F1471F00CCBD71 /* CreditsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreditsViewController.xib; sourceTree = "<group>"; };
-		D945B8EB22B6E91B0087E171 /* HarryPotterTriviaNight.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HarryPotterTriviaNight.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D945B8EB22B6E91B0087E171 /* TriwizardTrivia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TriwizardTrivia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D945B8EE22B6E91B0087E171 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D945B8F022B6E91B0087E171 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D945B8F322B6E91B0087E171 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -129,7 +129,7 @@
 		D945B8EC22B6E91B0087E171 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D945B8EB22B6E91B0087E171 /* HarryPotterTriviaNight.app */,
+				D945B8EB22B6E91B0087E171 /* TriwizardTrivia.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -178,7 +178,7 @@
 			);
 			name = HarryPotterTriviaNight;
 			productName = HarryPotterTriviaNight;
-			productReference = D945B8EB22B6E91B0087E171 /* HarryPotterTriviaNight.app */;
+			productReference = D945B8EB22B6E91B0087E171 /* TriwizardTrivia.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -445,9 +445,9 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.harolddavidson.HarryPotterTriviaNight;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = TriwizardTrivia;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -465,9 +465,9 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.harolddavidson.HarryPotterTriviaNight;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = TriwizardTrivia;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

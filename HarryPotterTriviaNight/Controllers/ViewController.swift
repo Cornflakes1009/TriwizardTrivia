@@ -40,6 +40,12 @@ class ViewController: UIViewController {
         
         beginButton.isHidden = true
         beginButton.isEnabled = false
+        
+        // if iPhone SE, adjusting the font view
+        let screenHeight = UIScreen.main.bounds.size.height
+        if(screenHeight < 569) {
+            headlineLabel.font = headlineLabel.font.withSize(34)
+        }
     }
 
     @IBAction func houseButtonTapped(_ sender: UIButton, forEvent event: UIEvent) {
