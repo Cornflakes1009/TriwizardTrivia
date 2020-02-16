@@ -9,6 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CreditsViewController" customModule="TriwizardTrivia" customModuleProvider="target">
             <connections>
+                <outlet property="textField" destination="K4D-JT-UeI" id="EYm-Pw-SaI"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -38,7 +39,7 @@ Shiva for nagging me into finally completing this app.
 
 Thank you all and don't think you won't have to help with my next app!</string>
                     <color key="textColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
             </subviews>

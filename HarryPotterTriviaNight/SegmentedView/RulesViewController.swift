@@ -10,21 +10,17 @@ import UIKit
 
 class RulesViewController: UIViewController {
 
+    @IBOutlet var textField: UITextView!
+    @IBOutlet var bottomConstraint: NSLayoutConstraint!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        textField.textColor = .white
+        
+        // if iPhone SE, adjusting the font view
+        let screenHeight = UIScreen.main.bounds.size.height
+        if(screenHeight < 569) {
+            textField.font = textField.font?.withSize(13)
+        }
     }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

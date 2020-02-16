@@ -4,13 +4,14 @@ import GoogleMobileAds
 class ResultsTableViewCell: UITableViewCell {
     @IBOutlet var trophyImage: UIImageView?
     @IBOutlet var houseLabel: UILabel?
-    
 }
 
 class ResultsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var resultsTableView: UITableView!
     @IBOutlet var restartButton: UIButton!
+    @IBOutlet var headlineLabel: UILabel!
+    @IBOutlet var restartButtonHeight: NSLayoutConstraint!
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return teams.count
@@ -19,7 +20,15 @@ class ResultsViewController: UIViewController, UITableViewDelegate, UITableViewD
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = resultsTableView.dequeueReusableCell(withIdentifier: "cell") as! ResultsTableViewCell
         
-        cell.houseLabel?.text = String(indexPath.row + 1) + ". "  + teams[indexPath.row].name
+        let score = teams[indexPath.row].score
+        let pts: String
+        if(score == 1) {
+            pts = "pt. "
+        } else {
+            pts = "pts. "
+        }
+        
+        cell.houseLabel?.text = String(score) + pts  + teams[indexPath.row].name
         cell.houseLabel?.textColor = #colorLiteral(red: 0.9215686275, green: 0.7529411765, blue: 0.2588235294, alpha: 1)
         cell.houseLabel?.adjustsFontSizeToFitWidth = true
         cell.houseLabel?.sizeToFit()
@@ -50,7 +59,6 @@ class ResultsViewController: UIViewController, UITableViewDelegate, UITableViewD
         questionIndex = 0
         questionList.removeAll()
         
-        
         let vc = self.storyboard?.instantiateViewController(identifier: "PickTeamsStoryboard") as! ViewController
         self.navigationController?.pushViewController(vc, animated: true)
     }
@@ -64,7 +72,7 @@ class ResultsViewController: UIViewController, UITableViewDelegate, UITableViewD
         restartButton.layer.shadowOpacity = 1.0
 
         // starting ads on the bannerview
-        bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
+        bannerView.adUnitID = prodAdMobsKey
         bannerView.rootViewController = self
         bannerView.load(GADRequest())
         
@@ -73,5 +81,12 @@ class ResultsViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         // sorting teams by score
         teams = teams.sorted(by: {$0.score > $1.score})
+        
+        // if iPhone SE, adjust the UI to fit
+        let screenHeight = UIScreen.main.bounds.size.height
+        if(screenHeight < 569) {
+            headlineLabel.font = headlineLabel.font.withSize(34)
+            restartButtonHeight.constant = 60
+        }
     }
 }

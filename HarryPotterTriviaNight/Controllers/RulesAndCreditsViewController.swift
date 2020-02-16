@@ -11,6 +11,7 @@ class RulesAndCreditsViewController: UIViewController {
     
     @IBOutlet var viewContainer: UIView!
     var views: [UIView]!
+    @IBOutlet var backButton: UIButton!
     
     @IBAction func segmentedControl(_ sender: UISegmentedControl) {
         //self.viewContainer.bringSubviewToFront(views[sender.selectedSegmentIndex])
@@ -36,6 +37,8 @@ class RulesAndCreditsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        backButton.tintColor = .white
         
         // initializing and adding the views
         views = [UIView]()

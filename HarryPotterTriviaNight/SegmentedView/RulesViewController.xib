@@ -9,6 +9,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RulesViewController" customModule="TriwizardTrivia" customModuleProvider="target">
             <connections>
+                <outlet property="bottomConstraint" destination="arY-gy-prt" id="c9v-zN-3bU"/>
+                <outlet property="textField" destination="b5U-7n-gMK" id="6XD-7U-cLf"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -28,24 +30,20 @@
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <mutableString key="text">TriwizardTrivia is a team-based trivia game.      
 
-Each house represents a team. 
-
-A team can be 1 or many players.
+Each house represents a team. A team can be 1 or many players.
 
 The trivia master holds the device and selects the players' houses. The first team selected goes first. 
 
-Once each team is selected, the questions are randomly selected and each team will be cycled through with one question each. 
+Once each team is selected, the questions are randomly selected and each team will be asked a question. 
 
 The trivia master must ask the question out loud and each member of the respective team whose turn it is can collaborate and provide one answer to the trivia master.
 
-The trivia master tell the teams what the correct answer is and mark whether the team ansered correctly or not. 
+The trivia master tells the teams what the correct answer is and marks whether the team answered correctly or not. 
 
-Each team has 15 questions to answer. 
-
-The results will be displayed after each team answers their 15 questions.
+Each team has 15 questions to answer and the results will be displayed after each team answers their 15 questions.
 </mutableString>
                     <color key="textColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
             </subviews>

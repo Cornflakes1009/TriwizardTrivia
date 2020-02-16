@@ -10,8 +10,10 @@ import UIKit
 
 class CreditsViewController: UIViewController {
 
+    @IBOutlet var textField: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        textField.textColor = .white
     }
 }

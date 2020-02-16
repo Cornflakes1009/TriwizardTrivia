@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8B980C6CB221A90DBB09F2FD /* Pods_HarryPotterTriviaNight.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17C155C01155C15A5DCD4049 /* Pods_HarryPotterTriviaNight.framework */; };
+		42122BB3D27AB02A67E5B924 /* Pods_HarryPotterTriviaNight.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 274FAB62CB3777FAD32CB169 /* Pods_HarryPotterTriviaNight.framework */; };
 		D9069DE3230A20C2008BE435 /* Teams.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9069DE2230A20C2008BE435 /* Teams.swift */; };
 		D916452523F1153900CCBD71 /* RulesAndCreditsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D916452423F1153900CCBD71 /* RulesAndCreditsViewController.swift */; };
 		D916452823F146E500CCBD71 /* RulesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D916452623F146E500CCBD71 /* RulesViewController.swift */; };
@@ -29,9 +29,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		17C155C01155C15A5DCD4049 /* Pods_HarryPotterTriviaNight.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HarryPotterTriviaNight.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		3CC92EB6CF7261DF157E5834 /* Pods-HarryPotterTriviaNight.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HarryPotterTriviaNight.debug.xcconfig"; path = "Target Support Files/Pods-HarryPotterTriviaNight/Pods-HarryPotterTriviaNight.debug.xcconfig"; sourceTree = "<group>"; };
-		BF4280C2345B9FBA9D1F8C97 /* Pods-HarryPotterTriviaNight.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HarryPotterTriviaNight.release.xcconfig"; path = "Target Support Files/Pods-HarryPotterTriviaNight/Pods-HarryPotterTriviaNight.release.xcconfig"; sourceTree = "<group>"; };
+		274FAB62CB3777FAD32CB169 /* Pods_HarryPotterTriviaNight.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HarryPotterTriviaNight.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A6EC13A5D995217C99BE26E /* Pods-HarryPotterTriviaNight.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HarryPotterTriviaNight.release.xcconfig"; path = "Target Support Files/Pods-HarryPotterTriviaNight/Pods-HarryPotterTriviaNight.release.xcconfig"; sourceTree = "<group>"; };
+		59B9A759F01725057B3365B2 /* Pods-HarryPotterTriviaNight.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HarryPotterTriviaNight.debug.xcconfig"; path = "Target Support Files/Pods-HarryPotterTriviaNight/Pods-HarryPotterTriviaNight.debug.xcconfig"; sourceTree = "<group>"; };
 		D9069DE2230A20C2008BE435 /* Teams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Teams.swift; sourceTree = "<group>"; };
 		D916452423F1153900CCBD71 /* RulesAndCreditsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulesAndCreditsViewController.swift; sourceTree = "<group>"; };
 		D916452623F146E500CCBD71 /* RulesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulesViewController.swift; sourceTree = "<group>"; };
@@ -59,17 +59,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8B980C6CB221A90DBB09F2FD /* Pods_HarryPotterTriviaNight.framework in Frameworks */,
+				42122BB3D27AB02A67E5B924 /* Pods_HarryPotterTriviaNight.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		5E4B3FC0EBA3D4F6D53B68FB /* Frameworks */ = {
+		29088C71DA57E0091E05C1AF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				17C155C01155C15A5DCD4049 /* Pods_HarryPotterTriviaNight.framework */,
+				274FAB62CB3777FAD32CB169 /* Pods_HarryPotterTriviaNight.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -77,8 +77,8 @@
 		BC810405BA339D95CBD380E0 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				3CC92EB6CF7261DF157E5834 /* Pods-HarryPotterTriviaNight.debug.xcconfig */,
-				BF4280C2345B9FBA9D1F8C97 /* Pods-HarryPotterTriviaNight.release.xcconfig */,
+				59B9A759F01725057B3365B2 /* Pods-HarryPotterTriviaNight.debug.xcconfig */,
+				2A6EC13A5D995217C99BE26E /* Pods-HarryPotterTriviaNight.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -122,7 +122,7 @@
 				D945B90022B9C9740087E171 /* Fonts */,
 				D945B8EC22B6E91B0087E171 /* Products */,
 				BC810405BA339D95CBD380E0 /* Pods */,
-				5E4B3FC0EBA3D4F6D53B68FB /* Frameworks */,
+				29088C71DA57E0091E05C1AF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -166,11 +166,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D945B8FD22B6E91D0087E171 /* Build configuration list for PBXNativeTarget "HarryPotterTriviaNight" */;
 			buildPhases = (
-				BEA8318ED4661D53FC51A9A3 /* [CP] Check Pods Manifest.lock */,
+				C6D37E8A6200E918A0B882FD /* [CP] Check Pods Manifest.lock */,
 				D945B8E722B6E91B0087E171 /* Sources */,
 				D945B8E822B6E91B0087E171 /* Frameworks */,
 				D945B8E922B6E91B0087E171 /* Resources */,
-				11FBF9568A4802C76F452062 /* [CP] Embed Pods Frameworks */,
+				810421C563C4E51DC6768E48 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -234,7 +234,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		11FBF9568A4802C76F452062 /* [CP] Embed Pods Frameworks */ = {
+		810421C563C4E51DC6768E48 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -251,7 +251,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HarryPotterTriviaNight/Pods-HarryPotterTriviaNight-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		BEA8318ED4661D53FC51A9A3 /* [CP] Check Pods Manifest.lock */ = {
+		C6D37E8A6200E918A0B882FD /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -433,18 +433,18 @@
 		};
 		D945B8FE22B6E91D0087E171 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3CC92EB6CF7261DF157E5834 /* Pods-HarryPotterTriviaNight.debug.xcconfig */;
+			baseConfigurationReference = 59B9A759F01725057B3365B2 /* Pods-HarryPotterTriviaNight.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 82G9R7QR7M;
+				DEVELOPMENT_TEAM = 464PVQ34ND;
 				INFOPLIST_FILE = HarryPotterTriviaNight/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.harolddavidson.HarryPotterTriviaNight;
+				PRODUCT_BUNDLE_IDENTIFIER = com.harolddavidson.TriwizardTrivia;
 				PRODUCT_NAME = TriwizardTrivia;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -453,18 +453,18 @@
 		};
 		D945B8FF22B6E91D0087E171 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BF4280C2345B9FBA9D1F8C97 /* Pods-HarryPotterTriviaNight.release.xcconfig */;
+			baseConfigurationReference = 2A6EC13A5D995217C99BE26E /* Pods-HarryPotterTriviaNight.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 82G9R7QR7M;
+				DEVELOPMENT_TEAM = 464PVQ34ND;
 				INFOPLIST_FILE = HarryPotterTriviaNight/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.harolddavidson.HarryPotterTriviaNight;
+				PRODUCT_BUNDLE_IDENTIFIER = com.harolddavidson.TriwizardTrivia;
 				PRODUCT_NAME = TriwizardTrivia;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;

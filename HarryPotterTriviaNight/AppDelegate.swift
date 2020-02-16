@@ -10,6 +10,9 @@ import UIKit
 import Firebase
 import GoogleMobileAds
 
+let prodAdMobsKey = "ca-app-pub-6504174477930496/1611814353"
+let testingAdMobsKey = "ca-app-pub-3940256099942544/2934735716"
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -18,16 +21,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        
-        // initialize firebase
-        //FirebaseApp.configure()
-        
-        // initialize admob - production
-        //GADMobileAds.configure(withApplicationID: "ca-app-pub-6504174477930496~5244166860")
-        
-        // initialize admob - development
-        //GADMobileAds.configure(withApplicationID: "ca-app-pub-3940256099942544/2934735716")
-        
         
         GADMobileAds.sharedInstance().start(completionHandler: nil)
         return true

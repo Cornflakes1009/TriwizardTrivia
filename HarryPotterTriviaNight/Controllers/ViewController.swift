@@ -7,6 +7,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var headlineLabel: UILabel!
     @IBOutlet weak var directionsLabel: UILabel!
     @IBOutlet weak var beginButton: UIButton!
+    @IBOutlet var gryffindorButton: UIButton!
+    @IBOutlet var beginButtonHeight: NSLayoutConstraint!
+    
     
     var gryffindorButtonSelected = false
     var hufflepuffButtonSelected = false
@@ -15,23 +18,33 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let screenHeight = UIScreen.main.bounds.size.height
+        // if iPhone SE, adjusting the font view
+        if(screenHeight < 569) {
+            headlineLabel.font = headlineLabel.font.withSize(34)
+            beginButtonHeight.constant = 60
+            directionsLabel.font = directionsLabel.font.withSize(20)
+        } else {
+            headlineLabel.font = headlineLabel.font.withSize(48)
+            directionsLabel.font = directionsLabel.font.withSize(30)
+        }
+        
         for button in teamButtons {
+            // if phone is bigger than SE
+            if(screenHeight > 569) {
+                button.titleLabel?.font = UIFont(name: "ParryHotter", size: 30)
+            }
             // adjusting text position
-            
             button.titleEdgeInsets = UIEdgeInsets.init(top: 7, left: 0, bottom: 0, right: 0)
             // adjusting text size
-            //button.titleLabel?.font = UIFont(name: "ParryHotter", size: 40)
             button.titleLabel?.adjustsFontSizeToFitWidth = true
-            button.titleLabel?.numberOfLines = 1
-            button.titleLabel?.minimumScaleFactor = 0.1
-            button.clipsToBounds = true
             
             // adding shadow
             button.layer.shadowColor = UIColor.black.cgColor
             button.layer.shadowOffset = CGSize(width: 5, height: 5)
             button.layer.shadowRadius = 5
             button.layer.shadowOpacity = 1.0
-            
         }
         
         // adjusting font to fit
@@ -40,12 +53,6 @@ class ViewController: UIViewController {
         
         beginButton.isHidden = true
         beginButton.isEnabled = false
-        
-        // if iPhone SE, adjusting the font view
-        let screenHeight = UIScreen.main.bounds.size.height
-        if(screenHeight < 569) {
-            headlineLabel.font = headlineLabel.font.withSize(34)
-        }
     }
 
     @IBAction func houseButtonTapped(_ sender: UIButton, forEvent event: UIEvent) {
@@ -118,7 +125,6 @@ class ViewController: UIViewController {
             
         default:
             break
-            
         }
         
         if(teams.count > 1) {
@@ -131,11 +137,13 @@ class ViewController: UIViewController {
     }
 
     @IBAction func beginButtonSegue(_ sender: Any) {
+         convertJSON(jsonToRead: "harryPotterTriviaQuestions", numberOfTeams: teams.count)
         let vc = self.storyboard?.instantiateViewController(identifier: "QuestionStoryboard") as! QuestionViewController
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
     @IBAction func rulesAndCreditsTapped(_ sender: Any) {
+        teams.removeAll()
         let vc = self.storyboard?.instantiateViewController(identifier: "toRulesAndCredits") as! RulesAndCreditsViewController
         self.navigationController?.pushViewController(vc, animated: true)
     }

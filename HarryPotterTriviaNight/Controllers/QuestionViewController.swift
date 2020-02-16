@@ -19,6 +19,10 @@ class QuestionViewController: UIViewController {
     @IBOutlet weak var correctButton: UIButton!
     @IBOutlet weak var bannerView: GADBannerView!
     @IBOutlet var buttons: [UIButton]!
+    @IBOutlet var questionToAnswerLabel: NSLayoutConstraint!
+    @IBOutlet var correctButtonHeight: NSLayoutConstraint!
+    @IBOutlet var incorrectButtonHeight: NSLayoutConstraint!
+    @IBOutlet var nextQuestionButtonHeight: NSLayoutConstraint!
     
     var answeredCorrectly = false
     
@@ -33,9 +37,6 @@ class QuestionViewController: UIViewController {
             button.layer.shadowOpacity = 1.0
         }
         
-        // converting JSON
-        convertJSON(jsonToRead: "harryPotterTriviaQuestions", numberOfTeams: teams.count)
-        
         // updating UI
         teamLabel.text = teams[0].name
         questionLabel.text = "Question: \(questionList[questionIndex].question)"
@@ -43,9 +44,24 @@ class QuestionViewController: UIViewController {
         nextQuestionButton.isHidden = true
         
         // starting ads on the bannerview
-        bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
+        bannerView.adUnitID = prodAdMobsKey
         bannerView.rootViewController = self
         bannerView.load(GADRequest())
+        
+        // if iPhone SE, adjusting the font view
+        let screenHeight = UIScreen.main.bounds.size.height
+        if(screenHeight < 569) {
+            teamLabel.font = teamLabel.font.withSize(34)
+            questionLabel.font = questionLabel.font.withSize(15)
+            answerLabel.font = answerLabel.font.withSize(15)
+            questionToAnswerLabel.constant = 10
+            nextQuestionButtonHeight.constant = 60
+            correctButtonHeight.constant = 60
+            incorrectButtonHeight.constant = 60
+            nextQuestionButton.titleLabel?.font = nextQuestionButton.titleLabel?.font.withSize(24)
+            
+            view.layoutIfNeeded()
+        }
     }
     
     // added to prevent the segue added from partial curl
@@ -73,11 +89,12 @@ class QuestionViewController: UIViewController {
             teams[currentTeam].score += 1
         }
         nextQuestionButton.isHidden = true
+        questionIndex += 1
         updateUI()
     }
     
     func updateUI() {
-        if(questionIndex == (3)) { // teams.count * 15
+        if(questionIndex == (teams.count * 15)) { // teams.count * 15
             
             let vc = self.storyboard?.instantiateViewController(identifier: "ResultsStoryboard") as! ResultsViewController
             self.navigationController?.pushViewController(vc, animated: true)
@@ -88,7 +105,7 @@ class QuestionViewController: UIViewController {
             } else {
                 currentTeam += 1
             }
-            questionIndex += 1
+
             teamLabel.text = teams[currentTeam].name
             questionLabel.text = "Question: \(questionList[questionIndex].question)"
             answerLabel.text = "Answer: \(questionList[questionIndex].answer)"
