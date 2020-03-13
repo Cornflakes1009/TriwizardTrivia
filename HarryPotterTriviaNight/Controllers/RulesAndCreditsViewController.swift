@@ -31,8 +31,8 @@ class RulesAndCreditsViewController: UIViewController {
     }
     
     @IBAction func backButtonTapped(_ sender: Any) {
-        let vc = self.storyboard?.instantiateViewController(identifier: "PickTeamsStoryboard") as! ViewController
-        self.navigationController?.pushViewController(vc, animated: true)
+//        let vc = self.storyboard?.instantiateViewController(identifier: "PickTeamsStoryboard") as! ViewController
+        self.navigationController?.popViewController(animated: true)
     }
     
     override func viewDidLoad() {
