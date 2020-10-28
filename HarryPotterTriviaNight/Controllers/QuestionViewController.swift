@@ -44,7 +44,7 @@ class QuestionViewController: UIViewController {
         nextQuestionButton.isHidden = true
         
         // starting ads on the bannerview
-        bannerView.adUnitID = prodAdMobsKey
+        bannerView.adUnitID = testingAdMobsKey
         bannerView.rootViewController = self
         bannerView.load(GADRequest())
         

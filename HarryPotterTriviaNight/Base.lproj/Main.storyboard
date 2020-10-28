@@ -20,12 +20,27 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="iPW-Og-bYu"/>
+                        <segue destination="2eM-0z-blX" kind="relationship" relationship="rootViewController" id="jEr-3J-jlq"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xU2-Yc-310" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-655" y="132"/>
+            <point key="canvasLocation" x="-2018" y="132"/>
+        </scene>
+        <!--SoloPlayViewController-->
+        <scene sceneID="ibt-5c-LCY">
+            <objects>
+                <viewController storyboardIdentifier="SoloPlayViewController" title="SoloPlayViewController" id="rKx-Vz-ys4" customClass="SoloPlayViewController" customModule="TriwizardTrivia" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="yqm-dr-a8s">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="6Yb-Br-5r7"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mfH-q7-6F7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1086" y="21"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -145,13 +160,24 @@
                                 <color key="textColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5WC-3a-IQA">
+                                <rect key="frame" x="8" y="7" width="48" height="30"/>
+                                <state key="normal" title="&lt; Back">
+                                    <color key="titleColor" red="0.92156862750000001" green="0.75294117650000003" blue="0.25882352939999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="cancelButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aQn-O2-gXk"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ljX-3I-641" secondAttribute="trailing" constant="8" id="0h6-rx-QTy"/>
                             <constraint firstItem="s6Q-qq-Lhe" firstAttribute="top" secondItem="Sgi-IJ-5pZ" secondAttribute="bottom" constant="10" id="2bS-rP-p0T"/>
+                            <constraint firstItem="5WC-3a-IQA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="6Gf-37-yhY"/>
                             <constraint firstItem="cF4-E3-1G7" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="9dU-Hn-Pll"/>
                             <constraint firstItem="ljX-3I-641" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="C4b-ej-zGP"/>
+                            <constraint firstItem="5WC-3a-IQA" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="7" id="Ehq-ki-Oxy"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Sgi-IJ-5pZ" secondAttribute="trailing" constant="8" id="VOc-5X-ObR"/>
                             <constraint firstItem="cF4-E3-1G7" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="aFg-0u-SvW"/>
                             <constraint firstAttribute="bottom" secondItem="cF4-E3-1G7" secondAttribute="bottom" id="bNP-eV-rX3"/>
@@ -189,6 +215,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="144.80000000000001" y="131.78410794602701"/>
+        </scene>
+        <!--Mode Select View Controller-->
+        <scene sceneID="Sr9-SW-4CQ">
+            <objects>
+                <viewController storyboardIdentifier="ModeSelectViewController" id="2eM-0z-blX" customClass="ModeSelectViewController" customModule="TriwizardTrivia" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3CE-wI-413">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="x2R-TR-37g"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="gvm-EB-eJR"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ye2-DT-Khg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1086" y="673"/>
         </scene>
         <!--toRulesAndCredits-->
         <scene sceneID="cXi-yl-KZ5">

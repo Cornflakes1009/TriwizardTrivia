@@ -24,6 +24,10 @@
 		D97AB16922BDAB2200124CAC /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97AB16822BDAB2200124CAC /* Question.swift */; };
 		D97AB16B22BDEAF600124CAC /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97AB16A22BDEAF500124CAC /* QuestionViewController.swift */; };
 		D97AB16D22C5925D00124CAC /* House.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97AB16C22C5925D00124CAC /* House.swift */; };
+		D98DCB032544FB2B0092B483 /* ModeSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98DCB022544FB2B0092B483 /* ModeSelectViewController.swift */; };
+		D992D4A62545293300EEAC9F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D992D4A52545293300EEAC9F /* Extensions.swift */; };
+		D992D4A825452C6C00EEAC9F /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = D992D4A725452C6C00EEAC9F /* Globals.swift */; };
+		D992D4AA2545470300EEAC9F /* SoloPlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D992D4A92545470300EEAC9F /* SoloPlayViewController.swift */; };
 		D9DAFD412320833500A87632 /* harryPotterTriviaQuestions.json in Resources */ = {isa = PBXBuildFile; fileRef = D9DAFD402320833500A87632 /* harryPotterTriviaQuestions.json */; };
 		D9DAFD432324779E00A87632 /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DAFD422324779E00A87632 /* ResultsViewController.swift */; };
 /* End PBXBuildFile section */
@@ -50,7 +54,11 @@
 		D97AB16822BDAB2200124CAC /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		D97AB16A22BDEAF500124CAC /* QuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
 		D97AB16C22C5925D00124CAC /* House.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = House.swift; sourceTree = "<group>"; };
-		D9DAFD402320833500A87632 /* harryPotterTriviaQuestions.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = harryPotterTriviaQuestions.json; sourceTree = SOURCE_ROOT; };
+		D98DCB022544FB2B0092B483 /* ModeSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModeSelectViewController.swift; sourceTree = "<group>"; };
+		D992D4A52545293300EEAC9F /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		D992D4A725452C6C00EEAC9F /* Globals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
+		D992D4A92545470300EEAC9F /* SoloPlayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoloPlayViewController.swift; sourceTree = "<group>"; };
+		D9DAFD402320833500A87632 /* harryPotterTriviaQuestions.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = harryPotterTriviaQuestions.json; path = "HarryPotterTriviaNight/Supporting Files/harryPotterTriviaQuestions.json"; sourceTree = SOURCE_ROOT; };
 		D9DAFD422324779E00A87632 /* ResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -98,7 +106,9 @@
 			children = (
 				D945B8F022B6E91B0087E171 /* ViewController.swift */,
 				D97AB16A22BDEAF500124CAC /* QuestionViewController.swift */,
+				D992D4A92545470300EEAC9F /* SoloPlayViewController.swift */,
 				D916452423F1153900CCBD71 /* RulesAndCreditsViewController.swift */,
+				D98DCB022544FB2B0092B483 /* ModeSelectViewController.swift */,
 				D9DAFD422324779E00A87632 /* ResultsViewController.swift */,
 			);
 			path = Controllers;
@@ -145,8 +155,8 @@
 				D945B8F522B6E91D0087E171 /* Assets.xcassets */,
 				D945B8FA22B6E91D0087E171 /* Info.plist */,
 				D97AB16622BB1A2900124CAC /* GoogleService-Info.plist */,
-				D9DAFD402320833500A87632 /* harryPotterTriviaQuestions.json */,
 				D9069DE0230A1F29008BE435 /* Models */,
+				D992D4AB254547EF00EEAC9F /* Supporting Files */,
 			);
 			path = HarryPotterTriviaNight;
 			sourceTree = "<group>";
@@ -157,6 +167,16 @@
 				D945B90122B9C99C0087E171 /* ParryHotter.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		D992D4AB254547EF00EEAC9F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D9DAFD402320833500A87632 /* harryPotterTriviaQuestions.json */,
+				D992D4A52545293300EEAC9F /* Extensions.swift */,
+				D992D4A725452C6C00EEAC9F /* Globals.swift */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -286,8 +306,12 @@
 				D945B8F122B6E91B0087E171 /* ViewController.swift in Sources */,
 				D916452823F146E500CCBD71 /* RulesViewController.swift in Sources */,
 				D9DAFD432324779E00A87632 /* ResultsViewController.swift in Sources */,
+				D992D4A825452C6C00EEAC9F /* Globals.swift in Sources */,
+				D992D4AA2545470300EEAC9F /* SoloPlayViewController.swift in Sources */,
 				D97AB16B22BDEAF600124CAC /* QuestionViewController.swift in Sources */,
+				D992D4A62545293300EEAC9F /* Extensions.swift in Sources */,
 				D97AB16D22C5925D00124CAC /* House.swift in Sources */,
+				D98DCB032544FB2B0092B483 /* ModeSelectViewController.swift in Sources */,
 				D945B8EF22B6E91B0087E171 /* AppDelegate.swift in Sources */,
 				D916452D23F1471F00CCBD71 /* CreditsViewController.swift in Sources */,
 			);

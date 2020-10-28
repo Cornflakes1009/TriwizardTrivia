@@ -54,6 +54,11 @@ class ViewController: UIViewController {
         beginButton.isHidden = true
         beginButton.isEnabled = false
     }
+    @IBAction func cancelButtonTapped(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+        
+    }
+    
 
     @IBAction func houseButtonTapped(_ sender: UIButton, forEvent event: UIEvent) {
         // switching on which house button clicked and if button was already selected

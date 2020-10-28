@@ -72,7 +72,7 @@ class ResultsViewController: UIViewController, UITableViewDelegate, UITableViewD
         restartButton.layer.shadowOpacity = 1.0
 
         // starting ads on the bannerview
-        bannerView.adUnitID = prodAdMobsKey
+        bannerView.adUnitID = testingAdMobsKey
         bannerView.rootViewController = self
         bannerView.load(GADRequest())
         
