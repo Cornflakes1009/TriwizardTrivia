@@ -17,19 +17,19 @@ class ModeSelectViewController: UIViewController {
         image.clipsToBounds = true
         return image
     }()
-
+    
     let titleLabel: UILabel = {
         let label = UILabel()
         label.text = "TriwizardTrivia"
         label.textAlignment = .center
-//        label.layer.shadowColor = UIColor.black.cgColor
-//        label.layer.shadowRadius = 3.0
-//        label.layer.shadowOpacity = 1.0
-//        label.layer.shadowOffset = CGSize(width: 4, height: 4)
+        //        label.layer.shadowColor = UIColor.black.cgColor
+        //        label.layer.shadowRadius = 3.0
+        //        label.layer.shadowOpacity = 1.0
+        //        label.layer.shadowOffset = CGSize(width: 4, height: 4)
         label.layer.masksToBounds = false
         label.font = titleLabelFont
         label.textColor = .yellow
-//        label.backgroundColor = UIColor.rgb(red: 255, green: 0, blue: 0, alpha: 1)
+        //        label.backgroundColor = UIColor.rgb(red: 255, green: 0, blue: 0, alpha: 1)
         return label
     }()
     
@@ -43,16 +43,21 @@ class ModeSelectViewController: UIViewController {
     }()
     
     let singlePlayerButton: UIButton = {
-            let button = UIButton(type: .system)
-            button.setTitle("Solo Mode", for: .normal)
-            button.backgroundColor = crimsonColor
-            button.setTitleColor(buttonTitleColor, for: .normal)
-            button.layer.cornerRadius = 5
-            button.titleLabel?.font = buttonFont
-            button.isEnabled = true
-            button.addTarget(self, action: #selector(soloPlayTapped), for: .touchUpInside)
-            return button
-        }()
+        let button = UIButton(type: .system)
+        button.setTitle("Solo Mode", for: .normal)
+        button.backgroundColor = crimsonColor
+        button.setTitleColor(buttonTitleColor, for: .normal)
+        button.layer.cornerRadius = 5
+        button.titleLabel?.font = buttonFont
+        button.isEnabled = true
+        button.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.95).cgColor
+        button.layer.shadowOffset = CGSize(width: 0, height: 3)
+        button.layer.shadowOpacity = 1.0
+        button.layer.shadowRadius = 10.0
+        button.layer.masksToBounds = false
+        button.addTarget(self, action: #selector(soloPlayTapped), for: .touchUpInside)
+        return button
+    }()
     
     let partyButton: UIButton = {
         let button = UIButton(type: .system)
@@ -62,6 +67,11 @@ class ModeSelectViewController: UIViewController {
         button.layer.cornerRadius = 5
         button.titleLabel?.font = buttonFont
         button.isEnabled = true
+        button.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.95).cgColor
+        button.layer.shadowOffset = CGSize(width: 0, height: 3)
+        button.layer.shadowOpacity = 1.0
+        button.layer.shadowRadius = 10.0
+        button.layer.masksToBounds = false
         button.addTarget(self, action: #selector(partyPlayTapped), for: .touchUpInside)
         return button
     }()
@@ -73,7 +83,7 @@ class ModeSelectViewController: UIViewController {
         setupViews()
         
     }
-
+    
     func setupViews() {
         //self.view.backgroundColor = UIColor(patternImage:  backgroundImage)
         let screenHeight = UIScreen.main.bounds.size.height
@@ -87,7 +97,7 @@ class ModeSelectViewController: UIViewController {
         
         view.addSubview(instructionLabel)
         instructionLabel.anchor(top: titleLabel.bottomAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 20, paddingLeft: 20, paddingBottom: 0, paddingRight: 20, width: 0, height: 0)
-    
+        
         setupStackView()
         
     }
@@ -102,14 +112,14 @@ class ModeSelectViewController: UIViewController {
         
         let screenHeight = UIScreen.main.bounds.size.height
         let stackViewHeight = CGFloat(screenHeight / 4)
-//        stackViewButtonHeight = CGFloat((stackViewHeight - 40) / 5)
+        //        stackViewButtonHeight = CGFloat((stackViewHeight - 40) / 5)
         
         view.addSubview(stackView)
         stackView.anchor(top: instructionLabel.bottomAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 10, paddingLeft: 20, paddingBottom: 0, paddingRight: 20, width: 0, height: stackViewHeight)
     }
     
     @objc func partyPlayTapped() {
-        let vc = self.storyboard?.instantiateViewController(identifier: "PickTeamsStoryboard") as! ViewController
+        let vc = self.storyboard?.instantiateViewController(identifier: "PartyRulesViewController") as! PartyRulesViewController
         self.navigationController?.pushViewController(vc, animated: true)
         vibrate()
     }
@@ -119,5 +129,5 @@ class ModeSelectViewController: UIViewController {
         self.navigationController?.pushViewController(vc, animated: true)
         vibrate()
     }
-
+    
 }
