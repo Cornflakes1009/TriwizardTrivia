@@ -87,7 +87,8 @@ class ModeSelectViewController: UIViewController {
     func setupViews() {
         //self.view.backgroundColor = UIColor(patternImage:  backgroundImage)
         let screenHeight = UIScreen.main.bounds.size.height
-        let fifthOfScreenHeight = screenHeight / 5
+        // setting the buttonHeight for each button in the game
+        buttonHeight = screenHeight / 10
         
         view.addSubview(backgroundImage)
         backgroundImage.anchor(top: view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
@@ -110,9 +111,8 @@ class ModeSelectViewController: UIViewController {
         stackView.axis = .vertical
         stackView.spacing = 10
         
-        let screenHeight = UIScreen.main.bounds.size.height
-        let stackViewHeight = CGFloat(screenHeight / 4)
-        //        stackViewButtonHeight = CGFloat((stackViewHeight - 40) / 5)
+        // calculating based on the number of buttons in stack view and adding 20 padding
+        let stackViewHeight = CGFloat(Int(buttonHeight) * stackView.arrangedSubviews.count + 40)
         
         view.addSubview(stackView)
         stackView.anchor(top: instructionLabel.bottomAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 10, paddingLeft: 20, paddingBottom: 0, paddingRight: 20, width: 0, height: stackViewHeight)

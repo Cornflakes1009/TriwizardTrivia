@@ -22,13 +22,14 @@ class SoloPlayViewController: UIViewController {
         let label = UILabel()
         label.text = "Solo Play"
         label.textAlignment = .center
-        label.layer.shadowColor = UIColor.black.cgColor
-        label.layer.shadowRadius = 3.0
-        label.layer.shadowOpacity = 1.0
-        label.layer.shadowOffset = CGSize(width: 4, height: 4)
+        //        label.layer.shadowColor = UIColor.black.cgColor
+        //        label.layer.shadowRadius = 3.0
+        //        label.layer.shadowOpacity = 1.0
+        //        label.layer.shadowOffset = CGSize(width: 4, height: 4)
         label.layer.masksToBounds = false
-//        label.font = titleLabelFont
-        label.textColor = buttonTitleColor
+        label.font = titleLabelFont
+        label.textColor = .yellow
+        //        label.backgroundColor = UIColor.rgb(red: 255, green: 0, blue: 0, alpha: 1)
         return label
     }()
     
@@ -121,7 +122,7 @@ class SoloPlayViewController: UIViewController {
         titleLabel.anchor(top: view.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 20, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
         
         view.addSubview(backButton)
-        backButton.anchor(top: view.topAnchor, left: view.leftAnchor, bottom: nil, right: nil, paddingTop: 10, paddingLeft: 10, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
+        backButton.anchor(top: view.topAnchor, left: view.leftAnchor, bottom: nil, right: nil, paddingTop: 20, paddingLeft: 10, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
         
         setupStackView()
     }
