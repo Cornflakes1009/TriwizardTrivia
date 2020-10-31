@@ -22,13 +22,13 @@ class ModeSelectViewController: UIViewController {
         let label = UILabel()
         label.text = "TriwizardTrivia"
         label.textAlignment = .center
-        //        label.layer.shadowColor = UIColor.black.cgColor
-        //        label.layer.shadowRadius = 3.0
-        //        label.layer.shadowOpacity = 1.0
-        //        label.layer.shadowOffset = CGSize(width: 4, height: 4)
+        label.layer.shadowColor = UIColor.black.cgColor
+        label.layer.shadowRadius = 3.0
+        label.layer.shadowOpacity = 1.0
+        label.layer.shadowOffset = CGSize(width: 4, height: 4)
         label.layer.masksToBounds = false
         label.font = titleLabelFont
-        label.textColor = .yellow
+        label.textColor = buttonTitleColor
         //        label.backgroundColor = UIColor.rgb(red: 255, green: 0, blue: 0, alpha: 1)
         return label
     }()

@@ -22,13 +22,13 @@ class SoloPlayViewController: UIViewController {
         let label = UILabel()
         label.text = "Solo Play"
         label.textAlignment = .center
-        //        label.layer.shadowColor = UIColor.black.cgColor
-        //        label.layer.shadowRadius = 3.0
-        //        label.layer.shadowOpacity = 1.0
-        //        label.layer.shadowOffset = CGSize(width: 4, height: 4)
+        label.layer.shadowColor = UIColor.black.cgColor
+        label.layer.shadowRadius = 3.0
+        label.layer.shadowOpacity = 1.0
+        label.layer.shadowOffset = CGSize(width: 4, height: 4)
         label.layer.masksToBounds = false
         label.font = titleLabelFont
-        label.textColor = .yellow
+        label.textColor = buttonTitleColor
         //        label.backgroundColor = UIColor.rgb(red: 255, green: 0, blue: 0, alpha: 1)
         return label
     }()
@@ -40,13 +40,13 @@ class SoloPlayViewController: UIViewController {
 //            button.titleLabel?.font = buttonFont
             button.addTarget(self, action: #selector(backTapped), for: .touchUpInside)
             return button
-        }()
+    }()
     
     let fifteenButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("15 Questions", for: .normal)
         button.backgroundColor = crimsonColor
-        button.setTitleColor(buttonTitleColor, for: .normal)
+        button.setTitleColor(gryffindorFontColor, for: .normal)
         button.layer.cornerRadius = 5
         button.titleLabel?.font = buttonFont
         button.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.95).cgColor
@@ -55,7 +55,7 @@ class SoloPlayViewController: UIViewController {
         button.layer.shadowRadius = 10.0
         button.layer.masksToBounds = false
 
-        //        button.addTarget(self, action: #selector(membersTapped), for: .touchUpInside)
+        button.addTarget(self, action: #selector(fifteenTapped), for: .touchUpInside)
         return button
     }()
     
@@ -63,7 +63,7 @@ class SoloPlayViewController: UIViewController {
             let button = UIButton(type: .system)
             button.setTitle("25 Questions", for: .normal)
             button.backgroundColor = hufflepuffColor
-            button.setTitleColor(buttonTitleColor, for: .normal)
+            button.setTitleColor(hufflepuffFontColor, for: .normal)
             button.layer.cornerRadius = 5
             button.titleLabel?.font = buttonFont
             button.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.95).cgColor
@@ -71,7 +71,7 @@ class SoloPlayViewController: UIViewController {
             button.layer.shadowOpacity = 1.0
             button.layer.shadowRadius = 10.0
             button.layer.masksToBounds = false
-    //        button.addTarget(self, action: #selector(membersTapped), for: .touchUpInside)
+            button.addTarget(self, action: #selector(twentyFiveTapped), for: .touchUpInside)
             return button
         }()
     
@@ -79,7 +79,7 @@ class SoloPlayViewController: UIViewController {
             let button = UIButton(type: .system)
             button.setTitle("50 Questions", for: .normal)
             button.backgroundColor = ravenclawColor
-            button.setTitleColor(buttonTitleColor, for: .normal)
+            button.setTitleColor(ravenclawFontColor, for: .normal)
             button.layer.cornerRadius = 5
             button.titleLabel?.font = buttonFont
             button.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.95).cgColor
@@ -87,7 +87,7 @@ class SoloPlayViewController: UIViewController {
             button.layer.shadowOpacity = 1.0
             button.layer.shadowRadius = 10.0
             button.layer.masksToBounds = false
-    //        button.addTarget(self, action: #selector(membersTapped), for: .touchUpInside)
+            button.addTarget(self, action: #selector(fiftyTapped), for: .touchUpInside)
             return button
         }()
     
@@ -95,7 +95,7 @@ class SoloPlayViewController: UIViewController {
             let button = UIButton(type: .system)
             button.setTitle("100 Questions", for: .normal)
             button.backgroundColor = slytherinColor
-            button.setTitleColor(buttonTitleColor, for: .normal)
+            button.setTitleColor(slytherinFontColor, for: .normal)
             button.layer.cornerRadius = 5
             button.titleLabel?.font = buttonFont
             button.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.95).cgColor
@@ -103,7 +103,7 @@ class SoloPlayViewController: UIViewController {
             button.layer.shadowOpacity = 1.0
             button.layer.shadowRadius = 10.0
             button.layer.masksToBounds = false
-    //        button.addTarget(self, action: #selector(membersTapped), for: .touchUpInside)
+            button.addTarget(self, action: #selector(oneHundredTapped), for: .touchUpInside)
             return button
         }()
 
@@ -137,10 +137,16 @@ class SoloPlayViewController: UIViewController {
         
         let screenHeight = UIScreen.main.bounds.size.height
         let stackViewHeight = CGFloat(screenHeight / 2)
-        let stackViewButtonHeight = CGFloat((stackViewHeight - 40) / 5)
+//        let stackViewButtonHeight = CGFloat((stackViewHeight - 40) / 5)
         
         view.addSubview(stackView)
         stackView.anchor(top: titleLabel.bottomAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 10, paddingLeft: 20, paddingBottom: 0, paddingRight: 20, width: 0, height: stackViewHeight)
+    }
+    
+    func startGameNavigation() {
+        let vc = self.storyboard?.instantiateViewController(identifier: "SoloQuestionViewController") as! SoloQuestionViewController
+        self.navigationController?.pushViewController(vc, animated: true)
+        vibrate()
     }
      
     @objc func backTapped() {
@@ -148,6 +154,23 @@ class SoloPlayViewController: UIViewController {
         vibrate()
     }
     
+    @objc func fifteenTapped() {
+        //convertSoloJSON(jsonToRead: "SoloTriviaQuestions", numberOfQuestions: 15)
+        startGameNavigation()
+    }
     
-
+    @objc func twentyFiveTapped() {
+        convertSoloJSON(jsonToRead: "SoloTriviaQuestions", numberOfQuestions: 25)
+        startGameNavigation()
+    }
+    
+    @objc func fiftyTapped() {
+        convertSoloJSON(jsonToRead: "SoloTriviaQuestions", numberOfQuestions: 50)
+        startGameNavigation()
+    }
+    
+    @objc func oneHundredTapped() {
+        convertSoloJSON(jsonToRead: "SoloTriviaQuestions", numberOfQuestions: 100)
+        startGameNavigation()
+    }
 }

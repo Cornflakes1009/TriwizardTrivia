@@ -25,6 +25,8 @@
 		D97AB16B22BDEAF600124CAC /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97AB16A22BDEAF500124CAC /* QuestionViewController.swift */; };
 		D97AB16D22C5925D00124CAC /* House.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97AB16C22C5925D00124CAC /* House.swift */; };
 		D98D09F4254BDF5C00423F08 /* PartyRulesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98D09F3254BDF5C00423F08 /* PartyRulesViewController.swift */; };
+		D98D0A06254BF21E00423F08 /* SoloQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98D0A05254BF21E00423F08 /* SoloQuestionViewController.swift */; };
+		D98D0A0A254BF41600423F08 /* SoloQuestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98D0A09254BF41600423F08 /* SoloQuestions.swift */; };
 		D98DCB032544FB2B0092B483 /* ModeSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98DCB022544FB2B0092B483 /* ModeSelectViewController.swift */; };
 		D992D4A62545293300EEAC9F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D992D4A52545293300EEAC9F /* Extensions.swift */; };
 		D992D4A825452C6C00EEAC9F /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = D992D4A725452C6C00EEAC9F /* Globals.swift */; };
@@ -56,6 +58,8 @@
 		D97AB16A22BDEAF500124CAC /* QuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
 		D97AB16C22C5925D00124CAC /* House.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = House.swift; sourceTree = "<group>"; };
 		D98D09F3254BDF5C00423F08 /* PartyRulesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartyRulesViewController.swift; sourceTree = "<group>"; };
+		D98D0A05254BF21E00423F08 /* SoloQuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoloQuestionViewController.swift; sourceTree = "<group>"; };
+		D98D0A09254BF41600423F08 /* SoloQuestions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoloQuestions.swift; sourceTree = "<group>"; };
 		D98DCB022544FB2B0092B483 /* ModeSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModeSelectViewController.swift; sourceTree = "<group>"; };
 		D992D4A52545293300EEAC9F /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		D992D4A725452C6C00EEAC9F /* Globals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
@@ -99,6 +103,7 @@
 				D97AB16C22C5925D00124CAC /* House.swift */,
 				D97AB16822BDAB2200124CAC /* Question.swift */,
 				D9069DE2230A20C2008BE435 /* Teams.swift */,
+				D98D0A09254BF41600423F08 /* SoloQuestions.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -107,6 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				D945B8F022B6E91B0087E171 /* ViewController.swift */,
+				D98D0A05254BF21E00423F08 /* SoloQuestionViewController.swift */,
 				D98D09F3254BDF5C00423F08 /* PartyRulesViewController.swift */,
 				D97AB16A22BDEAF500124CAC /* QuestionViewController.swift */,
 				D992D4A92545470300EEAC9F /* SoloPlayViewController.swift */,
@@ -308,6 +314,7 @@
 				D98D09F4254BDF5C00423F08 /* PartyRulesViewController.swift in Sources */,
 				D97AB16922BDAB2200124CAC /* Question.swift in Sources */,
 				D945B8F122B6E91B0087E171 /* ViewController.swift in Sources */,
+				D98D0A0A254BF41600423F08 /* SoloQuestions.swift in Sources */,
 				D916452823F146E500CCBD71 /* RulesViewController.swift in Sources */,
 				D9DAFD432324779E00A87632 /* ResultsViewController.swift in Sources */,
 				D992D4A825452C6C00EEAC9F /* Globals.swift in Sources */,
@@ -317,6 +324,7 @@
 				D97AB16D22C5925D00124CAC /* House.swift in Sources */,
 				D98DCB032544FB2B0092B483 /* ModeSelectViewController.swift in Sources */,
 				D945B8EF22B6E91B0087E171 /* AppDelegate.swift in Sources */,
+				D98D0A06254BF21E00423F08 /* SoloQuestionViewController.swift in Sources */,
 				D916452D23F1471F00CCBD71 /* CreditsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

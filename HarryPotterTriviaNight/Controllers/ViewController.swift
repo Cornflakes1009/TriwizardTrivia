@@ -16,6 +16,15 @@ class ViewController: UIViewController {
     var ravenclawButtonSelected = false
     var slytherinButtonSelected = false
     
+    let backButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setTitle("< Back", for: .normal)
+        button.setTitleColor(buttonTitleColor, for: .normal)
+        //            button.titleLabel?.font = buttonFont
+        button.addTarget(self, action: #selector(backTapped), for: .touchUpInside)
+        return button
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -29,6 +38,9 @@ class ViewController: UIViewController {
             headlineLabel.font = headlineLabel.font.withSize(48)
             directionsLabel.font = directionsLabel.font.withSize(30)
         }
+        
+        view.addSubview(backButton)
+        backButton.anchor(top: view.topAnchor, left: view.leftAnchor, bottom: nil, right: nil, paddingTop: 20, paddingLeft: 10, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
         
         for button in teamButtons {
             // if phone is bigger than SE
@@ -54,11 +66,6 @@ class ViewController: UIViewController {
         beginButton.isHidden = true
         beginButton.isEnabled = false
     }
-    @IBAction func cancelButtonTapped(_ sender: Any) {
-        self.navigationController?.popViewController(animated: true)
-        
-    }
-    
 
     @IBAction func houseButtonTapped(_ sender: UIButton, forEvent event: UIEvent) {
         // switching on which house button clicked and if button was already selected
@@ -151,6 +158,11 @@ class ViewController: UIViewController {
         teams.removeAll()
         let vc = self.storyboard?.instantiateViewController(identifier: "toRulesAndCredits") as! RulesAndCreditsViewController
         self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    @objc func backTapped() {
+        self.navigationController?.popViewController(animated: true)
+        vibrate()
     }
     
     func setColors(button: UIButton) {
