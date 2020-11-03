@@ -24,3 +24,12 @@ let hufflepuffFontColor     =   UIColor.rgb(red: 20, green: 20, blue: 35, alpha:
 let ravenclawFontColor      =   UIColor.rgb(red: 199, green: 199, blue: 208, alpha: 1)
 let slytherinFontColor      =   UIColor.rgb(red: 186, green: 185, blue: 195, alpha: 1)
 
+func resetGame() {
+    soloScore             =   0
+    soloQuestionIndex     =   0
+    questionIndex         =   0
+    currentTeam           =   0
+    soloQuestionList.removeAll()
+    questionList.removeAll()
+    teams.removeAll()
+}

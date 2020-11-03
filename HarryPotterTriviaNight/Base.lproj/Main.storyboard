@@ -74,6 +74,21 @@
             </objects>
             <point key="canvasLocation" x="-412" y="133"/>
         </scene>
+        <!--GameCreditsViewController-->
+        <scene sceneID="6Jh-5P-CAm">
+            <objects>
+                <viewController storyboardIdentifier="GameCreditsViewController" title="GameCreditsViewController" id="9kZ-TI-atW" customClass="GameCreditsViewController" customModule="TriwizardTrivia" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pp7-tf-EZN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="hVf-Dh-dM9"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HPm-vH-iCM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-391" y="806"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>

@@ -24,6 +24,14 @@ class QuestionViewController: UIViewController {
     @IBOutlet var incorrectButtonHeight: NSLayoutConstraint!
     @IBOutlet var nextQuestionButtonHeight: NSLayoutConstraint!
     
+    let backButton: UIButton = {
+            let button = UIButton(type: .system)
+            button.setTitle("< Back", for: .normal)
+            button.setTitleColor(buttonTitleColor, for: .normal)
+            button.addTarget(self, action: #selector(backTapped), for: .touchUpInside)
+            return button
+    }()
+    
     var answeredCorrectly = false
     
     override func viewDidLoad() {
@@ -62,6 +70,9 @@ class QuestionViewController: UIViewController {
             
             view.layoutIfNeeded()
         }
+        
+        view.addSubview(backButton)
+        backButton.anchor(top: view.topAnchor, left: view.leftAnchor, bottom: nil, right: nil, paddingTop: 20, paddingLeft: 10, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
     }
     
     // added to prevent the segue added from partial curl
@@ -112,6 +123,11 @@ class QuestionViewController: UIViewController {
             correctButton.backgroundColor = #colorLiteral(red: 0.02352941176, green: 0.6392156863, blue: 0.01568627451, alpha: 1)
             incorrectButton.backgroundColor = #colorLiteral(red: 0.7215686275, green: 0, blue: 0.01568627451, alpha: 1)
         }
+    }
+    
+    @objc func backTapped() {
+        self.navigationController?.popViewController(animated: true)
+        vibrate()
     }
 }
 

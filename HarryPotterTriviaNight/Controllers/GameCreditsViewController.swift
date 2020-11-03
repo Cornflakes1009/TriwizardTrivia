@@ -1,14 +1,14 @@
 //
-//  PartyRulesViewController.swift
+//  GameCreditsViewController.swift
 //  HarryPotterTriviaNight
 //
-//  Created by HaroldDavidson on 10/29/20.
+//  Created by HaroldDavidson on 11/2/20.
 //  Copyright © 2020 HaroldDavidson. All rights reserved.
 //
 
 import UIKit
 
-class PartyRulesViewController: UIViewController {
+class GameCreditsViewController: UIViewController {
     
     let backgroundImage: UIImageView = {
         let image = UIImageView()
@@ -19,25 +19,25 @@ class PartyRulesViewController: UIViewController {
     }()
     
     let backButton: UIButton = {
-            let button = UIButton(type: .system)
-            button.setTitle("< Back", for: .normal)
-            button.setTitleColor(buttonTitleColor, for: .normal)
-            button.addTarget(self, action: #selector(backTapped), for: .touchUpInside)
-            return button
+        let button = UIButton(type: .system)
+        button.setTitle("< Back", for: .normal)
+        button.setTitleColor(buttonTitleColor, for: .normal)
+        //            button.titleLabel?.font = buttonFont
+        button.addTarget(self, action: #selector(backTapped), for: .touchUpInside)
+        return button
     }()
     
     let titleLabel: UILabel = {
         let label = UILabel()
-        label.text = "How to Play"
+        label.text = "Credits"
         label.textAlignment = .center
-        //        label.layer.shadowColor = UIColor.black.cgColor
-        //        label.layer.shadowRadius = 3.0
-        //        label.layer.shadowOpacity = 1.0
-        //        label.layer.shadowOffset = CGSize(width: 4, height: 4)
+        label.layer.shadowColor = UIColor.black.cgColor
+        label.layer.shadowRadius = 3.0
+        label.layer.shadowOpacity = 1.0
+        label.layer.shadowOffset = CGSize(width: 4, height: 4)
         label.layer.masksToBounds = false
         label.font = titleLabelFont
-        label.textColor = .yellow
-        //        label.backgroundColor = UIColor.rgb(red: 255, green: 0, blue: 0, alpha: 1)
+        label.textColor = buttonTitleColor
         return label
     }()
     
@@ -69,27 +69,10 @@ class PartyRulesViewController: UIViewController {
         return tv
     }()
     
-
-    let playButton: UIButton = {
-        let button = UIButton(type: .system)
-        button.setTitle("Play", for: .normal)
-        button.backgroundColor = crimsonColor
-        button.setTitleColor(buttonTitleColor, for: .normal)
-        button.layer.cornerRadius = 5
-        button.titleLabel?.font = buttonFont
-        button.isEnabled = true
-        button.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.95).cgColor
-        button.layer.shadowOffset = CGSize(width: 0, height: 3)
-        button.layer.shadowOpacity = 1.0
-        button.layer.shadowRadius = 10.0
-        button.layer.masksToBounds = false
-        button.addTarget(self, action: #selector(playTapped), for: .touchUpInside)
-        return button
-    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         setupViews()
     }
     
@@ -107,21 +90,15 @@ class PartyRulesViewController: UIViewController {
         let textViewHeight = CGFloat(screenHeight * 0.6)
         view.addSubview(rulesTextView)
         rulesTextView.anchor(top: titleLabel.bottomAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 20, paddingLeft: 20, paddingBottom: 0, paddingRight: 20, width: 0, height: textViewHeight)
-        
-        
-        view.addSubview(playButton)
-        playButton.anchor(top: nil, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 20, paddingBottom: -20, paddingRight: 20, width: 0, height: buttonHeight)
-        
     }
-
+    
+    
     @objc func backTapped() {
         self.navigationController?.popViewController(animated: true)
         vibrate()
     }
     
-    @objc func playTapped() {
-        let vc = self.storyboard?.instantiateViewController(identifier: "PickTeamsStoryboard") as! ViewController
-        self.navigationController?.pushViewController(vc, animated: true)
-    }
+    
+    
     
 }

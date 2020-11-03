@@ -14,6 +14,7 @@
 		D916452923F146E500CCBD71 /* RulesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D916452723F146E500CCBD71 /* RulesViewController.xib */; };
 		D916452D23F1471F00CCBD71 /* CreditsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D916452B23F1471F00CCBD71 /* CreditsViewController.swift */; };
 		D916452E23F1471F00CCBD71 /* CreditsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D916452C23F1471F00CCBD71 /* CreditsViewController.xib */; };
+		D92BB1092550F2FF00BF84BE /* GameCreditsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92BB1082550F2FF00BF84BE /* GameCreditsViewController.swift */; };
 		D945B8EF22B6E91B0087E171 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D945B8EE22B6E91B0087E171 /* AppDelegate.swift */; };
 		D945B8F122B6E91B0087E171 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D945B8F022B6E91B0087E171 /* ViewController.swift */; };
 		D945B8F422B6E91B0087E171 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D945B8F222B6E91B0087E171 /* Main.storyboard */; };
@@ -45,6 +46,7 @@
 		D916452723F146E500CCBD71 /* RulesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RulesViewController.xib; sourceTree = "<group>"; };
 		D916452B23F1471F00CCBD71 /* CreditsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsViewController.swift; sourceTree = "<group>"; };
 		D916452C23F1471F00CCBD71 /* CreditsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreditsViewController.xib; sourceTree = "<group>"; };
+		D92BB1082550F2FF00BF84BE /* GameCreditsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCreditsViewController.swift; sourceTree = "<group>"; };
 		D945B8EB22B6E91B0087E171 /* TriwizardTrivia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TriwizardTrivia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D945B8EE22B6E91B0087E171 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D945B8F022B6E91B0087E171 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 				D992D4A92545470300EEAC9F /* SoloPlayViewController.swift */,
 				D916452423F1153900CCBD71 /* RulesAndCreditsViewController.swift */,
 				D98DCB022544FB2B0092B483 /* ModeSelectViewController.swift */,
+				D92BB1082550F2FF00BF84BE /* GameCreditsViewController.swift */,
 				D9DAFD422324779E00A87632 /* ResultsViewController.swift */,
 			);
 			path = Controllers;
@@ -326,6 +329,7 @@
 				D945B8EF22B6E91B0087E171 /* AppDelegate.swift in Sources */,
 				D98D0A06254BF21E00423F08 /* SoloQuestionViewController.swift in Sources */,
 				D916452D23F1471F00CCBD71 /* CreditsViewController.swift in Sources */,
+				D92BB1092550F2FF00BF84BE /* GameCreditsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

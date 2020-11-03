@@ -76,7 +76,19 @@ class ModeSelectViewController: UIViewController {
         return button
     }()
     
-    
+    let creditsButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setTitle("Credits", for: .normal)
+        button.setTitleColor(.white, for: .normal)
+        button.titleLabel?.font = instructionLabelFont
+        button.isEnabled = true
+        button.layer.shadowOffset = CGSize(width: 0, height: 3)
+        button.layer.shadowOpacity = 1.0
+        button.layer.shadowRadius = 10.0
+        button.layer.masksToBounds = false
+        button.addTarget(self, action: #selector(creditsTapped), for: .touchUpInside)
+        return button
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -100,6 +112,8 @@ class ModeSelectViewController: UIViewController {
         instructionLabel.anchor(top: titleLabel.bottomAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 20, paddingLeft: 20, paddingBottom: 0, paddingRight: 20, width: 0, height: 0)
         
         setupStackView()
+        view.addSubview(creditsButton)
+        creditsButton.anchor(top: stackView.bottomAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 10, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
         
     }
     
@@ -126,6 +140,12 @@ class ModeSelectViewController: UIViewController {
     
     @objc func soloPlayTapped() {
         let vc = self.storyboard?.instantiateViewController(identifier: "SoloPlayViewController") as! SoloPlayViewController
+        self.navigationController?.pushViewController(vc, animated: true)
+        vibrate()
+    }
+    
+    @objc func creditsTapped() {
+        let vc = self.storyboard?.instantiateViewController(identifier: "GameCreditsViewController") as! GameCreditsViewController
         self.navigationController?.pushViewController(vc, animated: true)
         vibrate()
     }
