@@ -22,7 +22,6 @@ class GameCreditsViewController: UIViewController {
         let button = UIButton(type: .system)
         button.setTitle("< Back", for: .normal)
         button.setTitleColor(buttonTitleColor, for: .normal)
-        //            button.titleLabel?.font = buttonFont
         button.addTarget(self, action: #selector(backTapped), for: .touchUpInside)
         return button
     }()
@@ -60,7 +59,6 @@ class GameCreditsViewController: UIViewController {
         7. Follow the app to determine turns and breaks.
         8. Mob programming is over when the app is complete or the session time runs out. Ex. 6pm-8pm.
         """
-//        tv.font = rulesFont
         tv.textColor = .white
         tv.backgroundColor = .clear
         tv.isEditable = false
@@ -68,7 +66,6 @@ class GameCreditsViewController: UIViewController {
         tv.isScrollEnabled = true
         return tv
     }()
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -92,13 +89,8 @@ class GameCreditsViewController: UIViewController {
         rulesTextView.anchor(top: titleLabel.bottomAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 20, paddingLeft: 20, paddingBottom: 0, paddingRight: 20, width: 0, height: textViewHeight)
     }
     
-    
     @objc func backTapped() {
         self.navigationController?.popViewController(animated: true)
         vibrate()
     }
-    
-    
-    
-    
 }

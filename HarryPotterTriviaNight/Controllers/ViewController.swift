@@ -10,7 +10,6 @@ class ViewController: UIViewController {
     @IBOutlet var gryffindorButton: UIButton!
     @IBOutlet var beginButtonHeight: NSLayoutConstraint!
     
-    
     var gryffindorButtonSelected = false
     var hufflepuffButtonSelected = false
     var ravenclawButtonSelected = false
@@ -154,14 +153,15 @@ class ViewController: UIViewController {
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
-    @IBAction func rulesAndCreditsTapped(_ sender: Any) {
-        teams.removeAll()
-        let vc = self.storyboard?.instantiateViewController(identifier: "toRulesAndCredits") as! RulesAndCreditsViewController
-        self.navigationController?.pushViewController(vc, animated: true)
-    }
+//    @IBAction func rulesAndCreditsTapped(_ sender: Any) {
+//        teams.removeAll()
+//        let vc = self.storyboard?.instantiateViewController(identifier: "toRulesAndCredits") as! RulesAndCreditsViewController
+//        self.navigationController?.pushViewController(vc, animated: true)
+//    }
     
     @objc func backTapped() {
         self.navigationController?.popViewController(animated: true)
+        resetGame()
         vibrate()
     }
     

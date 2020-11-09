@@ -127,7 +127,7 @@ class QuestionViewController: UIViewController {
     
     @objc func backTapped() {
         self.navigationController?.popViewController(animated: true)
+        resetGame()
         vibrate()
     }
 }
-

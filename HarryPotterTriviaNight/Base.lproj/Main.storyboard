@@ -191,16 +191,6 @@
                                     <action selector="beginButtonSegue:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uTj-Hb-gK5"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="idK-Ki-kqv">
-                                <rect key="frame" x="20" y="420.5" width="335" height="32"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                                <state key="normal" title="Rules and Credits">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="rulesAndCreditsTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Fdr-hi-eXp"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select at least two houses." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sgi-IJ-5pZ">
                                 <rect key="frame" x="8" y="102.5" width="359" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -219,7 +209,6 @@
                             <constraint firstItem="cF4-E3-1G7" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="aFg-0u-SvW"/>
                             <constraint firstAttribute="bottom" secondItem="cF4-E3-1G7" secondAttribute="bottom" id="bNP-eV-rX3"/>
                             <constraint firstItem="5bJ-YD-x4o" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="cYc-Dx-91G"/>
-                            <constraint firstItem="idK-Ki-kqv" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="dws-cU-8F7"/>
                             <constraint firstItem="s6Q-qq-Lhe" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="eZf-Ww-US3"/>
                             <constraint firstItem="ljX-3I-641" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="fWU-cH-zOr"/>
                             <constraint firstItem="Sgi-IJ-5pZ" firstAttribute="top" secondItem="ljX-3I-641" secondAttribute="bottom" constant="1" id="hRt-Tk-yas"/>
@@ -227,8 +216,6 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="s6Q-qq-Lhe" secondAttribute="trailing" constant="8" id="kGZ-TF-waA"/>
                             <constraint firstItem="Sgi-IJ-5pZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="l05-dJ-BC6"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="5bJ-YD-x4o" secondAttribute="bottom" constant="20" id="lZo-wg-FRp"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="idK-Ki-kqv" secondAttribute="trailing" constant="20" id="tii-bx-rTF"/>
-                            <constraint firstItem="idK-Ki-kqv" firstAttribute="top" secondItem="s6Q-qq-Lhe" secondAttribute="bottom" constant="8" id="tw5-TY-UGX"/>
                             <constraint firstItem="cF4-E3-1G7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="vP4-ng-Yp4"/>
                             <constraint firstAttribute="trailing" secondItem="cF4-E3-1G7" secondAttribute="trailing" id="wSR-h7-tGL"/>
                             <constraint firstItem="cF4-E3-1G7" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="x7i-X8-i6G"/>

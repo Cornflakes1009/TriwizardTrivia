@@ -32,6 +32,7 @@
 		D992D4A62545293300EEAC9F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D992D4A52545293300EEAC9F /* Extensions.swift */; };
 		D992D4A825452C6C00EEAC9F /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = D992D4A725452C6C00EEAC9F /* Globals.swift */; };
 		D992D4AA2545470300EEAC9F /* SoloPlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D992D4A92545470300EEAC9F /* SoloPlayViewController.swift */; };
+		D99F66A825591B89000EE745 /* harryPotterSoloQuestions.json in Resources */ = {isa = PBXBuildFile; fileRef = D99F66A725591B89000EE745 /* harryPotterSoloQuestions.json */; };
 		D9DAFD412320833500A87632 /* harryPotterTriviaQuestions.json in Resources */ = {isa = PBXBuildFile; fileRef = D9DAFD402320833500A87632 /* harryPotterTriviaQuestions.json */; };
 		D9DAFD432324779E00A87632 /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DAFD422324779E00A87632 /* ResultsViewController.swift */; };
 /* End PBXBuildFile section */
@@ -66,6 +67,7 @@
 		D992D4A52545293300EEAC9F /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		D992D4A725452C6C00EEAC9F /* Globals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
 		D992D4A92545470300EEAC9F /* SoloPlayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoloPlayViewController.swift; sourceTree = "<group>"; };
+		D99F66A725591B89000EE745 /* harryPotterSoloQuestions.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = harryPotterSoloQuestions.json; sourceTree = "<group>"; };
 		D9DAFD402320833500A87632 /* harryPotterTriviaQuestions.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = harryPotterTriviaQuestions.json; path = "HarryPotterTriviaNight/Supporting Files/harryPotterTriviaQuestions.json"; sourceTree = SOURCE_ROOT; };
 		D9DAFD422324779E00A87632 /* ResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -185,6 +187,7 @@
 			isa = PBXGroup;
 			children = (
 				D9DAFD402320833500A87632 /* harryPotterTriviaQuestions.json */,
+				D99F66A725591B89000EE745 /* harryPotterSoloQuestions.json */,
 				D992D4A52545293300EEAC9F /* Extensions.swift */,
 				D992D4A725452C6C00EEAC9F /* Globals.swift */,
 			);
@@ -252,6 +255,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D99F66A825591B89000EE745 /* harryPotterSoloQuestions.json in Resources */,
 				D945B8F922B6E91D0087E171 /* LaunchScreen.storyboard in Resources */,
 				D945B8F622B6E91D0087E171 /* Assets.xcassets in Resources */,
 				D97AB16722BB1A2900124CAC /* GoogleService-Info.plist in Resources */,

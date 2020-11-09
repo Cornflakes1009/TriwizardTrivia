@@ -40,7 +40,7 @@ class ResultsViewController: UIViewController, UITableViewDelegate, UITableViewD
         if(teams[indexPath.row].score == teams[0].score) {
             cell.trophyImage?.image = UIImage(systemName: "rosette")
         }
-
+        
         // making the tableview have a clear background
         cell.layer.backgroundColor = UIColor.clear.cgColor
         cell.backgroundColor = .clear
@@ -48,19 +48,21 @@ class ResultsViewController: UIViewController, UITableViewDelegate, UITableViewD
         resultsTableView.backgroundColor = .clear
         return cell
     }
-
+    
     @IBOutlet weak var bannerView: GADBannerView!
     
     // clearing out the game and sending back to home screen
     @IBAction func restartTapped(_ sender: Any) {
-        questionList.removeAll()
-        teams.removeAll()
-        currentTeam = 0
-        questionIndex = 0
-        questionList.removeAll()
+        resetGame()
         
-        let vc = self.storyboard?.instantiateViewController(identifier: "PickTeamsStoryboard") as! ViewController
-        self.navigationController?.pushViewController(vc, animated: true)
+        //        let vc = self.storyboard?.instantiateViewController(identifier: "PickTeamsStoryboard") as! ViewController
+        //        self.navigationController?.pushViewController(vc, animated: true)
+        if let first = presentingViewController,
+           let second = first.presentingViewController {
+            first.view.isHidden = true
+            second.dismiss(animated: true)
+        }
+        self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
     }
     
     override func viewDidLoad() {
@@ -70,7 +72,7 @@ class ResultsViewController: UIViewController, UITableViewDelegate, UITableViewD
         restartButton.layer.shadowOffset = CGSize(width: 5, height: 5)
         restartButton.layer.shadowRadius = 5
         restartButton.layer.shadowOpacity = 1.0
-
+        
         // starting ads on the bannerview
         bannerView.adUnitID = testingAdMobsKey
         bannerView.rootViewController = self

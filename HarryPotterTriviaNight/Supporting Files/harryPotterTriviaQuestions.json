@@ -2226,11 +2226,6 @@
     },
     {
         "category": "Harry Potter",
-        "question": "According to Slughorn, what is the purpose of a horcrux?",
-        "answer": "Immortality"
-    },
-    {
-        "category": "Harry Potter",
         "question": "Who is the ghost of Ravenclaw Tower?",
         "answer": "The Grey Lady / Helena Ravenclaw"
     },
@@ -2337,7 +2332,7 @@
     {
         "category": "Harry Potter",
         "question": "How do students open The Monster Book of Monsters?",
-        "answer": "The stroke the spine"
+        "answer": "They stroke the spine"
     },
     {
         "category": "Harry Potter",
@@ -3563,11 +3558,6 @@
         "category": "Harry Potter",
         "question": "Who attacks Mr. Weasley when he's on guard duty at the Department of Mysteries?",
         "answer": "Nagini"
-    },
-    {
-        "category": "Harry Potter",
-        "question": "What is the purpose of creating a Horcrux?",
-        "answer": "Immortality"
     },
     {
         "category": "Harry Potter",

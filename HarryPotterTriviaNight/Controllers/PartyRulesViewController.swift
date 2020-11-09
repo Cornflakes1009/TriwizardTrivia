@@ -30,37 +30,30 @@ class PartyRulesViewController: UIViewController {
         let label = UILabel()
         label.text = "How to Play"
         label.textAlignment = .center
-        //        label.layer.shadowColor = UIColor.black.cgColor
-        //        label.layer.shadowRadius = 3.0
-        //        label.layer.shadowOpacity = 1.0
-        //        label.layer.shadowOffset = CGSize(width: 4, height: 4)
         label.layer.masksToBounds = false
         label.font = titleLabelFont
-        label.textColor = .yellow
-        //        label.backgroundColor = UIColor.rgb(red: 255, green: 0, blue: 0, alpha: 1)
+        label.textColor = buttonTitleColor
         return label
     }()
     
     let rulesTextView: UITextView = {
         let tv = UITextView()
         tv.text = """
-        The goal of mob programming:
-        Mob programming is meant to facilitate the collaboration of programmers of all levels to work together and build a common app on a single computer.
-        
-        How mob programming works:
-        First, whomever is closest to the phone/tablet that you’re using for this app, enter the names of the group starting with their own and going clockwise. Discuss how long each round should be and how long and frequent breaks should be. Enter those times. Start the timer. This person is now the navigator and the driver is the person to their left. The navigator now reads the rules out loud.
-        
-        Rules:
-        1. Be respectful to each other and their property. No greasy pizza fingers!
-        2. The navigator is the only person allowed to direct the driver.
-        3. The navigator should discuss with the other group members on the next steps, but only the navigator is allowed to direct the driver.
-        4. The navigator has the final say in all matters related to the project during the navigator’s turn.
-        5. Once the timer runs out, pass the role of navigator and driver to the next group members specified.
-        6. The navigator discusses with the entire group to determine what they’ll build and what the requirements of “done” are. The navigator will instruct the driver to write this down.
-        7. Follow the app to determine turns and breaks.
-        8. Mob programming is over when the app is complete or the session time runs out. Ex. 6pm-8pm.
+        Party Mode is a team-based trivia game.
+
+        Each house represents a team. A team can be 1 or many players.
+
+        The trivia master holds the device and selects the players' houses. The first team selected goes first.
+
+        Once each team is selected, the questions are randomly selected and each team will be asked a question.
+
+        The trivia master must ask the question out loud and each member of the respective team whose turn it is can collaborate and provide one answer to the trivia master.
+
+        The trivia master tells the teams what the correct answer is and marks whether the team answered correctly or not.
+
+        Each team has 15 questions to answer and the results will be displayed after each team answers their 15 questions.
+
         """
-//        tv.font = rulesFont
         tv.textColor = .white
         tv.backgroundColor = .clear
         tv.isEditable = false
@@ -68,7 +61,6 @@ class PartyRulesViewController: UIViewController {
         tv.isScrollEnabled = true
         return tv
     }()
-    
 
     let playButton: UIButton = {
         let button = UIButton(type: .system)
@@ -111,7 +103,6 @@ class PartyRulesViewController: UIViewController {
         
         view.addSubview(playButton)
         playButton.anchor(top: nil, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 20, paddingBottom: -20, paddingRight: 20, width: 0, height: buttonHeight)
-        
     }
 
     @objc func backTapped() {
@@ -123,5 +114,4 @@ class PartyRulesViewController: UIViewController {
         let vc = self.storyboard?.instantiateViewController(identifier: "PickTeamsStoryboard") as! ViewController
         self.navigationController?.pushViewController(vc, animated: true)
     }
-    
 }

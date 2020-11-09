@@ -31,7 +31,6 @@ class RulesAndCreditsViewController: UIViewController {
     }
     
     @IBAction func backButtonTapped(_ sender: Any) {
-//        let vc = self.storyboard?.instantiateViewController(identifier: "PickTeamsStoryboard") as! ViewController
         self.navigationController?.popViewController(animated: true)
     }
     
@@ -53,5 +52,4 @@ class RulesAndCreditsViewController: UIViewController {
         viewContainer.bringSubviewToFront(views[0])
         views[1].isHidden = true
     }
-    
 }

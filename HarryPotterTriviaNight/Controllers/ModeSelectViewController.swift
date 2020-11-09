@@ -29,7 +29,6 @@ class ModeSelectViewController: UIViewController {
         label.layer.masksToBounds = false
         label.font = titleLabelFont
         label.textColor = buttonTitleColor
-        //        label.backgroundColor = UIColor.rgb(red: 255, green: 0, blue: 0, alpha: 1)
         return label
     }()
     
@@ -93,11 +92,9 @@ class ModeSelectViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
-        
     }
     
     func setupViews() {
-        //self.view.backgroundColor = UIColor(patternImage:  backgroundImage)
         let screenHeight = UIScreen.main.bounds.size.height
         // setting the buttonHeight for each button in the game
         buttonHeight = screenHeight / 10
@@ -149,5 +146,4 @@ class ModeSelectViewController: UIViewController {
         self.navigationController?.pushViewController(vc, animated: true)
         vibrate()
     }
-    
 }
