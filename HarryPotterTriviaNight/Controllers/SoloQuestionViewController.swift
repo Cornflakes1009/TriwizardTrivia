@@ -102,6 +102,14 @@ class SoloQuestionViewController: UIViewController {
         return button
     }()
     
+    let scoreLabel: UILabel = {
+        let label = UILabel()
+        label.font = buttonFont
+        label.textAlignment = .center
+        label.textColor = buttonTitleColor
+        return label
+    }()
+    
     let correctAnswerView: UIView = {
         let view = UIView()
         view.backgroundColor = .black
@@ -215,6 +223,9 @@ class SoloQuestionViewController: UIViewController {
         view.addSubview(backgroundImage)
         backgroundImage.anchor(top: view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
         
+        view.addSubview(scoreLabel)
+        scoreLabel.anchor(top: view.topAnchor, left: nil, bottom: nil, right: view.rightAnchor, paddingTop: 15, paddingLeft: 0, paddingBottom: 0, paddingRight: 15, width: 0, height: 0)
+        
         let questionLableHeight = CGFloat(screenHeight / 4)
         view.addSubview(questionLabel)
         questionLabel.anchor(top: view.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 30, paddingLeft: 20, paddingBottom: 0, paddingRight: 20, width: 0, height: questionLableHeight)
@@ -245,6 +256,8 @@ class SoloQuestionViewController: UIViewController {
         optionOneButton.setTitle(soloQuestionList[soloQuestionIndex].optionOne, for: .normal)
         optionTwoButton.setTitle(soloQuestionList[soloQuestionIndex].optionTwo, for: .normal)
         optionThreeButton.setTitle(soloQuestionList[soloQuestionIndex].optionThree, for: .normal)
+        
+        scoreLabel.text = "\(soloQuestionIndex + 1)/\(soloQuestionList.count)"
     }
     
     func showCorrectAnswer() {
@@ -286,8 +299,13 @@ class SoloQuestionViewController: UIViewController {
             showCorrectAnswer()
         }
         
-        soloQuestionIndex += 1
-        updateUI()
+        if soloQuestionIndex + 1 != soloQuestionList.count {
+            soloQuestionIndex += 1
+            updateUI()
+        } else {
+            let vc = self.storyboard?.instantiateViewController(identifier: "SoloScoreResultsViewController") as! SoloScoreResultsViewController
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
     }
     
     func presentBackConfirmationsView() {
@@ -352,6 +370,7 @@ class SoloQuestionViewController: UIViewController {
         } else if sender == optionThreeButton {
             checkIfCorrect(buttonNumber: 3)
         }
+        vibrate()
     }
     
     @objc func nextQuestionTapped() {

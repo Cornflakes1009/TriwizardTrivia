@@ -19,11 +19,11 @@ class PartyRulesViewController: UIViewController {
     }()
     
     let backButton: UIButton = {
-            let button = UIButton(type: .system)
-            button.setTitle("< Back", for: .normal)
-            button.setTitleColor(buttonTitleColor, for: .normal)
-            button.addTarget(self, action: #selector(backTapped), for: .touchUpInside)
-            return button
+        let button = UIButton(type: .system)
+        button.setTitle("< Back", for: .normal)
+        button.setTitleColor(buttonTitleColor, for: .normal)
+        button.addTarget(self, action: #selector(backTapped), for: .touchUpInside)
+        return button
     }()
     
     let titleLabel: UILabel = {
@@ -61,7 +61,7 @@ class PartyRulesViewController: UIViewController {
         tv.isScrollEnabled = true
         return tv
     }()
-
+    
     let playButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("Play", for: .normal)
@@ -81,7 +81,7 @@ class PartyRulesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         setupViews()
     }
     
@@ -104,7 +104,7 @@ class PartyRulesViewController: UIViewController {
         view.addSubview(playButton)
         playButton.anchor(top: nil, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 20, paddingBottom: -20, paddingRight: 20, width: 0, height: buttonHeight)
     }
-
+    
     @objc func backTapped() {
         self.navigationController?.popViewController(animated: true)
         vibrate()

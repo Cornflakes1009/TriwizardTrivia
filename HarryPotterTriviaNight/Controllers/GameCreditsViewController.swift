@@ -43,21 +43,17 @@ class GameCreditsViewController: UIViewController {
     let rulesTextView: UITextView = {
         let tv = UITextView()
         tv.text = """
-        The goal of mob programming:
-        Mob programming is meant to facilitate the collaboration of programmers of all levels to work together and build a common app on a single computer.
-        
-        How mob programming works:
-        First, whomever is closest to the phone/tablet that you’re using for this app, enter the names of the group starting with their own and going clockwise. Discuss how long each round should be and how long and frequent breaks should be. Enter those times. Start the timer. This person is now the navigator and the driver is the person to their left. The navigator now reads the rules out loud.
-        
-        Rules:
-        1. Be respectful to each other and their property. No greasy pizza fingers!
-        2. The navigator is the only person allowed to direct the driver.
-        3. The navigator should discuss with the other group members on the next steps, but only the navigator is allowed to direct the driver.
-        4. The navigator has the final say in all matters related to the project during the navigator’s turn.
-        5. Once the timer runs out, pass the role of navigator and driver to the next group members specified.
-        6. The navigator discusses with the entire group to determine what they’ll build and what the requirements of “done” are. The navigator will instruct the driver to write this down.
-        7. Follow the app to determine turns and breaks.
-        8. Mob programming is over when the app is complete or the session time runs out. Ex. 6pm-8pm.
+        I'd like to give a special thanks to the following people:
+
+        My girlfriend Cheng for making the app icon.
+
+        My former boss, Angie for telling me that I should make this app.
+
+        My long-term friend and roommate, Tim for his design criticisms and helpful input.
+
+        Shiva for nagging me into finally completing this app.
+
+        Thank you all and don't think you won't have to help with my next app!
         """
         tv.textColor = .white
         tv.backgroundColor = .clear

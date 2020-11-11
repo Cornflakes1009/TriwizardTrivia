@@ -55,14 +55,7 @@ class ResultsViewController: UIViewController, UITableViewDelegate, UITableViewD
     @IBAction func restartTapped(_ sender: Any) {
         resetGame()
         
-        //        let vc = self.storyboard?.instantiateViewController(identifier: "PickTeamsStoryboard") as! ViewController
-        //        self.navigationController?.pushViewController(vc, animated: true)
-        if let first = presentingViewController,
-           let second = first.presentingViewController {
-            first.view.isHidden = true
-            second.dismiss(animated: true)
-        }
-        self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
+        self.navigationController?.popToRootViewController(animated: true)
     }
     
     override func viewDidLoad() {

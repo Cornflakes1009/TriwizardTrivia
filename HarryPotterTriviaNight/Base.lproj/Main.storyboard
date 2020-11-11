@@ -42,7 +42,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mfH-q7-6F7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1116" y="834"/>
+            <point key="canvasLocation" x="-1116" y="824"/>
         </scene>
         <!--SoloQuestionViewController-->
         <scene sceneID="gdB-7n-Og6">
@@ -58,6 +58,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bQN-DV-RSz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1116" y="1532"/>
+        </scene>
+        <!--SoloScoreResultsViewController-->
+        <scene sceneID="3i4-BD-vJl">
+            <objects>
+                <viewController storyboardIdentifier="SoloScoreResultsViewController" title="SoloScoreResultsViewController" id="ic2-VJ-7Hg" customClass="SoloScoreResultsViewController" customModule="TriwizardTrivia" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Auj-Rd-4c8">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="gdg-zw-qZw"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="k2q-mX-wdF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1116" y="2228"/>
         </scene>
         <!--Party Rules View Controller-->
         <scene sceneID="HVy-tg-OmK">
@@ -87,7 +102,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HPm-vH-iCM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-391" y="806"/>
+            <point key="canvasLocation" x="-412" y="824"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -228,6 +243,9 @@
                         <outlet property="directionsLabel" destination="Sgi-IJ-5pZ" id="bur-Od-8A4"/>
                         <outlet property="gryffindorButton" destination="dAI-nJ-Twm" id="Xiu-wp-pMX"/>
                         <outlet property="headlineLabel" destination="ljX-3I-641" id="MHY-hT-U8w"/>
+                        <outlet property="hufflepuffButton" destination="CwJ-AB-eeC" id="BKJ-EH-rZw"/>
+                        <outlet property="ravenclawButton" destination="MkE-po-SN4" id="Y7L-Gp-02X"/>
+                        <outlet property="slytherinButton" destination="A4N-gJ-eQf" id="VaM-U4-syb"/>
                         <outletCollection property="teamButtons" destination="A4N-gJ-eQf" collectionClass="NSMutableArray" id="nEW-B2-CFp"/>
                         <outletCollection property="teamButtons" destination="CwJ-AB-eeC" collectionClass="NSMutableArray" id="rQr-ZJ-Yzq"/>
                         <outletCollection property="teamButtons" destination="dAI-nJ-Twm" collectionClass="NSMutableArray" id="4aS-yd-nWL"/>

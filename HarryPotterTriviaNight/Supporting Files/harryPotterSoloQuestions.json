@@ -1054,7 +1054,7 @@
  },
  {
    "category": "Harry Potter",
-   "question": "Who smacked Malfoy across the face in Harry Potter and the Prisoner of Azkaban?",
+   "question": "In the movie, who punched Draco Malfoy in the face in Harry Potter and the Prisoner of Azkaban?",
    "answer": 2,
    "0": "Ginny Weasley",
    "1": "Ron Weasley",
@@ -1063,7 +1063,7 @@
  },
  {
    "category": "Harry Potter",
-   "question": "What was the name of the hippogriff that attacked Draco Malfoy after he insulted it?",
+   "question": "What is the name of the hippogriff that attacked Draco Malfoy after he insulted it?",
    "answer": 3,
    "0": "Fleetwing",
    "1": "Hothoof",
@@ -1310,14 +1310,14 @@
    "answer": 2,
    "0": "Harry and Ron",
    "1": "Harry and Hermione",
-   "2": "Ron and Hermion",
+   "2": "Ron and Hermione",
    "3": "Hermione and Neville"
  },
  {
    "category": "Harry Potter",
    "question": "In Harry's fifth year at Hogwarts, who became the two Slytherin prefects?",
    "answer": 0,
-   "0": "Draco Malfoy & Pansy Parkinson",
+   "0": "Malfoy & Pansy Parkinson",
    "1": "Draco Malfoy & Crabbe",
    "2": "Draco Malfoy & Goyle",
    "3": "Crabbe & Goyle"
@@ -2355,7 +2355,7 @@
    "0": "Himself with the Sorcerer's Stone",
    "1": "Shaking Dumbledore's hand",
    "2": "Holding the House Cup",
-   "3": "His parents"
+   "3": "Himself with his parents"
  },
  {
    "category": "Harry Potter",
@@ -2984,7 +2984,7 @@
    "answer": 2,
    "0": "Seamus Finnigan",
    "1": "Luna Lovegood",
-   "2": "Hermione",
+   "2": "Hermione Granger",
    "3": "Neville Longbottom"
  },
  {
@@ -3655,7 +3655,7 @@
  },
  {
    "category": "Harry Potter",
-   "question": "Which champion scores the most amount of points in the second task of the Triwizard Tournament?",
+   "question": "Which champion scores the most points in the second task of the Triwizard Tournament?",
    "answer": 1,
    "0": "Harry Potter",
    "1": "Cedric Diggory",
@@ -5158,7 +5158,7 @@
  },
  {
    "category": "Harry Potter",
-   "question": "What kind of students did Salazar Slytherin want to admit to Hogwarts?",
+   "question": "Which kind of students did Salazar Slytherin want to admit to Hogwarts?",
    "answer": 3,
    "0": "Only the brave",
    "1": "Only the smart",

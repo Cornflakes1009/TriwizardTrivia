@@ -29,6 +29,7 @@
 	<key>UIAppFonts</key>
 	<array>
 		<string>ParryHotter.ttf</string>
+		<string>harry_potter_font.TTF</string>
 	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>

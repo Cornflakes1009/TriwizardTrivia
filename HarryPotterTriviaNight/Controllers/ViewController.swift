@@ -8,6 +8,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var directionsLabel: UILabel!
     @IBOutlet weak var beginButton: UIButton!
     @IBOutlet var gryffindorButton: UIButton!
+    @IBOutlet var hufflepuffButton: UIButton!
+    @IBOutlet var ravenclawButton: UIButton!
+    @IBOutlet var slytherinButton: UIButton!
     @IBOutlet var beginButtonHeight: NSLayoutConstraint!
     
     var gryffindorButtonSelected = false
@@ -64,6 +67,10 @@ class ViewController: UIViewController {
         
         beginButton.isHidden = true
         beginButton.isEnabled = false
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        setButtonsNotSelected()
     }
 
     @IBAction func houseButtonTapped(_ sender: UIButton, forEvent event: UIEvent) {
@@ -145,6 +152,26 @@ class ViewController: UIViewController {
             beginButton.isHidden = true
             beginButton.isEnabled = false
         }
+    }
+    
+    func setButtonsNotSelected() {
+        gryffindorButtonSelected = false
+        gryffindorButton.setTitleColor(#colorLiteral(red: 0.9215686275, green: 0.7529411765, blue: 0.2588235294, alpha: 1), for: .normal)
+        gryffindorButton.backgroundColor = #colorLiteral(red: 0.4901960784, green: 0.09803921569, blue: 0.08235294118, alpha: 1)
+        
+        hufflepuffButtonSelected = false
+        hufflepuffButton.setTitleColor(#colorLiteral(red: 0.07843137255, green: 0.07843137255, blue: 0.1333333333, alpha: 1), for: .normal)
+        hufflepuffButton.backgroundColor = #colorLiteral(red: 0.9333333333, green: 0.7137254902, blue: 0.2705882353, alpha: 1)
+        
+        ravenclawButtonSelected = false
+        ravenclawButton.setTitleColor(#colorLiteral(red: 0.7803921569, green: 0.7803921569, blue: 0.8156862745, alpha: 1), for: .normal)
+        ravenclawButton.backgroundColor = #colorLiteral(red: 0.1019607843, green: 0.1058823529, blue: 0.2980392157, alpha: 1)
+        
+        slytherinButtonSelected = false
+        slytherinButton.setTitleColor(#colorLiteral(red: 0.7294117647, green: 0.7254901961, blue: 0.7647058824, alpha: 1), for: .normal)
+        slytherinButton.backgroundColor = #colorLiteral(red: 0.2117647059, green: 0.462745098, blue: 0.2941176471, alpha: 1)
+        
+        beginButton.isHidden = true
     }
 
     @IBAction func beginButtonSegue(_ sender: Any) {

@@ -32,6 +32,14 @@ class QuestionViewController: UIViewController {
             return button
     }()
     
+    let scoreLabel: UILabel = {
+        let label = UILabel()
+        label.font = buttonFont
+        label.textAlignment = .center
+        label.textColor = buttonTitleColor
+        return label
+    }()
+    
     var answeredCorrectly = false
     
     override func viewDidLoad() {
@@ -73,6 +81,11 @@ class QuestionViewController: UIViewController {
         
         view.addSubview(backButton)
         backButton.anchor(top: view.topAnchor, left: view.leftAnchor, bottom: nil, right: nil, paddingTop: 20, paddingLeft: 10, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
+        
+        view.addSubview(scoreLabel)
+        scoreLabel.anchor(top: view.topAnchor, left: nil, bottom: nil, right: view.rightAnchor, paddingTop: 15, paddingLeft: 0, paddingBottom: 0, paddingRight: 15, width: 0, height: 0)
+        
+        scoreLabel.text = "\(questionIndex + 1)/\(questionList.count)"
     }
     
     // added to prevent the segue added from partial curl
@@ -123,6 +136,8 @@ class QuestionViewController: UIViewController {
             correctButton.backgroundColor = #colorLiteral(red: 0.02352941176, green: 0.6392156863, blue: 0.01568627451, alpha: 1)
             incorrectButton.backgroundColor = #colorLiteral(red: 0.7215686275, green: 0, blue: 0.01568627451, alpha: 1)
         }
+        
+        scoreLabel.text = "\(questionIndex + 1)/\(questionList.count)"
     }
     
     @objc func backTapped() {
