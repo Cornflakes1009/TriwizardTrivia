@@ -9,8 +9,8 @@
 import UIKit
 import GoogleMobileAds
 
-class QuestionViewController: UIViewController {
-
+class QuestionViewController: UIViewController, GADInterstitialDelegate {
+    
     @IBOutlet weak var teamLabel: UILabel!
     @IBOutlet weak var questionLabel: UILabel!
     @IBOutlet weak var answerLabel: UILabel!
@@ -23,27 +23,100 @@ class QuestionViewController: UIViewController {
     @IBOutlet var correctButtonHeight: NSLayoutConstraint!
     @IBOutlet var incorrectButtonHeight: NSLayoutConstraint!
     @IBOutlet var nextQuestionButtonHeight: NSLayoutConstraint!
+    var interstitial: GADInterstitial!
+    
+    let backgroundImage: UIImageView = {
+        let image = UIImageView()
+        image.image = UIImage(named: "clouds")
+        image.contentMode = .scaleAspectFill
+        image.clipsToBounds = true
+        return image
+    }()
     
     let backButton: UIButton = {
-            let button = UIButton(type: .system)
-            button.setTitle("< Back", for: .normal)
-            button.setTitleColor(buttonTitleColor, for: .normal)
-            button.addTarget(self, action: #selector(backTapped), for: .touchUpInside)
-            return button
+        let button = UIButton(type: .system)
+        button.setTitle("< Back", for: .normal)
+        button.setTitleColor(buttonTitleColor, for: .normal)
+        button.addTarget(self, action: #selector(backTapped), for: .touchUpInside)
+        return button
     }()
     
     let scoreLabel: UILabel = {
         let label = UILabel()
-        label.font = buttonFont
+        label.font = answerFont
         label.textAlignment = .center
         label.textColor = buttonTitleColor
         return label
+    }()
+    
+    let exitConfirmationView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .black
+        view.layer.cornerRadius = 5
+        view.alpha = 0
+        return view
+    }()
+    
+    let exitConfirmationLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Are you sure you wish to exit?"
+        label.font = instructionLabelFont
+        label.textAlignment = .center
+        label.textColor = .white
+        return label
+    }()
+    
+    let explanationConfirmationLabel: UILabel = {
+        let label = UILabel()
+        label.text = "This will exit the game and you'll lose your current progress?"
+        label.font = instructionLabelFont
+        label.textAlignment = .center
+        label.textColor = .white
+        label.numberOfLines = 0
+        return label
+    }()
+    
+    let exitGameCancel: UIButton = {
+        let button = UIButton(type: .system)
+        button.setTitle("Cancel", for: .normal)
+        button.backgroundColor = slytherinColor
+        button.setTitleColor(slytherinFontColor, for: .normal)
+        button.layer.cornerRadius = 5
+        button.titleLabel?.font = buttonFont
+        button.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.95).cgColor
+        button.layer.shadowOffset = CGSize(width: 0, height: 3)
+        button.layer.shadowOpacity = 1.0
+        button.layer.shadowRadius = 10.0
+        button.layer.masksToBounds = false
+        //            button.sender.tag = 4
+        button.addTarget(self, action: #selector(cancelTapped), for: .touchUpInside)
+        return button
+    }()
+    
+    let exitGameConfirm: UIButton = {
+        let button = UIButton(type: .system)
+        button.setTitle("Exit", for: .normal)
+        button.backgroundColor = crimsonColor
+        button.setTitleColor(gryffindorFontColor, for: .normal)
+        button.layer.cornerRadius = 5
+        button.titleLabel?.font = buttonFont
+        button.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.95).cgColor
+        button.layer.shadowOffset = CGSize(width: 0, height: 3)
+        button.layer.shadowOpacity = 1.0
+        button.layer.shadowRadius = 10.0
+        button.layer.masksToBounds = false
+        button.addTarget(self, action: #selector(confirmTapped), for: .touchUpInside)
+        return button
     }()
     
     var answeredCorrectly = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        view.addSubview(backgroundImage)
+        backgroundImage.anchor(top: view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
+        view.sendSubviewToBack(backgroundImage)
         
         // adding shadow
         for button in buttons {
@@ -60,7 +133,7 @@ class QuestionViewController: UIViewController {
         nextQuestionButton.isHidden = true
         
         // starting ads on the bannerview
-        bannerView.adUnitID = testingAdMobsKey
+        bannerView.adUnitID = prodAdMobsKey
         bannerView.rootViewController = self
         bannerView.load(GADRequest())
         
@@ -79,11 +152,22 @@ class QuestionViewController: UIViewController {
             view.layoutIfNeeded()
         }
         
+        interstitial = GADInterstitial(adUnitID: adUnitID)
+        let request = GADRequest()
+        interstitial.load(request)
+        
+        teamLabel.textAlignment = .center
+        teamLabel.layer.shadowColor = UIColor.black.cgColor
+        teamLabel.layer.shadowRadius = 3.0
+        teamLabel.layer.shadowOpacity = 1.0
+        teamLabel.layer.shadowOffset = CGSize(width: 4, height: 4)
+        teamLabel.layer.masksToBounds = false
+        
         view.addSubview(backButton)
-        backButton.anchor(top: view.topAnchor, left: view.leftAnchor, bottom: nil, right: nil, paddingTop: 20, paddingLeft: 10, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
+        backButton.anchor(top: view.safeAreaLayoutGuide.topAnchor, left: view.leftAnchor, bottom: nil, right: nil, paddingTop: 5, paddingLeft: 10, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
         
         view.addSubview(scoreLabel)
-        scoreLabel.anchor(top: view.topAnchor, left: nil, bottom: nil, right: view.rightAnchor, paddingTop: 15, paddingLeft: 0, paddingBottom: 0, paddingRight: 15, width: 0, height: 0)
+        scoreLabel.anchor(top: view.safeAreaLayoutGuide.topAnchor, left: nil, bottom: nil, right: view.rightAnchor, paddingTop: 15, paddingLeft: 0, paddingBottom: 0, paddingRight: 15, width: 0, height: 0)
         
         scoreLabel.text = "\(questionIndex + 1)/\(questionList.count)"
     }
@@ -94,6 +178,7 @@ class QuestionViewController: UIViewController {
     }
     
     @IBAction func correctTapped(_ sender: Any) {
+        vibrate()
         correctButton.backgroundColor = #colorLiteral(red: 0.4352941215, green: 0.4431372583, blue: 0.4745098054, alpha: 1)
         incorrectButton.backgroundColor = #colorLiteral(red: 0.7215686275, green: 0, blue: 0.01568627451, alpha: 1)
         answeredCorrectly = true
@@ -101,6 +186,7 @@ class QuestionViewController: UIViewController {
     }
     
     @IBAction func incorrectTapped(_ sender: Any) {
+        vibrate()
         incorrectButton.backgroundColor = #colorLiteral(red: 0.4352941215, green: 0.4431372583, blue: 0.4745098054, alpha: 1)
         correctButton.backgroundColor = #colorLiteral(red: 0.02352941176, green: 0.6392156863, blue: 0.01568627451, alpha: 1)
         answeredCorrectly = false
@@ -108,7 +194,7 @@ class QuestionViewController: UIViewController {
     }
     
     @IBAction func nextQuestionTapped(_ sender: Any) {
-        
+        vibrate()
         if(answeredCorrectly) {
             teams[currentTeam].score += 1
         }
@@ -120,6 +206,11 @@ class QuestionViewController: UIViewController {
     func updateUI() {
         if(questionIndex == (teams.count * 15)) { // teams.count * 15
             
+            if (interstitial.isReady) {
+                interstitial.present(fromRootViewController: self)
+                interstitial = createAd()
+            }
+            
             let vc = self.storyboard?.instantiateViewController(identifier: "ResultsStoryboard") as! ResultsViewController
             self.navigationController?.pushViewController(vc, animated: true)
             
@@ -129,7 +220,7 @@ class QuestionViewController: UIViewController {
             } else {
                 currentTeam += 1
             }
-
+            
             teamLabel.text = teams[currentTeam].name
             questionLabel.text = "Question: \(questionList[questionIndex].question)"
             answerLabel.text = "Answer: \(questionList[questionIndex].answer)"
@@ -140,9 +231,65 @@ class QuestionViewController: UIViewController {
         scoreLabel.text = "\(questionIndex + 1)/\(questionList.count)"
     }
     
+    func presentBackConfirmationsView() {
+        correctButton.isEnabled = false
+        incorrectButton.isEnabled = false
+        view.addSubview(exitConfirmationView)
+        exitConfirmationView.anchor(top: view.safeAreaLayoutGuide.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 20, paddingLeft: 20, paddingBottom: -20, paddingRight: 20, width: 0, height: 0)
+        UIView.animate(withDuration: 0.5) {
+            self.exitConfirmationView.alpha = 1
+        }
+        
+        backButton.isEnabled = false
+        
+        exitConfirmationView.addSubview(exitConfirmationLabel)
+        exitConfirmationLabel.anchor(top: exitConfirmationView.topAnchor, left: exitConfirmationView.leftAnchor, bottom: nil, right: exitConfirmationView.rightAnchor, paddingTop: 20, paddingLeft: 20, paddingBottom: 0, paddingRight: 20, width: 0, height: 0)
+        
+        exitConfirmationView.addSubview(explanationConfirmationLabel)
+        explanationConfirmationLabel.anchor(top: exitConfirmationLabel.bottomAnchor, left: exitConfirmationView.leftAnchor, bottom: nil, right: exitConfirmationView.rightAnchor, paddingTop: 40, paddingLeft: 20, paddingBottom: 0, paddingRight: 20, width: 0, height: 0)
+        
+        setupExitStackView()
+    }
+    
+    var exitStackView = UIStackView()
+    func setupExitStackView() {
+        exitStackView = UIStackView(arrangedSubviews: [exitGameCancel, exitGameConfirm])
+        let exitStackViewWidth = UIScreen.main.bounds.size.width - 80
+        exitStackView.distribution = .fillEqually
+        exitStackView.axis = .horizontal
+        exitStackView.spacing = 10
+        
+        exitConfirmationView.addSubview(exitStackView)
+        exitStackView.centerXAnchor.constraint(equalTo: exitConfirmationView.centerXAnchor).isActive = true
+        exitStackView.centerYAnchor.constraint(equalTo: exitConfirmationView.centerYAnchor).isActive = true
+        exitStackView.anchor(top: nil, left: nil, bottom: nil, right: nil, paddingTop: 0, paddingLeft: 20, paddingBottom: 0, paddingRight: 20, width: exitStackViewWidth, height: buttonHeight)
+    }
+    
+    // MARK: AdMob Function
+    func createAd() -> GADInterstitial {
+        let inter = GADInterstitial(adUnitID: adUnitID)
+        inter.load(GADRequest())
+        return inter
+    }
+    
     @objc func backTapped() {
+        presentBackConfirmationsView()
+        vibrate()
+    }
+    
+    @objc func confirmTapped() {
         self.navigationController?.popViewController(animated: true)
         resetGame()
+        vibrate()
+    }
+    
+    @objc func cancelTapped() {
+        UIView.animate(withDuration: 1) {
+            self.exitConfirmationView.alpha = 0
+        }
+        backButton.isEnabled = true
+        correctButton.isEnabled = true
+        incorrectButton.isEnabled = true
         vibrate()
     }
 }

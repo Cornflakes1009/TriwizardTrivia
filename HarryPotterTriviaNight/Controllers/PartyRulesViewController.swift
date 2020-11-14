@@ -30,6 +30,10 @@ class PartyRulesViewController: UIViewController {
         let label = UILabel()
         label.text = "How to Play"
         label.textAlignment = .center
+        label.layer.shadowColor = UIColor.black.cgColor
+        label.layer.shadowRadius = 3.0
+        label.layer.shadowOpacity = 1.0
+        label.layer.shadowOffset = CGSize(width: 4, height: 4)
         label.layer.masksToBounds = false
         label.font = titleLabelFont
         label.textColor = buttonTitleColor
@@ -52,13 +56,13 @@ class PartyRulesViewController: UIViewController {
         The trivia master tells the teams what the correct answer is and marks whether the team answered correctly or not.
 
         Each team has 15 questions to answer and the results will be displayed after each team answers their 15 questions.
-
         """
         tv.textColor = .white
         tv.backgroundColor = .clear
         tv.isEditable = false
         tv.isSelectable = false
         tv.isScrollEnabled = true
+        tv.font = textViewFont
         return tv
     }()
     
@@ -70,6 +74,11 @@ class PartyRulesViewController: UIViewController {
         button.layer.cornerRadius = 5
         button.titleLabel?.font = buttonFont
         button.isEnabled = true
+        button.setTitleShadowColor(.black, for: .normal)
+        button.titleLabel?.layer.shadowRadius = 3.0
+        button.titleLabel?.layer.shadowOpacity = 1.0
+        button.titleLabel?.layer.shadowOffset = CGSize(width: 4, height: 4)
+        button.titleLabel?.layer.masksToBounds = false
         button.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.95).cgColor
         button.layer.shadowOffset = CGSize(width: 0, height: 3)
         button.layer.shadowOpacity = 1.0
@@ -90,10 +99,10 @@ class PartyRulesViewController: UIViewController {
         backgroundImage.anchor(top: view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
         
         view.addSubview(backButton)
-        backButton.anchor(top: view.topAnchor, left: view.leftAnchor, bottom: nil, right: nil, paddingTop: 20, paddingLeft: 10, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
+        backButton.anchor(top: view.safeAreaLayoutGuide.topAnchor, left: view.leftAnchor, bottom: nil, right: nil, paddingTop: 5, paddingLeft: 10, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
         
         view.addSubview(titleLabel)
-        titleLabel.anchor(top: view.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 20, paddingLeft: 10, paddingBottom: 0, paddingRight: 10, width: 0, height: 0)
+        titleLabel.anchor(top: view.safeAreaLayoutGuide.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 20, paddingLeft: 10, paddingBottom: 0, paddingRight: 10, width: 0, height: 0)
         
         let screenHeight = UIScreen.main.bounds.size.height
         let textViewHeight = CGFloat(screenHeight * 0.6)
@@ -111,6 +120,7 @@ class PartyRulesViewController: UIViewController {
     }
     
     @objc func playTapped() {
+        vibrate()
         let vc = self.storyboard?.instantiateViewController(identifier: "PickTeamsStoryboard") as! ViewController
         self.navigationController?.pushViewController(vc, animated: true)
     }

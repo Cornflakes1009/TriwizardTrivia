@@ -60,6 +60,7 @@ class GameCreditsViewController: UIViewController {
         tv.isEditable = false
         tv.isSelectable = false
         tv.isScrollEnabled = true
+        tv.font = textViewFont
         return tv
     }()
     
@@ -74,13 +75,13 @@ class GameCreditsViewController: UIViewController {
         backgroundImage.anchor(top: view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
         
         view.addSubview(backButton)
-        backButton.anchor(top: view.topAnchor, left: view.leftAnchor, bottom: nil, right: nil, paddingTop: 20, paddingLeft: 10, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
+        backButton.anchor(top: view.safeAreaLayoutGuide.topAnchor, left: view.leftAnchor, bottom: nil, right: nil, paddingTop: 5, paddingLeft: 10, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
         
         view.addSubview(titleLabel)
         titleLabel.anchor(top: view.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 20, paddingLeft: 10, paddingBottom: 0, paddingRight: 10, width: 0, height: 0)
         
         let screenHeight = UIScreen.main.bounds.size.height
-        let textViewHeight = CGFloat(screenHeight * 0.6)
+        let textViewHeight = CGFloat(screenHeight * 0.7)
         view.addSubview(rulesTextView)
         rulesTextView.anchor(top: titleLabel.bottomAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 20, paddingLeft: 20, paddingBottom: 0, paddingRight: 20, width: 0, height: textViewHeight)
     }

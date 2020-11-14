@@ -116,16 +116,16 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Triwizard Trivia" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ljX-3I-641">
-                                <rect key="frame" x="8" y="20" width="359" height="81.5"/>
+                                <rect key="frame" x="8" y="20" width="359" height="40"/>
                                 <fontDescription key="fontDescription" name="ParryHotter" family="Parry Hotter" pointSize="34"/>
                                 <color key="textColor" red="0.93333333330000001" green="0.71372549019999998" blue="0.27058823529999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleAspectFill" axis="vertical" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="s6Q-qq-Lhe">
-                                <rect key="frame" x="8" y="136.5" width="359" height="276"/>
+                                <rect key="frame" x="8" y="95" width="359" height="180"/>
                                 <subviews>
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dAI-nJ-Twm">
-                                        <rect key="frame" x="0.0" y="0.0" width="359" height="60"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="359" height="36"/>
                                         <color key="backgroundColor" red="0.49019607843137253" green="0.098039215686274508" blue="0.082352941176470587" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="ParryHotter" family="Parry Hotter" pointSize="20"/>
                                         <size key="titleShadowOffset" width="0.0" height="3"/>
@@ -141,7 +141,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CwJ-AB-eeC">
-                                        <rect key="frame" x="0.0" y="72" width="359" height="60"/>
+                                        <rect key="frame" x="0.0" y="48" width="359" height="36"/>
                                         <color key="backgroundColor" red="0.93333333333333335" green="0.71372549019607845" blue="0.27058823529411763" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="ParryHotter" family="Parry Hotter" pointSize="20"/>
                                         <state key="normal" title="Hufflepuff">
@@ -155,7 +155,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MkE-po-SN4">
-                                        <rect key="frame" x="0.0" y="144" width="359" height="60"/>
+                                        <rect key="frame" x="0.0" y="96" width="359" height="36"/>
                                         <color key="backgroundColor" red="0.10196078431372549" green="0.10588235294117647" blue="0.29803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="ParryHotter" family="Parry Hotter" pointSize="20"/>
                                         <size key="titleShadowOffset" width="0.0" height="3"/>
@@ -171,7 +171,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A4N-gJ-eQf">
-                                        <rect key="frame" x="0.0" y="216" width="359" height="60"/>
+                                        <rect key="frame" x="0.0" y="144" width="359" height="36"/>
                                         <color key="backgroundColor" red="0.21176470588235294" green="0.46274509803921571" blue="0.29411764705882354" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="ParryHotter" family="Parry Hotter" pointSize="20"/>
                                         <size key="titleShadowOffset" width="0.0" height="3"/>
@@ -207,7 +207,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select at least two houses." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sgi-IJ-5pZ">
-                                <rect key="frame" x="8" y="102.5" width="359" height="24"/>
+                                <rect key="frame" x="8" y="61" width="359" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -349,9 +349,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clouds" translatesAutoresizingMaskIntoConstraints="NO" id="CeI-aF-GBe">
-                                <rect key="frame" x="0.0" y="-44" width="375" height="745"/>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Team Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KFm-43-TGQ">
                                 <rect key="frame" x="0.0" y="20" width="375" height="143.5"/>
                                 <fontDescription key="fontDescription" name="ParryHotter" family="Parry Hotter" pointSize="60"/>
@@ -458,16 +455,12 @@
                             <constraint firstItem="NDf-WP-dYG" firstAttribute="top" secondItem="tPn-QS-3ze" secondAttribute="bottom" constant="30" id="RNZ-Jl-csS"/>
                             <constraint firstItem="KEV-nM-U94" firstAttribute="leading" secondItem="pcM-qD-uVh" secondAttribute="leading" constant="10" id="T1Y-aW-sDq"/>
                             <constraint firstItem="pcM-qD-uVh" firstAttribute="trailing" secondItem="tPn-QS-3ze" secondAttribute="trailing" constant="10" id="TyS-HW-0mw"/>
-                            <constraint firstItem="pcM-qD-uVh" firstAttribute="top" secondItem="CeI-aF-GBe" secondAttribute="top" constant="44" id="Xth-5F-h6J"/>
                             <constraint firstItem="Jis-0H-ntY" firstAttribute="top" secondItem="NDf-WP-dYG" secondAttribute="bottom" constant="30" id="Zds-Sw-ZjE"/>
-                            <constraint firstItem="CeI-aF-GBe" firstAttribute="bottom" secondItem="pcM-qD-uVh" secondAttribute="bottom" constant="34" id="Zhf-p8-P2Z"/>
                             <constraint firstItem="tPn-QS-3ze" firstAttribute="leading" secondItem="pcM-qD-uVh" secondAttribute="leading" constant="10" id="a9e-7f-bMK"/>
                             <constraint firstItem="pcM-qD-uVh" firstAttribute="trailing" secondItem="KEV-nM-U94" secondAttribute="trailing" constant="10" id="bPB-qo-Pa3"/>
                             <constraint firstAttribute="bottom" secondItem="lbI-SX-wO3" secondAttribute="bottom" constant="10" id="cFw-DJ-5L8"/>
-                            <constraint firstItem="pcM-qD-uVh" firstAttribute="trailing" secondItem="CeI-aF-GBe" secondAttribute="trailing" id="hng-vC-dL0"/>
                             <constraint firstItem="tPn-QS-3ze" firstAttribute="top" secondItem="KFm-43-TGQ" secondAttribute="bottom" constant="8.5" id="krw-97-iGW"/>
                             <constraint firstItem="lbI-SX-wO3" firstAttribute="centerX" secondItem="Ud7-T5-FBQ" secondAttribute="centerX" id="mRi-4X-G8L"/>
-                            <constraint firstItem="CeI-aF-GBe" firstAttribute="leading" secondItem="pcM-qD-uVh" secondAttribute="leading" id="mSw-zo-KnG"/>
                             <constraint firstItem="NDf-WP-dYG" firstAttribute="leading" secondItem="pcM-qD-uVh" secondAttribute="leading" constant="10" id="v0w-i1-tya"/>
                         </constraints>
                     </view>

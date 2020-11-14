@@ -42,7 +42,7 @@ class ViewController: UIViewController {
         }
         
         view.addSubview(backButton)
-        backButton.anchor(top: view.topAnchor, left: view.leftAnchor, bottom: nil, right: nil, paddingTop: 20, paddingLeft: 10, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
+        backButton.anchor(top: view.safeAreaLayoutGuide.topAnchor, left: view.leftAnchor, bottom: nil, right: nil, paddingTop: 5, paddingLeft: 10, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
         
         for button in teamButtons {
             // if phone is bigger than SE
@@ -67,6 +67,13 @@ class ViewController: UIViewController {
         
         beginButton.isHidden = true
         beginButton.isEnabled = false
+        
+        headlineLabel.textAlignment = .center
+        headlineLabel.layer.shadowColor = UIColor.black.cgColor
+        headlineLabel.layer.shadowRadius = 3.0
+        headlineLabel.layer.shadowOpacity = 1.0
+        headlineLabel.layer.shadowOffset = CGSize(width: 4, height: 4)
+        headlineLabel.layer.masksToBounds = false
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -74,6 +81,7 @@ class ViewController: UIViewController {
     }
 
     @IBAction func houseButtonTapped(_ sender: UIButton, forEvent event: UIEvent) {
+        vibrate()
         // switching on which house button clicked and if button was already selected
         switch sender.tag {
         case 1:
@@ -175,6 +183,7 @@ class ViewController: UIViewController {
     }
 
     @IBAction func beginButtonSegue(_ sender: Any) {
+        vibrate()
          convertJSON(jsonToRead: "harryPotterTriviaQuestions", numberOfTeams: teams.count)
         let vc = self.storyboard?.instantiateViewController(identifier: "QuestionStoryboard") as! QuestionViewController
         self.navigationController?.pushViewController(vc, animated: true)

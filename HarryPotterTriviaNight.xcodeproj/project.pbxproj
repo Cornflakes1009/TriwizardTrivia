@@ -35,6 +35,7 @@
 		D99F66A825591B89000EE745 /* harryPotterSoloQuestions.json in Resources */ = {isa = PBXBuildFile; fileRef = D99F66A725591B89000EE745 /* harryPotterSoloQuestions.json */; };
 		D99F66AB255A0035000EE745 /* harry_potter_font.TTF in Resources */ = {isa = PBXBuildFile; fileRef = D99F66AA255A0035000EE745 /* harry_potter_font.TTF */; };
 		D99F66AE255A03F2000EE745 /* SoloScoreResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99F66AD255A03F2000EE745 /* SoloScoreResultsViewController.swift */; };
+		D99F66B2255DF158000EE745 /* ConfigureVaryingSizes.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99F66B1255DF158000EE745 /* ConfigureVaryingSizes.swift */; };
 		D9DAFD412320833500A87632 /* harryPotterTriviaQuestions.json in Resources */ = {isa = PBXBuildFile; fileRef = D9DAFD402320833500A87632 /* harryPotterTriviaQuestions.json */; };
 		D9DAFD432324779E00A87632 /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DAFD422324779E00A87632 /* ResultsViewController.swift */; };
 /* End PBXBuildFile section */
@@ -72,6 +73,7 @@
 		D99F66A725591B89000EE745 /* harryPotterSoloQuestions.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = harryPotterSoloQuestions.json; sourceTree = "<group>"; };
 		D99F66AA255A0035000EE745 /* harry_potter_font.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = harry_potter_font.TTF; sourceTree = "<group>"; };
 		D99F66AD255A03F2000EE745 /* SoloScoreResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoloScoreResultsViewController.swift; sourceTree = "<group>"; };
+		D99F66B1255DF158000EE745 /* ConfigureVaryingSizes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigureVaryingSizes.swift; sourceTree = "<group>"; };
 		D9DAFD402320833500A87632 /* harryPotterTriviaQuestions.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = harryPotterTriviaQuestions.json; path = "HarryPotterTriviaNight/Supporting Files/harryPotterTriviaQuestions.json"; sourceTree = SOURCE_ROOT; };
 		D9DAFD422324779E00A87632 /* ResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -196,6 +198,7 @@
 				D99F66A725591B89000EE745 /* harryPotterSoloQuestions.json */,
 				D992D4A52545293300EEAC9F /* Extensions.swift */,
 				D992D4A725452C6C00EEAC9F /* Globals.swift */,
+				D99F66B1255DF158000EE745 /* ConfigureVaryingSizes.swift */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -341,6 +344,7 @@
 				D945B8EF22B6E91B0087E171 /* AppDelegate.swift in Sources */,
 				D98D0A06254BF21E00423F08 /* SoloQuestionViewController.swift in Sources */,
 				D916452D23F1471F00CCBD71 /* CreditsViewController.swift in Sources */,
+				D99F66B2255DF158000EE745 /* ConfigureVaryingSizes.swift in Sources */,
 				D92BB1092550F2FF00BF84BE /* GameCreditsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

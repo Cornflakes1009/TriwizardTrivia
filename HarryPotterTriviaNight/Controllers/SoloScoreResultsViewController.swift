@@ -7,9 +7,10 @@
 //
 
 import UIKit
+import GoogleMobileAds
 
-class SoloScoreResultsViewController: UIViewController {
-
+class SoloScoreResultsViewController: UIViewController{
+    
     let backgroundImage: UIImageView = {
         let image = UIImageView()
         image.image = UIImage(named: "clouds")
@@ -50,7 +51,7 @@ class SoloScoreResultsViewController: UIViewController {
         label.layer.shadowOpacity = 1.0
         label.layer.shadowOffset = CGSize(width: 4, height: 4)
         label.layer.masksToBounds = false
-        label.font = titleLabelFont
+        label.font = finalScoreLabelFont
         label.textColor = buttonTitleColor
         return label
     }()
@@ -68,6 +69,11 @@ class SoloScoreResultsViewController: UIViewController {
         button.layer.shadowOpacity = 1.0
         button.layer.shadowRadius = 10.0
         button.layer.masksToBounds = false
+        button.setTitleShadowColor(.black, for: .normal)
+        button.titleLabel?.layer.shadowRadius = 3.0
+        button.titleLabel?.layer.shadowOpacity = 1.0
+        button.titleLabel?.layer.shadowOffset = CGSize(width: 4, height: 4)
+        button.titleLabel?.layer.masksToBounds = false
         button.addTarget(self, action: #selector(restartTapped), for: .touchUpInside)
         return button
     }()
@@ -77,14 +83,13 @@ class SoloScoreResultsViewController: UIViewController {
 
         setupViews()
     }
-    
 
     func setupViews() {
         view.addSubview(backgroundImage)
         backgroundImage.anchor(top: view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
         
         view.addSubview(titleLabel)
-        titleLabel.anchor(top: view.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 20, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
+        titleLabel.anchor(top: view.safeAreaLayoutGuide.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 20, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
         
         view.addSubview(instructionLabel)
         instructionLabel.anchor(top: titleLabel.bottomAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 20, paddingLeft: 20, paddingBottom: 0, paddingRight: 20, width: 0, height: 0)

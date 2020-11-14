@@ -7,8 +7,11 @@
 //
 
 import UIKit
+import GoogleMobileAds
 
-class SoloQuestionViewController: UIViewController {
+class SoloQuestionViewController: UIViewController, GADInterstitialDelegate {
+    
+    var interstitial: GADInterstitial!
     
     let backgroundImage: UIImageView = {
         let image = UIImageView()
@@ -44,7 +47,7 @@ class SoloQuestionViewController: UIViewController {
         button.backgroundColor = crimsonColor
         button.setTitleColor(gryffindorFontColor, for: .normal)
         button.layer.cornerRadius = 5
-        button.titleLabel?.font = buttonFont
+        button.titleLabel?.font = answerFont
         button.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.95).cgColor
         button.layer.shadowOffset = CGSize(width: 0, height: 3)
         button.layer.shadowOpacity = 1.0
@@ -60,7 +63,7 @@ class SoloQuestionViewController: UIViewController {
         button.backgroundColor = hufflepuffColor
         button.setTitleColor(hufflepuffFontColor, for: .normal)
         button.layer.cornerRadius = 5
-        button.titleLabel?.font = buttonFont
+        button.titleLabel?.font = answerFont
         button.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.95).cgColor
         button.layer.shadowOffset = CGSize(width: 0, height: 3)
         button.layer.shadowOpacity = 1.0
@@ -76,7 +79,7 @@ class SoloQuestionViewController: UIViewController {
         button.backgroundColor = ravenclawColor
         button.setTitleColor(ravenclawFontColor, for: .normal)
         button.layer.cornerRadius = 5
-        button.titleLabel?.font = buttonFont
+        button.titleLabel?.font = answerFont
         button.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.95).cgColor
         button.layer.shadowOffset = CGSize(width: 0, height: 3)
         button.layer.shadowOpacity = 1.0
@@ -86,13 +89,13 @@ class SoloQuestionViewController: UIViewController {
         return button
     }()
     
-     let optionThreeButton: UIButton = {
+    let optionThreeButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("Accidental Magic Reversal Squad", for: .normal)
         button.backgroundColor = slytherinColor
         button.setTitleColor(slytherinFontColor, for: .normal)
         button.layer.cornerRadius = 5
-        button.titleLabel?.font = buttonFont
+        button.titleLabel?.font = answerFont
         button.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.95).cgColor
         button.layer.shadowOffset = CGSize(width: 0, height: 3)
         button.layer.shadowOpacity = 1.0
@@ -104,7 +107,7 @@ class SoloQuestionViewController: UIViewController {
     
     let scoreLabel: UILabel = {
         let label = UILabel()
-        label.font = buttonFont
+        label.font = answerFont
         label.textAlignment = .center
         label.textColor = buttonTitleColor
         return label
@@ -148,6 +151,11 @@ class SoloQuestionViewController: UIViewController {
         button.layer.shadowOpacity = 1.0
         button.layer.shadowRadius = 10.0
         button.layer.masksToBounds = false
+        button.setTitleShadowColor(.black, for: .normal)
+        button.titleLabel?.layer.shadowRadius = 3.0
+        button.titleLabel?.layer.shadowOpacity = 1.0
+        button.titleLabel?.layer.shadowOffset = CGSize(width: 4, height: 4)
+        button.titleLabel?.layer.masksToBounds = false
         button.addTarget(self, action: #selector(nextQuestionTapped), for: .touchUpInside)
         return button
     }()
@@ -180,21 +188,25 @@ class SoloQuestionViewController: UIViewController {
     }()
     
     let exitGameCancel: UIButton = {
-       let button = UIButton(type: .system)
-       button.setTitle("Cancel", for: .normal)
-       button.backgroundColor = slytherinColor
-       button.setTitleColor(slytherinFontColor, for: .normal)
-       button.layer.cornerRadius = 5
-       button.titleLabel?.font = buttonFont
-       button.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.95).cgColor
-       button.layer.shadowOffset = CGSize(width: 0, height: 3)
-       button.layer.shadowOpacity = 1.0
-       button.layer.shadowRadius = 10.0
-       button.layer.masksToBounds = false
-       //            button.sender.tag = 4
-       button.addTarget(self, action: #selector(cancelTapped), for: .touchUpInside)
-       return button
-   }()
+        let button = UIButton(type: .system)
+        button.setTitle("Cancel", for: .normal)
+        button.backgroundColor = slytherinColor
+        button.setTitleColor(slytherinFontColor, for: .normal)
+        button.layer.cornerRadius = 5
+        button.titleLabel?.font = buttonFont
+        button.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.95).cgColor
+        button.layer.shadowOffset = CGSize(width: 0, height: 3)
+        button.layer.shadowOpacity = 1.0
+        button.layer.shadowRadius = 10.0
+        button.layer.masksToBounds = false
+        button.setTitleShadowColor(.black, for: .normal)
+        button.titleLabel?.layer.shadowRadius = 3.0
+        button.titleLabel?.layer.shadowOpacity = 1.0
+        button.titleLabel?.layer.shadowOffset = CGSize(width: 4, height: 4)
+        button.titleLabel?.layer.masksToBounds = false
+        button.addTarget(self, action: #selector(cancelTapped), for: .touchUpInside)
+        return button
+    }()
     
     let exitGameConfirm: UIButton = {
         let button = UIButton(type: .system)
@@ -208,14 +220,28 @@ class SoloQuestionViewController: UIViewController {
         button.layer.shadowOpacity = 1.0
         button.layer.shadowRadius = 10.0
         button.layer.masksToBounds = false
+        button.setTitleShadowColor(.black, for: .normal)
+        button.titleLabel?.layer.shadowRadius = 3.0
+        button.titleLabel?.layer.shadowOpacity = 1.0
+        button.titleLabel?.layer.shadowOffset = CGSize(width: 4, height: 4)
+        button.titleLabel?.layer.masksToBounds = false
         button.addTarget(self, action: #selector(confirmTapped), for: .touchUpInside)
         return button
+    }()
+    
+    let bannerView: GADBannerView = {
+        let bannerView = GADBannerView()
+        return bannerView
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
         updateUI()
+        
+        interstitial = GADInterstitial(adUnitID: adUnitID)
+        let request = GADRequest()
+        interstitial.load(request)
     }
     
     func setupViews() {
@@ -224,16 +250,21 @@ class SoloQuestionViewController: UIViewController {
         backgroundImage.anchor(top: view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
         
         view.addSubview(scoreLabel)
-        scoreLabel.anchor(top: view.topAnchor, left: nil, bottom: nil, right: view.rightAnchor, paddingTop: 15, paddingLeft: 0, paddingBottom: 0, paddingRight: 15, width: 0, height: 0)
+        scoreLabel.anchor(top: view.safeAreaLayoutGuide.topAnchor, left: nil, bottom: nil, right: view.rightAnchor, paddingTop: 5, paddingLeft: 0, paddingBottom: 0, paddingRight: 15, width: 0, height: 0)
         
         let questionLableHeight = CGFloat(screenHeight / 4)
         view.addSubview(questionLabel)
-        questionLabel.anchor(top: view.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 30, paddingLeft: 20, paddingBottom: 0, paddingRight: 20, width: 0, height: questionLableHeight)
+        questionLabel.anchor(top: view.safeAreaLayoutGuide.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 30, paddingLeft: 20, paddingBottom: 0, paddingRight: 20, width: 0, height: questionLableHeight)
         
         view.addSubview(backButton)
-        backButton.anchor(top: view.topAnchor, left: view.leftAnchor, bottom: nil, right: nil, paddingTop: 20, paddingLeft: 10, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
+        backButton.anchor(top: view.safeAreaLayoutGuide.topAnchor, left: view.leftAnchor, bottom: nil, right: nil, paddingTop: 5, paddingLeft: 10, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
         
         setupStackView()
+        
+        setupBannerView()
+        view.addSubview(bannerView)
+        bannerView.anchor(top: nil, left: nil, bottom: view.bottomAnchor, right: nil, paddingTop: 0, paddingLeft: 0, paddingBottom: -20, paddingRight: 0, width: 281, height: 50)
+        bannerView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
     }
     
     var stackView = UIStackView()
@@ -244,7 +275,7 @@ class SoloQuestionViewController: UIViewController {
         stackView.distribution = .fillEqually
         stackView.axis = .vertical
         stackView.spacing = 10
-    
+        
         let stackViewHeight = CGFloat(screenHeight / 2)
         view.addSubview(stackView)
         stackView.anchor(top: questionLabel.bottomAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 10, paddingLeft: 20, paddingBottom: 0, paddingRight: 20, width: 0, height: stackViewHeight)
@@ -263,7 +294,7 @@ class SoloQuestionViewController: UIViewController {
     func showCorrectAnswer() {
         backButton.isEnabled = false
         view.addSubview(correctAnswerView)
-        correctAnswerView.anchor(top: view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 20, paddingLeft: 20, paddingBottom: -20, paddingRight: 20, width: 0, height: 0)
+        correctAnswerView.anchor(top: view.safeAreaLayoutGuide.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 20, paddingLeft: 20, paddingBottom: -20, paddingRight: 20, width: 0, height: 0)
         UIView.animate(withDuration: 0.5) {
             self.correctAnswerView.alpha = 1
         }
@@ -303,6 +334,11 @@ class SoloQuestionViewController: UIViewController {
             soloQuestionIndex += 1
             updateUI()
         } else {
+            if (interstitial.isReady) {
+                interstitial.present(fromRootViewController: self)
+                interstitial = createAd()
+            }
+            
             let vc = self.storyboard?.instantiateViewController(identifier: "SoloScoreResultsViewController") as! SoloScoreResultsViewController
             self.navigationController?.pushViewController(vc, animated: true)
         }
@@ -310,7 +346,7 @@ class SoloQuestionViewController: UIViewController {
     
     func presentBackConfirmationsView() {
         view.addSubview(exitConfirmationView)
-        exitConfirmationView.anchor(top: view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 20, paddingLeft: 20, paddingBottom: -20, paddingRight: 20, width: 0, height: 0)
+        exitConfirmationView.anchor(top: view.safeAreaLayoutGuide.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 20, paddingLeft: 20, paddingBottom: -20, paddingRight: 20, width: 0, height: 0)
         UIView.animate(withDuration: 0.5) {
             self.exitConfirmationView.alpha = 1
         }
@@ -337,7 +373,21 @@ class SoloQuestionViewController: UIViewController {
         exitConfirmationView.addSubview(exitStackView)
         exitStackView.centerXAnchor.constraint(equalTo: exitConfirmationView.centerXAnchor).isActive = true
         exitStackView.centerYAnchor.constraint(equalTo: exitConfirmationView.centerYAnchor).isActive = true
-        exitStackView.anchor(top: nil, left: nil, bottom: nil, right: nil, paddingTop: 0, paddingLeft: 20, paddingBottom: 0, paddingRight: 20, width: exitStackViewWidth, height: 50)
+        exitStackView.anchor(top: nil, left: nil, bottom: nil, right: nil, paddingTop: 0, paddingLeft: 20, paddingBottom: 0, paddingRight: 20, width: exitStackViewWidth, height: buttonHeight)
+    }
+    
+    func setupBannerView() {
+        // starting ads on the bannerview
+        bannerView.adUnitID = prodAdMobsKey
+        bannerView.rootViewController = self
+        bannerView.load(GADRequest())
+    }
+    
+    // MARK: AdMob Function
+    func createAd() -> GADInterstitial {
+        let inter = GADInterstitial(adUnitID: adUnitID)
+        inter.load(GADRequest())
+        return inter
     }
     
     @objc func backTapped() {

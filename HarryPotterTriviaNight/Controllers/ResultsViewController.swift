@@ -54,7 +54,7 @@ class ResultsViewController: UIViewController, UITableViewDelegate, UITableViewD
     // clearing out the game and sending back to home screen
     @IBAction func restartTapped(_ sender: Any) {
         resetGame()
-        
+        vibrate()
         self.navigationController?.popToRootViewController(animated: true)
     }
     
@@ -67,7 +67,7 @@ class ResultsViewController: UIViewController, UITableViewDelegate, UITableViewD
         restartButton.layer.shadowOpacity = 1.0
         
         // starting ads on the bannerview
-        bannerView.adUnitID = testingAdMobsKey
+        bannerView.adUnitID = prodAdMobsKey
         bannerView.rootViewController = self
         bannerView.load(GADRequest())
         

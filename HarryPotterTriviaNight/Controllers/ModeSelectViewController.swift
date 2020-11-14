@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import GoogleMobileAds
 
 class ModeSelectViewController: UIViewController {
     
@@ -35,7 +36,6 @@ class ModeSelectViewController: UIViewController {
     let instructionLabel: UILabel = {
         let label = UILabel()
         label.text = "Select a Game Mode"
-        label.font = instructionLabelFont
         label.textAlignment = .center
         label.textColor = .white
         return label
@@ -47,6 +47,11 @@ class ModeSelectViewController: UIViewController {
         button.backgroundColor = crimsonColor
         button.setTitleColor(buttonTitleColor, for: .normal)
         button.layer.cornerRadius = 5
+        button.setTitleShadowColor(.black, for: .normal)
+        button.titleLabel?.layer.shadowRadius = 3.0
+        button.titleLabel?.layer.shadowOpacity = 1.0
+        button.titleLabel?.layer.shadowOffset = CGSize(width: 4, height: 4)
+        button.titleLabel?.layer.masksToBounds = false
         button.titleLabel?.font = buttonFont
         button.isEnabled = true
         button.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.95).cgColor
@@ -63,6 +68,11 @@ class ModeSelectViewController: UIViewController {
         button.setTitle("Party Mode", for: .normal)
         button.backgroundColor = crimsonColor
         button.setTitleColor(buttonTitleColor, for: .normal)
+        button.setTitleShadowColor(.black, for: .normal)
+        button.titleLabel?.layer.shadowRadius = 3.0
+        button.titleLabel?.layer.shadowOpacity = 1.0
+        button.titleLabel?.layer.shadowOffset = CGSize(width: 4, height: 4)
+        button.titleLabel?.layer.masksToBounds = false
         button.layer.cornerRadius = 5
         button.titleLabel?.font = buttonFont
         button.isEnabled = true
@@ -89,13 +99,28 @@ class ModeSelectViewController: UIViewController {
         return button
     }()
     
+    let bannerView: GADBannerView = {
+        let bannerView = GADBannerView()
+        return bannerView
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let screenHeight = UIScreen.main.bounds.size.height
+        varyForScreenSizes(screenHeight: screenHeight)
+        
         setupViews()
+        titleLabel.font = titleLabelFont
+        instructionLabel.font = instructionLabelFont
+        singlePlayerButton.titleLabel?.font = buttonFont
+        partyButton.titleLabel?.font = buttonFont
     }
     
     func setupViews() {
         let screenHeight = UIScreen.main.bounds.size.height
+        print(screenHeight)
+        
         // setting the buttonHeight for each button in the game
         buttonHeight = screenHeight / 10
         
@@ -103,7 +128,7 @@ class ModeSelectViewController: UIViewController {
         backgroundImage.anchor(top: view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
         
         view.addSubview(titleLabel)
-        titleLabel.anchor(top: view.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 20, paddingLeft: 10, paddingBottom: 0, paddingRight: 10, width: 0, height: 0)
+        titleLabel.anchor(top: view.safeAreaLayoutGuide.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 20, paddingLeft: 10, paddingBottom: 0, paddingRight: 10, width: 0, height: 0)
         
         view.addSubview(instructionLabel)
         instructionLabel.anchor(top: titleLabel.bottomAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 20, paddingLeft: 20, paddingBottom: 0, paddingRight: 20, width: 0, height: 0)
@@ -112,6 +137,12 @@ class ModeSelectViewController: UIViewController {
         view.addSubview(creditsButton)
         creditsButton.anchor(top: stackView.bottomAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 10, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
         
+        setupBannerView()
+        
+        view.addSubview(bannerView)
+        bannerView.anchor(top: nil, left: nil, bottom: view.bottomAnchor, right: nil, paddingTop: 0, paddingLeft: 0, paddingBottom: -20, paddingRight: 0, width: 281, height: 50)
+        
+        bannerView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
     }
     
     var stackView = UIStackView()
@@ -127,6 +158,13 @@ class ModeSelectViewController: UIViewController {
         
         view.addSubview(stackView)
         stackView.anchor(top: instructionLabel.bottomAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 10, paddingLeft: 20, paddingBottom: 0, paddingRight: 20, width: 0, height: stackViewHeight)
+    }
+    
+    func setupBannerView() {
+        // starting ads on the bannerview
+        bannerView.adUnitID = prodAdMobsKey
+        bannerView.rootViewController = self
+        bannerView.load(GADRequest())
     }
     
     @objc func partyPlayTapped() {
