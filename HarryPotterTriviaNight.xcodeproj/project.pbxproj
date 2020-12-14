@@ -14,6 +14,13 @@
 		D916452923F146E500CCBD71 /* RulesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D916452723F146E500CCBD71 /* RulesViewController.xib */; };
 		D916452D23F1471F00CCBD71 /* CreditsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D916452B23F1471F00CCBD71 /* CreditsViewController.swift */; };
 		D916452E23F1471F00CCBD71 /* CreditsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D916452C23F1471F00CCBD71 /* CreditsViewController.xib */; };
+		D9251F6B2584BCA50069C6EA /* BlitzQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9251F6A2584BCA50069C6EA /* BlitzQuestionViewController.swift */; };
+		D9251F6F2584BCB20069C6EA /* BlitzResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9251F6E2584BCB20069C6EA /* BlitzResultsViewController.swift */; };
+		D9251F722584BCF60069C6EA /* SurvivalQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9251F712584BCF60069C6EA /* SurvivalQuestionViewController.swift */; };
+		D9251F752584BD000069C6EA /* SurvivalResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9251F742584BD000069C6EA /* SurvivalResultsViewController.swift */; };
+		D9251F792584C0440069C6EA /* ConvertAllJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9251F782584C0440069C6EA /* ConvertAllJSON.swift */; };
+		D9251F7C2584C2070069C6EA /* AllQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9251F7B2584C2070069C6EA /* AllQuestion.swift */; };
+		D9251F80258586FF0069C6EA /* GameButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9251F7F258586FF0069C6EA /* GameButton.swift */; };
 		D92BB1092550F2FF00BF84BE /* GameCreditsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92BB1082550F2FF00BF84BE /* GameCreditsViewController.swift */; };
 		D945B8EF22B6E91B0087E171 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D945B8EE22B6E91B0087E171 /* AppDelegate.swift */; };
 		D945B8F122B6E91B0087E171 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D945B8F022B6E91B0087E171 /* ViewController.swift */; };
@@ -50,6 +57,13 @@
 		D916452723F146E500CCBD71 /* RulesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RulesViewController.xib; sourceTree = "<group>"; };
 		D916452B23F1471F00CCBD71 /* CreditsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsViewController.swift; sourceTree = "<group>"; };
 		D916452C23F1471F00CCBD71 /* CreditsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreditsViewController.xib; sourceTree = "<group>"; };
+		D9251F6A2584BCA50069C6EA /* BlitzQuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlitzQuestionViewController.swift; sourceTree = "<group>"; };
+		D9251F6E2584BCB20069C6EA /* BlitzResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlitzResultsViewController.swift; sourceTree = "<group>"; };
+		D9251F712584BCF60069C6EA /* SurvivalQuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurvivalQuestionViewController.swift; sourceTree = "<group>"; };
+		D9251F742584BD000069C6EA /* SurvivalResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurvivalResultsViewController.swift; sourceTree = "<group>"; };
+		D9251F782584C0440069C6EA /* ConvertAllJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertAllJSON.swift; sourceTree = "<group>"; };
+		D9251F7B2584C2070069C6EA /* AllQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllQuestion.swift; sourceTree = "<group>"; };
+		D9251F7F258586FF0069C6EA /* GameButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameButton.swift; sourceTree = "<group>"; };
 		D92BB1082550F2FF00BF84BE /* GameCreditsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCreditsViewController.swift; sourceTree = "<group>"; };
 		D945B8EB22B6E91B0087E171 /* TriwizardTrivia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TriwizardTrivia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D945B8EE22B6E91B0087E171 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -114,6 +128,8 @@
 				D97AB16822BDAB2200124CAC /* Question.swift */,
 				D9069DE2230A20C2008BE435 /* Teams.swift */,
 				D98D0A09254BF41600423F08 /* SoloQuestions.swift */,
+				D9251F782584C0440069C6EA /* ConvertAllJSON.swift */,
+				D9251F7B2584C2070069C6EA /* AllQuestion.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -121,16 +137,11 @@
 		D9069DE1230A1F6E008BE435 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				D92BB1082550F2FF00BF84BE /* GameCreditsViewController.swift */,
-				D98DCB022544FB2B0092B483 /* ModeSelectViewController.swift */,
-				D98D09F3254BDF5C00423F08 /* PartyRulesViewController.swift */,
-				D97AB16A22BDEAF500124CAC /* QuestionViewController.swift */,
-				D9DAFD422324779E00A87632 /* ResultsViewController.swift */,
-				D916452423F1153900CCBD71 /* RulesAndCreditsViewController.swift */,
-				D992D4A92545470300EEAC9F /* SoloPlayViewController.swift */,
-				D98D0A05254BF21E00423F08 /* SoloQuestionViewController.swift */,
-				D99F66AD255A03F2000EE745 /* SoloScoreResultsViewController.swift */,
-				D945B8F022B6E91B0087E171 /* ViewController.swift */,
+				D9251F6725844DEA0069C6EA /* Survival */,
+				D9251F6625844DDF0069C6EA /* Blitz */,
+				D9251F692584BC660069C6EA /* Global */,
+				D9251F6425844DB70069C6EA /* Party */,
+				D9251F6225844D7C0069C6EA /* Solo */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -144,6 +155,63 @@
 				D916452C23F1471F00CCBD71 /* CreditsViewController.xib */,
 			);
 			path = SegmentedView;
+			sourceTree = "<group>";
+		};
+		D9251F6225844D7C0069C6EA /* Solo */ = {
+			isa = PBXGroup;
+			children = (
+				D992D4A92545470300EEAC9F /* SoloPlayViewController.swift */,
+				D98D0A05254BF21E00423F08 /* SoloQuestionViewController.swift */,
+				D99F66AD255A03F2000EE745 /* SoloScoreResultsViewController.swift */,
+			);
+			path = Solo;
+			sourceTree = "<group>";
+		};
+		D9251F6425844DB70069C6EA /* Party */ = {
+			isa = PBXGroup;
+			children = (
+				D98D09F3254BDF5C00423F08 /* PartyRulesViewController.swift */,
+				D97AB16A22BDEAF500124CAC /* QuestionViewController.swift */,
+				D9DAFD422324779E00A87632 /* ResultsViewController.swift */,
+				D945B8F022B6E91B0087E171 /* ViewController.swift */,
+			);
+			path = Party;
+			sourceTree = "<group>";
+		};
+		D9251F6625844DDF0069C6EA /* Blitz */ = {
+			isa = PBXGroup;
+			children = (
+				D9251F6A2584BCA50069C6EA /* BlitzQuestionViewController.swift */,
+				D9251F6E2584BCB20069C6EA /* BlitzResultsViewController.swift */,
+			);
+			path = Blitz;
+			sourceTree = "<group>";
+		};
+		D9251F6725844DEA0069C6EA /* Survival */ = {
+			isa = PBXGroup;
+			children = (
+				D9251F712584BCF60069C6EA /* SurvivalQuestionViewController.swift */,
+				D9251F742584BD000069C6EA /* SurvivalResultsViewController.swift */,
+			);
+			path = Survival;
+			sourceTree = "<group>";
+		};
+		D9251F692584BC660069C6EA /* Global */ = {
+			isa = PBXGroup;
+			children = (
+				D98DCB022544FB2B0092B483 /* ModeSelectViewController.swift */,
+				D92BB1082550F2FF00BF84BE /* GameCreditsViewController.swift */,
+				D916452423F1153900CCBD71 /* RulesAndCreditsViewController.swift */,
+			);
+			path = Global;
+			sourceTree = "<group>";
+		};
+		D9251F7E258586DA0069C6EA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D9251F7F258586FF0069C6EA /* GameButton.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		D945B8E222B6E91B0087E171 = {
@@ -172,6 +240,7 @@
 				D916452A23F146F800CCBD71 /* SegmentedView */,
 				D945B8EE22B6E91B0087E171 /* AppDelegate.swift */,
 				D945B8F722B6E91D0087E171 /* LaunchScreen.storyboard */,
+				D9251F7E258586DA0069C6EA /* Views */,
 				D9069DE1230A1F6E008BE435 /* Controllers */,
 				D945B8F522B6E91D0087E171 /* Assets.xcassets */,
 				D945B8FA22B6E91D0087E171 /* Info.plist */,
@@ -326,11 +395,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9251F792584C0440069C6EA /* ConvertAllJSON.swift in Sources */,
+				D9251F6F2584BCB20069C6EA /* BlitzResultsViewController.swift in Sources */,
 				D9069DE3230A20C2008BE435 /* Teams.swift in Sources */,
 				D916452523F1153900CCBD71 /* RulesAndCreditsViewController.swift in Sources */,
 				D98D09F4254BDF5C00423F08 /* PartyRulesViewController.swift in Sources */,
 				D97AB16922BDAB2200124CAC /* Question.swift in Sources */,
 				D945B8F122B6E91B0087E171 /* ViewController.swift in Sources */,
+				D9251F80258586FF0069C6EA /* GameButton.swift in Sources */,
 				D98D0A0A254BF41600423F08 /* SoloQuestions.swift in Sources */,
 				D99F66AE255A03F2000EE745 /* SoloScoreResultsViewController.swift in Sources */,
 				D916452823F146E500CCBD71 /* RulesViewController.swift in Sources */,
@@ -338,14 +410,18 @@
 				D992D4A825452C6C00EEAC9F /* Globals.swift in Sources */,
 				D992D4AA2545470300EEAC9F /* SoloPlayViewController.swift in Sources */,
 				D97AB16B22BDEAF600124CAC /* QuestionViewController.swift in Sources */,
+				D9251F722584BCF60069C6EA /* SurvivalQuestionViewController.swift in Sources */,
+				D9251F7C2584C2070069C6EA /* AllQuestion.swift in Sources */,
 				D992D4A62545293300EEAC9F /* Extensions.swift in Sources */,
 				D97AB16D22C5925D00124CAC /* House.swift in Sources */,
 				D98DCB032544FB2B0092B483 /* ModeSelectViewController.swift in Sources */,
 				D945B8EF22B6E91B0087E171 /* AppDelegate.swift in Sources */,
 				D98D0A06254BF21E00423F08 /* SoloQuestionViewController.swift in Sources */,
+				D9251F752584BD000069C6EA /* SurvivalResultsViewController.swift in Sources */,
 				D916452D23F1471F00CCBD71 /* CreditsViewController.swift in Sources */,
 				D99F66B2255DF158000EE745 /* ConfigureVaryingSizes.swift in Sources */,
 				D92BB1092550F2FF00BF84BE /* GameCreditsViewController.swift in Sources */,
+				D9251F6B2584BCA50069C6EA /* BlitzQuestionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -502,6 +578,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.harolddavidson.TriwizardTrivia;
 				PRODUCT_NAME = TriwizardTrivia;
 				SWIFT_VERSION = 5.0;
@@ -522,6 +599,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.harolddavidson.TriwizardTrivia;
 				PRODUCT_NAME = TriwizardTrivia;
 				SWIFT_VERSION = 5.0;

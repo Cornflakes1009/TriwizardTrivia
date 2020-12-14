@@ -171,7 +171,7 @@ extension UIDevice {
 }
 
 // MARK: Adding a Light Vibration
-/** Light Haptic Feeback for button taps
+/** Light Haptic Feedback for button taps
  # For other vibrations, see: #
     https://www.hackingwithswift.com/example-code/uikit/how-to-generate-haptic-feedback-with-uifeedbackgenerator
  */

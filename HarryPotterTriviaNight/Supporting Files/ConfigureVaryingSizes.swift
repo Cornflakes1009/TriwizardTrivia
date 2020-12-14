@@ -84,6 +84,8 @@ func varyForScreenSizes(screenHeight: CGFloat) {
         break
     case Devices.sEHeight.rawValue:
         instructionLabelFont = UIFont(name: "Papyrus", size: 15)
+        titleLabelFont = UIFont(name: "ParryHotter", size: 45)
+        buttonFont = UIFont(name: "Harry P", size: 45)
         break
     case Devices.bigiPadProHeight.rawValue:
         break

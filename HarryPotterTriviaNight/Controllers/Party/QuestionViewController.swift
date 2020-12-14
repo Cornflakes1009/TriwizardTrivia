@@ -49,6 +49,7 @@ class QuestionViewController: UIViewController, GADInterstitialDelegate {
         return label
     }()
     
+    // MARK:- Exit View
     let exitConfirmationView: UIView = {
         let view = UIView()
         view.backgroundColor = .black
@@ -68,7 +69,7 @@ class QuestionViewController: UIViewController, GADInterstitialDelegate {
     
     let explanationConfirmationLabel: UILabel = {
         let label = UILabel()
-        label.text = "This will exit the game and you'll lose your current progress?"
+        label.text = "This will exit the game and you'll lose your current progress."
         label.font = instructionLabelFont
         label.textAlignment = .center
         label.textColor = .white
@@ -88,7 +89,11 @@ class QuestionViewController: UIViewController, GADInterstitialDelegate {
         button.layer.shadowOpacity = 1.0
         button.layer.shadowRadius = 10.0
         button.layer.masksToBounds = false
-        //            button.sender.tag = 4
+        button.setTitleShadowColor(.black, for: .normal)
+        button.titleLabel?.layer.shadowRadius = 3.0
+        button.titleLabel?.layer.shadowOpacity = 1.0
+        button.titleLabel?.layer.shadowOffset = CGSize(width: 4, height: 4)
+        button.titleLabel?.layer.masksToBounds = false
         button.addTarget(self, action: #selector(cancelTapped), for: .touchUpInside)
         return button
     }()
@@ -105,12 +110,18 @@ class QuestionViewController: UIViewController, GADInterstitialDelegate {
         button.layer.shadowOpacity = 1.0
         button.layer.shadowRadius = 10.0
         button.layer.masksToBounds = false
+        button.setTitleShadowColor(.black, for: .normal)
+        button.titleLabel?.layer.shadowRadius = 3.0
+        button.titleLabel?.layer.shadowOpacity = 1.0
+        button.titleLabel?.layer.shadowOffset = CGSize(width: 4, height: 4)
+        button.titleLabel?.layer.masksToBounds = false
         button.addTarget(self, action: #selector(confirmTapped), for: .touchUpInside)
         return button
     }()
     
     var answeredCorrectly = false
     
+    // MARK:- Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -177,32 +188,9 @@ class QuestionViewController: UIViewController, GADInterstitialDelegate {
         self.view.gestureRecognizers?.removeAll()
     }
     
-    @IBAction func correctTapped(_ sender: Any) {
-        vibrate()
-        correctButton.backgroundColor = #colorLiteral(red: 0.4352941215, green: 0.4431372583, blue: 0.4745098054, alpha: 1)
-        incorrectButton.backgroundColor = #colorLiteral(red: 0.7215686275, green: 0, blue: 0.01568627451, alpha: 1)
-        answeredCorrectly = true
-        nextQuestionButton.isHidden = false
-    }
     
-    @IBAction func incorrectTapped(_ sender: Any) {
-        vibrate()
-        incorrectButton.backgroundColor = #colorLiteral(red: 0.4352941215, green: 0.4431372583, blue: 0.4745098054, alpha: 1)
-        correctButton.backgroundColor = #colorLiteral(red: 0.02352941176, green: 0.6392156863, blue: 0.01568627451, alpha: 1)
-        answeredCorrectly = false
-        nextQuestionButton.isHidden = false
-    }
     
-    @IBAction func nextQuestionTapped(_ sender: Any) {
-        vibrate()
-        if(answeredCorrectly) {
-            teams[currentTeam].score += 1
-        }
-        nextQuestionButton.isHidden = true
-        questionIndex += 1
-        updateUI()
-    }
-    
+    // MARK:- UI Functions
     func updateUI() {
         if(questionIndex == (teams.count * 15)) { // teams.count * 15
             
@@ -224,8 +212,8 @@ class QuestionViewController: UIViewController, GADInterstitialDelegate {
             teamLabel.text = teams[currentTeam].name
             questionLabel.text = "Question: \(questionList[questionIndex].question)"
             answerLabel.text = "Answer: \(questionList[questionIndex].answer)"
-            correctButton.backgroundColor = #colorLiteral(red: 0.02352941176, green: 0.6392156863, blue: 0.01568627451, alpha: 1)
-            incorrectButton.backgroundColor = #colorLiteral(red: 0.7215686275, green: 0, blue: 0.01568627451, alpha: 1)
+            correctButton.backgroundColor = slytherinColor
+            incorrectButton.backgroundColor = crimsonColor
         }
         
         scoreLabel.text = "\(questionIndex + 1)/\(questionList.count)"
@@ -265,11 +253,38 @@ class QuestionViewController: UIViewController, GADInterstitialDelegate {
         exitStackView.anchor(top: nil, left: nil, bottom: nil, right: nil, paddingTop: 0, paddingLeft: 20, paddingBottom: 0, paddingRight: 20, width: exitStackViewWidth, height: buttonHeight)
     }
     
-    // MARK: AdMob Function
+    // MARK:- AdMob Function
     func createAd() -> GADInterstitial {
         let inter = GADInterstitial(adUnitID: adUnitID)
         inter.load(GADRequest())
         return inter
+    }
+    
+    // MARK:- Button Functions
+    @IBAction func correctTapped(_ sender: Any) {
+        vibrate()
+        correctButton.backgroundColor = #colorLiteral(red: 0.4352941215, green: 0.4431372583, blue: 0.4745098054, alpha: 1)
+        incorrectButton.backgroundColor = crimsonColor
+        answeredCorrectly = true
+        nextQuestionButton.isHidden = false
+    }
+    
+    @IBAction func incorrectTapped(_ sender: Any) {
+        vibrate()
+        incorrectButton.backgroundColor = #colorLiteral(red: 0.4352941215, green: 0.4431372583, blue: 0.4745098054, alpha: 1)
+        correctButton.backgroundColor = slytherinColor
+        answeredCorrectly = false
+        nextQuestionButton.isHidden = false
+    }
+    
+    @IBAction func nextQuestionTapped(_ sender: Any) {
+        vibrate()
+        if(answeredCorrectly) {
+            teams[currentTeam].score += 1
+        }
+        nextQuestionButton.isHidden = true
+        questionIndex += 1
+        updateUI()
     }
     
     @objc func backTapped() {

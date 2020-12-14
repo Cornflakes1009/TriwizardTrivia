@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fIh-xu-p5B">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fIh-xu-p5B">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -116,16 +116,16 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Triwizard Trivia" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ljX-3I-641">
-                                <rect key="frame" x="8" y="20" width="359" height="40"/>
+                                <rect key="frame" x="8" y="20" width="359" height="81.5"/>
                                 <fontDescription key="fontDescription" name="ParryHotter" family="Parry Hotter" pointSize="34"/>
                                 <color key="textColor" red="0.93333333330000001" green="0.71372549019999998" blue="0.27058823529999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleAspectFill" axis="vertical" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="s6Q-qq-Lhe">
-                                <rect key="frame" x="8" y="95" width="359" height="180"/>
+                                <rect key="frame" x="8" y="139" width="359" height="276"/>
                                 <subviews>
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dAI-nJ-Twm">
-                                        <rect key="frame" x="0.0" y="0.0" width="359" height="36"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="359" height="60"/>
                                         <color key="backgroundColor" red="0.49019607843137253" green="0.098039215686274508" blue="0.082352941176470587" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="ParryHotter" family="Parry Hotter" pointSize="20"/>
                                         <size key="titleShadowOffset" width="0.0" height="3"/>
@@ -141,7 +141,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CwJ-AB-eeC">
-                                        <rect key="frame" x="0.0" y="48" width="359" height="36"/>
+                                        <rect key="frame" x="0.0" y="72" width="359" height="60"/>
                                         <color key="backgroundColor" red="0.93333333333333335" green="0.71372549019607845" blue="0.27058823529411763" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="ParryHotter" family="Parry Hotter" pointSize="20"/>
                                         <state key="normal" title="Hufflepuff">
@@ -155,7 +155,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MkE-po-SN4">
-                                        <rect key="frame" x="0.0" y="96" width="359" height="36"/>
+                                        <rect key="frame" x="0.0" y="144" width="359" height="60"/>
                                         <color key="backgroundColor" red="0.10196078431372549" green="0.10588235294117647" blue="0.29803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="ParryHotter" family="Parry Hotter" pointSize="20"/>
                                         <size key="titleShadowOffset" width="0.0" height="3"/>
@@ -171,7 +171,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A4N-gJ-eQf">
-                                        <rect key="frame" x="0.0" y="144" width="359" height="36"/>
+                                        <rect key="frame" x="0.0" y="216" width="359" height="60"/>
                                         <color key="backgroundColor" red="0.21176470588235294" green="0.46274509803921571" blue="0.29411764705882354" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="ParryHotter" family="Parry Hotter" pointSize="20"/>
                                         <size key="titleShadowOffset" width="0.0" height="3"/>
@@ -207,8 +207,8 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select at least two houses." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sgi-IJ-5pZ">
-                                <rect key="frame" x="8" y="61" width="359" height="24"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <rect key="frame" x="8" y="102.5" width="359" height="26.5"/>
+                                <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="17"/>
                                 <color key="textColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -256,6 +256,36 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="260" y="133"/>
+        </scene>
+        <!--Survival Results View Controller-->
+        <scene sceneID="ZQT-iZ-EB9">
+            <objects>
+                <viewController storyboardIdentifier="SurvivalResultsViewController" id="diO-sE-M7r" customClass="SurvivalResultsViewController" customModule="TriwizardTrivia" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="prT-t4-ZDI">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="pFS-Sg-OtU"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GEH-5Y-TH8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1116" y="-1189"/>
+        </scene>
+        <!--Survival Question View Controller-->
+        <scene sceneID="vJp-0e-wnf">
+            <objects>
+                <viewController storyboardIdentifier="SurvivalQuestionViewController" id="q9W-lN-fbQ" customClass="SurvivalQuestionViewController" customModule="TriwizardTrivia" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="QSc-z9-aCS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="eGG-HL-aei"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KWG-ZS-Nsu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1116" y="-522"/>
         </scene>
         <!--Mode Select View Controller-->
         <scene sceneID="Sr9-SW-4CQ">
@@ -360,7 +390,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="GYl-F7-MrL"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="17"/>
                                 <color key="textColor" red="0.78039215689999997" green="0.78039215689999997" blue="0.81568627449999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -369,7 +399,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="mr2-td-rKo"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="17"/>
                                 <color key="textColor" red="0.78039215689999997" green="0.78039215689999997" blue="0.81568627449999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -378,15 +408,15 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rIx-U8-MDh">
                                         <rect key="frame" x="0.0" y="0.0" width="158.5" height="80"/>
-                                        <color key="backgroundColor" red="0.72156862745098038" green="0.0" blue="0.015686274509803921" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" red="0.49019607843137253" green="0.098039215686274508" blue="0.082352941176470587" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="80" id="xA3-8b-mZf"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                        <size key="titleShadowOffset" width="0.0" height="1"/>
+                                        <size key="titleShadowOffset" width="2" height="2"/>
                                         <state key="normal" title="Incorrect">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <color key="titleShadowColor" red="0.078640736639499664" green="0.077745310962200165" blue="0.13762009143829346" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="10"/>
@@ -397,12 +427,12 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qhx-qt-i9l">
                                         <rect key="frame" x="196.5" y="0.0" width="158.5" height="80"/>
-                                        <color key="backgroundColor" red="0.023529411764705882" green="0.63921568627450975" blue="0.015686274509803921" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" red="0.21176470588235294" green="0.46274509803921571" blue="0.29411764705882354" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="80" id="HqJ-hY-H8E"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                        <size key="titleShadowOffset" width="0.0" height="1"/>
+                                        <size key="titleShadowOffset" width="2" height="2"/>
                                         <state key="normal" title="Correct">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -589,7 +619,7 @@
                         <constraints>
                             <constraint firstItem="dxc-oH-xVn" firstAttribute="leading" secondItem="l3W-ez-XM9" secondAttribute="leading" id="3o7-YJ-K9O"/>
                             <constraint firstItem="Ql5-0a-ul1" firstAttribute="top" secondItem="Fsy-oJ-GHj" secondAttribute="bottom" constant="18" id="7Mg-n4-h6U"/>
-                            <constraint firstItem="dxc-oH-xVn" firstAttribute="bottom" secondItem="l3W-ez-XM9" secondAttribute="bottom" constant="34" id="C9e-ZA-6wc"/>
+                            <constraint firstItem="dxc-oH-xVn" firstAttribute="bottom" secondItem="YJe-cW-5my" secondAttribute="bottom" constant="34" id="C9e-ZA-6wc"/>
                             <constraint firstItem="l3W-ez-XM9" firstAttribute="trailing" secondItem="Fsy-oJ-GHj" secondAttribute="trailing" constant="8" id="DEw-MT-VRD"/>
                             <constraint firstItem="l3W-ez-XM9" firstAttribute="bottom" secondItem="Ql5-0a-ul1" secondAttribute="bottom" constant="10" id="H1J-6e-KoA"/>
                             <constraint firstItem="J1U-3s-kBX" firstAttribute="top" secondItem="GdK-MD-vPW" secondAttribute="bottom" constant="5.5" id="H4k-DH-V8H"/>
@@ -597,7 +627,7 @@
                             <constraint firstItem="GdK-MD-vPW" firstAttribute="leading" secondItem="l3W-ez-XM9" secondAttribute="leading" constant="16" id="QQZ-cw-LaN"/>
                             <constraint firstItem="l3W-ez-XM9" firstAttribute="trailing" secondItem="dxc-oH-xVn" secondAttribute="trailing" id="RhS-da-bAy"/>
                             <constraint firstItem="Ql5-0a-ul1" firstAttribute="centerX" secondItem="YJe-cW-5my" secondAttribute="centerX" id="T87-UJ-gQe"/>
-                            <constraint firstItem="l3W-ez-XM9" firstAttribute="top" secondItem="dxc-oH-xVn" secondAttribute="top" constant="44" id="aiL-wU-PiB"/>
+                            <constraint firstAttribute="top" secondItem="dxc-oH-xVn" secondAttribute="top" constant="44" id="aiL-wU-PiB"/>
                             <constraint firstItem="J1U-3s-kBX" firstAttribute="leading" secondItem="l3W-ez-XM9" secondAttribute="leading" constant="50" id="bWg-A8-W4G"/>
                             <constraint firstItem="l3W-ez-XM9" firstAttribute="trailing" secondItem="J1U-3s-kBX" secondAttribute="trailing" constant="50" id="oK6-sf-JGQ"/>
                             <constraint firstItem="Fsy-oJ-GHj" firstAttribute="leading" secondItem="l3W-ez-XM9" secondAttribute="leading" constant="8" id="uNy-R8-JJ4"/>
@@ -616,6 +646,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TDF-UB-awM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1681" y="133"/>
+        </scene>
+        <!--Blitz Question View Controller-->
+        <scene sceneID="WFA-cy-B8X">
+            <objects>
+                <viewController storyboardIdentifier="BlitzQuestionViewController" id="X2g-ZA-TIL" customClass="BlitzQuestionViewController" customModule="TriwizardTrivia" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Kza-oB-ip5">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="AHq-Y4-bUH"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iKt-U2-dsI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-412" y="-522"/>
         </scene>
     </scenes>
     <resources>

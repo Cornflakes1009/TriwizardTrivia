@@ -32,7 +32,7 @@ class SoloQuestionViewController: UIViewController, GADInterstitialDelegate {
     
     let questionLabel: UILabel = {
         let label = UILabel()
-        label.text = "This is a filler question. This text should be automatically replaced while the app is running."
+        label.text = ""
         label.font = instructionLabelFont
         label.textAlignment = .center
         label.textColor = .white
@@ -43,7 +43,7 @@ class SoloQuestionViewController: UIViewController, GADInterstitialDelegate {
     
     let optionZeroButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitle("Himself with the Sorcerer's Stone", for: .normal)
+        button.setTitle("", for: .normal)
         button.backgroundColor = crimsonColor
         button.setTitleColor(gryffindorFontColor, for: .normal)
         button.layer.cornerRadius = 5
@@ -59,7 +59,7 @@ class SoloQuestionViewController: UIViewController, GADInterstitialDelegate {
     
     let optionOneButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitle("Boomslang skin & lacewing flies", for: .normal)
+        button.setTitle("", for: .normal)
         button.backgroundColor = hufflepuffColor
         button.setTitleColor(hufflepuffFontColor, for: .normal)
         button.layer.cornerRadius = 5
@@ -75,7 +75,7 @@ class SoloQuestionViewController: UIViewController, GADInterstitialDelegate {
     
     let optionTwoButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitle("The Misuse of Muggle Artifacts", for: .normal)
+        button.setTitle("", for: .normal)
         button.backgroundColor = ravenclawColor
         button.setTitleColor(ravenclawFontColor, for: .normal)
         button.layer.cornerRadius = 5
@@ -91,7 +91,7 @@ class SoloQuestionViewController: UIViewController, GADInterstitialDelegate {
     
     let optionThreeButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitle("Accidental Magic Reversal Squad", for: .normal)
+        button.setTitle("", for: .normal)
         button.backgroundColor = slytherinColor
         button.setTitleColor(slytherinFontColor, for: .normal)
         button.layer.cornerRadius = 5
@@ -160,6 +160,7 @@ class SoloQuestionViewController: UIViewController, GADInterstitialDelegate {
         return button
     }()
     
+    // MARK:- Exit View
     let exitConfirmationView: UIView = {
         let view = UIView()
         view.backgroundColor = .black
@@ -179,7 +180,7 @@ class SoloQuestionViewController: UIViewController, GADInterstitialDelegate {
     
     let explanationConfirmationLabel: UILabel = {
         let label = UILabel()
-        label.text = "This will exit the game and you'll lose your current progress?"
+        label.text = "This will exit the game and you'll lose your current progress."
         label.font = instructionLabelFont
         label.textAlignment = .center
         label.textColor = .white
@@ -324,23 +325,20 @@ class SoloQuestionViewController: UIViewController, GADInterstitialDelegate {
     }
     
     func checkIfCorrect(buttonNumber: Int) {
+        
         if buttonNumber == soloQuestionList[soloQuestionIndex].answer {
             soloScore += 1
+            
+            if soloQuestionIndex + 1 != soloQuestionList.count {
+                soloQuestionIndex += 1
+                updateUI()
+            } else {
+                showInterstitial()
+                let vc = self.storyboard?.instantiateViewController(identifier: "SoloScoreResultsViewController") as! SoloScoreResultsViewController
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
         } else {
             showCorrectAnswer()
-        }
-        
-        if soloQuestionIndex + 1 != soloQuestionList.count {
-            soloQuestionIndex += 1
-            updateUI()
-        } else {
-            if (interstitial.isReady) {
-                interstitial.present(fromRootViewController: self)
-                interstitial = createAd()
-            }
-            
-            let vc = self.storyboard?.instantiateViewController(identifier: "SoloScoreResultsViewController") as! SoloScoreResultsViewController
-            self.navigationController?.pushViewController(vc, animated: true)
         }
     }
     
@@ -381,6 +379,13 @@ class SoloQuestionViewController: UIViewController, GADInterstitialDelegate {
         bannerView.adUnitID = prodAdMobsKey
         bannerView.rootViewController = self
         bannerView.load(GADRequest())
+    }
+    
+    func showInterstitial() {
+        if (interstitial.isReady) {
+            interstitial.present(fromRootViewController: self)
+            interstitial = createAd()
+        }
     }
     
     // MARK: AdMob Function
@@ -424,6 +429,17 @@ class SoloQuestionViewController: UIViewController, GADInterstitialDelegate {
     }
     
     @objc func nextQuestionTapped() {
+        
+        if soloQuestionIndex + 1 != soloQuestionList.count {
+            soloQuestionIndex += 1
+            updateUI()
+        } else {
+            showInterstitial()
+            
+            let vc = self.storyboard?.instantiateViewController(identifier: "SoloScoreResultsViewController") as! SoloScoreResultsViewController
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+        
         UIView.animate(withDuration: 1) {
             self.correctAnswerView.alpha = 0
         }

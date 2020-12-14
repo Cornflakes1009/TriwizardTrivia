@@ -43,7 +43,7 @@ class ModeSelectViewController: UIViewController {
     
     let singlePlayerButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitle("Solo Mode", for: .normal)
+        button.setTitle("Classic", for: .normal)
         button.backgroundColor = crimsonColor
         button.setTitleColor(buttonTitleColor, for: .normal)
         button.layer.cornerRadius = 5
@@ -65,7 +65,7 @@ class ModeSelectViewController: UIViewController {
     
     let partyButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitle("Party Mode", for: .normal)
+        button.setTitle("Party", for: .normal)
         button.backgroundColor = crimsonColor
         button.setTitleColor(buttonTitleColor, for: .normal)
         button.setTitleShadowColor(.black, for: .normal)
@@ -82,6 +82,50 @@ class ModeSelectViewController: UIViewController {
         button.layer.shadowRadius = 10.0
         button.layer.masksToBounds = false
         button.addTarget(self, action: #selector(partyPlayTapped), for: .touchUpInside)
+        return button
+    }()
+    
+    let survivalButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setTitle("Survival", for: .normal)
+        button.backgroundColor = crimsonColor
+        button.setTitleColor(buttonTitleColor, for: .normal)
+        button.layer.cornerRadius = 5
+        button.setTitleShadowColor(.black, for: .normal)
+        button.titleLabel?.layer.shadowRadius = 3.0
+        button.titleLabel?.layer.shadowOpacity = 1.0
+        button.titleLabel?.layer.shadowOffset = CGSize(width: 4, height: 4)
+        button.titleLabel?.layer.masksToBounds = false
+        button.titleLabel?.font = buttonFont
+        button.isEnabled = true
+        button.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.95).cgColor
+        button.layer.shadowOffset = CGSize(width: 0, height: 3)
+        button.layer.shadowOpacity = 1.0
+        button.layer.shadowRadius = 10.0
+        button.layer.masksToBounds = false
+        button.addTarget(self, action: #selector(survivalTapped), for: .touchUpInside)
+        return button
+    }()
+    
+    let blitzButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setTitle("Blitz", for: .normal)
+        button.backgroundColor = crimsonColor
+        button.setTitleColor(buttonTitleColor, for: .normal)
+        button.layer.cornerRadius = 5
+        button.setTitleShadowColor(.black, for: .normal)
+        button.titleLabel?.layer.shadowRadius = 3.0
+        button.titleLabel?.layer.shadowOpacity = 1.0
+        button.titleLabel?.layer.shadowOffset = CGSize(width: 4, height: 4)
+        button.titleLabel?.layer.masksToBounds = false
+        button.titleLabel?.font = buttonFont
+        button.isEnabled = true
+        button.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.95).cgColor
+        button.layer.shadowOffset = CGSize(width: 0, height: 3)
+        button.layer.shadowOpacity = 1.0
+        button.layer.shadowRadius = 10.0
+        button.layer.masksToBounds = false
+        button.addTarget(self, action: #selector(blitzTapped), for: .touchUpInside)
         return button
     }()
     
@@ -115,6 +159,8 @@ class ModeSelectViewController: UIViewController {
         instructionLabel.font = instructionLabelFont
         singlePlayerButton.titleLabel?.font = buttonFont
         partyButton.titleLabel?.font = buttonFont
+        survivalButton.titleLabel?.font = buttonFont
+        blitzButton.titleLabel?.font = buttonFont
     }
     
     func setupViews() {
@@ -148,7 +194,7 @@ class ModeSelectViewController: UIViewController {
     var stackView = UIStackView()
     // MARK: Setting Up the StackView
     func setupStackView() {
-        stackView = UIStackView(arrangedSubviews: [singlePlayerButton, partyButton])
+        stackView = UIStackView(arrangedSubviews: [singlePlayerButton, partyButton, survivalButton,blitzButton])
         stackView.distribution = .fillEqually
         stackView.axis = .vertical
         stackView.spacing = 10
@@ -175,6 +221,20 @@ class ModeSelectViewController: UIViewController {
     
     @objc func soloPlayTapped() {
         let vc = self.storyboard?.instantiateViewController(identifier: "SoloPlayViewController") as! SoloPlayViewController
+        self.navigationController?.pushViewController(vc, animated: true)
+        vibrate()
+    }
+    
+    @objc func survivalTapped() {
+        convertAllJSON(jsonToRead: "harryPotterSoloQuestions")
+        let vc = self.storyboard?.instantiateViewController(identifier: "SurvivalQuestionViewController") as! SurvivalQuestionViewController
+        self.navigationController?.pushViewController(vc, animated: true)
+        vibrate()
+    }
+    
+    @objc func blitzTapped() {
+        convertAllJSON(jsonToRead: "harryPotterSoloQuestions")
+        let vc = self.storyboard?.instantiateViewController(identifier: "BlitzQuestionViewController") as! BlitzQuestionViewController
         self.navigationController?.pushViewController(vc, animated: true)
         vibrate()
     }

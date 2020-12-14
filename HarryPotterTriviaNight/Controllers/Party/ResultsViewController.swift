@@ -77,6 +77,13 @@ class ResultsViewController: UIViewController, UITableViewDelegate, UITableViewD
         // sorting teams by score
         teams = teams.sorted(by: {$0.score > $1.score})
         
+        headlineLabel.textAlignment = .center
+        headlineLabel.layer.shadowColor = UIColor.black.cgColor
+        headlineLabel.layer.shadowRadius = 3.0
+        headlineLabel.layer.shadowOpacity = 1.0
+        headlineLabel.layer.shadowOffset = CGSize(width: 4, height: 4)
+        headlineLabel.layer.masksToBounds = false
+        
         // if iPhone SE, adjust the UI to fit
         let screenHeight = UIScreen.main.bounds.size.height
         if(screenHeight < 569) {
