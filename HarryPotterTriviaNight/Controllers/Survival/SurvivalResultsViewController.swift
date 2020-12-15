@@ -21,8 +21,13 @@ class SurvivalResultsViewController: UIViewController {
     let gameOverLabel: UILabel = {
         let label = UILabel()
         label.text = "Game Over"
-        label.font = titleLabelFont
         label.textAlignment = .center
+        label.layer.shadowColor = UIColor.black.cgColor
+        label.layer.shadowRadius = 3.0
+        label.layer.shadowOpacity = 1.0
+        label.layer.shadowOffset = CGSize(width: 4, height: 4)
+        label.layer.masksToBounds = false
+        label.font = titleLabelFont
         label.textColor = buttonTitleColor
         return label
     }()
@@ -41,16 +46,18 @@ class SurvivalResultsViewController: UIViewController {
     }()
     
     let restartButton: GameButton = {
-        let button = GameButton(title: "Back to Menu", backgroundColor: crimsonColor, fontColor: gryffindorFontColor)
+        let button = GameButton(title: "Back to Menu", backgroundColor: gryffindorColor, fontColor: gryffindorFontColor)
         button.addTarget(self, action: #selector(restartTapped), for: .touchUpInside)
         return button
     }()
     
+    // MARK:- Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
     }
     
+    // MARK:- Setting up the UI
     func setupUI() {
         view.addSubview(background)
         background.anchor(top: view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
@@ -67,6 +74,7 @@ class SurvivalResultsViewController: UIViewController {
         restartButton.anchor(top: nil, left: view.leftAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 20, paddingBottom: -20, paddingRight: 20, width: 0, height: buttonHeight)
     }
     
+    // MARK:- Button Functions
     @objc func restartTapped() {
         resetGame()
         self.navigationController?.popToRootViewController(animated: true)

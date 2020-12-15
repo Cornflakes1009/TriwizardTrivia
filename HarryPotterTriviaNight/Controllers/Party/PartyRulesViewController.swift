@@ -20,8 +20,9 @@ class PartyRulesViewController: UIViewController {
     
     let backButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitle("< Back", for: .normal)
-        button.setTitleColor(buttonTitleColor, for: .normal)
+        button.isEnabled = true
+        button.tintColor = backButtonColor
+        button.setTitleColor(whiteColor, for: .normal)
         button.addTarget(self, action: #selector(backTapped), for: .touchUpInside)
         return button
     }()
@@ -69,7 +70,7 @@ class PartyRulesViewController: UIViewController {
     let playButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("Play", for: .normal)
-        button.backgroundColor = crimsonColor
+        button.backgroundColor = gryffindorColor
         button.setTitleColor(buttonTitleColor, for: .normal)
         button.layer.cornerRadius = 5
         button.titleLabel?.font = buttonFont
@@ -98,8 +99,12 @@ class PartyRulesViewController: UIViewController {
         view.addSubview(backgroundImage)
         backgroundImage.anchor(top: view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
         
+        let backButtonImageConfig = UIImage.SymbolConfiguration(pointSize: 25, weight: .light, scale: .large)
+        let backButtonImage = UIImage(systemName: backButtonSymbol, withConfiguration: backButtonImageConfig)
+        
+        backButton.setImage(backButtonImage, for: .normal)
         view.addSubview(backButton)
-        backButton.anchor(top: view.safeAreaLayoutGuide.topAnchor, left: view.leftAnchor, bottom: nil, right: nil, paddingTop: 5, paddingLeft: 10, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
+        backButton.anchor(top: view.safeAreaLayoutGuide.topAnchor, left: view.leftAnchor, bottom: nil, right: nil, paddingTop: 5, paddingLeft: 5, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
         
         view.addSubview(titleLabel)
         titleLabel.anchor(top: view.safeAreaLayoutGuide.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 20, paddingLeft: 10, paddingBottom: 0, paddingRight: 10, width: 0, height: 0)

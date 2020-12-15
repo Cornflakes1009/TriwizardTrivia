@@ -46,7 +46,7 @@ class SurvivalQuestionViewController: UIViewController, GADInterstitialDelegate,
     let backButton: UIButton = {
         let button = UIButton(type: .system)
         button.isEnabled = true
-        button.tintColor = whiteColor
+        button.tintColor = backButtonColor
         button.setTitleColor(whiteColor, for: .normal)
         button.addTarget(self, action: #selector(backTapped), for: .touchUpInside)
         return button
@@ -98,7 +98,7 @@ class SurvivalQuestionViewController: UIViewController, GADInterstitialDelegate,
     
     // MARK:- Answer Buttons
     let optionZeroButton: GameButton = {
-        let button = GameButton(title: "", backgroundColor: crimsonColor, fontColor: gryffindorFontColor)
+        let button = GameButton(title: "", backgroundColor: gryffindorColor, fontColor: gryffindorFontColor)
         button.titleLabel?.font = answerFont
         button.addTarget(self, action: #selector(answerTapped(_:)), for: .touchUpInside)
         return button
@@ -148,7 +148,7 @@ class SurvivalQuestionViewController: UIViewController, GADInterstitialDelegate,
     }()
     
     let readyButton: GameButton = {
-        let button = GameButton(title: "Ready?", backgroundColor: crimsonColor, fontColor: gryffindorFontColor)
+        let button = GameButton(title: "Ready?", backgroundColor: gryffindorColor, fontColor: gryffindorFontColor)
         button.titleLabel?.font = buttonFont
         button.addTarget(self, action: #selector(readyTapped), for: .touchUpInside)
         return button
@@ -185,7 +185,7 @@ class SurvivalQuestionViewController: UIViewController, GADInterstitialDelegate,
     }()
     
     let extraLifeButton: GameButton = {
-        let button = GameButton(title: "Extra Life?", backgroundColor: crimsonColor, fontColor: gryffindorFontColor)
+        let button = GameButton(title: "Extra Life?", backgroundColor: gryffindorColor, fontColor: gryffindorFontColor)
         button.titleLabel?.font = buttonFont
         button.addTarget(self, action: #selector(extraLifeTapped), for: .touchUpInside)
         return button
@@ -227,7 +227,7 @@ class SurvivalQuestionViewController: UIViewController, GADInterstitialDelegate,
     }()
     
     let exitGameConfirm: GameButton = {
-        let button = GameButton(title: "Exit", backgroundColor: crimsonColor, fontColor: gryffindorFontColor)
+        let button = GameButton(title: "Exit", backgroundColor: gryffindorColor, fontColor: gryffindorFontColor)
         button.addTarget(self, action: #selector(confirmTapped), for: .touchUpInside)
         return button
     }()

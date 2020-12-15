@@ -7,6 +7,10 @@
 
 import UIKit
 
+
+// MARK:- This file isn't in use
+// MARK:-
+
 class RulesAndCreditsViewController: UIViewController {
     
     @IBOutlet var viewContainer: UIView!

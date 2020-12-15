@@ -44,7 +44,7 @@ class ModeSelectViewController: UIViewController {
     let singlePlayerButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("Classic", for: .normal)
-        button.backgroundColor = crimsonColor
+        button.backgroundColor = gryffindorColor
         button.setTitleColor(buttonTitleColor, for: .normal)
         button.layer.cornerRadius = 5
         button.setTitleShadowColor(.black, for: .normal)
@@ -66,7 +66,7 @@ class ModeSelectViewController: UIViewController {
     let partyButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("Party", for: .normal)
-        button.backgroundColor = crimsonColor
+        button.backgroundColor = gryffindorColor
         button.setTitleColor(buttonTitleColor, for: .normal)
         button.setTitleShadowColor(.black, for: .normal)
         button.titleLabel?.layer.shadowRadius = 3.0
@@ -88,7 +88,7 @@ class ModeSelectViewController: UIViewController {
     let survivalButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("Survival", for: .normal)
-        button.backgroundColor = crimsonColor
+        button.backgroundColor = gryffindorColor
         button.setTitleColor(buttonTitleColor, for: .normal)
         button.layer.cornerRadius = 5
         button.setTitleShadowColor(.black, for: .normal)
@@ -110,7 +110,7 @@ class ModeSelectViewController: UIViewController {
     let blitzButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("Blitz", for: .normal)
-        button.backgroundColor = crimsonColor
+        button.backgroundColor = gryffindorColor
         button.setTitleColor(buttonTitleColor, for: .normal)
         button.layer.cornerRadius = 5
         button.setTitleShadowColor(.black, for: .normal)
@@ -140,6 +140,34 @@ class ModeSelectViewController: UIViewController {
         button.layer.shadowRadius = 10.0
         button.layer.masksToBounds = false
         button.addTarget(self, action: #selector(creditsTapped), for: .touchUpInside)
+        return button
+    }()
+    
+    let scoresButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setTitle("Scores", for: .normal)
+        button.setTitleColor(.white, for: .normal)
+        button.titleLabel?.font = instructionLabelFont
+        button.isEnabled = true
+        button.layer.shadowOffset = CGSize(width: 0, height: 3)
+        button.layer.shadowOpacity = 1.0
+        button.layer.shadowRadius = 10.0
+        button.layer.masksToBounds = false
+        button.addTarget(self, action: #selector(scoresTapped), for: .touchUpInside)
+        return button
+    }()
+    
+    let contactButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setTitle("Contact", for: .normal)
+        button.setTitleColor(.white, for: .normal)
+        button.titleLabel?.font = instructionLabelFont
+        button.isEnabled = true
+        button.layer.shadowOffset = CGSize(width: 0, height: 3)
+        button.layer.shadowOpacity = 1.0
+        button.layer.shadowRadius = 10.0
+        button.layer.masksToBounds = false
+        button.addTarget(self, action: #selector(scoresTapped), for: .touchUpInside)
         return button
     }()
     
@@ -174,14 +202,14 @@ class ModeSelectViewController: UIViewController {
         backgroundImage.anchor(top: view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
         
         view.addSubview(titleLabel)
-        titleLabel.anchor(top: view.safeAreaLayoutGuide.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 20, paddingLeft: 10, paddingBottom: 0, paddingRight: 10, width: 0, height: 0)
-        
-        view.addSubview(instructionLabel)
-        instructionLabel.anchor(top: titleLabel.bottomAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 20, paddingLeft: 20, paddingBottom: 0, paddingRight: 20, width: 0, height: 0)
+        titleLabel.anchor(top: view.safeAreaLayoutGuide.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 10, paddingLeft: 10, paddingBottom: 0, paddingRight: 10, width: 0, height: 0)
         
         setupStackView()
-        view.addSubview(creditsButton)
-        creditsButton.anchor(top: stackView.bottomAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 10, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
+        
+        setupHorizontalStackView()
+        
+        view.addSubview(instructionLabel)
+        instructionLabel.anchor(top: nil, left: view.leftAnchor, bottom: stackView.topAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 20, paddingBottom: -10, paddingRight: 20, width: 0, height: 0)
         
         setupBannerView()
         
@@ -194,7 +222,7 @@ class ModeSelectViewController: UIViewController {
     var stackView = UIStackView()
     // MARK: Setting Up the StackView
     func setupStackView() {
-        stackView = UIStackView(arrangedSubviews: [singlePlayerButton, partyButton, survivalButton,blitzButton])
+        stackView = UIStackView(arrangedSubviews: [singlePlayerButton, partyButton, survivalButton, blitzButton])
         stackView.distribution = .fillEqually
         stackView.axis = .vertical
         stackView.spacing = 10
@@ -203,7 +231,30 @@ class ModeSelectViewController: UIViewController {
         let stackViewHeight = CGFloat(Int(buttonHeight) * stackView.arrangedSubviews.count + 40)
         
         view.addSubview(stackView)
-        stackView.anchor(top: instructionLabel.bottomAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 10, paddingLeft: 20, paddingBottom: 0, paddingRight: 20, width: 0, height: stackViewHeight)
+        stackView.anchor(top: nil, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 10, paddingLeft: 20, paddingBottom: 0, paddingRight: 20, width: 0, height: stackViewHeight)
+        
+        stackView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        stackView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+//        stackView.anchor(top: nil, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 0, paddingLeft: 20, paddingBottom: 0, paddingRight: 20, width: 0, height: stackViewHeight)
+    }
+    
+    var horizontalStackView = UIStackView()
+    // MARK: Setting Up the StackView
+    func setupHorizontalStackView() {
+        horizontalStackView = UIStackView(arrangedSubviews: [creditsButton, scoresButton, contactButton])
+        horizontalStackView.distribution = .fillEqually
+        horizontalStackView.axis = .horizontal
+        stackView.spacing = 10
+        
+        // calculating based on the number of buttons in stack view and adding 20 padding
+        //let stackViewHeight = CGFloat(Int(buttonHeight) * stackView.arrangedSubviews.count + 40)
+        
+        view.addSubview(horizontalStackView)
+        horizontalStackView.anchor(top: stackView.bottomAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 10, paddingLeft: 20, paddingBottom: 0, paddingRight: 20, width: 0, height: buttonHeight)
+        
+//        stackView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+//        stackView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+//        stackView.anchor(top: nil, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 0, paddingLeft: 20, paddingBottom: 0, paddingRight: 20, width: 0, height: 0)
     }
     
     func setupBannerView() {
@@ -241,6 +292,12 @@ class ModeSelectViewController: UIViewController {
     
     @objc func creditsTapped() {
         let vc = self.storyboard?.instantiateViewController(identifier: "GameCreditsViewController") as! GameCreditsViewController
+        self.navigationController?.pushViewController(vc, animated: true)
+        vibrate()
+    }
+    
+    @objc func scoresTapped() {
+        let vc = self.storyboard?.instantiateViewController(identifier: "ScoresViewController") as! ScoresViewController
         self.navigationController?.pushViewController(vc, animated: true)
         vibrate()
     }

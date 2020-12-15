@@ -59,7 +59,7 @@ class SoloScoreResultsViewController: UIViewController{
     let restartButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("Restart", for: .normal)
-        button.backgroundColor = crimsonColor
+        button.backgroundColor = gryffindorColor
         button.setTitleColor(buttonTitleColor, for: .normal)
         button.layer.cornerRadius = 5
         button.titleLabel?.font = buttonFont

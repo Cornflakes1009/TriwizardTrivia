@@ -20,9 +20,9 @@ class ViewController: UIViewController {
     
     let backButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitle("< Back", for: .normal)
-        button.setTitleColor(buttonTitleColor, for: .normal)
-        //            button.titleLabel?.font = buttonFont
+        button.isEnabled = true
+        button.tintColor = backButtonColor
+        button.setTitleColor(whiteColor, for: .normal)
         button.addTarget(self, action: #selector(backTapped), for: .touchUpInside)
         return button
     }()
@@ -41,8 +41,12 @@ class ViewController: UIViewController {
             directionsLabel.font = directionsLabel.font.withSize(30)
         }
         
+        let backButtonImageConfig = UIImage.SymbolConfiguration(pointSize: 25, weight: .light, scale: .large)
+        let backButtonImage = UIImage(systemName: backButtonSymbol, withConfiguration: backButtonImageConfig)
+        
+        backButton.setImage(backButtonImage, for: .normal)
         view.addSubview(backButton)
-        backButton.anchor(top: view.safeAreaLayoutGuide.topAnchor, left: view.leftAnchor, bottom: nil, right: nil, paddingTop: 5, paddingLeft: 10, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
+        backButton.anchor(top: view.safeAreaLayoutGuide.topAnchor, left: view.leftAnchor, bottom: nil, right: nil, paddingTop: 5, paddingLeft: 5, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
         
         for button in teamButtons {
             // if phone is bigger than SE

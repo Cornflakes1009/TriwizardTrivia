@@ -50,30 +50,35 @@ func varyForScreenSizes(screenHeight: CGFloat) {
         textViewFont =  UIFont(name: "Papyrus", size: 20)
         instructionLabelFont = UIFont(name: "Papyrus", size: 21)
         buttonFont = UIFont(name: "Harry P", size: 60)
+        scoreViewFont = UIFont(name: "Papyrus", size: 35)
         break
     case Devices.twelveHeight.rawValue:
         titleLabelFont = UIFont(name: "ParryHotter", size: 50)
         textViewFont =  UIFont(name: "Papyrus", size: 20)
         instructionLabelFont = UIFont(name: "Papyrus", size: 21)
         buttonFont = UIFont(name: "Harry P", size: 50)
+        scoreViewFont = UIFont(name: "Papyrus", size: 30)
         break
     case Devices.elevenAndProMaxHeight.rawValue:
         titleLabelFont = UIFont(name: "ParryHotter", size: 55)
         textViewFont =  UIFont(name: "Papyrus", size: 20)
         instructionLabelFont = UIFont(name: "Papyrus", size: 20)
         buttonFont = UIFont(name: "Harry P", size: 55)
+        scoreViewFont = UIFont(name: "Papyrus", size: 35)
         break
     case Devices.elevenProHeight.rawValue:
         titleLabelFont = UIFont(name: "ParryHotter", size: 50)
         textViewFont =  UIFont(name: "Papyrus", size: 20)
         instructionLabelFont = UIFont(name: "Papyrus", size: 21)
         buttonFont = UIFont(name: "Harry P", size: 50)
+        scoreViewFont = UIFont(name: "Papyrus", size: 35)
         break
     case Devices.eightPlusHeight.rawValue:
         titleLabelFont = UIFont(name: "ParryHotter", size: 60)
         textViewFont =  UIFont(name: "Papyrus", size: 20)
         instructionLabelFont = UIFont(name: "Papyrus", size: 25)
         buttonFont = UIFont(name: "Harry P", size: 50)
+        scoreViewFont = UIFont(name: "Papyrus", size: 30)
         break
     case Devices.eightHeight.rawValue:
         titleLabelFont = UIFont(name: "ParryHotter", size: 60)
@@ -81,11 +86,13 @@ func varyForScreenSizes(screenHeight: CGFloat) {
         instructionLabelFont = UIFont(name: "Papyrus", size: 20)
         buttonFont = UIFont(name: "Harry P", size: 50)
         titleLabelFont = UIFont(name: "ParryHotter", size: 50)
+        scoreViewFont = UIFont(name: "Papyrus", size: 25)
         break
     case Devices.sEHeight.rawValue:
         instructionLabelFont = UIFont(name: "Papyrus", size: 15)
         titleLabelFont = UIFont(name: "ParryHotter", size: 45)
         buttonFont = UIFont(name: "Harry P", size: 45)
+        scoreViewFont = UIFont(name: "Papyrus", size: 20)
         break
     case Devices.bigiPadProHeight.rawValue:
         break

@@ -15,7 +15,7 @@ class BlitzQuestionViewController: UIViewController, GADInterstitialDelegate, GA
     func rewardedAd(_ rewardedAd: GADRewardedAd, userDidEarn reward: GADAdReward) {
         UIView.animate(withDuration: 1) {
             self.correctAnswerView.alpha = 0
-            self.extraLifeExitButton.removeFromSuperview()
+            self.extraLifeExitButton.alpha = 0
         }
         
         time = 30
@@ -40,7 +40,7 @@ class BlitzQuestionViewController: UIViewController, GADInterstitialDelegate, GA
     let backButton: UIButton = {
         let button = UIButton(type: .system)
         button.isEnabled = true
-        button.tintColor = whiteColor
+        button.tintColor = backButtonColor
         button.setTitleColor(whiteColor, for: .normal)
         button.addTarget(self, action: #selector(backTapped), for: .touchUpInside)
         return button
@@ -92,7 +92,7 @@ class BlitzQuestionViewController: UIViewController, GADInterstitialDelegate, GA
     
     // MARK:- Answer Buttons
     let optionZeroButton: GameButton = {
-        let button = GameButton(title: "", backgroundColor: crimsonColor, fontColor: gryffindorFontColor)
+        let button = GameButton(title: "", backgroundColor: gryffindorColor, fontColor: gryffindorFontColor)
         button.titleLabel?.font = answerFont
         button.addTarget(self, action: #selector(answerTapped(_:)), for: .touchUpInside)
         return button
@@ -140,7 +140,7 @@ class BlitzQuestionViewController: UIViewController, GADInterstitialDelegate, GA
     }()
     
     let readyButton: GameButton = {
-        let button = GameButton(title: "Ready?", backgroundColor: crimsonColor, fontColor: gryffindorFontColor)
+        let button = GameButton(title: "Ready?", backgroundColor: gryffindorColor, fontColor: gryffindorFontColor)
         button.addTarget(self, action: #selector(readyTapped), for: .touchUpInside)
         return button
     }()
@@ -176,14 +176,14 @@ class BlitzQuestionViewController: UIViewController, GADInterstitialDelegate, GA
     }()
     
     let nextQuestionButton: GameButton = {
-        let button = GameButton(title: "Next Question", backgroundColor: crimsonColor, fontColor: gryffindorFontColor)
+        let button = GameButton(title: "Next Question", backgroundColor: gryffindorColor, fontColor: gryffindorFontColor)
         button.addTarget(self, action: #selector(nextQuestionTapped), for: .touchUpInside)
         button.titleLabel?.font = buttonFont
         return button
     }()
     
     let extraLifeButton: GameButton = {
-        let button = GameButton(title: "Extra Life?", backgroundColor: crimsonColor, fontColor: gryffindorFontColor)
+        let button = GameButton(title: "Extra Life?", backgroundColor: gryffindorColor, fontColor: gryffindorFontColor)
         button.addTarget(self, action: #selector(extraLifeTapped), for: .touchUpInside)
         return button
     }()
@@ -224,7 +224,7 @@ class BlitzQuestionViewController: UIViewController, GADInterstitialDelegate, GA
     }()
     
     let exitGameConfirm: UIButton = {
-        let button = GameButton(title: "Exit", backgroundColor: crimsonColor, fontColor: gryffindorFontColor)
+        let button = GameButton(title: "Exit", backgroundColor: gryffindorColor, fontColor: gryffindorFontColor)
         button.addTarget(self, action: #selector(confirmTapped), for: .touchUpInside)
         return button
     }()
@@ -384,6 +384,7 @@ class BlitzQuestionViewController: UIViewController, GADInterstitialDelegate, GA
     func showRewardedAdAnswerView() {
         nextQuestionButton.removeFromSuperview()
         backButton.isEnabled = false
+        extraLifeExitButton.alpha = 1
         view.addSubview(correctAnswerView)
         correctAnswerView.anchor(top: view.safeAreaLayoutGuide.topAnchor, left: view.leftAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, right: view.rightAnchor, paddingTop: 10, paddingLeft: 10, paddingBottom: -10, paddingRight: 10, width: 0, height: 0)
         UIView.animate(withDuration: 0.5) {
@@ -414,7 +415,7 @@ class BlitzQuestionViewController: UIViewController, GADInterstitialDelegate, GA
         popUpBackground.centerYAnchor.constraint(equalTo: correctAnswerView.centerYAnchor).isActive = true
         
         correctAnswerView.addSubview(correctAnswerTopLabel)
-        correctAnswerTopLabel.anchor(top: extraLifeExitButton.bottomAnchor, left: correctAnswerView.leftAnchor, bottom: nil, right: correctAnswerView.rightAnchor, paddingTop: 10, paddingLeft: 20, paddingBottom: 0, paddingRight: 20, width: 0, height: 0)
+        correctAnswerTopLabel.anchor(top: extraLifeExitButton.bottomAnchor, left: correctAnswerView.leftAnchor, bottom: nil, right: correctAnswerView.rightAnchor, paddingTop: 20, paddingLeft: 20, paddingBottom: 0, paddingRight: 20, width: 0, height: 0)
         
         correctAnswerView.addSubview(correctAnswerLabel)
         correctAnswerLabel.anchor(top: nil, left: correctAnswerView.leftAnchor, bottom: nil, right: correctAnswerView.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)

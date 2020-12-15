@@ -17,6 +17,7 @@ let popUpBackgroundImage    =   UIImage(named: "sorting_hat")
 // MARK:- Fonts
 var titleLabelFont          =   UIFont(name: "ParryHotter", size: 30)
 var instructionLabelFont    =   UIFont(name: "Papyrus", size: 25)
+var scoreViewFont           =   UIFont(name: "Papyrus", size: 15)
 var popupLabelFont          =   UIFont(name: "Papyrus", size: 20)
 var buttonFont              =   UIFont(name: "Harry P", size: 30)
 let answerFont              =   UIFont(name: "Harry P", size: 30)
@@ -24,7 +25,7 @@ var textViewFont            =   UIFont(name: "Papyrus", size: 15)
 let finalScoreLabelFont     =   UIFont(name: "Harry P", size: 70)
 
 // MARK:- Colors
-let crimsonColor            =   UIColor.rgb(red: 125, green: 25, blue: 21, alpha: 1)
+let gryffindorColor            =   UIColor.rgb(red: 125, green: 25, blue: 21, alpha: 1)
 let hufflepuffColor         =   UIColor.rgb(red: 238, green: 182, blue: 69, alpha: 1)
 let ravenclawColor          =   UIColor.rgb(red: 26, green: 27, blue: 76, alpha: 1)
 let slytherinColor          =   UIColor.rgb(red: 54, green: 118, blue: 75, alpha: 1)
@@ -34,6 +35,7 @@ let hufflepuffFontColor     =   UIColor.rgb(red: 20, green: 20, blue: 35, alpha:
 let ravenclawFontColor      =   UIColor.rgb(red: 199, green: 199, blue: 208, alpha: 1)
 let slytherinFontColor      =   UIColor.rgb(red: 186, green: 185, blue: 195, alpha: 1)
 let whiteColor              =   UIColor.rgb(red: 255, green: 255, blue: 255, alpha: 1)
+let backButtonColor         =   UIColor.rgb(red: 100, green: 100, blue: 100, alpha: 1.0)
 
 // MARK:- AdMob
 // TEST
@@ -64,6 +66,7 @@ func resetGame() {
     soloQuestionIndex       =   0
     questionIndex           =   0
     currentTeam             =   0
+    correctlyAnswered       =   0
     soloQuestionList.removeAll()
     questionList.removeAll()
     allQuestionList.removeAll()

@@ -23,9 +23,9 @@ class SoloQuestionViewController: UIViewController, GADInterstitialDelegate {
     
     let backButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitle("< Back", for: .normal)
-        button.setTitleColor(buttonTitleColor, for: .normal)
-        //            button.titleLabel?.font = buttonFont
+        button.isEnabled = true
+        button.tintColor = backButtonColor
+        button.setTitleColor(whiteColor, for: .normal)
         button.addTarget(self, action: #selector(backTapped), for: .touchUpInside)
         return button
     }()
@@ -44,7 +44,7 @@ class SoloQuestionViewController: UIViewController, GADInterstitialDelegate {
     let optionZeroButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("", for: .normal)
-        button.backgroundColor = crimsonColor
+        button.backgroundColor = gryffindorColor
         button.setTitleColor(gryffindorFontColor, for: .normal)
         button.layer.cornerRadius = 5
         button.titleLabel?.font = answerFont
@@ -141,7 +141,7 @@ class SoloQuestionViewController: UIViewController, GADInterstitialDelegate {
     let nextQuestionButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("Next Question", for: .normal)
-        button.backgroundColor = crimsonColor
+        button.backgroundColor = gryffindorColor
         button.setTitleColor(buttonTitleColor, for: .normal)
         button.layer.cornerRadius = 5
         button.titleLabel?.font = buttonFont
@@ -212,7 +212,7 @@ class SoloQuestionViewController: UIViewController, GADInterstitialDelegate {
     let exitGameConfirm: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("Exit", for: .normal)
-        button.backgroundColor = crimsonColor
+        button.backgroundColor = gryffindorColor
         button.setTitleColor(gryffindorFontColor, for: .normal)
         button.layer.cornerRadius = 5
         button.titleLabel?.font = buttonFont
@@ -257,8 +257,12 @@ class SoloQuestionViewController: UIViewController, GADInterstitialDelegate {
         view.addSubview(questionLabel)
         questionLabel.anchor(top: view.safeAreaLayoutGuide.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 30, paddingLeft: 20, paddingBottom: 0, paddingRight: 20, width: 0, height: questionLableHeight)
         
+        let backButtonImageConfig = UIImage.SymbolConfiguration(pointSize: 25, weight: .light, scale: .large)
+        let backButtonImage = UIImage(systemName: backButtonSymbol, withConfiguration: backButtonImageConfig)
+        
+        backButton.setImage(backButtonImage, for: .normal)
         view.addSubview(backButton)
-        backButton.anchor(top: view.safeAreaLayoutGuide.topAnchor, left: view.leftAnchor, bottom: nil, right: nil, paddingTop: 5, paddingLeft: 10, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
+        backButton.anchor(top: view.safeAreaLayoutGuide.topAnchor, left: view.leftAnchor, bottom: nil, right: nil, paddingTop: 5, paddingLeft: 5, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
         
         setupStackView()
         

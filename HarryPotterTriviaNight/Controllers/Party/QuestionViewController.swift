@@ -35,8 +35,9 @@ class QuestionViewController: UIViewController, GADInterstitialDelegate {
     
     let backButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitle("< Back", for: .normal)
-        button.setTitleColor(buttonTitleColor, for: .normal)
+        button.isEnabled = true
+        button.tintColor = backButtonColor
+        button.setTitleColor(whiteColor, for: .normal)
         button.addTarget(self, action: #selector(backTapped), for: .touchUpInside)
         return button
     }()
@@ -101,7 +102,7 @@ class QuestionViewController: UIViewController, GADInterstitialDelegate {
     let exitGameConfirm: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("Exit", for: .normal)
-        button.backgroundColor = crimsonColor
+        button.backgroundColor = gryffindorColor
         button.setTitleColor(gryffindorFontColor, for: .normal)
         button.layer.cornerRadius = 5
         button.titleLabel?.font = buttonFont
@@ -174,8 +175,12 @@ class QuestionViewController: UIViewController, GADInterstitialDelegate {
         teamLabel.layer.shadowOffset = CGSize(width: 4, height: 4)
         teamLabel.layer.masksToBounds = false
         
+        let backButtonImageConfig = UIImage.SymbolConfiguration(pointSize: 25, weight: .light, scale: .large)
+        let backButtonImage = UIImage(systemName: backButtonSymbol, withConfiguration: backButtonImageConfig)
+        
+        backButton.setImage(backButtonImage, for: .normal)
         view.addSubview(backButton)
-        backButton.anchor(top: view.safeAreaLayoutGuide.topAnchor, left: view.leftAnchor, bottom: nil, right: nil, paddingTop: 5, paddingLeft: 10, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
+        backButton.anchor(top: view.safeAreaLayoutGuide.topAnchor, left: view.leftAnchor, bottom: nil, right: nil, paddingTop: 5, paddingLeft: 5, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
         
         view.addSubview(scoreLabel)
         scoreLabel.anchor(top: view.safeAreaLayoutGuide.topAnchor, left: nil, bottom: nil, right: view.rightAnchor, paddingTop: 15, paddingLeft: 0, paddingBottom: 0, paddingRight: 15, width: 0, height: 0)
@@ -213,7 +218,7 @@ class QuestionViewController: UIViewController, GADInterstitialDelegate {
             questionLabel.text = "Question: \(questionList[questionIndex].question)"
             answerLabel.text = "Answer: \(questionList[questionIndex].answer)"
             correctButton.backgroundColor = slytherinColor
-            incorrectButton.backgroundColor = crimsonColor
+            incorrectButton.backgroundColor = gryffindorColor
         }
         
         scoreLabel.text = "\(questionIndex + 1)/\(questionList.count)"
@@ -264,7 +269,7 @@ class QuestionViewController: UIViewController, GADInterstitialDelegate {
     @IBAction func correctTapped(_ sender: Any) {
         vibrate()
         correctButton.backgroundColor = #colorLiteral(red: 0.4352941215, green: 0.4431372583, blue: 0.4745098054, alpha: 1)
-        incorrectButton.backgroundColor = crimsonColor
+        incorrectButton.backgroundColor = gryffindorColor
         answeredCorrectly = true
         nextQuestionButton.isHidden = false
     }

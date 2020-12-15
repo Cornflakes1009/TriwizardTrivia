@@ -21,6 +21,7 @@
 		D9251F792584C0440069C6EA /* ConvertAllJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9251F782584C0440069C6EA /* ConvertAllJSON.swift */; };
 		D9251F7C2584C2070069C6EA /* AllQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9251F7B2584C2070069C6EA /* AllQuestion.swift */; };
 		D9251F80258586FF0069C6EA /* GameButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9251F7F258586FF0069C6EA /* GameButton.swift */; };
+		D9251F8325888DC20069C6EA /* ScoresViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9251F8225888DC20069C6EA /* ScoresViewController.swift */; };
 		D92BB1092550F2FF00BF84BE /* GameCreditsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92BB1082550F2FF00BF84BE /* GameCreditsViewController.swift */; };
 		D945B8EF22B6E91B0087E171 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D945B8EE22B6E91B0087E171 /* AppDelegate.swift */; };
 		D945B8F122B6E91B0087E171 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D945B8F022B6E91B0087E171 /* ViewController.swift */; };
@@ -64,6 +65,7 @@
 		D9251F782584C0440069C6EA /* ConvertAllJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertAllJSON.swift; sourceTree = "<group>"; };
 		D9251F7B2584C2070069C6EA /* AllQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllQuestion.swift; sourceTree = "<group>"; };
 		D9251F7F258586FF0069C6EA /* GameButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameButton.swift; sourceTree = "<group>"; };
+		D9251F8225888DC20069C6EA /* ScoresViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoresViewController.swift; sourceTree = "<group>"; };
 		D92BB1082550F2FF00BF84BE /* GameCreditsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCreditsViewController.swift; sourceTree = "<group>"; };
 		D945B8EB22B6E91B0087E171 /* TriwizardTrivia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TriwizardTrivia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D945B8EE22B6E91B0087E171 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -202,6 +204,7 @@
 				D98DCB022544FB2B0092B483 /* ModeSelectViewController.swift */,
 				D92BB1082550F2FF00BF84BE /* GameCreditsViewController.swift */,
 				D916452423F1153900CCBD71 /* RulesAndCreditsViewController.swift */,
+				D9251F8225888DC20069C6EA /* ScoresViewController.swift */,
 			);
 			path = Global;
 			sourceTree = "<group>";
@@ -418,6 +421,7 @@
 				D945B8EF22B6E91B0087E171 /* AppDelegate.swift in Sources */,
 				D98D0A06254BF21E00423F08 /* SoloQuestionViewController.swift in Sources */,
 				D9251F752584BD000069C6EA /* SurvivalResultsViewController.swift in Sources */,
+				D9251F8325888DC20069C6EA /* ScoresViewController.swift in Sources */,
 				D916452D23F1471F00CCBD71 /* CreditsViewController.swift in Sources */,
 				D99F66B2255DF158000EE745 /* ConfigureVaryingSizes.swift in Sources */,
 				D92BB1092550F2FF00BF84BE /* GameCreditsViewController.swift in Sources */,
