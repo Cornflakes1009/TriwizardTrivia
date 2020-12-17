@@ -61,6 +61,7 @@ var allQuestionList         =   [AllQuestion]()
 var correctlyAnswered       =   0
 var soloScore               =   0
 
+// MARK:- Game Functions
 func resetGame() {
     soloScore               =   0
     soloQuestionIndex       =   0
