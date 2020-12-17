@@ -633,7 +633,7 @@
                                     <constraint firstAttribute="height" constant="75" id="PPe-j2-Se6"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="ParryHotter" family="Parry Hotter" pointSize="30"/>
-                                <state key="normal" title="Restart">
+                                <state key="normal" title="Back to Menu">
                                     <color key="titleColor" red="0.92156862750000001" green="0.75294117650000003" blue="0.25882352939999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -675,7 +675,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TDF-UB-awM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1681" y="133"/>
+            <point key="canvasLocation" x="1567" y="133"/>
         </scene>
         <!--Blitz Question View Controller-->
         <scene sceneID="WFA-cy-B8X">

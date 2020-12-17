@@ -84,10 +84,8 @@ class BlitzQuestionViewController: UIViewController, GADInterstitialDelegate, GA
     
     // MARK:- Banner View
     let bannerView: GADBannerView = {
-        let banner = GADBannerView()
-        banner.adUnitID = adUnitID
-        banner.load(GADRequest())
-        return banner
+        let bannerView = GADBannerView()
+        return bannerView
     }()
     
     // MARK:- Answer Buttons
@@ -288,7 +286,7 @@ class BlitzQuestionViewController: UIViewController, GADInterstitialDelegate, GA
         
         bannerView.rootViewController = self
         view.addSubview(bannerView)
-        bannerView.anchor(top: nil, left: nil, bottom: view.bottomAnchor, right: nil, paddingTop: 0, paddingLeft: 0, paddingBottom: -20, paddingRight: 0, width: 281, height: 50)
+        bannerView.anchor(top: nil, left: nil, bottom: view.safeAreaLayoutGuide.bottomAnchor, right: nil, paddingTop: 0, paddingLeft: 0, paddingBottom: -20, paddingRight: 0, width: 281, height: 50)
         bannerView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         
         setupStackView()
@@ -297,6 +295,8 @@ class BlitzQuestionViewController: UIViewController, GADInterstitialDelegate, GA
         // needs to be added last so that it shows on top at game mode launch
         addExplanationView()
         backButton.isEnabled = false
+        
+        setupBannerView()
     }
     
     // MARK:- StackView
@@ -483,6 +483,13 @@ class BlitzQuestionViewController: UIViewController, GADInterstitialDelegate, GA
           print("Loading Succeeded")
         }
       }
+    }
+    
+    func setupBannerView() {
+        // starting ads on the bannerview
+        bannerView.adUnitID = prodAdMobsKey
+        bannerView.rootViewController = self
+        bannerView.load(GADRequest())
     }
     
     // MARK:- Check if Answer Tapped is Correct

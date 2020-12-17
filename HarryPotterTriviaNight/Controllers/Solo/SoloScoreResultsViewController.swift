@@ -58,7 +58,7 @@ class SoloScoreResultsViewController: UIViewController{
     
     let restartButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitle("Restart", for: .normal)
+        button.setTitle("Back to Menu", for: .normal)
         button.backgroundColor = gryffindorColor
         button.setTitleColor(buttonTitleColor, for: .normal)
         button.layer.cornerRadius = 5

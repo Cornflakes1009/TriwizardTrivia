@@ -109,14 +109,16 @@ class PartyRulesViewController: UIViewController {
         view.addSubview(titleLabel)
         titleLabel.anchor(top: view.safeAreaLayoutGuide.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 20, paddingLeft: 10, paddingBottom: 0, paddingRight: 10, width: 0, height: 0)
         
-        let screenHeight = UIScreen.main.bounds.size.height
-        let textViewHeight = CGFloat(screenHeight * 0.6)
-        view.addSubview(rulesTextView)
-        rulesTextView.anchor(top: titleLabel.bottomAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 20, paddingLeft: 20, paddingBottom: 0, paddingRight: 20, width: 0, height: textViewHeight)
-        
-        
         view.addSubview(playButton)
         playButton.anchor(top: nil, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 20, paddingBottom: -20, paddingRight: 20, width: 0, height: buttonHeight)
+        
+//        let screenHeight = UIScreen.main.bounds.size.height
+//        let textViewHeight = CGFloat(screenHeight * 0.6)
+        view.addSubview(rulesTextView)
+        rulesTextView.anchor(top: titleLabel.bottomAnchor, left: view.leftAnchor, bottom: playButton.topAnchor, right: view.rightAnchor, paddingTop: 10, paddingLeft: 20, paddingBottom: -10, paddingRight: 20, width: 0, height: 0)
+        
+        
+        
     }
     
     @objc func backTapped() {
