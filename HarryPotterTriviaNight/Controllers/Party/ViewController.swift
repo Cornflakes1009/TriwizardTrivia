@@ -35,10 +35,10 @@ class ViewController: UIViewController {
         if(screenHeight < 569) {
             headlineLabel.font = headlineLabel.font.withSize(34)
             beginButtonHeight.constant = 60
-            directionsLabel.font = directionsLabel.font.withSize(20)
+            directionsLabel.font = instructionLabelFont
         } else {
             headlineLabel.font = headlineLabel.font.withSize(48)
-            directionsLabel.font = directionsLabel.font.withSize(30)
+            directionsLabel.font = instructionLabelFont
         }
         
         let backButtonImageConfig = UIImage.SymbolConfiguration(pointSize: 25, weight: .light, scale: .large)

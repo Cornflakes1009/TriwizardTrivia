@@ -89,11 +89,10 @@ class SurvivalQuestionViewController: UIViewController, GADInterstitialDelegate,
     }()
     
     // MARK:- Banner View
+    // MARK:- Banner View
     let bannerView: GADBannerView = {
-        let banner = GADBannerView()
-        banner.adUnitID = adUnitID
-        banner.load(GADRequest())
-        return banner
+        let bannerView = GADBannerView()
+        return bannerView
     }()
     
     // MARK:- Answer Buttons
@@ -300,6 +299,8 @@ class SurvivalQuestionViewController: UIViewController, GADInterstitialDelegate,
         // needs to be added last so that it shows on top at game mode launch
         addExplanationView()
         backButton.isEnabled = false
+        
+        setupBannerView()
     }
     
     // MARK:- StackView
@@ -445,6 +446,13 @@ class SurvivalQuestionViewController: UIViewController, GADInterstitialDelegate,
           print("Loading Succeeded")
         }
       }
+    }
+    
+    func setupBannerView() {
+        // starting ads on the bannerview
+        bannerView.adUnitID = prodAdMobsKey
+        bannerView.rootViewController = self
+        bannerView.load(GADRequest())
     }
     
     // MARK:- Check if Answer Tapped is Correct

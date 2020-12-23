@@ -65,6 +65,7 @@ class QuestionViewController: UIViewController, GADInterstitialDelegate {
         label.font = instructionLabelFont
         label.textAlignment = .center
         label.textColor = .white
+        label.numberOfLines = 0
         return label
     }()
     
@@ -119,6 +120,16 @@ class QuestionViewController: UIViewController, GADInterstitialDelegate {
         button.addTarget(self, action: #selector(confirmTapped), for: .touchUpInside)
         return button
     }()
+    
+    let popUpBackground: UIImageView = {
+        let image = UIImageView()
+        image.image = popUpBackgroundImage
+        image.contentMode = .scaleAspectFit
+        image.clipsToBounds = true
+        image.alpha = 0.3
+        return image
+    }()
+    
     
     var answeredCorrectly = false
     
@@ -232,6 +243,13 @@ class QuestionViewController: UIViewController, GADInterstitialDelegate {
         UIView.animate(withDuration: 0.5) {
             self.exitConfirmationView.alpha = 1
         }
+        
+        exitConfirmationView.addSubview(popUpBackground)
+        popUpBackground.anchor(top: exitConfirmationView.topAnchor, left: exitConfirmationView.leftAnchor, bottom: nil, right: exitConfirmationView.rightAnchor, paddingTop: 20, paddingLeft: 20, paddingBottom: 0, paddingRight: 20, width: 0, height: 0)
+        popUpBackground.centerXAnchor.constraint(equalTo: exitConfirmationView.centerXAnchor).isActive = true
+        popUpBackground.centerYAnchor.constraint(equalTo: exitConfirmationView.centerYAnchor).isActive = true
+        
+        backButton.isEnabled = false
         
         backButton.isEnabled = false
         

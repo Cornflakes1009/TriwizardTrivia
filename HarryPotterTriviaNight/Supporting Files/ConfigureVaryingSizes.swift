@@ -50,7 +50,7 @@ func varyForScreenSizes(screenHeight: CGFloat) {
         textViewFont =  UIFont(name: "Papyrus", size: 20)
         instructionLabelFont = UIFont(name: "Papyrus", size: 21)
         buttonFont = UIFont(name: "Harry P", size: 60)
-        scoreViewFont = UIFont(name: "Papyrus", size: 35)
+        scoreViewFont = UIFont(name: "Papyrus", size: 30)
         break
     case Devices.twelveHeight.rawValue:
         titleLabelFont = UIFont(name: "ParryHotter", size: 50)
@@ -62,7 +62,7 @@ func varyForScreenSizes(screenHeight: CGFloat) {
     case Devices.elevenAndProMaxHeight.rawValue:
         titleLabelFont = UIFont(name: "ParryHotter", size: 55)
         textViewFont =  UIFont(name: "Papyrus", size: 20)
-        instructionLabelFont = UIFont(name: "Papyrus", size: 20)
+        instructionLabelFont = UIFont(name: "Papyrus", size: 25)
         buttonFont = UIFont(name: "Harry P", size: 55)
         scoreViewFont = UIFont(name: "Papyrus", size: 35)
         break
@@ -71,7 +71,7 @@ func varyForScreenSizes(screenHeight: CGFloat) {
         textViewFont =  UIFont(name: "Papyrus", size: 20)
         instructionLabelFont = UIFont(name: "Papyrus", size: 21)
         buttonFont = UIFont(name: "Harry P", size: 50)
-        scoreViewFont = UIFont(name: "Papyrus", size: 35)
+        scoreViewFont = UIFont(name: "Papyrus", size: 30)
         break
     case Devices.eightPlusHeight.rawValue:
         titleLabelFont = UIFont(name: "ParryHotter", size: 60)

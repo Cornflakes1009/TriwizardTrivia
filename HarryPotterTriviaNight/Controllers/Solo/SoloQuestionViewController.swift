@@ -126,6 +126,7 @@ class SoloQuestionViewController: UIViewController, GADInterstitialDelegate {
         label.text = "Sorry, the correct answer was:"
         label.font = instructionLabelFont
         label.textAlignment = .center
+        label.numberOfLines = 0
         label.textColor = .white
         return label
     }()
@@ -175,6 +176,7 @@ class SoloQuestionViewController: UIViewController, GADInterstitialDelegate {
         label.font = instructionLabelFont
         label.textAlignment = .center
         label.textColor = .white
+        label.numberOfLines = 0
         return label
     }()
     
@@ -228,6 +230,15 @@ class SoloQuestionViewController: UIViewController, GADInterstitialDelegate {
         button.titleLabel?.layer.masksToBounds = false
         button.addTarget(self, action: #selector(confirmTapped), for: .touchUpInside)
         return button
+    }()
+    
+    let popUpBackground: UIImageView = {
+        let image = UIImageView()
+        image.image = popUpBackgroundImage
+        image.contentMode = .scaleAspectFit
+        image.clipsToBounds = true
+        image.alpha = 0.3
+        return image
     }()
     
     let bannerView: GADBannerView = {
@@ -304,6 +315,11 @@ class SoloQuestionViewController: UIViewController, GADInterstitialDelegate {
             self.correctAnswerView.alpha = 1
         }
         
+        correctAnswerView.addSubview(popUpBackground)
+        popUpBackground.anchor(top: correctAnswerView.topAnchor, left: correctAnswerView.leftAnchor, bottom: nil, right: correctAnswerView.rightAnchor, paddingTop: 20, paddingLeft: 20, paddingBottom: 0, paddingRight: 20, width: 0, height: 0)
+        popUpBackground.centerXAnchor.constraint(equalTo: correctAnswerView.centerXAnchor).isActive = true
+        popUpBackground.centerYAnchor.constraint(equalTo: correctAnswerView.centerYAnchor).isActive = true
+        
         let currentCorrectAnswer = soloQuestionList[soloQuestionIndex].answer
         if currentCorrectAnswer == 0 {
             correctAnswerLabel.text = "\(soloQuestionList[soloQuestionIndex].optionZero)"
@@ -352,6 +368,11 @@ class SoloQuestionViewController: UIViewController, GADInterstitialDelegate {
         UIView.animate(withDuration: 0.5) {
             self.exitConfirmationView.alpha = 1
         }
+        
+        exitConfirmationView.addSubview(popUpBackground)
+        popUpBackground.anchor(top: exitConfirmationView.topAnchor, left: exitConfirmationView.leftAnchor, bottom: nil, right: exitConfirmationView.rightAnchor, paddingTop: 20, paddingLeft: 20, paddingBottom: 0, paddingRight: 20, width: 0, height: 0)
+        popUpBackground.centerXAnchor.constraint(equalTo: exitConfirmationView.centerXAnchor).isActive = true
+        popUpBackground.centerYAnchor.constraint(equalTo: exitConfirmationView.centerYAnchor).isActive = true
         
         backButton.isEnabled = false
         
