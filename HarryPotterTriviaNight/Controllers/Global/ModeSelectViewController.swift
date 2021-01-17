@@ -7,9 +7,12 @@
 //
 
 import UIKit
+import AVFoundation
 import GoogleMobileAds
 
 class ModeSelectViewController: UIViewController {
+    
+    var player: AVPlayer?
     
     let backgroundImage: UIImageView = {
         let image = UIImageView()
@@ -40,6 +43,12 @@ class ModeSelectViewController: UIViewController {
         label.textAlignment = .center
         label.textColor = .white
         return label
+    }()
+    
+    let scrollView: UIScrollView = {
+        let scrollView = UIScrollView()
+        scrollView.layer.cornerRadius = 5
+        return scrollView
     }()
     
     let singlePlayerButton: UIButton = {
@@ -130,6 +139,29 @@ class ModeSelectViewController: UIViewController {
         return button
     }()
     
+    let fantasticBeastsButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setTitle("Fantastic Beasts", for: .normal)
+        button.backgroundColor = gryffindorColor
+        button.setTitleColor(buttonTitleColor, for: .normal)
+        button.layer.cornerRadius = 5
+        button.setTitleShadowColor(.black, for: .normal)
+        button.titleLabel?.layer.shadowRadius = 3.0
+        button.titleLabel?.layer.shadowOpacity = 1.0
+        button.titleLabel?.layer.shadowOffset = CGSize(width: 4, height: 4)
+        button.titleLabel?.layer.masksToBounds = false
+        button.titleLabel?.font = buttonFont
+        button.isEnabled = true
+        button.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.95).cgColor
+        button.layer.shadowOffset = CGSize(width: 0, height: 3)
+        button.layer.shadowOpacity = 1.0
+        button.layer.shadowRadius = 10.0
+        button.layer.masksToBounds = false
+        button.addTarget(self, action: #selector(fantasticBeastsTapped), for: .touchUpInside)
+        return button
+    }()
+    
+    // MARK:- Horizontal Scroll View items
     let creditsButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("Credits", for: .normal)
@@ -177,6 +209,7 @@ class ModeSelectViewController: UIViewController {
         return bannerView
     }()
     
+    // MARK: - Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -190,8 +223,18 @@ class ModeSelectViewController: UIViewController {
         partyButton.titleLabel?.font = buttonFont
         survivalButton.titleLabel?.font = buttonFont
         blitzButton.titleLabel?.font = buttonFont
+        fantasticBeastsButton.titleLabel?.font = buttonFont
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        player?.play()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        player?.pause()
+    }
+    
+    // MARK: - Setting Up Views
     func setupViews() {
         let screenHeight = UIScreen.main.bounds.size.height
         print(screenHeight)
@@ -199,8 +242,10 @@ class ModeSelectViewController: UIViewController {
         // setting the buttonHeight for each button in the game
         buttonHeight = screenHeight / 10
         
-        view.addSubview(backgroundImage)
-        backgroundImage.anchor(top: view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
+//        view.addSubview(backgroundImage)
+//        backgroundImage.anchor(top: view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
+        
+        playBackgroundVideo()
         
         view.addSubview(titleLabel)
         titleLabel.anchor(top: view.safeAreaLayoutGuide.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 10, paddingLeft: 10, paddingBottom: 0, paddingRight: 10, width: 0, height: 0)
@@ -210,7 +255,7 @@ class ModeSelectViewController: UIViewController {
         setupHorizontalStackView()
         
         view.addSubview(instructionLabel)
-        instructionLabel.anchor(top: nil, left: view.leftAnchor, bottom: stackView.topAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 20, paddingBottom: -10, paddingRight: 20, width: 0, height: 0)
+        instructionLabel.anchor(top: nil, left: view.leftAnchor, bottom: scrollView.topAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 20, paddingBottom: -10, paddingRight: 20, width: 0, height: 0)
         
         setupBannerView()
         
@@ -219,23 +264,50 @@ class ModeSelectViewController: UIViewController {
         
         bannerView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
     }
+    // MARK: - Background Video
+    func playBackgroundVideo() {
+        let path = Bundle.main.path(forResource: "smoke", ofType: ".mp4")
+        player = AVPlayer(url: URL(fileURLWithPath: path!))
+        player!.actionAtItemEnd = AVPlayer.ActionAtItemEnd.none
+        let playerLayer = AVPlayerLayer(player: player)
+        playerLayer.frame = self.view.frame
+        playerLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
+        self.view.layer.insertSublayer(playerLayer, at: 0)
+        NotificationCenter.default.addObserver(self, selector: #selector(playerItemDidReachEnd), name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: player!.currentItem)
+        player!.seek(to: CMTime.zero)
+        player!.play()
+        self.player?.isMuted = true
+    }
     
+    @objc func playerItemDidReachEnd() {
+        player!.seek(to: CMTime.zero)
+    }
+    
+    // MARK: - Button Stack View
     var stackView = UIStackView()
     // MARK: Setting Up the StackView
     func setupStackView() {
-        stackView = UIStackView(arrangedSubviews: [singlePlayerButton, partyButton, survivalButton, blitzButton])
+        stackView = UIStackView(arrangedSubviews: [singlePlayerButton, partyButton, survivalButton, blitzButton, fantasticBeastsButton])
         stackView.distribution = .fillEqually
         stackView.axis = .vertical
         stackView.spacing = 10
         
         // calculating based on the number of buttons in stack view and adding 20 padding
-        let stackViewHeight = CGFloat(Int(buttonHeight) * stackView.arrangedSubviews.count + 40)
+        let scrollViewHeight = CGFloat(Int(buttonHeight) * stackView.arrangedSubviews.count)
+        let stackViewHeight = CGFloat(Int(buttonHeight) * stackView.arrangedSubviews.count + 50)
         
-        view.addSubview(stackView)
-        stackView.anchor(top: nil, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 10, paddingLeft: 20, paddingBottom: 0, paddingRight: 20, width: 0, height: stackViewHeight)
+        view.addSubview(scrollView)
+        scrollView.anchor(top: nil, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 10, paddingLeft: 20, paddingBottom: 0, paddingRight: 20, width: 0, height: scrollViewHeight)
         
-        stackView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        stackView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        scrollView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        scrollView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        
+        scrollView.addSubview(stackView)
+        stackView.anchor(top: scrollView.topAnchor, left: scrollView.leftAnchor, bottom: scrollView.bottomAnchor, right: scrollView.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: stackViewHeight)
+        stackView.widthAnchor.constraint(equalTo: scrollView.widthAnchor).isActive = true
+        
+        //stackView.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor).isActive = true
+        //stackView.centerYAnchor.constraint(equalTo: scrollView.centerYAnchor).isActive = true
 //        stackView.anchor(top: nil, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 0, paddingLeft: 20, paddingBottom: 0, paddingRight: 20, width: 0, height: stackViewHeight)
     }
     
@@ -251,7 +323,7 @@ class ModeSelectViewController: UIViewController {
         //let stackViewHeight = CGFloat(Int(buttonHeight) * stackView.arrangedSubviews.count + 40)
         
         view.addSubview(horizontalStackView)
-        horizontalStackView.anchor(top: stackView.bottomAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 10, paddingLeft: 20, paddingBottom: 0, paddingRight: 20, width: 0, height: buttonHeight)
+        horizontalStackView.anchor(top: scrollView.bottomAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 10, paddingLeft: 20, paddingBottom: 0, paddingRight: 20, width: 0, height: buttonHeight)
         
 //        stackView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
 //        stackView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
@@ -272,6 +344,7 @@ class ModeSelectViewController: UIViewController {
     }
     
     @objc func soloPlayTapped() {
+        soloTriviaFileToRead = "harryPotterSoloQuestions"
         let vc = self.storyboard?.instantiateViewController(identifier: "SoloPlayViewController") as! SoloPlayViewController
         self.navigationController?.pushViewController(vc, animated: true)
         vibrate()
@@ -287,6 +360,13 @@ class ModeSelectViewController: UIViewController {
     @objc func blitzTapped() {
         convertAllJSON(jsonToRead: "harryPotterSoloQuestions")
         let vc = self.storyboard?.instantiateViewController(identifier: "BlitzQuestionViewController") as! BlitzQuestionViewController
+        self.navigationController?.pushViewController(vc, animated: true)
+        vibrate()
+    }
+    
+    @objc func fantasticBeastsTapped() {
+        soloTriviaFileToRead = "fantasticBeastsQuestions"
+        let vc = self.storyboard?.instantiateViewController(identifier: "SoloPlayViewController") as! SoloPlayViewController
         self.navigationController?.pushViewController(vc, animated: true)
         vibrate()
     }

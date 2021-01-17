@@ -25,7 +25,7 @@ var textViewFont            =   UIFont(name: "Papyrus", size: 15)
 let finalScoreLabelFont     =   UIFont(name: "Harry P", size: 70)
 
 // MARK:- Colors
-let gryffindorColor            =   UIColor.rgb(red: 125, green: 25, blue: 21, alpha: 1)
+let gryffindorColor            =   UIColor.rgb(red: 125, green: 25, blue: 21, alpha: 1) 
 let hufflepuffColor         =   UIColor.rgb(red: 238, green: 182, blue: 69, alpha: 1)
 let ravenclawColor          =   UIColor.rgb(red: 26, green: 27, blue: 76, alpha: 1)
 let slytherinColor          =   UIColor.rgb(red: 54, green: 118, blue: 75, alpha: 1)
@@ -57,6 +57,7 @@ var totalNumberOfCorrect    =   defaults.integer(forKey: "totalNumberOfCorrect")
 var numOfGamesPlayed        =   defaults.integer(forKey: "numOfGamesPlayed")
 
 // MARK:- Game Variables
+var soloTriviaFileToRead    =   ""
 var allQuestionList         =   [AllQuestion]()
 var correctlyAnswered       =   0
 var soloScore               =   0

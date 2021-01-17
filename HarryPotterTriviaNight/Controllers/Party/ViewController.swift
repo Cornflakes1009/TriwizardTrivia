@@ -1,5 +1,6 @@
 import UIKit
 import GoogleMobileAds
+import AVFoundation
 
 class ViewController: UIViewController {
 
@@ -18,6 +19,8 @@ class ViewController: UIViewController {
     var ravenclawButtonSelected = false
     var slytherinButtonSelected = false
     
+    var player: AVPlayer?
+    
     let backButton: UIButton = {
         let button = UIButton(type: .system)
         button.isEnabled = true
@@ -27,8 +30,11 @@ class ViewController: UIViewController {
         return button
     }()
     
+    // MARK:- Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        playBackgroundVideo()
         
         let screenHeight = UIScreen.main.bounds.size.height
         // if iPhone SE, adjusting the font view
@@ -82,6 +88,25 @@ class ViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         setButtonsNotSelected()
+    }
+    
+    // MARK: - Background Video
+    func playBackgroundVideo() {
+        let path = Bundle.main.path(forResource: "smoke1", ofType: ".mp4")
+        player = AVPlayer(url: URL(fileURLWithPath: path!))
+        player!.actionAtItemEnd = AVPlayer.ActionAtItemEnd.none
+        let playerLayer = AVPlayerLayer(player: player)
+        playerLayer.frame = self.view.frame
+        playerLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
+        self.view.layer.insertSublayer(playerLayer, at: 0)
+        NotificationCenter.default.addObserver(self, selector: #selector(playerItemDidReachEnd), name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: player!.currentItem)
+        player!.seek(to: CMTime.zero)
+        player!.play()
+        self.player?.isMuted = true
+    }
+    
+    @objc func playerItemDidReachEnd() {
+        player!.seek(to: CMTime.zero)
     }
 
     @IBAction func houseButtonTapped(_ sender: UIButton, forEvent event: UIEvent) {

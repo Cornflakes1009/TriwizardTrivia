@@ -1,5 +1,6 @@
 import UIKit
 import GoogleMobileAds
+import AVFoundation
 
 class ResultsTableViewCell: UITableViewCell {
     @IBOutlet var trophyImage: UIImageView?
@@ -7,6 +8,8 @@ class ResultsTableViewCell: UITableViewCell {
 }
 
 class ResultsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    var player: AVPlayer?
     
     @IBOutlet weak var resultsTableView: UITableView!
     @IBOutlet var restartButton: UIButton!
@@ -58,9 +61,11 @@ class ResultsViewController: UIViewController, UITableViewDelegate, UITableViewD
         self.navigationController?.popToRootViewController(animated: true)
     }
     
+    // MARK:- Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        playBackgroundVideo()
         restartButton.layer.shadowColor = UIColor.black.cgColor
         restartButton.layer.shadowOffset = CGSize(width: 5, height: 5)
         restartButton.layer.shadowRadius = 5
@@ -90,5 +95,24 @@ class ResultsViewController: UIViewController, UITableViewDelegate, UITableViewD
             headlineLabel.font = headlineLabel.font.withSize(34)
             restartButtonHeight.constant = 60
         }
+    }
+    
+    // MARK: - Background Video
+    func playBackgroundVideo() {
+        let path = Bundle.main.path(forResource: "smoke1", ofType: ".mp4")
+        player = AVPlayer(url: URL(fileURLWithPath: path!))
+        player!.actionAtItemEnd = AVPlayer.ActionAtItemEnd.none
+        let playerLayer = AVPlayerLayer(player: player)
+        playerLayer.frame = self.view.frame
+        playerLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
+        self.view.layer.insertSublayer(playerLayer, at: 0)
+        NotificationCenter.default.addObserver(self, selector: #selector(playerItemDidReachEnd), name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: player!.currentItem)
+        player!.seek(to: CMTime.zero)
+        player!.play()
+        self.player?.isMuted = true
+    }
+    
+    @objc func playerItemDidReachEnd() {
+        player!.seek(to: CMTime.zero)
     }
 }

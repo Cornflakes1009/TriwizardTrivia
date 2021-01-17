@@ -7,11 +7,16 @@
 //
 
 import UIKit
+import AVFoundation
 import Firebase
 import GoogleMobileAds
 
 let prodAdMobsKey = "ca-app-pub-6504174477930496/1611814353"
 let testingAdMobsKey = "ca-app-pub-3940256099942544/2934735716"
+var backgroundMusic: AVAudioPlayer?
+
+let path = Bundle.main.path(forResource: "background_music.mp3", ofType:nil)!
+let url = URL(fileURLWithPath: path)
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -21,6 +26,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        do {
+            backgroundMusic = try AVAudioPlayer(contentsOf: url)
+            backgroundMusic?.numberOfLoops = -1
+            backgroundMusic?.play()
+        } catch {
+            // couldn't load file :(
+            print("failed")
+        }
         
         GADMobileAds.sharedInstance().start(completionHandler: nil)
         return true

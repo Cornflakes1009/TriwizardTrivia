@@ -8,9 +8,11 @@
 
 import UIKit
 import MessageUI
+import AVFoundation
 
 class ScoresViewController: UIViewController, MFMailComposeViewControllerDelegate {
 
+    var player: AVPlayer?
     let screenHeight = UIScreen.main.bounds.size.height
     let percentageAnsweredCorrectly = round(Double(totalNumberOfCorrect) / Double(totalNumberOfQuestions) * 100)
     
@@ -90,9 +92,31 @@ class ScoresViewController: UIViewController, MFMailComposeViewControllerDelegat
         setupViews()
     }
     
+    // MARK: - Background Video
+    func playBackgroundVideo() {
+        let path = Bundle.main.path(forResource: "smoke1", ofType: ".mp4")
+        player = AVPlayer(url: URL(fileURLWithPath: path!))
+        player!.actionAtItemEnd = AVPlayer.ActionAtItemEnd.none
+        let playerLayer = AVPlayerLayer(player: player)
+        playerLayer.frame = self.view.frame
+        playerLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
+        self.view.layer.insertSublayer(playerLayer, at: 0)
+        NotificationCenter.default.addObserver(self, selector: #selector(playerItemDidReachEnd), name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: player!.currentItem)
+        player!.seek(to: CMTime.zero)
+        player!.play()
+        self.player?.isMuted = true
+    }
+    
+    @objc func playerItemDidReachEnd() {
+        player!.seek(to: CMTime.zero)
+    }
+    
+    // MARK: - Setup Views
     func setupViews() {
-        view.addSubview(backgroundImage)
-        backgroundImage.anchor(top: view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
+//        view.addSubview(backgroundImage)
+//        backgroundImage.anchor(top: view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
+        
+        playBackgroundVideo()
         
         let backButtonImageConfig = UIImage.SymbolConfiguration(pointSize: 25, weight: .light, scale: .large)
         let backButtonImage = UIImage(systemName: backButtonSymbol, withConfiguration: backButtonImageConfig)

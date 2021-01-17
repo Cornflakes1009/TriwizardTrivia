@@ -7,12 +7,12 @@
 //
 
 import UIKit
-
+import AVFoundation
 import GoogleMobileAds
-import UIKit
 
 class SurvivalQuestionViewController: UIViewController, GADInterstitialDelegate, GADRewardedAdDelegate {
     
+    var player: AVPlayer?
     // MARK:- handle the completion and dismissal of rewarded ad
     func rewardedAd(_ rewardedAd: GADRewardedAd, userDidEarn reward: GADAdReward) {
         UIView.animate(withDuration: 1) {
@@ -268,8 +268,10 @@ class SurvivalQuestionViewController: UIViewController, GADInterstitialDelegate,
     
     // MARK:- Setup Views
     func setupViews() {
-        view.addSubview(background)
-        background.anchor(top: view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
+//        view.addSubview(background)
+//        background.anchor(top: view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
+        
+        playBackgroundVideo()
         
         let backButtonImageConfig = UIImage.SymbolConfiguration(pointSize: 25, weight: .light, scale: .large)
         let backButtonImage = UIImage(systemName: backButtonSymbol, withConfiguration: backButtonImageConfig)
@@ -303,6 +305,25 @@ class SurvivalQuestionViewController: UIViewController, GADInterstitialDelegate,
         setupBannerView()
     }
     
+    // MARK: - Background Video
+    func playBackgroundVideo() {
+        let path = Bundle.main.path(forResource: "smoke", ofType: ".mp4")
+        player = AVPlayer(url: URL(fileURLWithPath: path!))
+        player!.actionAtItemEnd = AVPlayer.ActionAtItemEnd.none
+        let playerLayer = AVPlayerLayer(player: player)
+        playerLayer.frame = self.view.frame
+        playerLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
+        self.view.layer.insertSublayer(playerLayer, at: 0)
+        NotificationCenter.default.addObserver(self, selector: #selector(playerItemDidReachEnd), name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: player!.currentItem)
+        player!.seek(to: CMTime.zero)
+        player!.play()
+        self.player?.isMuted = true
+    }
+    
+    @objc func playerItemDidReachEnd() {
+        player!.seek(to: CMTime.zero)
+    }
+    
     // MARK:- StackView
     var stackView = UIStackView()
     func setupStackView() {
@@ -327,7 +348,7 @@ class SurvivalQuestionViewController: UIViewController, GADInterstitialDelegate,
         }
         
         explanationView.addSubview(explanationTopLabel)
-        explanationTopLabel.anchor(top: explanationView.topAnchor, left: explanationView.leftAnchor, bottom: nil, right: explanationView.rightAnchor, paddingTop: 10, paddingLeft: 10, paddingBottom: 0, paddingRight: 10, width: 0, height: 0)
+        explanationTopLabel.anchor(top: explanationView.topAnchor, left: explanationView.leftAnchor, bottom: nil, right: explanationView.rightAnchor, paddingTop: 25, paddingLeft: 10, paddingBottom: 0, paddingRight: 10, width: 0, height: 0)
         
         explanationView.addSubview(popUpBackground)
         popUpBackground.anchor(top: explanationView.topAnchor, left: explanationView.leftAnchor, bottom: explanationView.bottomAnchor, right: explanationView.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)

@@ -7,10 +7,13 @@
 //
 
 import UIKit
+import AVFoundation
 import GoogleMobileAds
 
 class BlitzQuestionViewController: UIViewController, GADInterstitialDelegate, GADRewardedAdDelegate {
 
+    var player: AVPlayer?
+    
     // MARK:- handle the completion of watching rewarded ad
     func rewardedAd(_ rewardedAd: GADRewardedAd, userDidEarn reward: GADAdReward) {
         UIView.animate(withDuration: 1) {
@@ -264,8 +267,10 @@ class BlitzQuestionViewController: UIViewController, GADInterstitialDelegate, GA
     
     // MARK:- Setup Views
     func setupViews() {
-        view.addSubview(background)
-        background.anchor(top: view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
+//        view.addSubview(background)
+//        background.anchor(top: view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
+        
+        playBackgroundVideo()
         
         let backButtonImageConfig = UIImage.SymbolConfiguration(pointSize: 25, weight: .light, scale: .large)
         let backButtonImage = UIImage(systemName: backButtonSymbol, withConfiguration: backButtonImageConfig)
@@ -299,6 +304,25 @@ class BlitzQuestionViewController: UIViewController, GADInterstitialDelegate, GA
         setupBannerView()
     }
     
+    // MARK: - Background Video
+    func playBackgroundVideo() {
+        let path = Bundle.main.path(forResource: "smoke", ofType: ".mp4")
+        player = AVPlayer(url: URL(fileURLWithPath: path!))
+        player!.actionAtItemEnd = AVPlayer.ActionAtItemEnd.none
+        let playerLayer = AVPlayerLayer(player: player)
+        playerLayer.frame = self.view.frame
+        playerLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
+        self.view.layer.insertSublayer(playerLayer, at: 0)
+        NotificationCenter.default.addObserver(self, selector: #selector(playerItemDidReachEnd), name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: player!.currentItem)
+        player!.seek(to: CMTime.zero)
+        player!.play()
+        self.player?.isMuted = true
+    }
+    
+    @objc func playerItemDidReachEnd() {
+        player!.seek(to: CMTime.zero)
+    }
+    
     // MARK:- StackView
     var stackView = UIStackView()
     func setupStackView() {
@@ -323,7 +347,7 @@ class BlitzQuestionViewController: UIViewController, GADInterstitialDelegate, GA
         }
         
         explanationView.addSubview(explanationTopLabel)
-        explanationTopLabel.anchor(top: explanationView.topAnchor, left: explanationView.leftAnchor, bottom: nil, right: explanationView.rightAnchor, paddingTop: 10, paddingLeft: 10, paddingBottom: 0, paddingRight: 10, width: 0, height: 0)
+        explanationTopLabel.anchor(top: explanationView.topAnchor, left: explanationView.leftAnchor, bottom: nil, right: explanationView.rightAnchor, paddingTop: 20, paddingLeft: 10, paddingBottom: 0, paddingRight: 10, width: 0, height: 0)
         
         explanationView.addSubview(popUpBackground)
         popUpBackground.anchor(top: explanationView.topAnchor, left: explanationView.leftAnchor, bottom: explanationView.bottomAnchor, right: explanationView.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
@@ -501,6 +525,7 @@ class BlitzQuestionViewController: UIViewController, GADInterstitialDelegate, GA
             defaults.setValue(totalNumberOfCorrect, forKey: "totalNumberOfCorrect")
             correctlyAnswered += 1
         } else {
+            extraLifeExitButton.alpha = 1
             showCorrectAnswer()
         }
         

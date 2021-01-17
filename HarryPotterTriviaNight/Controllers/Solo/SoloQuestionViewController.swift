@@ -7,10 +7,12 @@
 //
 
 import UIKit
+import AVFoundation
 import GoogleMobileAds
 
 class SoloQuestionViewController: UIViewController, GADInterstitialDelegate {
     
+    var player: AVPlayer?
     var interstitial: GADInterstitial!
     
     let backgroundImage: UIImageView = {
@@ -246,6 +248,7 @@ class SoloQuestionViewController: UIViewController, GADInterstitialDelegate {
         return bannerView
     }()
     
+    // MARK:- Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
@@ -254,12 +257,18 @@ class SoloQuestionViewController: UIViewController, GADInterstitialDelegate {
         interstitial = GADInterstitial(adUnitID: adUnitID)
         let request = GADRequest()
         interstitial.load(request)
+        
+        numOfGamesPlayed += 1
+        defaults.setValue(numOfGamesPlayed, forKey: "numOfGamesPlayed")
     }
     
     func setupViews() {
         let screenHeight = UIScreen.main.bounds.size.height
-        view.addSubview(backgroundImage)
-        backgroundImage.anchor(top: view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
+        
+//        view.addSubview(backgroundImage)
+//        backgroundImage.anchor(top: view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
+        
+        playBackgroundVideo()
         
         view.addSubview(scoreLabel)
         scoreLabel.anchor(top: view.safeAreaLayoutGuide.topAnchor, left: nil, bottom: nil, right: view.rightAnchor, paddingTop: 5, paddingLeft: 0, paddingBottom: 0, paddingRight: 15, width: 0, height: 0)
@@ -283,6 +292,26 @@ class SoloQuestionViewController: UIViewController, GADInterstitialDelegate {
         bannerView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
     }
     
+    // MARK: - Background Video
+    func playBackgroundVideo() {
+        let path = Bundle.main.path(forResource: "smoke", ofType: ".mp4")
+        player = AVPlayer(url: URL(fileURLWithPath: path!))
+        player!.actionAtItemEnd = AVPlayer.ActionAtItemEnd.none
+        let playerLayer = AVPlayerLayer(player: player)
+        playerLayer.frame = self.view.frame
+        playerLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
+        self.view.layer.insertSublayer(playerLayer, at: 0)
+        NotificationCenter.default.addObserver(self, selector: #selector(playerItemDidReachEnd), name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: player!.currentItem)
+        player!.seek(to: CMTime.zero)
+        player!.play()
+        self.player?.isMuted = true
+    }
+    
+    @objc func playerItemDidReachEnd() {
+        player!.seek(to: CMTime.zero)
+    }
+    
+    // MARK: - StackView
     var stackView = UIStackView()
     // MARK: Setting Up the StackView
     func setupStackView() {
@@ -345,10 +374,13 @@ class SoloQuestionViewController: UIViewController, GADInterstitialDelegate {
     }
     
     func checkIfCorrect(buttonNumber: Int) {
+        totalNumberOfQuestions += 1
+        defaults.setValue(totalNumberOfQuestions, forKey: "totalNumberOfQuestions")
         
         if buttonNumber == soloQuestionList[soloQuestionIndex].answer {
             soloScore += 1
-            
+            totalNumberOfCorrect += 1
+            defaults.setValue(totalNumberOfCorrect, forKey: "totalNumberOfCorrect")
             if soloQuestionIndex + 1 != soloQuestionList.count {
                 soloQuestionIndex += 1
                 updateUI()

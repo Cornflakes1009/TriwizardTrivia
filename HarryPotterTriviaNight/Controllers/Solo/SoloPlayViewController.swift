@@ -7,8 +7,11 @@
 //
 
 import UIKit
+import AVFoundation
 
 class SoloPlayViewController: UIViewController {
+    
+    var player: AVPlayer?
     
     let backgroundImage: UIImageView = {
         let image = UIImageView()
@@ -125,18 +128,26 @@ class SoloPlayViewController: UIViewController {
         return button
     }()
     
+    // MARK: - Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupViews()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        player?.play()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        player?.pause()
+    }
+    
     func setupViews() {
-        view.addSubview(backgroundImage)
-        backgroundImage.anchor(top: view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
+//        view.addSubview(backgroundImage)
+//        backgroundImage.anchor(top: view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
         
-        view.addSubview(titleLabel)
-        titleLabel.anchor(top: view.safeAreaLayoutGuide.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 20, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
+        playBackgroundVideo()
         
         let backButtonImageConfig = UIImage.SymbolConfiguration(pointSize: 25, weight: .light, scale: .large)
         let backButtonImage = UIImage(systemName: backButtonSymbol, withConfiguration: backButtonImageConfig)
@@ -145,9 +156,37 @@ class SoloPlayViewController: UIViewController {
         view.addSubview(backButton)
         backButton.anchor(top: view.safeAreaLayoutGuide.topAnchor, left: view.leftAnchor, bottom: nil, right: nil, paddingTop: 5, paddingLeft: 5, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
         
+        if soloTriviaFileToRead == "harryPotterSoloQuestions" {
+            titleLabel.text = "Classic"
+        } else {
+            titleLabel.text = "Fantastic Beasts"
+        }
+        view.addSubview(titleLabel)
+        titleLabel.anchor(top: backButton.bottomAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 10, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
+        
         setupStackView()
     }
     
+    // MARK: - Background Video
+    func playBackgroundVideo() {
+        let path = Bundle.main.path(forResource: "smoke1", ofType: ".mp4")
+        player = AVPlayer(url: URL(fileURLWithPath: path!))
+        player!.actionAtItemEnd = AVPlayer.ActionAtItemEnd.none
+        let playerLayer = AVPlayerLayer(player: player)
+        playerLayer.frame = self.view.frame
+        playerLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
+        self.view.layer.insertSublayer(playerLayer, at: 0)
+        NotificationCenter.default.addObserver(self, selector: #selector(playerItemDidReachEnd), name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: player!.currentItem)
+        player!.seek(to: CMTime.zero)
+        player!.play()
+        self.player?.isMuted = true
+    }
+    
+    @objc func playerItemDidReachEnd() {
+        player!.seek(to: CMTime.zero)
+    }
+    
+    // MARK: - StackView
     var stackView = UIStackView()
     // MARK: Setting Up the StackView
     func setupStackView() {
@@ -175,22 +214,22 @@ class SoloPlayViewController: UIViewController {
     }
     
     @objc func fifteenTapped() {
-        convertSoloJSON(jsonToRead: "harryPotterSoloQuestions", numberOfQuestions: 15)
+        convertSoloJSON(jsonToRead: soloTriviaFileToRead, numberOfQuestions: 15)
         startGameNavigation()
     }
     
     @objc func twentyFiveTapped() {
-        convertSoloJSON(jsonToRead: "harryPotterSoloQuestions", numberOfQuestions: 25)
+        convertSoloJSON(jsonToRead: soloTriviaFileToRead, numberOfQuestions: 25)
         startGameNavigation()
     }
     
     @objc func fiftyTapped() {
-        convertSoloJSON(jsonToRead: "harryPotterSoloQuestions", numberOfQuestions: 50)
+        convertSoloJSON(jsonToRead: soloTriviaFileToRead, numberOfQuestions: 50)
         startGameNavigation()
     }
     
     @objc func oneHundredTapped() {
-        convertSoloJSON(jsonToRead: "harryPotterSoloQuestions", numberOfQuestions: 100)
+        convertSoloJSON(jsonToRead: soloTriviaFileToRead, numberOfQuestions: 100)
         startGameNavigation()
     }
 }

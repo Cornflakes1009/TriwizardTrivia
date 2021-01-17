@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 import GoogleMobileAds
 
 class QuestionViewController: UIViewController, GADInterstitialDelegate {
@@ -24,6 +25,7 @@ class QuestionViewController: UIViewController, GADInterstitialDelegate {
     @IBOutlet var incorrectButtonHeight: NSLayoutConstraint!
     @IBOutlet var nextQuestionButtonHeight: NSLayoutConstraint!
     var interstitial: GADInterstitial!
+    var player: AVPlayer?
     
     let backgroundImage: UIImageView = {
         let image = UIImageView()
@@ -137,9 +139,11 @@ class QuestionViewController: UIViewController, GADInterstitialDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.addSubview(backgroundImage)
-        backgroundImage.anchor(top: view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
-        view.sendSubviewToBack(backgroundImage)
+        playBackgroundVideo()
+        
+//        view.addSubview(backgroundImage)
+//        backgroundImage.anchor(top: view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
+//        view.sendSubviewToBack(backgroundImage)
         
         // adding shadow
         for button in buttons {
@@ -197,6 +201,12 @@ class QuestionViewController: UIViewController, GADInterstitialDelegate {
         scoreLabel.anchor(top: view.safeAreaLayoutGuide.topAnchor, left: nil, bottom: nil, right: view.rightAnchor, paddingTop: 15, paddingLeft: 0, paddingBottom: 0, paddingRight: 15, width: 0, height: 0)
         
         scoreLabel.text = "\(questionIndex + 1)/\(questionList.count)"
+        
+        numOfGamesPlayed += 1
+        defaults.setValue(numOfGamesPlayed, forKey: "numOfGamesPlayed")
+        
+        correctButton.titleLabel?.font = buttonFont
+        incorrectButton.titleLabel?.font = buttonFont
     }
     
     // added to prevent the segue added from partial curl
@@ -204,7 +214,24 @@ class QuestionViewController: UIViewController, GADInterstitialDelegate {
         self.view.gestureRecognizers?.removeAll()
     }
     
+    // MARK: - Background Video
+    func playBackgroundVideo() {
+        let path = Bundle.main.path(forResource: "smoke", ofType: ".mp4")
+        player = AVPlayer(url: URL(fileURLWithPath: path!))
+        player!.actionAtItemEnd = AVPlayer.ActionAtItemEnd.none
+        let playerLayer = AVPlayerLayer(player: player)
+        playerLayer.frame = self.view.frame
+        playerLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
+        self.view.layer.insertSublayer(playerLayer, at: 0)
+        NotificationCenter.default.addObserver(self, selector: #selector(playerItemDidReachEnd), name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: player!.currentItem)
+        player!.seek(to: CMTime.zero)
+        player!.play()
+        self.player?.isMuted = true
+    }
     
+    @objc func playerItemDidReachEnd() {
+        player!.seek(to: CMTime.zero)
+    }
     
     // MARK:- UI Functions
     func updateUI() {
@@ -230,6 +257,8 @@ class QuestionViewController: UIViewController, GADInterstitialDelegate {
             answerLabel.text = "Answer: \(questionList[questionIndex].answer)"
             correctButton.backgroundColor = slytherinColor
             incorrectButton.backgroundColor = gryffindorColor
+            correctButton.titleLabel?.font = buttonFont
+            incorrectButton.titleLabel?.font = buttonFont
         }
         
         scoreLabel.text = "\(questionIndex + 1)/\(questionList.count)"
@@ -301,13 +330,18 @@ class QuestionViewController: UIViewController, GADInterstitialDelegate {
     }
     
     @IBAction func nextQuestionTapped(_ sender: Any) {
-        vibrate()
+        totalNumberOfQuestions += 1
+        defaults.setValue(totalNumberOfQuestions, forKey: "totalNumberOfQuestions")
+        
         if(answeredCorrectly) {
             teams[currentTeam].score += 1
+            totalNumberOfCorrect += 1
+            defaults.setValue(totalNumberOfCorrect, forKey: "totalNumberOfCorrect")
         }
         nextQuestionButton.isHidden = true
         questionIndex += 1
         updateUI()
+        vibrate()
     }
     
     @objc func backTapped() {
