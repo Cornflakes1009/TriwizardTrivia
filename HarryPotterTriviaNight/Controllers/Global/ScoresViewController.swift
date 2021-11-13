@@ -157,7 +157,7 @@ class ScoresViewController: UIViewController, MFMailComposeViewControllerDelegat
         controller.dismiss(animated: true)
     }
     
-    func sendEmail() {
+    private func sendEmail() {
         if MFMailComposeViewController.canSendMail() {
             let mail = MFMailComposeViewController()
             mail.mailComposeDelegate = self

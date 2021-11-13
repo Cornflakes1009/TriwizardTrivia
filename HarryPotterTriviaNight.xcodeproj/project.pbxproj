@@ -36,6 +36,7 @@
 		D97AB16922BDAB2200124CAC /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97AB16822BDAB2200124CAC /* Question.swift */; };
 		D97AB16B22BDEAF600124CAC /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97AB16A22BDEAF500124CAC /* QuestionViewController.swift */; };
 		D97AB16D22C5925D00124CAC /* House.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97AB16C22C5925D00124CAC /* House.swift */; };
+		D986BBC825BCF49F002861E5 /* KeyboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D986BBC725BCF49F002861E5 /* KeyboardView.swift */; };
 		D98D09F4254BDF5C00423F08 /* PartyRulesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98D09F3254BDF5C00423F08 /* PartyRulesViewController.swift */; };
 		D98D0A06254BF21E00423F08 /* SoloQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98D0A05254BF21E00423F08 /* SoloQuestionViewController.swift */; };
 		D98D0A0A254BF41600423F08 /* SoloQuestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98D0A09254BF41600423F08 /* SoloQuestions.swift */; };
@@ -86,6 +87,7 @@
 		D97AB16822BDAB2200124CAC /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		D97AB16A22BDEAF500124CAC /* QuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
 		D97AB16C22C5925D00124CAC /* House.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = House.swift; sourceTree = "<group>"; };
+		D986BBC725BCF49F002861E5 /* KeyboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardView.swift; sourceTree = "<group>"; };
 		D98D09F3254BDF5C00423F08 /* PartyRulesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartyRulesViewController.swift; sourceTree = "<group>"; };
 		D98D0A05254BF21E00423F08 /* SoloQuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoloQuestionViewController.swift; sourceTree = "<group>"; };
 		D98D0A09254BF41600423F08 /* SoloQuestions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoloQuestions.swift; sourceTree = "<group>"; };
@@ -221,6 +223,7 @@
 			isa = PBXGroup;
 			children = (
 				D9251F7F258586FF0069C6EA /* GameButton.swift */,
+				D986BBC725BCF49F002861E5 /* KeyboardView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -441,6 +444,7 @@
 				D916452D23F1471F00CCBD71 /* CreditsViewController.swift in Sources */,
 				D99F66B2255DF158000EE745 /* ConfigureVaryingSizes.swift in Sources */,
 				D92BB1092550F2FF00BF84BE /* GameCreditsViewController.swift in Sources */,
+				D986BBC825BCF49F002861E5 /* KeyboardView.swift in Sources */,
 				D9251F6B2584BCA50069C6EA /* BlitzQuestionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -838,8 +838,8 @@
  },
  {
    "category": "Harry Potter",
-   "question": "What kind of snake does Harry release at the zoo?",
-   "answer": 2,
+   "question": "In the movie, what kind of snake does Harry release at the zoo?",
+   "answer": 3,
    "0": "Basilisk",
    "1": "Cobra",
    "2": "Boa constrictor",
@@ -4240,7 +4240,7 @@
  },
  {
    "category": "Harry Potter",
-   "question": "Who saves Harry from drowning in the frozen lake when he retrieves the Sword of Gryffindor?",
+   "question": "Who saves Harry from drowning in the frozen lake when he attempts to retrieve the Sword of Gryffindor?",
    "answer": 0,
    "0": "Ron Weasley",
    "1": "Severus Snape",
@@ -6247,7 +6247,7 @@
  },
  {
    "category": "Harry Potter",
-   "question": "What did Genny Weasley name her Pygmy Puff?",
+   "question": "What did Ginny Weasley name her Pygmy Puff?",
    "answer": 0,
    "0": "Arnold",
    "1": "Bertram",

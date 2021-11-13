@@ -458,7 +458,8 @@ class SoloQuestionViewController: UIViewController, GADInterstitialDelegate {
     }
     
     @objc func confirmTapped() {
-        self.navigationController?.popViewController(animated: true)
+        //self.navigationController?.popViewController(animated: true)
+        dismiss(animated: false, completion: nil)
         resetGame()
         vibrate()
     }
