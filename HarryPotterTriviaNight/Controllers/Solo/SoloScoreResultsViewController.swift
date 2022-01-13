@@ -59,6 +59,13 @@ class SoloScoreResultsViewController: UIViewController{
         return label
     }()
     
+    let shareButton: GameButton = {
+        let button = GameButton(title: "Share", backgroundColor: gryffindorColor, fontColor: gryffindorFontColor)
+        button.setTitle("Share", for: .normal)
+        button.addTarget(self, action: #selector(shareTapped), for: .touchUpInside)
+        return button
+    }()
+    
     let restartButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("Back to Menu", for: .normal)
@@ -86,6 +93,7 @@ class SoloScoreResultsViewController: UIViewController{
         super.viewDidLoad()
 
         setupViews()
+        completedGame.toggle()
     }
     
     // MARK: - Background Video
@@ -109,9 +117,6 @@ class SoloScoreResultsViewController: UIViewController{
     
     // MARK:- Setup Views
     func setupViews() {
-//        view.addSubview(backgroundImage)
-//        backgroundImage.anchor(top: view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
-        
         playBackgroundVideo()
         
         view.addSubview(titleLabel)
@@ -125,8 +130,18 @@ class SoloScoreResultsViewController: UIViewController{
         scoreLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         scoreLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
         
+        view.addSubview(shareButton)
+        shareButton.anchor(top: scoreLabel.bottomAnchor, left: nil, bottom: nil, right: nil, paddingTop: 20, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: screenWidth * 0.6, height: buttonHeight)
+        shareButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        
         view.addSubview(restartButton)
         restartButton.anchor(top: nil, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 20, paddingBottom: -20, paddingRight: 20, width: 0, height: buttonHeight)
+    }
+    
+    @objc func shareTapped() {
+        let items = ["Look at my score! \(soloScore)/\(soloQuestionList.count) \n\n\(appStoreLink)"]
+        let ac = UIActivityViewController(activityItems: items as [Any], applicationActivities: nil)
+        present(ac, animated: true)
     }
     
     @objc func restartTapped() {

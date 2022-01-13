@@ -7,12 +7,17 @@
 //
 
 import UIKit
+import AVFoundation
 
-// MARK:- Images
+// MARK: - Images
 let backgroundImage         =   UIImage(named: "clouds.jpg")!
 let backButtonSymbol        =   "chevron.left.square"
 let closePopupSymbol        =   "xmark.square"
 let popUpBackgroundImage    =   UIImage(named: "sorting_hat")
+
+// MARK: - Audio
+let buttonClick             =   URL(fileURLWithPath: Bundle.main.path(forResource: "buttonClick", ofType: "mp3")!)
+var buttonAudio             =   AVAudioPlayer()
 
 // MARK:- Fonts
 var titleLabelFont          =   UIFont(name: "ParryHotter", size: 30)
@@ -24,8 +29,8 @@ let answerFont              =   UIFont(name: "Harry P", size: 30)
 var textViewFont            =   UIFont(name: "Papyrus", size: 15)
 let finalScoreLabelFont     =   UIFont(name: "Harry P", size: 70)
 
-// MARK:- Colors
-let gryffindorColor            =   UIColor.rgb(red: 125, green: 25, blue: 21, alpha: 1) 
+// MARK: - Colors
+let gryffindorColor         =   UIColor.rgb(red: 125, green: 25, blue: 21, alpha: 1)
 let hufflepuffColor         =   UIColor.rgb(red: 238, green: 182, blue: 69, alpha: 1)
 let ravenclawColor          =   UIColor.rgb(red: 26, green: 27, blue: 76, alpha: 1)
 let slytherinColor          =   UIColor.rgb(red: 54, green: 118, blue: 75, alpha: 1)
@@ -37,32 +42,37 @@ let slytherinFontColor      =   UIColor.rgb(red: 186, green: 185, blue: 195, alp
 let whiteColor              =   UIColor.rgb(red: 255, green: 255, blue: 255, alpha: 1)
 let backButtonColor         =   UIColor.rgb(red: 100, green: 100, blue: 100, alpha: 1.0)
 
-// MARK:- AdMob
+// MARK: - App Store Link
+let appStoreLink            =   "https://apps.apple.com/us/app/triwizardtrivia/id1499282472"
+// MARK: - AdMob
 // TEST
 //let adUnitID                =   "ca-app-pub-3940256099942544/4411468910"
 // PROD
 let adUnitID                =   "ca-app-pub-6504174477930496/7071782026"
 let rewardedAdUnitID        =   "ca-app-pub-6504174477930496/3101369546"
 
-// MARK:- Sizes
-var buttonHeight: CGFloat   =   0
+// MARK: - Sizes
+var screenWidth             =   CGFloat(0)
+var screenHeight            =   CGFloat(0)
+var buttonHeight            =   CGFloat(0)
 
-// MARK:- Miscellaneous
+// MARK: - Miscellaneous
 let popUpViewAlpha          =   CGFloat(1)
 
-// MARK:- Persistent Storage
+// MARK: - Persistent Storage
 let defaults                =   UserDefaults.standard
 var totalNumberOfQuestions  =   defaults.integer(forKey: "totalNumberOfQuestions")
 var totalNumberOfCorrect    =   defaults.integer(forKey: "totalNumberOfCorrect")
 var numOfGamesPlayed        =   defaults.integer(forKey: "numOfGamesPlayed")
 
-// MARK:- Game Variables
+// MARK: - Game Variables
 var soloTriviaFileToRead    =   ""
 var allQuestionList         =   [AllQuestion]()
 var correctlyAnswered       =   0
 var soloScore               =   0
+var completedGame           =   false
 
-// MARK:- Game Functions
+// MARK: - Game Functions
 func resetGame() {
     soloScore               =   0
     soloQuestionIndex       =   0

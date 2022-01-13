@@ -607,6 +607,7 @@ class BlitzQuestionViewController: UIViewController, GADInterstitialDelegate, GA
         
         let vc = self.storyboard?.instantiateViewController(identifier: "BlitzResultsViewController") as! BlitzResultsViewController
         self.navigationController?.pushViewController(vc, animated: true)
+        vibrate()
     }
     
     @objc func confirmTapped() {

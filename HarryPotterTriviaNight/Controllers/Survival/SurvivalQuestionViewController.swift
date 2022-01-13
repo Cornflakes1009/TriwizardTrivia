@@ -571,6 +571,7 @@ class SurvivalQuestionViewController: UIViewController, GADInterstitialDelegate,
         
         let vc = self.storyboard?.instantiateViewController(identifier: "SurvivalResultsViewController") as! SurvivalResultsViewController
         self.navigationController?.pushViewController(vc, animated: true)
+        vibrate()
     }
     
     @objc func confirmTapped() {

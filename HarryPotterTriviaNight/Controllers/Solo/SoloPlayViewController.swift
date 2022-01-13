@@ -203,13 +203,8 @@ class SoloPlayViewController: UIViewController {
     }
     
     func startGameNavigation() {
-//        let vc = self.storyboard?.instantiateViewController(identifier: "SoloQuestionViewController") as! SoloQuestionViewController
-//        self.navigationController?.pushViewController(vc, animated: true)
-        
-        let vc = SoloQuestionViewController()
-        vc.modalPresentationStyle = .fullScreen
-        vc.modalTransitionStyle = .partialCurl
-        present(vc, animated: true)
+        let vc = self.storyboard?.instantiateViewController(identifier: "SoloQuestionViewController") as! SoloQuestionViewController
+        self.navigationController?.pushViewController(vc, animated: true)
         vibrate()
     }
     

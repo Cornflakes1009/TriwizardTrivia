@@ -178,6 +178,14 @@ extension UIDevice {
 func vibrate() {
     let generator = UIImpactFeedbackGenerator(style: .light)
     generator.impactOccurred()
+    
+    // adding audio
+    do {
+        buttonAudio = try AVAudioPlayer(contentsOf: buttonClick)
+        buttonAudio.play()
+    } catch {
+        // couldn't load file :(
+    }
 }
 
 // MARK: Trim String

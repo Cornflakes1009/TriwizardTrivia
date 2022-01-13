@@ -32,6 +32,7 @@
 		D945B8F622B6E91D0087E171 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D945B8F522B6E91D0087E171 /* Assets.xcassets */; };
 		D945B8F922B6E91D0087E171 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D945B8F722B6E91D0087E171 /* LaunchScreen.storyboard */; };
 		D945B90222B9C99C0087E171 /* ParryHotter.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D945B90122B9C99C0087E171 /* ParryHotter.ttf */; };
+		D967AFF32782D44D00A4B29D /* buttonClick.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D967AFF22782D44D00A4B29D /* buttonClick.mp3 */; };
 		D97AB16722BB1A2900124CAC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D97AB16622BB1A2900124CAC /* GoogleService-Info.plist */; };
 		D97AB16922BDAB2200124CAC /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97AB16822BDAB2200124CAC /* Question.swift */; };
 		D97AB16B22BDEAF600124CAC /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97AB16A22BDEAF500124CAC /* QuestionViewController.swift */; };
@@ -83,6 +84,7 @@
 		D945B8F822B6E91D0087E171 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D945B8FA22B6E91D0087E171 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D945B90122B9C99C0087E171 /* ParryHotter.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ParryHotter.ttf; sourceTree = "<group>"; };
+		D967AFF22782D44D00A4B29D /* buttonClick.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = buttonClick.mp3; sourceTree = "<group>"; };
 		D97AB16622BB1A2900124CAC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D97AB16822BDAB2200124CAC /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		D97AB16A22BDEAF500124CAC /* QuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
@@ -277,6 +279,7 @@
 		D992D4AB254547EF00EEAC9F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D967AFF22782D44D00A4B29D /* buttonClick.mp3 */,
 				D90F61CB25B4C56A00FC070D /* background_music.mp3 */,
 				D90F61C825B4BFB000FC070D /* smoke.mp4 */,
 				D90F61C325B4B99700FC070D /* smoke1.mp4 */,
@@ -365,6 +368,7 @@
 				D9AFF59725B3E213005D260A /* fantasticBeastsQuestions.json in Resources */,
 				D916452E23F1471F00CCBD71 /* CreditsViewController.xib in Resources */,
 				D90F61C925B4BFB000FC070D /* smoke.mp4 in Resources */,
+				D967AFF32782D44D00A4B29D /* buttonClick.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,6 +8,7 @@
 
 import UIKit
 import AVFoundation
+import StoreKit
 import GoogleMobileAds
 
 class ModeSelectViewController: UIViewController {
@@ -228,6 +229,9 @@ class ModeSelectViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         player?.play()
+        if completedGame && numOfGamesPlayed >= 3 {
+            SKStoreReviewController.requestReview()
+        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -236,8 +240,8 @@ class ModeSelectViewController: UIViewController {
     
     // MARK: - Setting Up Views
     func setupViews() {
-        let screenHeight = UIScreen.main.bounds.size.height
-        print(screenHeight)
+        screenHeight = UIScreen.main.bounds.size.height
+        screenWidth = UIScreen.main.bounds.size.width
         
         // setting the buttonHeight for each button in the game
         buttonHeight = screenHeight / 10
@@ -305,10 +309,6 @@ class ModeSelectViewController: UIViewController {
         scrollView.addSubview(stackView)
         stackView.anchor(top: scrollView.topAnchor, left: scrollView.leftAnchor, bottom: scrollView.bottomAnchor, right: scrollView.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: stackViewHeight)
         stackView.widthAnchor.constraint(equalTo: scrollView.widthAnchor).isActive = true
-        
-        //stackView.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor).isActive = true
-        //stackView.centerYAnchor.constraint(equalTo: scrollView.centerYAnchor).isActive = true
-//        stackView.anchor(top: nil, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 0, paddingLeft: 20, paddingBottom: 0, paddingRight: 20, width: 0, height: stackViewHeight)
     }
     
     var horizontalStackView = UIStackView()
@@ -324,10 +324,6 @@ class ModeSelectViewController: UIViewController {
         
         view.addSubview(horizontalStackView)
         horizontalStackView.anchor(top: scrollView.bottomAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 10, paddingLeft: 20, paddingBottom: 0, paddingRight: 20, width: 0, height: buttonHeight)
-        
-//        stackView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-//        stackView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
-//        stackView.anchor(top: nil, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 0, paddingLeft: 20, paddingBottom: 0, paddingRight: 20, width: 0, height: 0)
     }
     
     func setupBannerView() {

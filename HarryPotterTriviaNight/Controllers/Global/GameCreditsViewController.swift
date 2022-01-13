@@ -48,8 +48,6 @@ class GameCreditsViewController: UIViewController {
         tv.text = """
         I'd like to give a special thanks to the following people:
 
-        My girlfriend Cheng for making the app icon.
-
         My former boss, Angie for telling me that I should make this app.
 
         My long-term friend and roommate, Tim for his design criticisms and helpful input.
