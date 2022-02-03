@@ -26,6 +26,8 @@
 	<true/>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>We need access to save photos to your gallery.</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>ParryHotter.ttf</string>
@@ -50,7 +52,5 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>We need access to save photos to your gallery.</string>
 </dict>
 </plist>
