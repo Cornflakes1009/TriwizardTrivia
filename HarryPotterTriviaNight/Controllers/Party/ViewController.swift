@@ -213,7 +213,7 @@ class ViewController: UIViewController {
 
     @IBAction func beginButtonSegue(_ sender: Any) {
         vibrate()
-         convertJSON(jsonToRead: "harryPotterTriviaQuestions", numberOfTeams: teams.count)
+        convertJSON(jsonToRead: "harryPotterTriviaQuestions", numberOfTeams: teams.count)
         let vc = self.storyboard?.instantiateViewController(identifier: "QuestionStoryboard") as! QuestionViewController
         self.navigationController?.pushViewController(vc, animated: true)
     }

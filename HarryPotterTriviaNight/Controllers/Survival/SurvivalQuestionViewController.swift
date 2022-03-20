@@ -89,7 +89,6 @@ class SurvivalQuestionViewController: UIViewController, GADInterstitialDelegate,
     }()
     
     // MARK:- Banner View
-    // MARK:- Banner View
     let bannerView: GADBannerView = {
         let bannerView = GADBannerView()
         return bannerView
@@ -106,8 +105,10 @@ class SurvivalQuestionViewController: UIViewController, GADInterstitialDelegate,
     let optionOneButton: GameButton = {
         let button = GameButton(title: "", backgroundColor: hufflepuffColor, fontColor: hufflepuffFontColor)
         button.titleLabel?.font = answerFont
-//        button.titleLabel?.layer.shadowRadius = 1.0
-//        button.titleLabel?.layer.shadowOffset = CGSize(width: 1, height: 1)
+        button.titleLabel?.layer.shadowRadius = 0
+        button.titleLabel?.layer.shadowOpacity = 00
+        button.titleLabel?.layer.shadowOffset = CGSize(width: 0, height: 0)
+        button.titleLabel?.layer.masksToBounds = false
         button.addTarget(self, action: #selector(answerTapped(_:)), for: .touchUpInside)
         return button
     }()
@@ -268,9 +269,7 @@ class SurvivalQuestionViewController: UIViewController, GADInterstitialDelegate,
     
     // MARK:- Setup Views
     func setupViews() {
-//        view.addSubview(background)
-//        background.anchor(top: view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
-        
+
         playBackgroundVideo()
         
         let backButtonImageConfig = UIImage.SymbolConfiguration(pointSize: 25, weight: .light, scale: .large)
@@ -360,7 +359,7 @@ class SurvivalQuestionViewController: UIViewController, GADInterstitialDelegate,
     }
     
     // MARK:- Exit View
-    func presentBackConfirmationsView() {
+    private func presentBackConfirmationsView() {
         backButton.isEnabled = false
         view.addSubview(exitConfirmationView)
         exitConfirmationView.anchor(top: view.safeAreaLayoutGuide.topAnchor, left: view.leftAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, right: view.rightAnchor, paddingTop: 10, paddingLeft: 10, paddingBottom: -10, paddingRight: 10, width: 0, height: 0)

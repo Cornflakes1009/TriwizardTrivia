@@ -102,6 +102,10 @@ class BlitzQuestionViewController: UIViewController, GADInterstitialDelegate, GA
     let optionOneButton: GameButton = {
         let button = GameButton(title: "", backgroundColor: hufflepuffColor, fontColor: hufflepuffFontColor)
         button.titleLabel?.font = answerFont
+        button.titleLabel?.layer.shadowRadius = 0
+        button.titleLabel?.layer.shadowOpacity = 00
+        button.titleLabel?.layer.shadowOffset = CGSize(width: 0, height: 0)
+        button.titleLabel?.layer.masksToBounds = false
         button.addTarget(self, action: #selector(answerTapped(_:)), for: .touchUpInside)
         return button
     }()

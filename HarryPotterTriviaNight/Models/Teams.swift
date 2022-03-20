@@ -11,11 +11,7 @@ import Foundation
 var teams = [Team]()
 var currentTeam = 0
 
-class Team {
+struct Team {
     let name: String
     var score = 0
-    
-    init(name: String) {
-        self.name = name
-    }
 }

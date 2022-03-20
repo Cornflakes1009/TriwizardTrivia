@@ -13,7 +13,6 @@ import AVFoundation
 class ScoresViewController: UIViewController, MFMailComposeViewControllerDelegate {
 
     var player: AVPlayer?
-    let screenHeight = UIScreen.main.bounds.size.height
     let percentageAnsweredCorrectly = round(Double(totalNumberOfCorrect) / Double(totalNumberOfQuestions) * 100)
     
     let backgroundImage: UIImageView = {
@@ -113,8 +112,6 @@ class ScoresViewController: UIViewController, MFMailComposeViewControllerDelegat
     
     // MARK: - Setup Views
     func setupViews() {
-//        view.addSubview(backgroundImage)
-//        backgroundImage.anchor(top: view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
         
         playBackgroundVideo()
         
@@ -162,6 +159,7 @@ class ScoresViewController: UIViewController, MFMailComposeViewControllerDelegat
             let mail = MFMailComposeViewController()
             mail.mailComposeDelegate = self
             mail.setToRecipients(["spelldevelopment@gmail.com"])
+            mail.setSubject("TriwizardTrivia")
             mail.setMessageBody("<p>Hello, Spell Development. I have a question, issue, or general inquiry.</p>", isHTML: true)
 
             present(mail, animated: true)

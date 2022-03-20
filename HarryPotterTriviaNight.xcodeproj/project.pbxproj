@@ -37,6 +37,7 @@
 		D97AB16922BDAB2200124CAC /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97AB16822BDAB2200124CAC /* Question.swift */; };
 		D97AB16B22BDEAF600124CAC /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97AB16A22BDEAF500124CAC /* QuestionViewController.swift */; };
 		D97AB16D22C5925D00124CAC /* House.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97AB16C22C5925D00124CAC /* House.swift */; };
+		D981C7EE27B8F795000831CF /* PotionsClassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D981C7ED27B8F795000831CF /* PotionsClassViewController.swift */; };
 		D986BBC825BCF49F002861E5 /* KeyboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D986BBC725BCF49F002861E5 /* KeyboardView.swift */; };
 		D98D09F4254BDF5C00423F08 /* PartyRulesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98D09F3254BDF5C00423F08 /* PartyRulesViewController.swift */; };
 		D98D0A06254BF21E00423F08 /* SoloQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98D0A05254BF21E00423F08 /* SoloQuestionViewController.swift */; };
@@ -52,6 +53,8 @@
 		D9AFF59725B3E213005D260A /* fantasticBeastsQuestions.json in Resources */ = {isa = PBXBuildFile; fileRef = D9AFF59625B3E213005D260A /* fantasticBeastsQuestions.json */; };
 		D9DAFD412320833500A87632 /* harryPotterTriviaQuestions.json in Resources */ = {isa = PBXBuildFile; fileRef = D9DAFD402320833500A87632 /* harryPotterTriviaQuestions.json */; };
 		D9DAFD432324779E00A87632 /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DAFD422324779E00A87632 /* ResultsViewController.swift */; };
+		D9FA2C5E27E5C369005C3939 /* TextButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FA2C5D27E5C369005C3939 /* TextButton.swift */; };
+		D9FA2C6027E5C71D005C3939 /* WhiteLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FA2C5F27E5C71D005C3939 /* WhiteLabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -89,6 +92,7 @@
 		D97AB16822BDAB2200124CAC /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		D97AB16A22BDEAF500124CAC /* QuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
 		D97AB16C22C5925D00124CAC /* House.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = House.swift; sourceTree = "<group>"; };
+		D981C7ED27B8F795000831CF /* PotionsClassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PotionsClassViewController.swift; sourceTree = "<group>"; };
 		D986BBC725BCF49F002861E5 /* KeyboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardView.swift; sourceTree = "<group>"; };
 		D98D09F3254BDF5C00423F08 /* PartyRulesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartyRulesViewController.swift; sourceTree = "<group>"; };
 		D98D0A05254BF21E00423F08 /* SoloQuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoloQuestionViewController.swift; sourceTree = "<group>"; };
@@ -104,6 +108,8 @@
 		D9AFF59625B3E213005D260A /* fantasticBeastsQuestions.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = fantasticBeastsQuestions.json; sourceTree = "<group>"; };
 		D9DAFD402320833500A87632 /* harryPotterTriviaQuestions.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = harryPotterTriviaQuestions.json; path = "HarryPotterTriviaNight/Supporting Files/harryPotterTriviaQuestions.json"; sourceTree = SOURCE_ROOT; };
 		D9DAFD422324779E00A87632 /* ResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
+		D9FA2C5D27E5C369005C3939 /* TextButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextButton.swift; sourceTree = "<group>"; };
+		D9FA2C5F27E5C71D005C3939 /* WhiteLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhiteLabel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +157,7 @@
 		D9069DE1230A1F6E008BE435 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				D981C7EC27B8F769000831CF /* Potions */,
 				D9251F6725844DEA0069C6EA /* Survival */,
 				D9251F6625844DDF0069C6EA /* Blitz */,
 				D9251F692584BC660069C6EA /* Global */,
@@ -226,6 +233,8 @@
 			children = (
 				D9251F7F258586FF0069C6EA /* GameButton.swift */,
 				D986BBC725BCF49F002861E5 /* KeyboardView.swift */,
+				D9FA2C5D27E5C369005C3939 /* TextButton.swift */,
+				D9FA2C5F27E5C71D005C3939 /* WhiteLabel.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -274,6 +283,14 @@
 				D99F66AA255A0035000EE745 /* harry_potter_font.TTF */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		D981C7EC27B8F769000831CF /* Potions */ = {
+			isa = PBXGroup;
+			children = (
+				D981C7ED27B8F795000831CF /* PotionsClassViewController.swift */,
+			);
+			path = Potions;
 			sourceTree = "<group>";
 		};
 		D992D4AB254547EF00EEAC9F /* Supporting Files */ = {
@@ -429,8 +446,11 @@
 				D97AB16922BDAB2200124CAC /* Question.swift in Sources */,
 				D945B8F122B6E91B0087E171 /* ViewController.swift in Sources */,
 				D9251F80258586FF0069C6EA /* GameButton.swift in Sources */,
+				D9FA2C5E27E5C369005C3939 /* TextButton.swift in Sources */,
+				D981C7EE27B8F795000831CF /* PotionsClassViewController.swift in Sources */,
 				D98D0A0A254BF41600423F08 /* SoloQuestions.swift in Sources */,
 				D99F66AE255A03F2000EE745 /* SoloScoreResultsViewController.swift in Sources */,
+				D9FA2C6027E5C71D005C3939 /* WhiteLabel.swift in Sources */,
 				D916452823F146E500CCBD71 /* RulesViewController.swift in Sources */,
 				D9DAFD432324779E00A87632 /* ResultsViewController.swift in Sources */,
 				D992D4A825452C6C00EEAC9F /* Globals.swift in Sources */,

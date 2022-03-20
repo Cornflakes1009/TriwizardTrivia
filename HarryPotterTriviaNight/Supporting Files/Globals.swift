@@ -44,6 +44,7 @@ let backButtonColor         =   UIColor.rgb(red: 100, green: 100, blue: 100, alp
 
 // MARK: - App Store Link
 let appStoreLink            =   "https://apps.apple.com/us/app/triwizardtrivia/id1499282472"
+
 // MARK: - AdMob
 // TEST
 //let adUnitID                =   "ca-app-pub-3940256099942544/4411468910"

@@ -5,6 +5,7 @@
 //  Created by HaroldDavidson on 10/24/20.
 //  Copyright © 2020 HaroldDavidson. All rights reserved.
 //
+// MARK: - VC for selecting the number of questions for Classic/Solo and Fantastic Beasts modes
 
 import UIKit
 import AVFoundation
@@ -44,87 +45,35 @@ class SoloPlayViewController: UIViewController {
         return button
     }()
     
-    let fifteenButton: UIButton = {
-        let button = UIButton(type: .system)
-        button.setTitle("15 Questions", for: .normal)
-        button.backgroundColor = gryffindorColor
-        button.setTitleColor(gryffindorFontColor, for: .normal)
-        button.layer.cornerRadius = 5
-        button.titleLabel?.font = buttonFont
-        button.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.95).cgColor
-        button.layer.shadowOffset = CGSize(width: 0, height: 3)
-        button.layer.shadowOpacity = 1.0
-        button.layer.shadowRadius = 10.0
-        button.layer.masksToBounds = false
-        button.setTitleShadowColor(.black, for: .normal)
-        button.titleLabel?.layer.shadowRadius = 3.0
-        button.titleLabel?.layer.shadowOpacity = 1.0
-        button.titleLabel?.layer.shadowOffset = CGSize(width: 4, height: 4)
-        button.titleLabel?.layer.masksToBounds = false
+    let fifteenButton: GameButton = {
+        let button = GameButton(title: "15 Questions", backgroundColor: gryffindorColor, fontColor: gryffindorFontColor)
         button.addTarget(self, action: #selector(fifteenTapped), for: .touchUpInside)
+        button.titleLabel?.font = buttonFont
         return button
     }()
     
-    let twentyFiveButton: UIButton = {
-        let button = UIButton(type: .system)
-        button.setTitle("25 Questions", for: .normal)
-        button.backgroundColor = hufflepuffColor
-        button.setTitleColor(hufflepuffFontColor, for: .normal)
-        button.layer.cornerRadius = 5
-        button.titleLabel?.font = buttonFont
-        button.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.95).cgColor
-        button.layer.shadowOffset = CGSize(width: 0, height: 3)
-        button.layer.shadowOpacity = 1.0
-        button.layer.shadowRadius = 10.0
-        button.layer.masksToBounds = false
-        button.setTitleShadowColor(.black, for: .normal)
-        button.titleLabel?.layer.shadowRadius = 1.0
-        button.titleLabel?.layer.shadowOpacity = 1.0
-        button.titleLabel?.layer.shadowOffset = CGSize(width: 2, height: 2)
-        button.titleLabel?.layer.masksToBounds = false
+    let twentyFiveButton: GameButton = {
+        let button = GameButton(title: "25 Questions", backgroundColor: hufflepuffColor, fontColor: hufflepuffFontColor)
         button.addTarget(self, action: #selector(twentyFiveTapped), for: .touchUpInside)
+        button.titleLabel?.font = buttonFont
+        button.titleLabel?.layer.shadowRadius = 0
+        button.titleLabel?.layer.shadowOpacity = 00
+        button.titleLabel?.layer.shadowOffset = CGSize(width: 0, height: 0)
+        button.titleLabel?.layer.masksToBounds = false
         return button
     }()
     
-    let fiftyButton: UIButton = {
-        let button = UIButton(type: .system)
-        button.setTitle("50 Questions", for: .normal)
-        button.backgroundColor = ravenclawColor
-        button.setTitleColor(ravenclawFontColor, for: .normal)
-        button.layer.cornerRadius = 5
-        button.titleLabel?.font = buttonFont
-        button.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.95).cgColor
-        button.layer.shadowOffset = CGSize(width: 0, height: 3)
-        button.layer.shadowOpacity = 1.0
-        button.layer.shadowRadius = 10.0
-        button.layer.masksToBounds = false
-        button.setTitleShadowColor(.black, for: .normal)
-        button.titleLabel?.layer.shadowRadius = 3.0
-        button.titleLabel?.layer.shadowOpacity = 1.0
-        button.titleLabel?.layer.shadowOffset = CGSize(width: 4, height: 4)
-        button.titleLabel?.layer.masksToBounds = false
+    let fiftyButton: GameButton = {
+        let button = GameButton(title: "50 Questions", backgroundColor: ravenclawColor, fontColor: ravenclawFontColor)
         button.addTarget(self, action: #selector(fiftyTapped), for: .touchUpInside)
+        button.titleLabel?.font = buttonFont
         return button
     }()
-    
-    let oneHundredButton: UIButton = {
-        let button = UIButton(type: .system)
-        button.setTitle("100 Questions", for: .normal)
-        button.backgroundColor = slytherinColor
-        button.setTitleColor(slytherinFontColor, for: .normal)
-        button.layer.cornerRadius = 5
-        button.titleLabel?.font = buttonFont
-        button.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.95).cgColor
-        button.layer.shadowOffset = CGSize(width: 0, height: 3)
-        button.layer.shadowOpacity = 1.0
-        button.layer.shadowRadius = 10.0
-        button.layer.masksToBounds = false
-        button.setTitleShadowColor(.black, for: .normal)
-        button.titleLabel?.layer.shadowRadius = 3.0
-        button.titleLabel?.layer.shadowOpacity = 1.0
-        button.titleLabel?.layer.shadowOffset = CGSize(width: 4, height: 4)
-        button.titleLabel?.layer.masksToBounds = false
+
+    let oneHundredButton: GameButton = {
+        let button = GameButton(title: "100 Questions", backgroundColor: slytherinColor, fontColor: slytherinFontColor)
         button.addTarget(self, action: #selector(oneHundredTapped), for: .touchUpInside)
+        button.titleLabel?.font = buttonFont
         return button
     }()
     
@@ -144,9 +93,7 @@ class SoloPlayViewController: UIViewController {
     }
     
     func setupViews() {
-//        view.addSubview(backgroundImage)
-//        backgroundImage.anchor(top: view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
-        
+
         playBackgroundVideo()
         
         let backButtonImageConfig = UIImage.SymbolConfiguration(pointSize: 25, weight: .light, scale: .large)

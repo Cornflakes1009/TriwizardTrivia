@@ -141,10 +141,6 @@ class QuestionViewController: UIViewController, GADInterstitialDelegate {
         
         playBackgroundVideo()
         
-//        view.addSubview(backgroundImage)
-//        backgroundImage.anchor(top: view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
-//        view.sendSubviewToBack(backgroundImage)
-        
         // adding shadow
         for button in buttons {
             button.layer.shadowColor = UIColor.black.cgColor

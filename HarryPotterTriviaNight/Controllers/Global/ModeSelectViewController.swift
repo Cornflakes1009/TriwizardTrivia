@@ -51,156 +51,60 @@ class ModeSelectViewController: UIViewController {
         scrollView.layer.cornerRadius = 5
         return scrollView
     }()
-    
-    let singlePlayerButton: UIButton = {
-        let button = UIButton(type: .system)
-        button.setTitle("Classic", for: .normal)
-        button.backgroundColor = gryffindorColor
-        button.setTitleColor(buttonTitleColor, for: .normal)
-        button.layer.cornerRadius = 5
-        button.setTitleShadowColor(.black, for: .normal)
-        button.titleLabel?.layer.shadowRadius = 3.0
-        button.titleLabel?.layer.shadowOpacity = 1.0
-        button.titleLabel?.layer.shadowOffset = CGSize(width: 4, height: 4)
-        button.titleLabel?.layer.masksToBounds = false
-        button.titleLabel?.font = buttonFont
-        button.isEnabled = true
-        button.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.95).cgColor
-        button.layer.shadowOffset = CGSize(width: 0, height: 3)
-        button.layer.shadowOpacity = 1.0
-        button.layer.shadowRadius = 10.0
-        button.layer.masksToBounds = false
+
+    let singlePlayerButton: GameButton = {
+        let button = GameButton(title: "Classic", backgroundColor: gryffindorColor, fontColor: buttonTitleColor)
         button.addTarget(self, action: #selector(soloPlayTapped), for: .touchUpInside)
         return button
     }()
+
+    let potionsClassButton: GameButton = {
+        let button = GameButton(title: "Potions Class", backgroundColor: gryffindorColor, fontColor: buttonTitleColor)
+        button.addTarget(self, action: #selector(potionsClassTapped), for: .touchUpInside)
+        return button
+    }()
     
-    let partyButton: UIButton = {
-        let button = UIButton(type: .system)
-        button.setTitle("Party", for: .normal)
-        button.backgroundColor = gryffindorColor
-        button.setTitleColor(buttonTitleColor, for: .normal)
-        button.setTitleShadowColor(.black, for: .normal)
-        button.titleLabel?.layer.shadowRadius = 3.0
-        button.titleLabel?.layer.shadowOpacity = 1.0
-        button.titleLabel?.layer.shadowOffset = CGSize(width: 4, height: 4)
-        button.titleLabel?.layer.masksToBounds = false
-        button.layer.cornerRadius = 5
-        button.titleLabel?.font = buttonFont
-        button.isEnabled = true
-        button.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.95).cgColor
-        button.layer.shadowOffset = CGSize(width: 0, height: 3)
-        button.layer.shadowOpacity = 1.0
-        button.layer.shadowRadius = 10.0
-        button.layer.masksToBounds = false
+    let partyButton: GameButton = {
+        let button = GameButton(title: "Party", backgroundColor: gryffindorColor, fontColor: buttonTitleColor)
         button.addTarget(self, action: #selector(partyPlayTapped), for: .touchUpInside)
         return button
     }()
     
-    let survivalButton: UIButton = {
-        let button = UIButton(type: .system)
-        button.setTitle("Survival", for: .normal)
-        button.backgroundColor = gryffindorColor
-        button.setTitleColor(buttonTitleColor, for: .normal)
-        button.layer.cornerRadius = 5
-        button.setTitleShadowColor(.black, for: .normal)
-        button.titleLabel?.layer.shadowRadius = 3.0
-        button.titleLabel?.layer.shadowOpacity = 1.0
-        button.titleLabel?.layer.shadowOffset = CGSize(width: 4, height: 4)
-        button.titleLabel?.layer.masksToBounds = false
-        button.titleLabel?.font = buttonFont
-        button.isEnabled = true
-        button.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.95).cgColor
-        button.layer.shadowOffset = CGSize(width: 0, height: 3)
-        button.layer.shadowOpacity = 1.0
-        button.layer.shadowRadius = 10.0
-        button.layer.masksToBounds = false
+    let survivalButton: GameButton = {
+        let button = GameButton(title: "Survival", backgroundColor: gryffindorColor, fontColor: buttonTitleColor)
         button.addTarget(self, action: #selector(survivalTapped), for: .touchUpInside)
         return button
     }()
     
-    let blitzButton: UIButton = {
-        let button = UIButton(type: .system)
-        button.setTitle("Blitz", for: .normal)
-        button.backgroundColor = gryffindorColor
-        button.setTitleColor(buttonTitleColor, for: .normal)
-        button.layer.cornerRadius = 5
-        button.setTitleShadowColor(.black, for: .normal)
-        button.titleLabel?.layer.shadowRadius = 3.0
-        button.titleLabel?.layer.shadowOpacity = 1.0
-        button.titleLabel?.layer.shadowOffset = CGSize(width: 4, height: 4)
-        button.titleLabel?.layer.masksToBounds = false
-        button.titleLabel?.font = buttonFont
-        button.isEnabled = true
-        button.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.95).cgColor
-        button.layer.shadowOffset = CGSize(width: 0, height: 3)
-        button.layer.shadowOpacity = 1.0
-        button.layer.shadowRadius = 10.0
-        button.layer.masksToBounds = false
+    let blitzButton: GameButton = {
+        let button = GameButton(title: "Blitz", backgroundColor: gryffindorColor, fontColor: buttonTitleColor)
         button.addTarget(self, action: #selector(blitzTapped), for: .touchUpInside)
         return button
     }()
     
-    let fantasticBeastsButton: UIButton = {
-        let button = UIButton(type: .system)
-        button.setTitle("Fantastic Beasts", for: .normal)
-        button.backgroundColor = gryffindorColor
-        button.setTitleColor(buttonTitleColor, for: .normal)
-        button.layer.cornerRadius = 5
-        button.setTitleShadowColor(.black, for: .normal)
-        button.titleLabel?.layer.shadowRadius = 3.0
-        button.titleLabel?.layer.shadowOpacity = 1.0
-        button.titleLabel?.layer.shadowOffset = CGSize(width: 4, height: 4)
-        button.titleLabel?.layer.masksToBounds = false
-        button.titleLabel?.font = buttonFont
-        button.isEnabled = true
-        button.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.95).cgColor
-        button.layer.shadowOffset = CGSize(width: 0, height: 3)
-        button.layer.shadowOpacity = 1.0
-        button.layer.shadowRadius = 10.0
-        button.layer.masksToBounds = false
+    let fantasticBeastsButton: GameButton = {
+        let button = GameButton(title: "Fantastic Beasts", backgroundColor: gryffindorColor, fontColor: buttonTitleColor)
         button.addTarget(self, action: #selector(fantasticBeastsTapped), for: .touchUpInside)
         return button
     }()
     
     // MARK:- Horizontal Scroll View items
-    let creditsButton: UIButton = {
-        let button = UIButton(type: .system)
-        button.setTitle("Credits", for: .normal)
-        button.setTitleColor(.white, for: .normal)
-        button.titleLabel?.font = instructionLabelFont
-        button.isEnabled = true
-        button.layer.shadowOffset = CGSize(width: 0, height: 3)
-        button.layer.shadowOpacity = 1.0
-        button.layer.shadowRadius = 10.0
-        button.layer.masksToBounds = false
+
+    
+    let creditsButton: TextButton = {
+        let button = TextButton(title: "Credits", fontColor: whiteColor)
         button.addTarget(self, action: #selector(creditsTapped), for: .touchUpInside)
         return button
     }()
     
-    let scoresButton: UIButton = {
-        let button = UIButton(type: .system)
-        button.setTitle("Scores", for: .normal)
-        button.setTitleColor(.white, for: .normal)
-        button.titleLabel?.font = instructionLabelFont
-        button.isEnabled = true
-        button.layer.shadowOffset = CGSize(width: 0, height: 3)
-        button.layer.shadowOpacity = 1.0
-        button.layer.shadowRadius = 10.0
-        button.layer.masksToBounds = false
+    let scoresButton: TextButton = {
+        let button = TextButton(title: "Scores", fontColor: whiteColor)
         button.addTarget(self, action: #selector(scoresTapped), for: .touchUpInside)
         return button
     }()
     
-    let contactButton: UIButton = {
-        let button = UIButton(type: .system)
-        button.setTitle("Contact", for: .normal)
-        button.setTitleColor(.white, for: .normal)
-        button.titleLabel?.font = instructionLabelFont
-        button.isEnabled = true
-        button.layer.shadowOffset = CGSize(width: 0, height: 3)
-        button.layer.shadowOpacity = 1.0
-        button.layer.shadowRadius = 10.0
-        button.layer.masksToBounds = false
+    let contactButton: TextButton = {
+        let button = TextButton(title: "Contact", fontColor: whiteColor)
         button.addTarget(self, action: #selector(scoresTapped), for: .touchUpInside)
         return button
     }()
@@ -214,17 +118,16 @@ class ModeSelectViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let screenHeight = UIScreen.main.bounds.size.height
         varyForScreenSizes(screenHeight: screenHeight)
-        
         setupViews()
-        titleLabel.font = titleLabelFont
-        instructionLabel.font = instructionLabelFont
-        singlePlayerButton.titleLabel?.font = buttonFont
-        partyButton.titleLabel?.font = buttonFont
-        survivalButton.titleLabel?.font = buttonFont
-        blitzButton.titleLabel?.font = buttonFont
-        fantasticBeastsButton.titleLabel?.font = buttonFont
+        titleLabel.font                         = titleLabelFont
+        instructionLabel.font                   = instructionLabelFont
+        singlePlayerButton.titleLabel?.font     = buttonFont
+        potionsClassButton.titleLabel?.font     = buttonFont
+        partyButton.titleLabel?.font            = buttonFont
+        survivalButton.titleLabel?.font         = buttonFont
+        blitzButton.titleLabel?.font            = buttonFont
+        fantasticBeastsButton.titleLabel?.font  = buttonFont
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -245,9 +148,6 @@ class ModeSelectViewController: UIViewController {
         
         // setting the buttonHeight for each button in the game
         buttonHeight = screenHeight / 10
-        
-//        view.addSubview(backgroundImage)
-//        backgroundImage.anchor(top: view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
         
         playBackgroundVideo()
         
@@ -288,10 +188,10 @@ class ModeSelectViewController: UIViewController {
     }
     
     // MARK: - Button Stack View
-    var stackView = UIStackView()
+    private var stackView = UIStackView()
     // MARK: Setting Up the StackView
-    func setupStackView() {
-        stackView = UIStackView(arrangedSubviews: [singlePlayerButton, partyButton, survivalButton, blitzButton, fantasticBeastsButton])
+    private func setupStackView() {
+        stackView = UIStackView(arrangedSubviews: [singlePlayerButton, potionsClassButton, partyButton, survivalButton, blitzButton, fantasticBeastsButton])
         stackView.distribution = .fillEqually
         stackView.axis = .vertical
         stackView.spacing = 10
@@ -311,26 +211,29 @@ class ModeSelectViewController: UIViewController {
         stackView.widthAnchor.constraint(equalTo: scrollView.widthAnchor).isActive = true
     }
     
-    var horizontalStackView = UIStackView()
     // MARK: Setting Up the StackView
-    func setupHorizontalStackView() {
+    private var horizontalStackView = UIStackView()
+    private func setupHorizontalStackView() {
         horizontalStackView = UIStackView(arrangedSubviews: [creditsButton, scoresButton, contactButton])
         horizontalStackView.distribution = .fillEqually
         horizontalStackView.axis = .horizontal
         stackView.spacing = 10
-        
-        // calculating based on the number of buttons in stack view and adding 20 padding
-        //let stackViewHeight = CGFloat(Int(buttonHeight) * stackView.arrangedSubviews.count + 40)
-        
         view.addSubview(horizontalStackView)
         horizontalStackView.anchor(top: scrollView.bottomAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 10, paddingLeft: 20, paddingBottom: 0, paddingRight: 20, width: 0, height: buttonHeight)
     }
     
-    func setupBannerView() {
+    private func setupBannerView() {
         // starting ads on the bannerview
         bannerView.adUnitID = prodAdMobsKey
         bannerView.rootViewController = self
         bannerView.load(GADRequest())
+    }
+    
+    @objc func soloPlayTapped() {
+        soloTriviaFileToRead = "harryPotterSoloQuestions"
+        let vc = self.storyboard?.instantiateViewController(identifier: "SoloPlayViewController") as! SoloPlayViewController
+        self.navigationController?.pushViewController(vc, animated: true)
+        vibrate()
     }
     
     @objc func partyPlayTapped() {
@@ -339,9 +242,8 @@ class ModeSelectViewController: UIViewController {
         vibrate()
     }
     
-    @objc func soloPlayTapped() {
-        soloTriviaFileToRead = "harryPotterSoloQuestions"
-        let vc = self.storyboard?.instantiateViewController(identifier: "SoloPlayViewController") as! SoloPlayViewController
+    @objc func potionsClassTapped() {
+        let vc = self.storyboard?.instantiateViewController(identifier: "PotionsClassViewController") as! PotionsClassViewController
         self.navigationController?.pushViewController(vc, animated: true)
         vibrate()
     }
