@@ -41,7 +41,7 @@
 		D986BBC825BCF49F002861E5 /* KeyboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D986BBC725BCF49F002861E5 /* KeyboardView.swift */; };
 		D98D09F4254BDF5C00423F08 /* PartyRulesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98D09F3254BDF5C00423F08 /* PartyRulesViewController.swift */; };
 		D98D0A06254BF21E00423F08 /* SoloQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98D0A05254BF21E00423F08 /* SoloQuestionViewController.swift */; };
-		D98D0A0A254BF41600423F08 /* SoloQuestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98D0A09254BF41600423F08 /* SoloQuestions.swift */; };
+		D98D0A0A254BF41600423F08 /* ConvertSoloQuestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98D0A09254BF41600423F08 /* ConvertSoloQuestions.swift */; };
 		D98DCB032544FB2B0092B483 /* ModeSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98DCB022544FB2B0092B483 /* ModeSelectViewController.swift */; };
 		D992D4A62545293300EEAC9F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D992D4A52545293300EEAC9F /* Extensions.swift */; };
 		D992D4A825452C6C00EEAC9F /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = D992D4A725452C6C00EEAC9F /* Globals.swift */; };
@@ -55,6 +55,9 @@
 		D9DAFD432324779E00A87632 /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DAFD422324779E00A87632 /* ResultsViewController.swift */; };
 		D9FA2C5E27E5C369005C3939 /* TextButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FA2C5D27E5C369005C3939 /* TextButton.swift */; };
 		D9FA2C6027E5C71D005C3939 /* WhiteLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FA2C5F27E5C71D005C3939 /* WhiteLabel.swift */; };
+		D9FA2C6227E6D267005C3939 /* KeyboardView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FA2C6127E6D267005C3939 /* KeyboardView2.swift */; };
+		D9FA2C6427E81ABE005C3939 /* ConvertHangmanWords.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FA2C6327E81ABE005C3939 /* ConvertHangmanWords.swift */; };
+		D9FA2C6627E837E8005C3939 /* Characters.json in Resources */ = {isa = PBXBuildFile; fileRef = D9FA2C6527E837E8005C3939 /* Characters.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -96,7 +99,7 @@
 		D986BBC725BCF49F002861E5 /* KeyboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardView.swift; sourceTree = "<group>"; };
 		D98D09F3254BDF5C00423F08 /* PartyRulesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartyRulesViewController.swift; sourceTree = "<group>"; };
 		D98D0A05254BF21E00423F08 /* SoloQuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoloQuestionViewController.swift; sourceTree = "<group>"; };
-		D98D0A09254BF41600423F08 /* SoloQuestions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoloQuestions.swift; sourceTree = "<group>"; };
+		D98D0A09254BF41600423F08 /* ConvertSoloQuestions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertSoloQuestions.swift; sourceTree = "<group>"; };
 		D98DCB022544FB2B0092B483 /* ModeSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModeSelectViewController.swift; sourceTree = "<group>"; };
 		D992D4A52545293300EEAC9F /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		D992D4A725452C6C00EEAC9F /* Globals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
@@ -110,6 +113,9 @@
 		D9DAFD422324779E00A87632 /* ResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
 		D9FA2C5D27E5C369005C3939 /* TextButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextButton.swift; sourceTree = "<group>"; };
 		D9FA2C5F27E5C71D005C3939 /* WhiteLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhiteLabel.swift; sourceTree = "<group>"; };
+		D9FA2C6127E6D267005C3939 /* KeyboardView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardView2.swift; sourceTree = "<group>"; };
+		D9FA2C6327E81ABE005C3939 /* ConvertHangmanWords.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertHangmanWords.swift; sourceTree = "<group>"; };
+		D9FA2C6527E837E8005C3939 /* Characters.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Characters.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,12 +150,14 @@
 		D9069DE0230A1F29008BE435 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				D9FA2C6527E837E8005C3939 /* Characters.json */,
 				D97AB16C22C5925D00124CAC /* House.swift */,
 				D97AB16822BDAB2200124CAC /* Question.swift */,
 				D9069DE2230A20C2008BE435 /* Teams.swift */,
-				D98D0A09254BF41600423F08 /* SoloQuestions.swift */,
+				D98D0A09254BF41600423F08 /* ConvertSoloQuestions.swift */,
 				D9251F782584C0440069C6EA /* ConvertAllJSON.swift */,
 				D9251F7B2584C2070069C6EA /* AllQuestion.swift */,
+				D9FA2C6327E81ABE005C3939 /* ConvertHangmanWords.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -235,6 +243,7 @@
 				D986BBC725BCF49F002861E5 /* KeyboardView.swift */,
 				D9FA2C5D27E5C369005C3939 /* TextButton.swift */,
 				D9FA2C5F27E5C71D005C3939 /* WhiteLabel.swift */,
+				D9FA2C6127E6D267005C3939 /* KeyboardView2.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -378,6 +387,7 @@
 				D97AB16722BB1A2900124CAC /* GoogleService-Info.plist in Resources */,
 				D90F61C425B4B99700FC070D /* smoke1.mp4 in Resources */,
 				D99F66AB255A0035000EE745 /* harry_potter_font.TTF in Resources */,
+				D9FA2C6627E837E8005C3939 /* Characters.json in Resources */,
 				D916452923F146E500CCBD71 /* RulesViewController.xib in Resources */,
 				D9DAFD412320833500A87632 /* harryPotterTriviaQuestions.json in Resources */,
 				D945B8F422B6E91B0087E171 /* Main.storyboard in Resources */,
@@ -438,6 +448,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9FA2C6427E81ABE005C3939 /* ConvertHangmanWords.swift in Sources */,
 				D9251F792584C0440069C6EA /* ConvertAllJSON.swift in Sources */,
 				D9251F6F2584BCB20069C6EA /* BlitzResultsViewController.swift in Sources */,
 				D9069DE3230A20C2008BE435 /* Teams.swift in Sources */,
@@ -445,10 +456,11 @@
 				D98D09F4254BDF5C00423F08 /* PartyRulesViewController.swift in Sources */,
 				D97AB16922BDAB2200124CAC /* Question.swift in Sources */,
 				D945B8F122B6E91B0087E171 /* ViewController.swift in Sources */,
+				D9FA2C6227E6D267005C3939 /* KeyboardView2.swift in Sources */,
 				D9251F80258586FF0069C6EA /* GameButton.swift in Sources */,
 				D9FA2C5E27E5C369005C3939 /* TextButton.swift in Sources */,
 				D981C7EE27B8F795000831CF /* PotionsClassViewController.swift in Sources */,
-				D98D0A0A254BF41600423F08 /* SoloQuestions.swift in Sources */,
+				D98D0A0A254BF41600423F08 /* ConvertSoloQuestions.swift in Sources */,
 				D99F66AE255A03F2000EE745 /* SoloScoreResultsViewController.swift in Sources */,
 				D9FA2C6027E5C71D005C3939 /* WhiteLabel.swift in Sources */,
 				D916452823F146E500CCBD71 /* RulesViewController.swift in Sources */,

@@ -40,6 +40,7 @@ let hufflepuffFontColor     =   UIColor.rgb(red: 20, green: 20, blue: 35, alpha:
 let ravenclawFontColor      =   UIColor.rgb(red: 199, green: 199, blue: 208, alpha: 1)
 let slytherinFontColor      =   UIColor.rgb(red: 186, green: 185, blue: 195, alpha: 1)
 let whiteColor              =   UIColor.rgb(red: 255, green: 255, blue: 255, alpha: 1)
+let blackColor              =   UIColor.rgb(red: 0, green: 0, blue: 0, alpha: 1)
 let backButtonColor         =   UIColor.rgb(red: 100, green: 100, blue: 100, alpha: 1.0)
 
 // MARK: - App Store Link
