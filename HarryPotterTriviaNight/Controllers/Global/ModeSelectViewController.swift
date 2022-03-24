@@ -245,7 +245,7 @@ class ModeSelectViewController: UIViewController {
     @objc func potionsClassTapped() {
         convertHangmanonJSON(jsonToRead: "Characters")
         
-        let vc = self.storyboard?.instantiateViewController(identifier: "PotionsClassViewController") as! PotionsClassViewController
+        let vc = HangmanCategorySelectViewController()
         self.navigationController?.pushViewController(vc, animated: true)
         vibrate()
     }

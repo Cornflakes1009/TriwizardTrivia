@@ -18,7 +18,7 @@ struct HangmanWords {
 
 func convertHangmanonJSON(jsonToRead: String) {
     // clearing out the questionArr before converting JSON
-    //var wordArr = [HangmanWords]()
+    hangmanWordList.removeAll()
     
     guard let path = Bundle.main.path(forResource: jsonToRead, ofType: "json") else { return }
     let url = URL(fileURLWithPath: path)
@@ -42,6 +42,8 @@ func convertHangmanonJSON(jsonToRead: String) {
         } // end of the for in loop
         
         hangmanWordList.shuffle()
+        
+        hangmanWordList = [hangmanWordList[0], hangmanWordList[1], hangmanWordList[2]]
         
     } catch {
         print(error)

@@ -57,7 +57,14 @@
 		D9FA2C6027E5C71D005C3939 /* WhiteLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FA2C5F27E5C71D005C3939 /* WhiteLabel.swift */; };
 		D9FA2C6227E6D267005C3939 /* KeyboardView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FA2C6127E6D267005C3939 /* KeyboardView2.swift */; };
 		D9FA2C6427E81ABE005C3939 /* ConvertHangmanWords.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FA2C6327E81ABE005C3939 /* ConvertHangmanWords.swift */; };
-		D9FA2C6627E837E8005C3939 /* Characters.json in Resources */ = {isa = PBXBuildFile; fileRef = D9FA2C6527E837E8005C3939 /* Characters.json */; };
+		D9FA2C8827EAF1DA005C3939 /* HangmanCategorySelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FA2C8727EAF1D9005C3939 /* HangmanCategorySelectViewController.swift */; };
+		D9FA2C9127EC0552005C3939 /* Spells.json in Resources */ = {isa = PBXBuildFile; fileRef = D9FA2C8A27EC0551005C3939 /* Spells.json */; };
+		D9FA2C9227EC0552005C3939 /* Locations.json in Resources */ = {isa = PBXBuildFile; fileRef = D9FA2C8B27EC0551005C3939 /* Locations.json */; };
+		D9FA2C9327EC0552005C3939 /* Order Members.json in Resources */ = {isa = PBXBuildFile; fileRef = D9FA2C8C27EC0551005C3939 /* Order Members.json */; };
+		D9FA2C9427EC0552005C3939 /* Characters.json in Resources */ = {isa = PBXBuildFile; fileRef = D9FA2C8D27EC0551005C3939 /* Characters.json */; };
+		D9FA2C9527EC0552005C3939 /* Potions.json in Resources */ = {isa = PBXBuildFile; fileRef = D9FA2C8E27EC0551005C3939 /* Potions.json */; };
+		D9FA2C9627EC0552005C3939 /* Magical Beasts.json in Resources */ = {isa = PBXBuildFile; fileRef = D9FA2C8F27EC0551005C3939 /* Magical Beasts.json */; };
+		D9FA2C9727EC0552005C3939 /* Death Eaters.json in Resources */ = {isa = PBXBuildFile; fileRef = D9FA2C9027EC0551005C3939 /* Death Eaters.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -115,7 +122,14 @@
 		D9FA2C5F27E5C71D005C3939 /* WhiteLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhiteLabel.swift; sourceTree = "<group>"; };
 		D9FA2C6127E6D267005C3939 /* KeyboardView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardView2.swift; sourceTree = "<group>"; };
 		D9FA2C6327E81ABE005C3939 /* ConvertHangmanWords.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertHangmanWords.swift; sourceTree = "<group>"; };
-		D9FA2C6527E837E8005C3939 /* Characters.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Characters.json; sourceTree = "<group>"; };
+		D9FA2C8727EAF1D9005C3939 /* HangmanCategorySelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HangmanCategorySelectViewController.swift; sourceTree = "<group>"; };
+		D9FA2C8A27EC0551005C3939 /* Spells.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Spells.json; sourceTree = "<group>"; };
+		D9FA2C8B27EC0551005C3939 /* Locations.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Locations.json; sourceTree = "<group>"; };
+		D9FA2C8C27EC0551005C3939 /* Order Members.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "Order Members.json"; sourceTree = "<group>"; };
+		D9FA2C8D27EC0551005C3939 /* Characters.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Characters.json; sourceTree = "<group>"; };
+		D9FA2C8E27EC0551005C3939 /* Potions.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Potions.json; sourceTree = "<group>"; };
+		D9FA2C8F27EC0551005C3939 /* Magical Beasts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "Magical Beasts.json"; sourceTree = "<group>"; };
+		D9FA2C9027EC0551005C3939 /* Death Eaters.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "Death Eaters.json"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,7 +164,6 @@
 		D9069DE0230A1F29008BE435 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				D9FA2C6527E837E8005C3939 /* Characters.json */,
 				D97AB16C22C5925D00124CAC /* House.swift */,
 				D97AB16822BDAB2200124CAC /* Question.swift */,
 				D9069DE2230A20C2008BE435 /* Teams.swift */,
@@ -298,6 +311,7 @@
 			isa = PBXGroup;
 			children = (
 				D981C7ED27B8F795000831CF /* PotionsClassViewController.swift */,
+				D9FA2C8727EAF1D9005C3939 /* HangmanCategorySelectViewController.swift */,
 			);
 			path = Potions;
 			sourceTree = "<group>";
@@ -305,6 +319,7 @@
 		D992D4AB254547EF00EEAC9F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D9FA2C8927EC0543005C3939 /* JSON */,
 				D967AFF22782D44D00A4B29D /* buttonClick.mp3 */,
 				D90F61CB25B4C56A00FC070D /* background_music.mp3 */,
 				D90F61C825B4BFB000FC070D /* smoke.mp4 */,
@@ -317,6 +332,20 @@
 				D99F66B1255DF158000EE745 /* ConfigureVaryingSizes.swift */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D9FA2C8927EC0543005C3939 /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				D9FA2C8D27EC0551005C3939 /* Characters.json */,
+				D9FA2C9027EC0551005C3939 /* Death Eaters.json */,
+				D9FA2C8B27EC0551005C3939 /* Locations.json */,
+				D9FA2C8F27EC0551005C3939 /* Magical Beasts.json */,
+				D9FA2C8C27EC0551005C3939 /* Order Members.json */,
+				D9FA2C8E27EC0551005C3939 /* Potions.json */,
+				D9FA2C8A27EC0551005C3939 /* Spells.json */,
+			);
+			path = JSON;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -387,15 +416,21 @@
 				D97AB16722BB1A2900124CAC /* GoogleService-Info.plist in Resources */,
 				D90F61C425B4B99700FC070D /* smoke1.mp4 in Resources */,
 				D99F66AB255A0035000EE745 /* harry_potter_font.TTF in Resources */,
-				D9FA2C6627E837E8005C3939 /* Characters.json in Resources */,
 				D916452923F146E500CCBD71 /* RulesViewController.xib in Resources */,
 				D9DAFD412320833500A87632 /* harryPotterTriviaQuestions.json in Resources */,
+				D9FA2C9527EC0552005C3939 /* Potions.json in Resources */,
 				D945B8F422B6E91B0087E171 /* Main.storyboard in Resources */,
 				D945B90222B9C99C0087E171 /* ParryHotter.ttf in Resources */,
+				D9FA2C9727EC0552005C3939 /* Death Eaters.json in Resources */,
+				D9FA2C9127EC0552005C3939 /* Spells.json in Resources */,
 				D9AFF59725B3E213005D260A /* fantasticBeastsQuestions.json in Resources */,
+				D9FA2C9227EC0552005C3939 /* Locations.json in Resources */,
+				D9FA2C9427EC0552005C3939 /* Characters.json in Resources */,
 				D916452E23F1471F00CCBD71 /* CreditsViewController.xib in Resources */,
+				D9FA2C9327EC0552005C3939 /* Order Members.json in Resources */,
 				D90F61C925B4BFB000FC070D /* smoke.mp4 in Resources */,
 				D967AFF32782D44D00A4B29D /* buttonClick.mp3 in Resources */,
+				D9FA2C9627EC0552005C3939 /* Magical Beasts.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -448,6 +483,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9FA2C8827EAF1DA005C3939 /* HangmanCategorySelectViewController.swift in Sources */,
 				D9FA2C6427E81ABE005C3939 /* ConvertHangmanWords.swift in Sources */,
 				D9251F792584C0440069C6EA /* ConvertAllJSON.swift in Sources */,
 				D9251F6F2584BCB20069C6EA /* BlitzResultsViewController.swift in Sources */,

@@ -74,6 +74,7 @@ var correctlyAnswered       =   0
 var soloScore               =   0
 var completedGame           =   false
 
+
 // MARK: - Game Functions
 func resetGame() {
     soloScore               =   0

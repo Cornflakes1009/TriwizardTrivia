@@ -26,6 +26,8 @@ class PotionsClassViewController: UIViewController {
     private var wordCountForAds = 0
     private let cauldronArray = ["cauldron1", "cauldron2", "cauldron3", "cauldron4", "cauldron5", "cauldron6", "cauldron7"]
     private var wrongGuesses = 0
+    private var passedWords = 0
+    private var failedWords = 0
 
     //MARK:- UI
     private var topButtons = [UIButton]()
@@ -41,6 +43,14 @@ class PotionsClassViewController: UIViewController {
         button.setTitleColor(whiteColor, for: .normal)
         button.addTarget(self, action: #selector(backTapped), for: .touchUpInside)
         return button
+    }()
+    
+    let wordNumberLabel: UILabel = {
+        let label = UILabel()
+        label.font = instructionLabelFont
+        label.textAlignment = .center
+        label.textColor = whiteColor
+        return label
     }()
     
     private let wordLabel: UILabel = {
@@ -110,7 +120,7 @@ class PotionsClassViewController: UIViewController {
         popUpBackground.centerYAnchor.constraint(equalTo: exitConfirmationView.centerYAnchor).isActive = true
         
         exitConfirmationView.addSubview(exitConfirmationLabel)
-        exitConfirmationLabel.anchor(top: exitConfirmationView.topAnchor, left: exitConfirmationView.leftAnchor, bottom: nil, right: exitConfirmationView.rightAnchor, paddingTop: 10, paddingLeft: 10, paddingBottom: 0, paddingRight: 20, width: 0, height: 0)
+        exitConfirmationLabel.anchor(top: exitConfirmationView.topAnchor, left: exitConfirmationView.leftAnchor, bottom: nil, right: exitConfirmationView.rightAnchor, paddingTop: 20, paddingLeft: 10, paddingBottom: 0, paddingRight: 20, width: 0, height: 0)
         
         setupExitStackView()
         
@@ -119,8 +129,68 @@ class PotionsClassViewController: UIViewController {
         }
     }
     
+    // MARK: - Word Complete Popup
+    private let wordCompletePopupView: UIView = {
+        let view = UIView()
+        view.backgroundColor = blackColor
+        view.layer.cornerRadius = 5
+        return view
+    }()
+    
+    private let statusLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = whiteColor
+        label.font = instructionLabelFont
+        label.numberOfLines = 0
+        label.textAlignment = .center
+        return label
+    }()
+    
+    private let popupWordLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = whiteColor
+        label.font = instructionLabelFont
+        label.numberOfLines = 0
+        label.textAlignment = .center
+        return label
+    }()
+    
+    private let nextWordButton: GameButton = {
+        let button = GameButton(title: "Next Word", backgroundColor: gryffindorColor, fontColor: gryffindorFontColor)
+        button.addTarget(self, action: #selector(nextWordTapped), for: .touchUpInside)
+        return button
+    }()
+    
+    private func triggerCompleteWordPopup(with status: String) {
+        backButton.isEnabled = false
+        view.addSubview(wordCompletePopupView)
+        wordCompletePopupView.anchor(top: view.safeAreaLayoutGuide.topAnchor, left: view.leftAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, right: view.rightAnchor, paddingTop: 10, paddingLeft: 10, paddingBottom: -10, paddingRight: 10, width: 0, height: 0)
+        
+        
+        wordCompletePopupView.addSubview(popUpBackground)
+        popUpBackground.anchor(top: wordCompletePopupView.topAnchor, left: wordCompletePopupView.leftAnchor, bottom: wordCompletePopupView.bottomAnchor, right: wordCompletePopupView.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
+        popUpBackground.centerXAnchor.constraint(equalTo: wordCompletePopupView.centerXAnchor).isActive = true
+        popUpBackground.centerYAnchor.constraint(equalTo: wordCompletePopupView.centerYAnchor).isActive = true
+        
+        statusLabel.text = "\(status) The word was:"
+        wordCompletePopupView.addSubview(statusLabel)
+        statusLabel.anchor(top: wordCompletePopupView.topAnchor, left: wordCompletePopupView.leftAnchor, bottom: nil, right: wordCompletePopupView.rightAnchor, paddingTop: 20, paddingLeft: 20, paddingBottom: 0, paddingRight: 20, width: 0, height: 0)
+        
+        popupWordLabel.text = "\(wordToGuess.capitalized)"
+        wordCompletePopupView.addSubview(popupWordLabel)
+        popupWordLabel.anchor(top: nil, left: wordCompletePopupView.leftAnchor, bottom: nil, right: wordCompletePopupView.rightAnchor, paddingTop: 0, paddingLeft: 20, paddingBottom: 0, paddingRight: 20, width: 0, height: 0)
+        popupWordLabel.centerYAnchor.constraint(equalTo: wordCompletePopupView.centerYAnchor).isActive = true
+        
+        wordCompletePopupView.addSubview(nextWordButton)
+        nextWordButton.anchor(top: nil, left: wordCompletePopupView.leftAnchor, bottom: wordCompletePopupView.bottomAnchor, right: wordCompletePopupView.rightAnchor, paddingTop: 0, paddingLeft: 20, paddingBottom: -20, paddingRight: 20, width: 0, height: buttonHeight)
+        
+        UIView.animate(withDuration: 0.5) {
+            self.wordCompletePopupView.alpha = popUpViewAlpha
+        }
+    }
+    
     // MARK: - Admob
-    let bannerView: GADBannerView = {
+    private let bannerView: GADBannerView = {
         let bannerView = GADBannerView()
         return bannerView
     }()
@@ -146,6 +216,10 @@ class PotionsClassViewController: UIViewController {
         view.addSubview(backButton)
         backButton.anchor(top: view.safeAreaLayoutGuide.topAnchor, left: view.leftAnchor, bottom: nil, right: nil, paddingTop: 5, paddingLeft: 5, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
         
+        view.addSubview(wordNumberLabel)
+        wordNumberLabel.anchor(top: view.safeAreaLayoutGuide.topAnchor, left: nil, bottom: nil, right: view.rightAnchor, paddingTop: 5, paddingLeft: 0, paddingBottom: 0, paddingRight: 5, width: 0, height: 0)
+        wordNumberLabel.text = "\(hangmanIndex + 1)/\(hangmanWordList.count)"
+        
         view.addSubview(wordLabel)
         wordLabel.anchor(top: view.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 100, paddingLeft: 10, paddingBottom: 0, paddingRight: 10, width: 0, height: 0)
         
@@ -154,29 +228,20 @@ class PotionsClassViewController: UIViewController {
         bannerView.anchor(top: nil, left: nil, bottom: view.bottomAnchor, right: nil, paddingTop: 0, paddingLeft: 0, paddingBottom: -20, paddingRight: 0, width: 281, height: 50)
         bannerView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         
-        setupStackView()
+        setupKeyboardStackView()
         view.addSubview(keyboardView)
         keyboardView.anchor(top: nil, left: view.leftAnchor, bottom: bannerView.topAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 10, paddingBottom: -10, paddingRight: 10, width: 0, height: 150)
         
         view.addSubview(cauldronImage)
         cauldronImage.anchor(top: wordLabel.bottomAnchor, left: nil, bottom: keyboardView.topAnchor, right: nil, paddingTop: 5, paddingLeft: 0, paddingBottom: -5, paddingRight: 0, width: screenWidth * 0.5, height: screenWidth * 0.5)
         cauldronImage.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-//        cauldronImage.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
     }
-    
-    private func setupStackView() {
-        
-        convertStringToButton()
-        
-        let topStackView = createHorizontalStackView(for: topButtons)
-        let middleStackView = createHorizontalStackView(for: middleButtons)
-        let bottomStackView = createHorizontalStackView(for: bottomButtons)
-        
-        keyboardView = UIStackView(arrangedSubviews: [topStackView, middleStackView, bottomStackView])
-        keyboardView.distribution = .fillEqually
-        keyboardView.axis = .vertical
-        keyboardView.alignment = .center
-        keyboardView.spacing = 12
+
+    // MARK: - AdMob Function
+    func createAd() -> GADInterstitial {
+        let inter = GADInterstitial(adUnitID: adUnitID)
+        inter.load(GADRequest())
+        return inter
     }
     
     func setupBannerView() {
@@ -193,14 +258,7 @@ class PotionsClassViewController: UIViewController {
         }
     }
     
-    // MARK: AdMob Function
-    func createAd() -> GADInterstitial {
-        let inter = GADInterstitial(adUnitID: adUnitID)
-        inter.load(GADRequest())
-        return inter
-    }
-    
-    // MARK:- Exit StackView
+    // MARK: - Exit StackView
     private var exitStackView = UIStackView()
     private func setupExitStackView() {
         exitStackView = UIStackView(arrangedSubviews: [exitGameCancel, exitGameConfirm])
@@ -215,9 +273,26 @@ class PotionsClassViewController: UIViewController {
         exitStackView.anchor(top: nil, left: nil, bottom: nil, right: nil, paddingTop: 0, paddingLeft: 20, paddingBottom: 0, paddingRight: 20, width: exitStackViewWidth, height: buttonHeight)
     }
     
+    // MARK: - Creating Keyboard
+    private func setupKeyboardStackView() {
+        
+        convertStringToButton()
+        
+        let topStackView = createHorizontalStackView(for: topButtons)
+        let middleStackView = createHorizontalStackView(for: middleButtons)
+        let bottomStackView = createHorizontalStackView(for: bottomButtons)
+        
+        keyboardView = UIStackView(arrangedSubviews: [topStackView, middleStackView, bottomStackView])
+        keyboardView.distribution = .fillEqually
+        keyboardView.axis = .vertical
+        keyboardView.alignment = .center
+        keyboardView.spacing = 12
+    }
+    
     private func createHorizontalStackView(for buttons: [UIButton]) -> UIStackView {
         let sv = UIStackView()
         sv.axis = .horizontal
+        sv.distribution = .fillEqually
         sv.spacing = 5
         buttons.forEach { (button) in
             sv.addArrangedSubview(button)
@@ -269,7 +344,7 @@ class PotionsClassViewController: UIViewController {
         button.isEnabled = true
     }
     
-    // converting word to underscores and spaces
+    // MARK: -  Converting Word to Underscores and Spaces
     private func prepareWordLabel(with word: String) {
         underscoreString = ""
         underscoreArray.removeAll()
@@ -310,9 +385,16 @@ class PotionsClassViewController: UIViewController {
         vibrate()
     }
     
-    // Keyboard buttons tapped
+    @objc func nextWordTapped() {
+        UIView.animate(withDuration: 1) {
+            self.wordCompletePopupView.alpha = 0
+        }
+        backButton.isEnabled = true
+        vibrate()
+    }
+    
+    // MARK: - Keyboard buttons tapped
     @objc private func handleKeyboardPressed(_ button: UIButton) {
-        var endString = ""
         button.isEnabled = false
         var matched = false
         var newRound = false
@@ -322,40 +404,53 @@ class PotionsClassViewController: UIViewController {
             
             if wordToGuessArray.contains(text) {
                 matched = true
+                // replacing underscores with correctly guessed letter
                 for (index, char) in wordToGuessArray.enumerated() {
                     if char == text {
                         underscoreArray[index] = char
                     }
                 }
+                
+                // checking if all letters guessed
+                if !underscoreArray.contains(" _ ") {
+                    triggerCompleteWordPopup(with: "Good job! Outstanding!")
+                    if hangmanIndex + 1 != hangmanWordList.count {
+                        hangmanIndex += 1
+                    } else {
+                        hangmanIndex = 0
+                    }
+                    
+                    // running ad on every 5th word
+                    let totalWords = passedWords + failedWords
+                    if totalWords % 5 == 0 && totalWords > 1 {
+                        showInterstitial()
+                    }
+                    
+                    wordNumberLabel.text = "\(hangmanIndex + 1)/\(hangmanWordList.count)"
+                    wordToGuess = hangmanWordList[hangmanIndex].word.uppercased()
+                    prepareWordLabel(with: wordToGuess)
+                    resetKeyboard()
+                    wrongGuesses = 0
+                    passedWords += 1
+                    newRound = true
+                }
+                
             } else {
                 wrongGuesses += 1
+                // resetting the cauldron index and incrementing failed words
                 if wrongGuesses > cauldronArray.count - 1{
                     wrongGuesses = 0
+                    
+                    resetKeyboard()
+                    failedWords += 1
+                    triggerCompleteWordPopup(with: "Oh no! The potion went bad!")
+                    prepareWordLabel(with: wordToGuess)
                 }
-                cauldronImage.image = UIImage(named: cauldronArray[wrongGuesses])
             }
-            
-            
-            // alerting the player that the letters have all been guessed
-            if !underscoreArray.contains(" _ ") {
-                if hangmanIndex != hangmanWordList.count {
-                    hangmanIndex += 1
-                } else {
-                    hangmanIndex = 0
-                }
 
-                wordToGuess = hangmanWordList[hangmanIndex].word.uppercased()
-                prepareWordLabel(with: wordToGuess)
-                resetKeyboard()
-                wrongGuesses = 0
-                cauldronImage.image = UIImage(named: cauldronArray[wrongGuesses])
-                newRound = true
-            }
-            
-            endString = underscoreArray.joined(separator: " ")
-            wordLabel.text = endString
+            wordLabel.text = underscoreArray.joined(separator: "")
             if !newRound { button.backgroundColor = matched ? .green : .red }
-            
+            cauldronImage.image = UIImage(named: cauldronArray[wrongGuesses])
         }
     }
     
