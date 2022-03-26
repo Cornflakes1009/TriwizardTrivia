@@ -252,14 +252,14 @@ class ModeSelectViewController: UIViewController {
     
     @objc func survivalTapped() {
         convertAllJSON(jsonToRead: "harryPotterSoloQuestions")
-        let vc = self.storyboard?.instantiateViewController(identifier: "SurvivalQuestionViewController") as! SurvivalQuestionViewController
+        let vc = SurvivalQuestionViewController()
         self.navigationController?.pushViewController(vc, animated: true)
         vibrate()
     }
     
     @objc func blitzTapped() {
         convertAllJSON(jsonToRead: "harryPotterSoloQuestions")
-        let vc = self.storyboard?.instantiateViewController(identifier: "BlitzQuestionViewController") as! BlitzQuestionViewController
+        let vc = BlitzQuestionViewController()
         self.navigationController?.pushViewController(vc, animated: true)
         vibrate()
     }

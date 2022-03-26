@@ -116,7 +116,7 @@
 		D99F66AD255A03F2000EE745 /* SoloScoreResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoloScoreResultsViewController.swift; sourceTree = "<group>"; };
 		D99F66B1255DF158000EE745 /* ConfigureVaryingSizes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigureVaryingSizes.swift; sourceTree = "<group>"; };
 		D9AFF59625B3E213005D260A /* fantasticBeastsQuestions.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = fantasticBeastsQuestions.json; sourceTree = "<group>"; };
-		D9DAFD402320833500A87632 /* harryPotterTriviaQuestions.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = harryPotterTriviaQuestions.json; path = "HarryPotterTriviaNight/Supporting Files/harryPotterTriviaQuestions.json"; sourceTree = SOURCE_ROOT; };
+		D9DAFD402320833500A87632 /* harryPotterTriviaQuestions.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = harryPotterTriviaQuestions.json; path = "HarryPotterTriviaNight/Supporting Files/JSON/harryPotterTriviaQuestions.json"; sourceTree = SOURCE_ROOT; };
 		D9DAFD422324779E00A87632 /* ResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
 		D9FA2C5D27E5C369005C3939 /* TextButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextButton.swift; sourceTree = "<group>"; };
 		D9FA2C5F27E5C71D005C3939 /* WhiteLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhiteLabel.swift; sourceTree = "<group>"; };
@@ -324,9 +324,6 @@
 				D90F61CB25B4C56A00FC070D /* background_music.mp3 */,
 				D90F61C825B4BFB000FC070D /* smoke.mp4 */,
 				D90F61C325B4B99700FC070D /* smoke1.mp4 */,
-				D9AFF59625B3E213005D260A /* fantasticBeastsQuestions.json */,
-				D9DAFD402320833500A87632 /* harryPotterTriviaQuestions.json */,
-				D99F66A725591B89000EE745 /* harryPotterSoloQuestions.json */,
 				D992D4A52545293300EEAC9F /* Extensions.swift */,
 				D992D4A725452C6C00EEAC9F /* Globals.swift */,
 				D99F66B1255DF158000EE745 /* ConfigureVaryingSizes.swift */,
@@ -344,6 +341,9 @@
 				D9FA2C8C27EC0551005C3939 /* Order Members.json */,
 				D9FA2C8E27EC0551005C3939 /* Potions.json */,
 				D9FA2C8A27EC0551005C3939 /* Spells.json */,
+				D9AFF59625B3E213005D260A /* fantasticBeastsQuestions.json */,
+				D9DAFD402320833500A87632 /* harryPotterTriviaQuestions.json */,
+				D99F66A725591B89000EE745 /* harryPotterSoloQuestions.json */,
 			);
 			path = JSON;
 			sourceTree = "<group>";

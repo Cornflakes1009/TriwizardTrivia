@@ -568,7 +568,7 @@ class SurvivalQuestionViewController: UIViewController, GADInterstitialDelegate,
             interstitial = createAd()
         }
         
-        let vc = self.storyboard?.instantiateViewController(identifier: "SurvivalResultsViewController") as! SurvivalResultsViewController
+        let vc = SurvivalResultsViewController()
         self.navigationController?.pushViewController(vc, animated: true)
         vibrate()
     }

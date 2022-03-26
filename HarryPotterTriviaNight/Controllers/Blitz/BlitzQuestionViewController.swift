@@ -422,10 +422,6 @@ class BlitzQuestionViewController: UIViewController, GADInterstitialDelegate, GA
         let backButtonImageConfig = UIImage.SymbolConfiguration(pointSize: 25, weight: .light, scale: .large)
         let backButtonImage = UIImage(systemName: closePopupSymbol, withConfiguration: backButtonImageConfig)
         
-        extraLifeExitButton.setImage(backButtonImage, for: .normal)
-        correctAnswerView.addSubview(extraLifeExitButton)
-        extraLifeExitButton.anchor(top: correctAnswerView.topAnchor, left: correctAnswerView.leftAnchor, bottom: nil, right: nil, paddingTop: 5, paddingLeft: 5, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
-        
         let currentCorrectAnswer = allQuestionList[questionIndex].answer
         if currentCorrectAnswer == 0 {
             correctAnswerLabel.text = "\(allQuestionList[questionIndex].optionZero)"
@@ -441,6 +437,10 @@ class BlitzQuestionViewController: UIViewController, GADInterstitialDelegate, GA
         popUpBackground.anchor(top: correctAnswerView.topAnchor, left: correctAnswerView.leftAnchor, bottom: correctAnswerView.bottomAnchor, right: correctAnswerView.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
         popUpBackground.centerXAnchor.constraint(equalTo: correctAnswerView.centerXAnchor).isActive = true
         popUpBackground.centerYAnchor.constraint(equalTo: correctAnswerView.centerYAnchor).isActive = true
+        
+        extraLifeExitButton.setImage(backButtonImage, for: .normal)
+        correctAnswerView.addSubview(extraLifeExitButton)
+        extraLifeExitButton.anchor(top: correctAnswerView.topAnchor, left: correctAnswerView.leftAnchor, bottom: nil, right: nil, paddingTop: 5, paddingLeft: 5, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
         
         correctAnswerView.addSubview(correctAnswerTopLabel)
         correctAnswerTopLabel.anchor(top: extraLifeExitButton.bottomAnchor, left: correctAnswerView.leftAnchor, bottom: nil, right: correctAnswerView.rightAnchor, paddingTop: 20, paddingLeft: 20, paddingBottom: 0, paddingRight: 20, width: 0, height: 0)
@@ -542,7 +542,7 @@ class BlitzQuestionViewController: UIViewController, GADInterstitialDelegate, GA
                 interstitial = createAd()
             }
             
-            let vc = self.storyboard?.instantiateViewController(identifier: "BlitzResultsViewController") as! BlitzResultsViewController
+            let vc = BlitzResultsViewController()
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }
@@ -609,7 +609,7 @@ class BlitzQuestionViewController: UIViewController, GADInterstitialDelegate, GA
             interstitial = createAd()
         }
         
-        let vc = self.storyboard?.instantiateViewController(identifier: "BlitzResultsViewController") as! BlitzResultsViewController
+        let vc = BlitzResultsViewController()
         self.navigationController?.pushViewController(vc, animated: true)
         vibrate()
     }
