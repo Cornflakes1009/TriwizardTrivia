@@ -13,24 +13,14 @@ import GoogleMobileAds
 class BlitzQuestionViewController: UIViewController, GADInterstitialDelegate, GADRewardedAdDelegate {
 
     var player: AVPlayer?
-    
-    // MARK:- handle the completion of watching rewarded ad
-    func rewardedAd(_ rewardedAd: GADRewardedAd, userDidEarn reward: GADAdReward) {
-        UIView.animate(withDuration: 1) {
-            self.correctAnswerView.alpha = 0
-            self.extraLifeExitButton.alpha = 0
-        }
-        
-        time = 30
-        startTimer()
-        backButton.isEnabled = true
-        createAndLoadRewardedAd()
-    }
-    
     var timer = Timer()
     var time: Double = 120
     var interstitial: GADInterstitial!
     var rewardedAd: GADRewardedAd?
+    
+
+    
+    
     
     let background: UIImageView = {
         let image = UIImageView()
@@ -270,15 +260,12 @@ class BlitzQuestionViewController: UIViewController, GADInterstitialDelegate, GA
     }
     
     // MARK:- Setup Views
-    func setupViews() {
-//        view.addSubview(background)
-//        background.anchor(top: view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
+    private func setupViews() {
         
         playBackgroundVideo()
         
         let backButtonImageConfig = UIImage.SymbolConfiguration(pointSize: 25, weight: .light, scale: .large)
         let backButtonImage = UIImage(systemName: backButtonSymbol, withConfiguration: backButtonImageConfig)
-        
         backButton.setImage(backButtonImage, for: .normal)
         view.addSubview(backButton)
         backButton.anchor(top: view.safeAreaLayoutGuide.topAnchor, left: view.leftAnchor, bottom: nil, right: nil, paddingTop: 5, paddingLeft: 5, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
@@ -295,8 +282,7 @@ class BlitzQuestionViewController: UIViewController, GADInterstitialDelegate, GA
         
         bannerView.rootViewController = self
         view.addSubview(bannerView)
-        bannerView.anchor(top: nil, left: nil, bottom: view.safeAreaLayoutGuide.bottomAnchor, right: nil, paddingTop: 0, paddingLeft: 0, paddingBottom: -20, paddingRight: 0, width: 281, height: 50)
-        bannerView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        bannerView.anchor(top: nil, left: view.leftAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 50)
         
         setupStackView()
         updateUI()
@@ -329,7 +315,7 @@ class BlitzQuestionViewController: UIViewController, GADInterstitialDelegate, GA
     
     // MARK:- StackView
     var stackView = UIStackView()
-    func setupStackView() {
+    private func setupStackView() {
         stackView = UIStackView(arrangedSubviews: [optionZeroButton, optionOneButton, optionTwoButton, optionThreeButton])
         stackView.distribution = .fillEqually
         stackView.axis = .vertical
@@ -343,7 +329,7 @@ class BlitzQuestionViewController: UIViewController, GADInterstitialDelegate, GA
     }
     
     // MARK:- Explanation View
-    func addExplanationView() {
+    private func addExplanationView() {
         view.addSubview(explanationView)
         explanationView.anchor(top: view.safeAreaLayoutGuide.topAnchor, left: view.leftAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, right: view.rightAnchor, paddingTop: 10, paddingLeft: 10, paddingBottom: -10, paddingRight: 10, width: 0, height: 0)
         UIView.animate(withDuration: 1) {
@@ -363,7 +349,7 @@ class BlitzQuestionViewController: UIViewController, GADInterstitialDelegate, GA
     }
     
     // MARK:- Exit View
-    func presentBackConfirmationsView() {
+    private func presentBackConfirmationsView() {
         backButton.isEnabled = false
         view.addSubview(exitConfirmationView)
         exitConfirmationView.anchor(top: view.safeAreaLayoutGuide.topAnchor, left: view.leftAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, right: view.rightAnchor, paddingTop: 10, paddingLeft: 10, paddingBottom: -10, paddingRight: 10, width: 0, height: 0)
@@ -385,7 +371,7 @@ class BlitzQuestionViewController: UIViewController, GADInterstitialDelegate, GA
     
     // MARK:- Exit StackView
     var exitStackView = UIStackView()
-    func setupExitStackView() {
+    private func setupExitStackView() {
         exitStackView = UIStackView(arrangedSubviews: [exitGameCancel, exitGameConfirm])
         let exitStackViewWidth = UIScreen.main.bounds.size.width - 80
         exitStackView.distribution = .fillEqually
@@ -398,7 +384,7 @@ class BlitzQuestionViewController: UIViewController, GADInterstitialDelegate, GA
         exitStackView.anchor(top: nil, left: nil, bottom: nil, right: nil, paddingTop: 0, paddingLeft: 20, paddingBottom: 0, paddingRight: 20, width: exitStackViewWidth, height: buttonHeight)
     }
     
-    func updateUI() {
+    private func updateUI() {
         questionLabel.text = "\(allQuestionList[questionIndex].question)"
         optionZeroButton.setTitle(allQuestionList[questionIndex].optionZero, for: .normal)
         optionOneButton.setTitle(allQuestionList[questionIndex].optionOne, for: .normal)
@@ -409,18 +395,15 @@ class BlitzQuestionViewController: UIViewController, GADInterstitialDelegate, GA
     }
     
     // MARK:- Show Rewarded Ad Answer View
-    func showRewardedAdAnswerView() {
+    private func showRewardedAdAnswerView() {
         nextQuestionButton.removeFromSuperview()
         backButton.isEnabled = false
-        extraLifeExitButton.alpha = 1
+        //extraLifeExitButton.alpha = 1
         view.addSubview(correctAnswerView)
         correctAnswerView.anchor(top: view.safeAreaLayoutGuide.topAnchor, left: view.leftAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, right: view.rightAnchor, paddingTop: 10, paddingLeft: 10, paddingBottom: -10, paddingRight: 10, width: 0, height: 0)
         UIView.animate(withDuration: 0.5) {
             self.correctAnswerView.alpha = popUpViewAlpha
         }
-        
-        let backButtonImageConfig = UIImage.SymbolConfiguration(pointSize: 25, weight: .light, scale: .large)
-        let backButtonImage = UIImage(systemName: closePopupSymbol, withConfiguration: backButtonImageConfig)
         
         let currentCorrectAnswer = allQuestionList[questionIndex].answer
         if currentCorrectAnswer == 0 {
@@ -438,7 +421,9 @@ class BlitzQuestionViewController: UIViewController, GADInterstitialDelegate, GA
         popUpBackground.centerXAnchor.constraint(equalTo: correctAnswerView.centerXAnchor).isActive = true
         popUpBackground.centerYAnchor.constraint(equalTo: correctAnswerView.centerYAnchor).isActive = true
         
-        extraLifeExitButton.setImage(backButtonImage, for: .normal)
+        let exitButtonImageConfig = UIImage.SymbolConfiguration(pointSize: 25, weight: .light, scale: .large)
+        let exitButtonImage = UIImage(systemName: closePopupSymbol, withConfiguration: exitButtonImageConfig)
+        extraLifeExitButton.setImage(exitButtonImage, for: .normal)
         correctAnswerView.addSubview(extraLifeExitButton)
         extraLifeExitButton.anchor(top: correctAnswerView.topAnchor, left: correctAnswerView.leftAnchor, bottom: nil, right: nil, paddingTop: 5, paddingLeft: 5, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
         
@@ -455,9 +440,22 @@ class BlitzQuestionViewController: UIViewController, GADInterstitialDelegate, GA
         extraLifeButton.anchor(top: nil, left: correctAnswerView.leftAnchor, bottom: correctAnswerView.bottomAnchor, right: correctAnswerView.rightAnchor, paddingTop: 0, paddingLeft: 20, paddingBottom: -20, paddingRight: 20, width: 0, height: buttonHeight)
     }
     
+    // MARK:- handle the completion of watching rewarded ad
+    internal func rewardedAd(_ rewardedAd: GADRewardedAd, userDidEarn reward: GADAdReward) {
+        UIView.animate(withDuration: 1) {
+            self.correctAnswerView.alpha = 0
+            self.extraLifeExitButton.alpha = 1
+        }
+        
+        time = 30
+        startTimer()
+        backButton.isEnabled = true
+        createAndLoadRewardedAd()
+    }
+    
     // MARK:- Show Correct Answer View
-    func showCorrectAnswer() {
-        extraLifeButton.removeFromSuperview()
+    private func showCorrectAnswer() {
+        //extraLifeButton.removeFromSuperview()
         backButton.isEnabled = false
         view.addSubview(correctAnswerView)
         correctAnswerView.anchor(top: view.safeAreaLayoutGuide.topAnchor, left: view.leftAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, right: view.rightAnchor, paddingTop: 10, paddingLeft: 10, paddingBottom: -10, paddingRight: 10, width: 0, height: 0)
@@ -495,14 +493,14 @@ class BlitzQuestionViewController: UIViewController, GADInterstitialDelegate, GA
     }
     
     // MARK:- AdMob Functions
-    func createAd() -> GADInterstitial {
+    private func createAd() -> GADInterstitial {
         let inter = GADInterstitial(adUnitID: adUnitID)
         inter.delegate = self
         inter.load(GADRequest())
         return inter
     }
     
-    func createAndLoadRewardedAd() {
+    private func createAndLoadRewardedAd() {
       rewardedAd = GADRewardedAd(adUnitID: rewardedAdUnitID)
       rewardedAd?.load(GADRequest()) { error in
         if let error = error {
@@ -513,7 +511,7 @@ class BlitzQuestionViewController: UIViewController, GADInterstitialDelegate, GA
       }
     }
     
-    func setupBannerView() {
+    private func setupBannerView() {
         // starting ads on the bannerview
         bannerView.adUnitID = prodAdMobsKey
         bannerView.rootViewController = self
@@ -521,7 +519,7 @@ class BlitzQuestionViewController: UIViewController, GADInterstitialDelegate, GA
     }
     
     // MARK:- Check if Answer Tapped is Correct
-    func checkIfCorrect(buttonNumber: Int) {
+    private func checkIfCorrect(buttonNumber: Int) {
         totalNumberOfQuestions += 1
         defaults.setValue(totalNumberOfQuestions, forKey: "totalNumberOfQuestions")
         if buttonNumber == allQuestionList[questionIndex].answer {
@@ -548,7 +546,7 @@ class BlitzQuestionViewController: UIViewController, GADInterstitialDelegate, GA
     }
     
     // MARK:- Timer
-    func startTimer() {
+    private func startTimer() {
         timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: (#selector(BlitzQuestionViewController.updateTimer)), userInfo: nil, repeats: true)
     }
     

@@ -141,6 +141,7 @@ class SoloScoreResultsViewController: UIViewController{
     @objc func shareTapped() {
         let items = ["Look at my score! \(soloScore)/\(soloQuestionList.count) \n\n\(appStoreLink)"]
         let ac = UIActivityViewController(activityItems: items as [Any], applicationActivities: nil)
+        vibrate()
         present(ac, animated: true)
     }
     

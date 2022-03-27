@@ -47,51 +47,6 @@
             </objects>
             <point key="canvasLocation" x="-1871" y="824"/>
         </scene>
-        <!--SoloPlayViewController-->
-        <scene sceneID="ibt-5c-LCY">
-            <objects>
-                <viewController storyboardIdentifier="SoloPlayViewController" title="SoloPlayViewController" id="rKx-Vz-ys4" customClass="SoloPlayViewController" customModule="TriwizardTrivia" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="yqm-dr-a8s">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="6Yb-Br-5r7"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="mfH-q7-6F7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1116" y="824"/>
-        </scene>
-        <!--SoloQuestionViewController-->
-        <scene sceneID="gdB-7n-Og6">
-            <objects>
-                <viewController storyboardIdentifier="SoloQuestionViewController" title="SoloQuestionViewController" id="qa0-AZ-G12" customClass="SoloQuestionViewController" customModule="TriwizardTrivia" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="XFW-jw-ifj">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="K3h-wF-kfw"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bQN-DV-RSz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1116" y="1532"/>
-        </scene>
-        <!--SoloScoreResultsViewController-->
-        <scene sceneID="3i4-BD-vJl">
-            <objects>
-                <viewController storyboardIdentifier="SoloScoreResultsViewController" title="SoloScoreResultsViewController" id="ic2-VJ-7Hg" customClass="SoloScoreResultsViewController" customModule="TriwizardTrivia" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Auj-Rd-4c8">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="gdg-zw-qZw"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="k2q-mX-wdF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1116" y="2228"/>
-        </scene>
         <!--Party Rules View Controller-->
         <scene sceneID="HVy-tg-OmK">
             <objects>
@@ -121,21 +76,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HPm-vH-iCM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-412" y="824"/>
-        </scene>
-        <!--Potions Class View Controller-->
-        <scene sceneID="Aks-Me-pIm">
-            <objects>
-                <viewController storyboardIdentifier="PotionsClassViewController" id="g6a-tE-YKe" customClass="PotionsClassViewController" customModule="TriwizardTrivia" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="4td-A9-LhF">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="K06-dm-i02"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="jHf-aM-1EH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="260" y="-522"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -280,51 +220,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="260" y="133"/>
-        </scene>
-        <!--Survival Results View Controller-->
-        <scene sceneID="ZQT-iZ-EB9">
-            <objects>
-                <viewController storyboardIdentifier="SurvivalResultsViewController" id="diO-sE-M7r" customClass="SurvivalResultsViewController" customModule="TriwizardTrivia" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="prT-t4-ZDI">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="pFS-Sg-OtU"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="GEH-5Y-TH8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1116" y="-1189"/>
-        </scene>
-        <!--Blitz Results View Controller-->
-        <scene sceneID="HEM-Ww-XnV">
-            <objects>
-                <viewController storyboardIdentifier="BlitzResultsViewController" id="WJT-FC-qRq" customClass="BlitzResultsViewController" customModule="TriwizardTrivia" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="sTs-ik-Fbn">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="hXm-h9-1vT"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="pLs-Y5-ERE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-412" y="-1190"/>
-        </scene>
-        <!--Survival Question View Controller-->
-        <scene sceneID="vJp-0e-wnf">
-            <objects>
-                <viewController storyboardIdentifier="SurvivalQuestionViewController" id="q9W-lN-fbQ" customClass="SurvivalQuestionViewController" customModule="TriwizardTrivia" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="QSc-z9-aCS">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="eGG-HL-aei"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="KWG-ZS-Nsu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1116" y="-522"/>
         </scene>
         <!--Mode Select View Controller-->
         <scene sceneID="Sr9-SW-4CQ">
@@ -503,10 +398,9 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lbI-SX-wO3" customClass="GADBannerView">
-                                <rect key="frame" x="47" y="607" width="281" height="50"/>
+                                <rect key="frame" x="0.0" y="607" width="375" height="50"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="281" id="fVU-q6-YAN"/>
                                     <constraint firstAttribute="height" constant="50" id="r9X-PD-zAd"/>
                                 </constraints>
                             </view>
@@ -527,9 +421,11 @@
                             <constraint firstItem="Jis-0H-ntY" firstAttribute="top" secondItem="NDf-WP-dYG" secondAttribute="bottom" constant="30" id="Zds-Sw-ZjE"/>
                             <constraint firstItem="tPn-QS-3ze" firstAttribute="leading" secondItem="pcM-qD-uVh" secondAttribute="leading" constant="10" id="a9e-7f-bMK"/>
                             <constraint firstItem="pcM-qD-uVh" firstAttribute="trailing" secondItem="KEV-nM-U94" secondAttribute="trailing" constant="10" id="bPB-qo-Pa3"/>
-                            <constraint firstAttribute="bottom" secondItem="lbI-SX-wO3" secondAttribute="bottom" constant="10" id="cFw-DJ-5L8"/>
+                            <constraint firstItem="pcM-qD-uVh" firstAttribute="bottom" secondItem="lbI-SX-wO3" secondAttribute="bottom" constant="10" id="cFw-DJ-5L8"/>
+                            <constraint firstItem="pcM-qD-uVh" firstAttribute="trailing" secondItem="lbI-SX-wO3" secondAttribute="trailing" id="ckK-bg-Xs0"/>
                             <constraint firstItem="tPn-QS-3ze" firstAttribute="top" secondItem="KFm-43-TGQ" secondAttribute="bottom" constant="8.5" id="krw-97-iGW"/>
                             <constraint firstItem="lbI-SX-wO3" firstAttribute="centerX" secondItem="Ud7-T5-FBQ" secondAttribute="centerX" id="mRi-4X-G8L"/>
+                            <constraint firstItem="lbI-SX-wO3" firstAttribute="leading" secondItem="pcM-qD-uVh" secondAttribute="leading" id="tWa-Cv-tWi"/>
                             <constraint firstItem="NDf-WP-dYG" firstAttribute="leading" secondItem="pcM-qD-uVh" secondAttribute="leading" constant="10" id="v0w-i1-tya"/>
                         </constraints>
                     </view>
@@ -563,10 +459,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ql5-0a-ul1" customClass="GADBannerView">
-                                <rect key="frame" x="47" y="607" width="281" height="50"/>
+                                <rect key="frame" x="0.0" y="607" width="375" height="50"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="281" id="JYj-0H-rTp"/>
                                     <constraint firstAttribute="height" constant="50" id="bkW-aK-KdU"/>
                                 </constraints>
                             </view>
@@ -657,10 +552,12 @@
                             <constraint firstItem="l3W-ez-XM9" firstAttribute="trailing" secondItem="Fsy-oJ-GHj" secondAttribute="trailing" constant="8" id="DEw-MT-VRD"/>
                             <constraint firstItem="l3W-ez-XM9" firstAttribute="bottom" secondItem="Ql5-0a-ul1" secondAttribute="bottom" constant="10" id="H1J-6e-KoA"/>
                             <constraint firstItem="J1U-3s-kBX" firstAttribute="top" secondItem="GdK-MD-vPW" secondAttribute="bottom" constant="5.5" id="H4k-DH-V8H"/>
+                            <constraint firstItem="l3W-ez-XM9" firstAttribute="trailing" secondItem="Ql5-0a-ul1" secondAttribute="trailing" id="I6P-eM-83D"/>
                             <constraint firstItem="GdK-MD-vPW" firstAttribute="top" secondItem="l3W-ez-XM9" secondAttribute="top" constant="20" id="IST-ZS-lDI"/>
                             <constraint firstItem="GdK-MD-vPW" firstAttribute="leading" secondItem="l3W-ez-XM9" secondAttribute="leading" constant="16" id="QQZ-cw-LaN"/>
                             <constraint firstItem="Ql5-0a-ul1" firstAttribute="centerX" secondItem="YJe-cW-5my" secondAttribute="centerX" id="T87-UJ-gQe"/>
                             <constraint firstItem="J1U-3s-kBX" firstAttribute="leading" secondItem="l3W-ez-XM9" secondAttribute="leading" constant="50" id="bWg-A8-W4G"/>
+                            <constraint firstItem="Ql5-0a-ul1" firstAttribute="leading" secondItem="l3W-ez-XM9" secondAttribute="leading" id="eE9-lT-dmx"/>
                             <constraint firstItem="l3W-ez-XM9" firstAttribute="trailing" secondItem="J1U-3s-kBX" secondAttribute="trailing" constant="50" id="oK6-sf-JGQ"/>
                             <constraint firstItem="Fsy-oJ-GHj" firstAttribute="leading" secondItem="l3W-ez-XM9" secondAttribute="leading" constant="8" id="uNy-R8-JJ4"/>
                             <constraint firstItem="l3W-ez-XM9" firstAttribute="trailing" secondItem="GdK-MD-vPW" secondAttribute="trailing" constant="16" id="w88-Ac-L7q"/>
@@ -678,21 +575,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TDF-UB-awM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1567" y="133"/>
-        </scene>
-        <!--Blitz Question View Controller-->
-        <scene sceneID="WFA-cy-B8X">
-            <objects>
-                <viewController storyboardIdentifier="BlitzQuestionViewController" id="X2g-ZA-TIL" customClass="BlitzQuestionViewController" customModule="TriwizardTrivia" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Kza-oB-ip5">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="AHq-Y4-bUH"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="iKt-U2-dsI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-412" y="-522"/>
         </scene>
     </scenes>
     <resources>

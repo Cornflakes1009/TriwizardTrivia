@@ -98,6 +98,7 @@ class BlitzResultsViewController: UIViewController {
     
     @objc func restartTapped() {
         resetGame()
+        vibrate()
         self.navigationController?.popToRootViewController(animated: true)
     }
 }

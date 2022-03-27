@@ -9,6 +9,7 @@
 
 import UIKit
 import AVFoundation
+import GoogleMobileAds
 
 class SoloPlayViewController: UIViewController {
     
@@ -77,6 +78,11 @@ class SoloPlayViewController: UIViewController {
         return button
     }()
     
+    private let bannerView: GADBannerView = {
+        let bannerView = GADBannerView()
+        return bannerView
+    }()
+    
     // MARK: - Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -98,7 +104,6 @@ class SoloPlayViewController: UIViewController {
         
         let backButtonImageConfig = UIImage.SymbolConfiguration(pointSize: 25, weight: .light, scale: .large)
         let backButtonImage = UIImage(systemName: backButtonSymbol, withConfiguration: backButtonImageConfig)
-        
         backButton.setImage(backButtonImage, for: .normal)
         view.addSubview(backButton)
         backButton.anchor(top: view.safeAreaLayoutGuide.topAnchor, left: view.leftAnchor, bottom: nil, right: nil, paddingTop: 5, paddingLeft: 5, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
@@ -112,6 +117,12 @@ class SoloPlayViewController: UIViewController {
         titleLabel.anchor(top: backButton.bottomAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 10, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
         
         setupStackView()
+        
+        setupBannerView()
+        
+        view.addSubview(bannerView)
+        bannerView.anchor(top: nil, left: view.leftAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 50)
+
     }
     
     // MARK: - Background Video
@@ -133,6 +144,14 @@ class SoloPlayViewController: UIViewController {
         player!.seek(to: CMTime.zero)
     }
     
+    
+    private func setupBannerView() {
+        // starting ads on the bannerview
+        bannerView.adUnitID = prodAdMobsKey
+        bannerView.rootViewController = self
+        bannerView.load(GADRequest())
+    }
+    
     // MARK: - StackView
     var stackView = UIStackView()
     // MARK: Setting Up the StackView
@@ -149,8 +168,8 @@ class SoloPlayViewController: UIViewController {
         stackView.anchor(top: titleLabel.bottomAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 10, paddingLeft: 20, paddingBottom: 0, paddingRight: 20, width: 0, height: stackViewHeight)
     }
     
-    func startGameNavigation() {
-        let vc = self.storyboard?.instantiateViewController(identifier: "SoloQuestionViewController") as! SoloQuestionViewController
+    private func startGameNavigation() {
+        let vc = SoloQuestionViewController()
         self.navigationController?.pushViewController(vc, animated: true)
         vibrate()
     }

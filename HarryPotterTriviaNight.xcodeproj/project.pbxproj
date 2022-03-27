@@ -38,7 +38,6 @@
 		D97AB16B22BDEAF600124CAC /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97AB16A22BDEAF500124CAC /* QuestionViewController.swift */; };
 		D97AB16D22C5925D00124CAC /* House.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97AB16C22C5925D00124CAC /* House.swift */; };
 		D981C7EE27B8F795000831CF /* PotionsClassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D981C7ED27B8F795000831CF /* PotionsClassViewController.swift */; };
-		D986BBC825BCF49F002861E5 /* KeyboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D986BBC725BCF49F002861E5 /* KeyboardView.swift */; };
 		D98D09F4254BDF5C00423F08 /* PartyRulesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98D09F3254BDF5C00423F08 /* PartyRulesViewController.swift */; };
 		D98D0A06254BF21E00423F08 /* SoloQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98D0A05254BF21E00423F08 /* SoloQuestionViewController.swift */; };
 		D98D0A0A254BF41600423F08 /* ConvertSoloQuestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98D0A09254BF41600423F08 /* ConvertSoloQuestions.swift */; };
@@ -55,7 +54,6 @@
 		D9DAFD432324779E00A87632 /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DAFD422324779E00A87632 /* ResultsViewController.swift */; };
 		D9FA2C5E27E5C369005C3939 /* TextButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FA2C5D27E5C369005C3939 /* TextButton.swift */; };
 		D9FA2C6027E5C71D005C3939 /* WhiteLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FA2C5F27E5C71D005C3939 /* WhiteLabel.swift */; };
-		D9FA2C6227E6D267005C3939 /* KeyboardView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FA2C6127E6D267005C3939 /* KeyboardView2.swift */; };
 		D9FA2C6427E81ABE005C3939 /* ConvertHangmanWords.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FA2C6327E81ABE005C3939 /* ConvertHangmanWords.swift */; };
 		D9FA2C8827EAF1DA005C3939 /* HangmanCategorySelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FA2C8727EAF1D9005C3939 /* HangmanCategorySelectViewController.swift */; };
 		D9FA2C9127EC0552005C3939 /* Spells.json in Resources */ = {isa = PBXBuildFile; fileRef = D9FA2C8A27EC0551005C3939 /* Spells.json */; };
@@ -65,6 +63,7 @@
 		D9FA2C9527EC0552005C3939 /* Potions.json in Resources */ = {isa = PBXBuildFile; fileRef = D9FA2C8E27EC0551005C3939 /* Potions.json */; };
 		D9FA2C9627EC0552005C3939 /* Magical Beasts.json in Resources */ = {isa = PBXBuildFile; fileRef = D9FA2C8F27EC0551005C3939 /* Magical Beasts.json */; };
 		D9FA2C9727EC0552005C3939 /* Death Eaters.json in Resources */ = {isa = PBXBuildFile; fileRef = D9FA2C9027EC0551005C3939 /* Death Eaters.json */; };
+		D9FA2C9927EFD6D9005C3939 /* HangmanCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FA2C9827EFD6D9005C3939 /* HangmanCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -103,7 +102,6 @@
 		D97AB16A22BDEAF500124CAC /* QuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
 		D97AB16C22C5925D00124CAC /* House.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = House.swift; sourceTree = "<group>"; };
 		D981C7ED27B8F795000831CF /* PotionsClassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PotionsClassViewController.swift; sourceTree = "<group>"; };
-		D986BBC725BCF49F002861E5 /* KeyboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardView.swift; sourceTree = "<group>"; };
 		D98D09F3254BDF5C00423F08 /* PartyRulesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartyRulesViewController.swift; sourceTree = "<group>"; };
 		D98D0A05254BF21E00423F08 /* SoloQuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoloQuestionViewController.swift; sourceTree = "<group>"; };
 		D98D0A09254BF41600423F08 /* ConvertSoloQuestions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertSoloQuestions.swift; sourceTree = "<group>"; };
@@ -120,7 +118,6 @@
 		D9DAFD422324779E00A87632 /* ResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
 		D9FA2C5D27E5C369005C3939 /* TextButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextButton.swift; sourceTree = "<group>"; };
 		D9FA2C5F27E5C71D005C3939 /* WhiteLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhiteLabel.swift; sourceTree = "<group>"; };
-		D9FA2C6127E6D267005C3939 /* KeyboardView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardView2.swift; sourceTree = "<group>"; };
 		D9FA2C6327E81ABE005C3939 /* ConvertHangmanWords.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertHangmanWords.swift; sourceTree = "<group>"; };
 		D9FA2C8727EAF1D9005C3939 /* HangmanCategorySelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HangmanCategorySelectViewController.swift; sourceTree = "<group>"; };
 		D9FA2C8A27EC0551005C3939 /* Spells.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Spells.json; sourceTree = "<group>"; };
@@ -130,6 +127,7 @@
 		D9FA2C8E27EC0551005C3939 /* Potions.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Potions.json; sourceTree = "<group>"; };
 		D9FA2C8F27EC0551005C3939 /* Magical Beasts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "Magical Beasts.json"; sourceTree = "<group>"; };
 		D9FA2C9027EC0551005C3939 /* Death Eaters.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "Death Eaters.json"; sourceTree = "<group>"; };
+		D9FA2C9827EFD6D9005C3939 /* HangmanCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HangmanCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -253,10 +251,9 @@
 			isa = PBXGroup;
 			children = (
 				D9251F7F258586FF0069C6EA /* GameButton.swift */,
-				D986BBC725BCF49F002861E5 /* KeyboardView.swift */,
 				D9FA2C5D27E5C369005C3939 /* TextButton.swift */,
 				D9FA2C5F27E5C71D005C3939 /* WhiteLabel.swift */,
-				D9FA2C6127E6D267005C3939 /* KeyboardView2.swift */,
+				D9FA2C9827EFD6D9005C3939 /* HangmanCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -283,10 +280,10 @@
 		D945B8ED22B6E91B0087E171 /* HarryPotterTriviaNight */ = {
 			isa = PBXGroup;
 			children = (
-				D945B8F222B6E91B0087E171 /* Main.storyboard */,
 				D916452A23F146F800CCBD71 /* SegmentedView */,
 				D945B8EE22B6E91B0087E171 /* AppDelegate.swift */,
 				D945B8F722B6E91D0087E171 /* LaunchScreen.storyboard */,
+				D945B8F222B6E91B0087E171 /* Main.storyboard */,
 				D9251F7E258586DA0069C6EA /* Views */,
 				D9069DE1230A1F6E008BE435 /* Controllers */,
 				D945B8F522B6E91D0087E171 /* Assets.xcassets */,
@@ -492,7 +489,6 @@
 				D98D09F4254BDF5C00423F08 /* PartyRulesViewController.swift in Sources */,
 				D97AB16922BDAB2200124CAC /* Question.swift in Sources */,
 				D945B8F122B6E91B0087E171 /* ViewController.swift in Sources */,
-				D9FA2C6227E6D267005C3939 /* KeyboardView2.swift in Sources */,
 				D9251F80258586FF0069C6EA /* GameButton.swift in Sources */,
 				D9FA2C5E27E5C369005C3939 /* TextButton.swift in Sources */,
 				D981C7EE27B8F795000831CF /* PotionsClassViewController.swift in Sources */,
@@ -509,6 +505,7 @@
 				D992D4A62545293300EEAC9F /* Extensions.swift in Sources */,
 				D97AB16D22C5925D00124CAC /* House.swift in Sources */,
 				D98DCB032544FB2B0092B483 /* ModeSelectViewController.swift in Sources */,
+				D9FA2C9927EFD6D9005C3939 /* HangmanCell.swift in Sources */,
 				D945B8EF22B6E91B0087E171 /* AppDelegate.swift in Sources */,
 				D98D0A06254BF21E00423F08 /* SoloQuestionViewController.swift in Sources */,
 				D9251F752584BD000069C6EA /* SurvivalResultsViewController.swift in Sources */,
@@ -516,7 +513,6 @@
 				D916452D23F1471F00CCBD71 /* CreditsViewController.swift in Sources */,
 				D99F66B2255DF158000EE745 /* ConfigureVaryingSizes.swift in Sources */,
 				D92BB1092550F2FF00BF84BE /* GameCreditsViewController.swift in Sources */,
-				D986BBC825BCF49F002861E5 /* KeyboardView.swift in Sources */,
 				D9251F6B2584BCA50069C6EA /* BlitzQuestionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

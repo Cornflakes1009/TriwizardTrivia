@@ -164,9 +164,7 @@ class ModeSelectViewController: UIViewController {
         setupBannerView()
         
         view.addSubview(bannerView)
-        bannerView.anchor(top: nil, left: nil, bottom: view.bottomAnchor, right: nil, paddingTop: 0, paddingLeft: 0, paddingBottom: -20, paddingRight: 0, width: 281, height: 50)
-        
-        bannerView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        bannerView.anchor(top: nil, left: view.leftAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 50)
     }
     // MARK: - Background Video
     func playBackgroundVideo() {
@@ -231,7 +229,7 @@ class ModeSelectViewController: UIViewController {
     
     @objc func soloPlayTapped() {
         soloTriviaFileToRead = "harryPotterSoloQuestions"
-        let vc = self.storyboard?.instantiateViewController(identifier: "SoloPlayViewController") as! SoloPlayViewController
+        let vc = SoloPlayViewController()
         self.navigationController?.pushViewController(vc, animated: true)
         vibrate()
     }
@@ -243,8 +241,6 @@ class ModeSelectViewController: UIViewController {
     }
     
     @objc func potionsClassTapped() {
-        convertHangmanonJSON(jsonToRead: "Characters")
-        
         let vc = HangmanCategorySelectViewController()
         self.navigationController?.pushViewController(vc, animated: true)
         vibrate()
@@ -266,7 +262,7 @@ class ModeSelectViewController: UIViewController {
     
     @objc func fantasticBeastsTapped() {
         soloTriviaFileToRead = "fantasticBeastsQuestions"
-        let vc = self.storyboard?.instantiateViewController(identifier: "SoloPlayViewController") as! SoloPlayViewController
+        let vc = SoloPlayViewController()
         self.navigationController?.pushViewController(vc, animated: true)
         vibrate()
     }
