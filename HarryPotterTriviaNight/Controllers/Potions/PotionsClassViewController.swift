@@ -412,7 +412,7 @@ class PotionsClassViewController: UIViewController {
                 
                 // checking if all letters guessed
                 if !underscoreArray.contains(" _ ") {
-                    triggerCompleteWordPopup(with: "Good job! Outstanding!")
+                    //triggerCompleteWordPopup(with: "Good job! Outstanding!")
                     if hangmanIndex + 1 != hangmanWordList.count {
                         hangmanIndex += 1
                     } else {
@@ -437,13 +437,20 @@ class PotionsClassViewController: UIViewController {
             } else {
                 wrongGuesses += 1
                 // resetting the cauldron index and incrementing failed words
-                if wrongGuesses > cauldronArray.count - 1{
+                if wrongGuesses == cauldronArray.count - 1 {
                     wrongGuesses = 0
-                    
                     resetKeyboard()
                     failedWords += 1
                     triggerCompleteWordPopup(with: "Oh no! The potion went bad!")
+                    if hangmanIndex + 1 != hangmanWordList.count {
+                        hangmanIndex += 1
+                    } else {
+                        hangmanIndex = 0
+                    }
+                    wordNumberLabel.text = "\(hangmanIndex + 1)/\(hangmanWordList.count)"
+                    wordToGuess = hangmanWordList[hangmanIndex].word.uppercased()
                     prepareWordLabel(with: wordToGuess)
+                    newRound = true
                 }
             }
 
