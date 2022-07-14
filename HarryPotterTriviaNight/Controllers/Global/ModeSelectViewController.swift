@@ -54,37 +54,37 @@ class ModeSelectViewController: UIViewController {
 
     let singlePlayerButton: GameButton = {
         let button = GameButton(title: "Classic", backgroundColor: gryffindorColor, fontColor: buttonTitleColor)
-        button.addTarget(self, action: #selector(soloPlayTapped), for: .touchUpInside)
+        button.addTarget(nil, action: #selector(soloPlayTapped), for: .touchUpInside)
         return button
     }()
 
     let potionsClassButton: GameButton = {
         let button = GameButton(title: "Potions Class", backgroundColor: gryffindorColor, fontColor: buttonTitleColor)
-        button.addTarget(self, action: #selector(potionsClassTapped), for: .touchUpInside)
+        button.addTarget(nil, action: #selector(potionsClassTapped), for: .touchUpInside)
         return button
     }()
     
     let partyButton: GameButton = {
         let button = GameButton(title: "Party", backgroundColor: gryffindorColor, fontColor: buttonTitleColor)
-        button.addTarget(self, action: #selector(partyPlayTapped), for: .touchUpInside)
+        button.addTarget(nil, action: #selector(partyPlayTapped), for: .touchUpInside)
         return button
     }()
     
     let survivalButton: GameButton = {
         let button = GameButton(title: "Survival", backgroundColor: gryffindorColor, fontColor: buttonTitleColor)
-        button.addTarget(self, action: #selector(survivalTapped), for: .touchUpInside)
+        button.addTarget(nil, action: #selector(survivalTapped), for: .touchUpInside)
         return button
     }()
     
     let blitzButton: GameButton = {
         let button = GameButton(title: "Blitz", backgroundColor: gryffindorColor, fontColor: buttonTitleColor)
-        button.addTarget(self, action: #selector(blitzTapped), for: .touchUpInside)
+        button.addTarget(nil, action: #selector(blitzTapped), for: .touchUpInside)
         return button
     }()
     
     let fantasticBeastsButton: GameButton = {
         let button = GameButton(title: "Fantastic Beasts", backgroundColor: gryffindorColor, fontColor: buttonTitleColor)
-        button.addTarget(self, action: #selector(fantasticBeastsTapped), for: .touchUpInside)
+        button.addTarget(nil, action: #selector(fantasticBeastsTapped), for: .touchUpInside)
         return button
     }()
     
@@ -93,19 +93,19 @@ class ModeSelectViewController: UIViewController {
     
     let creditsButton: TextButton = {
         let button = TextButton(title: "Credits", fontColor: whiteColor)
-        button.addTarget(self, action: #selector(creditsTapped), for: .touchUpInside)
+        button.addTarget(nil, action: #selector(creditsTapped), for: .touchUpInside)
         return button
     }()
     
     let scoresButton: TextButton = {
         let button = TextButton(title: "Scores", fontColor: whiteColor)
-        button.addTarget(self, action: #selector(scoresTapped), for: .touchUpInside)
+        button.addTarget(nil, action: #selector(scoresTapped), for: .touchUpInside)
         return button
     }()
     
     let contactButton: TextButton = {
         let button = TextButton(title: "Contact", fontColor: whiteColor)
-        button.addTarget(self, action: #selector(scoresTapped), for: .touchUpInside)
+        button.addTarget(nil, action: #selector(scoresTapped), for: .touchUpInside)
         return button
     }()
     
@@ -117,6 +117,8 @@ class ModeSelectViewController: UIViewController {
     // MARK: - Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
+        screenHeight = UIScreen.main.bounds.size.height
+        screenWidth = UIScreen.main.bounds.size.width
         
         varyForScreenSizes(screenHeight: screenHeight)
         setupViews()
@@ -143,8 +145,6 @@ class ModeSelectViewController: UIViewController {
     
     // MARK: - Setting Up Views
     func setupViews() {
-        screenHeight = UIScreen.main.bounds.size.height
-        screenWidth = UIScreen.main.bounds.size.width
         
         // setting the buttonHeight for each button in the game
         buttonHeight = screenHeight / 10
@@ -152,19 +152,18 @@ class ModeSelectViewController: UIViewController {
         playBackgroundVideo()
         
         view.addSubview(titleLabel)
-        titleLabel.anchor(top: view.safeAreaLayoutGuide.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 10, paddingLeft: 10, paddingBottom: 0, paddingRight: 10, width: 0, height: 0)
+        titleLabel.anchor(top: view.safeAreaLayoutGuide.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 5, paddingLeft: 10, paddingBottom: 0, paddingRight: 10, width: 0, height: 0)
         
-        setupStackView()
+        view.addSubview(instructionLabel)
+        instructionLabel.anchor(top: titleLabel.bottomAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 0, paddingLeft: 20, paddingBottom: 0, paddingRight: 20, width: 0, height: 0)
+        
+        setupBannerView()
+        view.addSubview(bannerView)
+        bannerView.anchor(top: nil, left: view.leftAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 50)
         
         setupHorizontalStackView()
         
-        view.addSubview(instructionLabel)
-        instructionLabel.anchor(top: nil, left: view.leftAnchor, bottom: scrollView.topAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 20, paddingBottom: -10, paddingRight: 20, width: 0, height: 0)
-        
-        setupBannerView()
-        
-        view.addSubview(bannerView)
-        bannerView.anchor(top: nil, left: view.leftAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 50)
+        setupCategoryStackView()
     }
     // MARK: - Background Video
     func playBackgroundVideo() {
@@ -186,27 +185,22 @@ class ModeSelectViewController: UIViewController {
     }
     
     // MARK: - Button Stack View
-    private var stackView = UIStackView()
+    private var categoryStackView = UIStackView()
     // MARK: Setting Up the StackView
-    private func setupStackView() {
-        stackView = UIStackView(arrangedSubviews: [singlePlayerButton, potionsClassButton, partyButton, survivalButton, blitzButton, fantasticBeastsButton])
-        stackView.distribution = .fillEqually
-        stackView.axis = .vertical
-        stackView.spacing = 10
+    private func setupCategoryStackView() {
+        categoryStackView = UIStackView(arrangedSubviews: [singlePlayerButton, potionsClassButton, partyButton, survivalButton, blitzButton, fantasticBeastsButton])
+        categoryStackView.distribution = .fillEqually
+        categoryStackView.axis = .vertical
+        categoryStackView.spacing = 10
         
-        // calculating based on the number of buttons in stack view and adding 20 padding
-        let scrollViewHeight = CGFloat(Int(buttonHeight) * stackView.arrangedSubviews.count)
-        let stackViewHeight = CGFloat(Int(buttonHeight) * stackView.arrangedSubviews.count + 50)
+        let stackViewHeight = CGFloat(Int(buttonHeight) * categoryStackView.arrangedSubviews.count + 50)
         
         view.addSubview(scrollView)
-        scrollView.anchor(top: nil, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 10, paddingLeft: 20, paddingBottom: 0, paddingRight: 20, width: 0, height: scrollViewHeight)
-        
-        scrollView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        scrollView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
-        
-        scrollView.addSubview(stackView)
-        stackView.anchor(top: scrollView.topAnchor, left: scrollView.leftAnchor, bottom: scrollView.bottomAnchor, right: scrollView.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: stackViewHeight)
-        stackView.widthAnchor.constraint(equalTo: scrollView.widthAnchor).isActive = true
+        scrollView.anchor(top: instructionLabel.bottomAnchor, left: view.leftAnchor, bottom: horizontalStackView.topAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 20, paddingBottom: 0, paddingRight: 20, width: 0, height: 0)
+
+        scrollView.addSubview(categoryStackView)
+        categoryStackView.anchor(top: scrollView.topAnchor, left: scrollView.leftAnchor, bottom: scrollView.bottomAnchor, right: scrollView.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: stackViewHeight)
+        categoryStackView.widthAnchor.constraint(equalTo: scrollView.widthAnchor).isActive = true
     }
     
     // MARK: Setting Up the StackView
@@ -215,9 +209,9 @@ class ModeSelectViewController: UIViewController {
         horizontalStackView = UIStackView(arrangedSubviews: [creditsButton, scoresButton, contactButton])
         horizontalStackView.distribution = .fillEqually
         horizontalStackView.axis = .horizontal
-        stackView.spacing = 10
+        categoryStackView.spacing = 10
         view.addSubview(horizontalStackView)
-        horizontalStackView.anchor(top: scrollView.bottomAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 10, paddingLeft: 20, paddingBottom: 0, paddingRight: 20, width: 0, height: buttonHeight)
+        horizontalStackView.anchor(top: nil, left: view.leftAnchor, bottom: bannerView.topAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 20, paddingBottom: -5, paddingRight: 20, width: 0, height: buttonHeight)
     }
     
     private func setupBannerView() {
@@ -229,7 +223,7 @@ class ModeSelectViewController: UIViewController {
     
     @objc func soloPlayTapped() {
         soloTriviaFileToRead = "harryPotterSoloQuestions"
-        let vc = SoloPlayViewController()
+        let vc = ClassicQuestionSelectionViewController()
         self.navigationController?.pushViewController(vc, animated: true)
         vibrate()
     }
@@ -241,7 +235,7 @@ class ModeSelectViewController: UIViewController {
     }
     
     @objc func potionsClassTapped() {
-        let vc = HangmanCategorySelectViewController()
+        let vc = PotionsClassCategorySelectViewController()
         self.navigationController?.pushViewController(vc, animated: true)
         vibrate()
     }
@@ -262,19 +256,19 @@ class ModeSelectViewController: UIViewController {
     
     @objc func fantasticBeastsTapped() {
         soloTriviaFileToRead = "fantasticBeastsQuestions"
-        let vc = SoloPlayViewController()
+        let vc = ClassicQuestionSelectionViewController()
         self.navigationController?.pushViewController(vc, animated: true)
         vibrate()
     }
     
     @objc func creditsTapped() {
-        let vc = self.storyboard?.instantiateViewController(identifier: "GameCreditsViewController") as! GameCreditsViewController
+        let vc = GameCreditsViewController()
         self.navigationController?.pushViewController(vc, animated: true)
         vibrate()
     }
     
     @objc func scoresTapped() {
-        let vc = self.storyboard?.instantiateViewController(identifier: "ScoresViewController") as! ScoresViewController
+        let vc = ScoresViewController()
         self.navigationController?.pushViewController(vc, animated: true)
         vibrate()
     }

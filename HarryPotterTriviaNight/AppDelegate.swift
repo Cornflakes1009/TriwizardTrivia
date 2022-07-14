@@ -17,6 +17,8 @@ var backgroundMusic: AVAudioPlayer?
 
 let path = Bundle.main.path(forResource: "background_music.mp3", ofType:nil)!
 let url = URL(fileURLWithPath: path)
+let langStr = Locale.current.languageCode
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -26,6 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        print("------- \(langStr)") 
         
         do {
             backgroundMusic = try AVAudioPlayer(contentsOf: url)

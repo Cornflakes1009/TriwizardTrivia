@@ -26,7 +26,7 @@ class PartyRulesViewController: UIViewController {
         button.isEnabled = true
         button.tintColor = backButtonColor
         button.setTitleColor(whiteColor, for: .normal)
-        button.addTarget(self, action: #selector(backTapped), for: .touchUpInside)
+        button.addTarget(nil, action: #selector(backTapped), for: .touchUpInside)
         return button
     }()
     
@@ -88,7 +88,7 @@ class PartyRulesViewController: UIViewController {
         button.layer.shadowOpacity = 1.0
         button.layer.shadowRadius = 10.0
         button.layer.masksToBounds = false
-        button.addTarget(self, action: #selector(playTapped), for: .touchUpInside)
+        button.addTarget(nil, action: #selector(playTapped), for: .touchUpInside)
         return button
     }()
     
@@ -123,9 +123,7 @@ class PartyRulesViewController: UIViewController {
 //        backgroundImage.anchor(top: view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
         
         playBackgroundVideo()
-        
-        let backButtonImageConfig = UIImage.SymbolConfiguration(pointSize: 25, weight: .light, scale: .large)
-        let backButtonImage = UIImage(systemName: backButtonSymbol, withConfiguration: backButtonImageConfig)
+
         
         backButton.setImage(backButtonImage, for: .normal)
         view.addSubview(backButton)

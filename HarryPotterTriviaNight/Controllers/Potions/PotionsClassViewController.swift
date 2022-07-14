@@ -26,8 +26,6 @@ class PotionsClassViewController: UIViewController {
     private var wordCountForAds = 0
     private let cauldronArray = ["cauldron1", "cauldron2", "cauldron3", "cauldron4", "cauldron5", "cauldron6", "cauldron7"]
     private var wrongGuesses = 0
-    private var passedWords = 0
-    private var failedWords = 0
 
     //MARK:- UI
     private var topButtons = [UIButton]()
@@ -41,8 +39,26 @@ class PotionsClassViewController: UIViewController {
         button.isEnabled = true
         button.tintColor = backButtonColor
         button.setTitleColor(whiteColor, for: .normal)
-        button.addTarget(self, action: #selector(backTapped), for: .touchUpInside)
+        button.addTarget(nil, action: #selector(backTapped), for: .touchUpInside)
         return button
+    }()
+    
+    let winsLabel: UILabel = {
+        let label = UILabel()
+        label.font = instructionLabelFont
+        label.textAlignment = .center
+        label.text = "W: 0"
+        label.textColor = whiteColor
+        return label
+    }()
+    
+    let lossesLabel: UILabel = {
+        let label = UILabel()
+        label.font = instructionLabelFont
+        label.textAlignment = .center
+        label.text = "L: 0"
+        label.textColor = whiteColor
+        return label
     }()
     
     let wordNumberLabel: UILabel = {
@@ -98,13 +114,13 @@ class PotionsClassViewController: UIViewController {
     
     private let exitGameCancel: GameButton = {
         let button = GameButton(title: "Cancel", backgroundColor: slytherinColor, fontColor: slytherinFontColor)
-        button.addTarget(self, action: #selector(cancelTapped), for: .touchUpInside)
+        button.addTarget(nil, action: #selector(cancelTapped), for: .touchUpInside)
         return button
     }()
     
     private let exitGameConfirm: GameButton = {
         let button = GameButton(title: "Exit", backgroundColor: gryffindorColor, fontColor: gryffindorFontColor)
-        button.addTarget(self, action: #selector(confirmTapped), for: .touchUpInside)
+        button.addTarget(nil, action: #selector(confirmTapped), for: .touchUpInside)
         return button
     }()
     
@@ -157,7 +173,7 @@ class PotionsClassViewController: UIViewController {
     
     private let nextWordButton: GameButton = {
         let button = GameButton(title: "Next Word", backgroundColor: gryffindorColor, fontColor: gryffindorFontColor)
-        button.addTarget(self, action: #selector(nextWordTapped), for: .touchUpInside)
+        button.addTarget(nil, action: #selector(nextWordTapped), for: .touchUpInside)
         return button
     }()
     
@@ -209,13 +225,13 @@ class PotionsClassViewController: UIViewController {
     
     // MARK: - Setting Up Views
     private func setupViews() {
-        let backButtonImageConfig = UIImage.SymbolConfiguration(pointSize: 25, weight: .light, scale: .large)
-        let backButtonImage = UIImage(systemName: backButtonSymbol, withConfiguration: backButtonImageConfig)
         
         backButton.setImage(backButtonImage, for: .normal)
         view.addSubview(backButton)
         backButton.anchor(top: view.safeAreaLayoutGuide.topAnchor, left: view.leftAnchor, bottom: nil, right: nil, paddingTop: 5, paddingLeft: 5, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
         
+        setupWinLossStackView()
+            
         view.addSubview(wordNumberLabel)
         wordNumberLabel.anchor(top: view.safeAreaLayoutGuide.topAnchor, left: nil, bottom: nil, right: view.rightAnchor, paddingTop: 5, paddingLeft: 0, paddingBottom: 0, paddingRight: 5, width: 0, height: 0)
         wordNumberLabel.text = "\(hangmanIndex + 1)/\(hangmanWordList.count)"
@@ -255,6 +271,19 @@ class PotionsClassViewController: UIViewController {
             interstitial.present(fromRootViewController: self)
             interstitial = createAd()
         }
+    }
+    
+    // MARK: - Win/Loss StackView
+    private var winLossStackView = UIStackView()
+    private func setupWinLossStackView() {
+        winLossStackView = UIStackView(arrangedSubviews: [winsLabel, lossesLabel])
+        winLossStackView.distribution = .fillEqually
+        winLossStackView.axis = .horizontal
+        winLossStackView.spacing = 10
+        
+        view.addSubview(winLossStackView)
+        winLossStackView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        winLossStackView.anchor(top: view.safeAreaLayoutGuide.topAnchor, left: nil, bottom: nil, right: nil, paddingTop: 5, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: screenWidth / 3, height: 0)
     }
     
     // MARK: - Exit StackView
@@ -345,6 +374,7 @@ class PotionsClassViewController: UIViewController {
     
     // MARK: -  Converting Word to Underscores and Spaces
     private func prepareWordLabel(with word: String) {
+        
         underscoreString = ""
         underscoreArray.removeAll()
         wordToGuessArray.removeAll()
@@ -395,8 +425,10 @@ class PotionsClassViewController: UIViewController {
     // MARK: - Keyboard buttons tapped
     @objc private func handleKeyboardPressed(_ button: UIButton) {
         button.isEnabled = false
+        vibrate()
         var matched = false
         var newRound = false
+        
         
         if let text = button.titleLabel?.text {
             guessedCharacters.append(text)
@@ -412,7 +444,12 @@ class PotionsClassViewController: UIViewController {
                 
                 // checking if all letters guessed
                 if !underscoreArray.contains(" _ ") {
-                    //triggerCompleteWordPopup(with: "Good job! Outstanding!")
+                    totalNumberOfWords += 1
+                    defaults.setValue(totalNumberOfWords, forKey: "totalNumberOfWords")
+                    
+                    totalCorrectWords += 1
+                    defaults.setValue(totalCorrectWords, forKey: "totalCorrectWords")
+                    triggerCompleteWordPopup(with: "Outstanding!")
                     if hangmanIndex + 1 != hangmanWordList.count {
                         hangmanIndex += 1
                     } else {
@@ -431,6 +468,7 @@ class PotionsClassViewController: UIViewController {
                     resetKeyboard()
                     wrongGuesses = 0
                     passedWords += 1
+                    winsLabel.text = "W: \(passedWords)"
                     newRound = true
                 }
                 
@@ -438,9 +476,12 @@ class PotionsClassViewController: UIViewController {
                 wrongGuesses += 1
                 // resetting the cauldron index and incrementing failed words
                 if wrongGuesses == cauldronArray.count - 1 {
+                    totalNumberOfWords += 1
+                    defaults.setValue(totalNumberOfWords, forKey: "totalNumberOfWords")
                     wrongGuesses = 0
                     resetKeyboard()
                     failedWords += 1
+                    lossesLabel.text = "L: \(failedWords)"
                     triggerCompleteWordPopup(with: "Oh no! The potion went bad!")
                     if hangmanIndex + 1 != hangmanWordList.count {
                         hangmanIndex += 1
@@ -457,6 +498,8 @@ class PotionsClassViewController: UIViewController {
             wordLabel.text = underscoreArray.joined(separator: "")
             if !newRound { button.backgroundColor = matched ? .green : .red }
             cauldronImage.image = UIImage(named: cauldronArray[wrongGuesses])
+            
+            
         }
     }
     

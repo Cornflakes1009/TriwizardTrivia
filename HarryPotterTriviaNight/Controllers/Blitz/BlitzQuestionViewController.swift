@@ -35,7 +35,7 @@ class BlitzQuestionViewController: UIViewController, GADInterstitialDelegate, GA
         button.isEnabled = true
         button.tintColor = backButtonColor
         button.setTitleColor(whiteColor, for: .normal)
-        button.addTarget(self, action: #selector(backTapped), for: .touchUpInside)
+        button.addTarget(nil, action: #selector(backTapped), for: .touchUpInside)
         return button
     }()
     
@@ -85,7 +85,7 @@ class BlitzQuestionViewController: UIViewController, GADInterstitialDelegate, GA
     let optionZeroButton: GameButton = {
         let button = GameButton(title: "", backgroundColor: gryffindorColor, fontColor: gryffindorFontColor)
         button.titleLabel?.font = answerFont
-        button.addTarget(self, action: #selector(answerTapped(_:)), for: .touchUpInside)
+        button.addTarget(nil, action: #selector(answerTapped(_:)), for: .touchUpInside)
         return button
     }()
     
@@ -96,21 +96,21 @@ class BlitzQuestionViewController: UIViewController, GADInterstitialDelegate, GA
         button.titleLabel?.layer.shadowOpacity = 00
         button.titleLabel?.layer.shadowOffset = CGSize(width: 0, height: 0)
         button.titleLabel?.layer.masksToBounds = false
-        button.addTarget(self, action: #selector(answerTapped(_:)), for: .touchUpInside)
+        button.addTarget(nil, action: #selector(answerTapped(_:)), for: .touchUpInside)
         return button
     }()
     
     let optionTwoButton: GameButton = {
         let button = GameButton(title: "", backgroundColor: ravenclawColor, fontColor: ravenclawFontColor)
         button.titleLabel?.font = answerFont
-        button.addTarget(self, action: #selector(answerTapped(_:)), for: .touchUpInside)
+        button.addTarget(nil, action: #selector(answerTapped(_:)), for: .touchUpInside)
         return button
     }()
     
     let optionThreeButton: GameButton = {
         let button = GameButton(title: "", backgroundColor: slytherinColor, fontColor: slytherinFontColor)
         button.titleLabel?.font = answerFont
-        button.addTarget(self, action: #selector(answerTapped(_:)), for: .touchUpInside)
+        button.addTarget(nil, action: #selector(answerTapped(_:)), for: .touchUpInside)
         return button
     }()
     
@@ -136,7 +136,7 @@ class BlitzQuestionViewController: UIViewController, GADInterstitialDelegate, GA
     
     let readyButton: GameButton = {
         let button = GameButton(title: "Ready?", backgroundColor: gryffindorColor, fontColor: gryffindorFontColor)
-        button.addTarget(self, action: #selector(readyTapped), for: .touchUpInside)
+        button.addTarget(nil, action: #selector(readyTapped), for: .touchUpInside)
         return button
     }()
 
@@ -172,14 +172,14 @@ class BlitzQuestionViewController: UIViewController, GADInterstitialDelegate, GA
     
     let nextQuestionButton: GameButton = {
         let button = GameButton(title: "Next Question", backgroundColor: gryffindorColor, fontColor: gryffindorFontColor)
-        button.addTarget(self, action: #selector(nextQuestionTapped), for: .touchUpInside)
+        button.addTarget(nil, action: #selector(nextQuestionTapped), for: .touchUpInside)
         button.titleLabel?.font = buttonFont
         return button
     }()
     
     let extraLifeButton: GameButton = {
         let button = GameButton(title: "Extra Life?", backgroundColor: gryffindorColor, fontColor: gryffindorFontColor)
-        button.addTarget(self, action: #selector(extraLifeTapped), for: .touchUpInside)
+        button.addTarget(nil, action: #selector(extraLifeTapped), for: .touchUpInside)
         return button
     }()
     
@@ -188,7 +188,7 @@ class BlitzQuestionViewController: UIViewController, GADInterstitialDelegate, GA
         button.isEnabled = true
         button.tintColor = whiteColor
         button.setTitleColor(whiteColor, for: .normal)
-        button.addTarget(self, action: #selector(extraLifeExitTapped), for: .touchUpInside)
+        button.addTarget(nil, action: #selector(extraLifeExitTapped), for: .touchUpInside)
         return button
     }()
     
@@ -214,13 +214,13 @@ class BlitzQuestionViewController: UIViewController, GADInterstitialDelegate, GA
     
     let exitGameCancel: UIButton = {
         let button = GameButton(title: "Cancel", backgroundColor: slytherinColor, fontColor: slytherinFontColor)
-        button.addTarget(self, action: #selector(cancelTapped), for: .touchUpInside)
+        button.addTarget(nil, action: #selector(cancelTapped), for: .touchUpInside)
         return button
     }()
     
     let exitGameConfirm: UIButton = {
         let button = GameButton(title: "Exit", backgroundColor: gryffindorColor, fontColor: gryffindorFontColor)
-        button.addTarget(self, action: #selector(confirmTapped), for: .touchUpInside)
+        button.addTarget(nil, action: #selector(confirmTapped), for: .touchUpInside)
         return button
     }()
     
@@ -264,8 +264,6 @@ class BlitzQuestionViewController: UIViewController, GADInterstitialDelegate, GA
         
         playBackgroundVideo()
         
-        let backButtonImageConfig = UIImage.SymbolConfiguration(pointSize: 25, weight: .light, scale: .large)
-        let backButtonImage = UIImage(systemName: backButtonSymbol, withConfiguration: backButtonImageConfig)
         backButton.setImage(backButtonImage, for: .normal)
         view.addSubview(backButton)
         backButton.anchor(top: view.safeAreaLayoutGuide.topAnchor, left: view.leftAnchor, bottom: nil, right: nil, paddingTop: 5, paddingLeft: 5, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
@@ -398,7 +396,6 @@ class BlitzQuestionViewController: UIViewController, GADInterstitialDelegate, GA
     private func showRewardedAdAnswerView() {
         nextQuestionButton.removeFromSuperview()
         backButton.isEnabled = false
-        //extraLifeExitButton.alpha = 1
         view.addSubview(correctAnswerView)
         correctAnswerView.anchor(top: view.safeAreaLayoutGuide.topAnchor, left: view.leftAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, right: view.rightAnchor, paddingTop: 10, paddingLeft: 10, paddingBottom: -10, paddingRight: 10, width: 0, height: 0)
         UIView.animate(withDuration: 0.5) {
@@ -420,9 +417,7 @@ class BlitzQuestionViewController: UIViewController, GADInterstitialDelegate, GA
         popUpBackground.anchor(top: correctAnswerView.topAnchor, left: correctAnswerView.leftAnchor, bottom: correctAnswerView.bottomAnchor, right: correctAnswerView.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
         popUpBackground.centerXAnchor.constraint(equalTo: correctAnswerView.centerXAnchor).isActive = true
         popUpBackground.centerYAnchor.constraint(equalTo: correctAnswerView.centerYAnchor).isActive = true
-        
-        let exitButtonImageConfig = UIImage.SymbolConfiguration(pointSize: 25, weight: .light, scale: .large)
-        let exitButtonImage = UIImage(systemName: closePopupSymbol, withConfiguration: exitButtonImageConfig)
+
         extraLifeExitButton.setImage(exitButtonImage, for: .normal)
         correctAnswerView.addSubview(extraLifeExitButton)
         extraLifeExitButton.anchor(top: correctAnswerView.topAnchor, left: correctAnswerView.leftAnchor, bottom: nil, right: nil, paddingTop: 5, paddingLeft: 5, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)

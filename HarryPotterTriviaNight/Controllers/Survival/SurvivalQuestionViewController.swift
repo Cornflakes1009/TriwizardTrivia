@@ -48,7 +48,7 @@ class SurvivalQuestionViewController: UIViewController, GADInterstitialDelegate,
         button.isEnabled = true
         button.tintColor = backButtonColor
         button.setTitleColor(whiteColor, for: .normal)
-        button.addTarget(self, action: #selector(backTapped), for: .touchUpInside)
+        button.addTarget(nil, action: #selector(backTapped), for: .touchUpInside)
         return button
     }()
     
@@ -98,7 +98,7 @@ class SurvivalQuestionViewController: UIViewController, GADInterstitialDelegate,
     let optionZeroButton: GameButton = {
         let button = GameButton(title: "", backgroundColor: gryffindorColor, fontColor: gryffindorFontColor)
         button.titleLabel?.font = answerFont
-        button.addTarget(self, action: #selector(answerTapped(_:)), for: .touchUpInside)
+        button.addTarget(nil, action: #selector(answerTapped(_:)), for: .touchUpInside)
         return button
     }()
     
@@ -109,21 +109,21 @@ class SurvivalQuestionViewController: UIViewController, GADInterstitialDelegate,
         button.titleLabel?.layer.shadowOpacity = 00
         button.titleLabel?.layer.shadowOffset = CGSize(width: 0, height: 0)
         button.titleLabel?.layer.masksToBounds = false
-        button.addTarget(self, action: #selector(answerTapped(_:)), for: .touchUpInside)
+        button.addTarget(nil, action: #selector(answerTapped(_:)), for: .touchUpInside)
         return button
     }()
     
     let optionTwoButton: GameButton = {
         let button = GameButton(title: "", backgroundColor: ravenclawColor, fontColor: ravenclawFontColor)
         button.titleLabel?.font = answerFont
-        button.addTarget(self, action: #selector(answerTapped(_:)), for: .touchUpInside)
+        button.addTarget(nil, action: #selector(answerTapped(_:)), for: .touchUpInside)
         return button
     }()
     
     let optionThreeButton: GameButton = {
         let button = GameButton(title: "", backgroundColor: slytherinColor, fontColor: slytherinFontColor)
         button.titleLabel?.font = answerFont
-        button.addTarget(self, action: #selector(answerTapped(_:)), for: .touchUpInside)
+        button.addTarget(nil, action: #selector(answerTapped(_:)), for: .touchUpInside)
         return button
     }()
     
@@ -150,7 +150,7 @@ class SurvivalQuestionViewController: UIViewController, GADInterstitialDelegate,
     let readyButton: GameButton = {
         let button = GameButton(title: "Ready?", backgroundColor: gryffindorColor, fontColor: gryffindorFontColor)
         button.titleLabel?.font = buttonFont
-        button.addTarget(self, action: #selector(readyTapped), for: .touchUpInside)
+        button.addTarget(nil, action: #selector(readyTapped), for: .touchUpInside)
         return button
     }()
 
@@ -187,7 +187,7 @@ class SurvivalQuestionViewController: UIViewController, GADInterstitialDelegate,
     let extraLifeButton: GameButton = {
         let button = GameButton(title: "Extra Life?", backgroundColor: gryffindorColor, fontColor: gryffindorFontColor)
         button.titleLabel?.font = buttonFont
-        button.addTarget(self, action: #selector(extraLifeTapped), for: .touchUpInside)
+        button.addTarget(nil, action: #selector(extraLifeTapped), for: .touchUpInside)
         return button
     }()
     
@@ -196,7 +196,7 @@ class SurvivalQuestionViewController: UIViewController, GADInterstitialDelegate,
         button.isEnabled = true
         button.tintColor = whiteColor
         button.setTitleColor(whiteColor, for: .normal)
-        button.addTarget(self, action: #selector(extraLifeExitTapped), for: .touchUpInside)
+        button.addTarget(nil, action: #selector(extraLifeExitTapped), for: .touchUpInside)
         return button
     }()
     
@@ -222,13 +222,13 @@ class SurvivalQuestionViewController: UIViewController, GADInterstitialDelegate,
     
     let exitGameCancel: GameButton = {
         let button = GameButton(title: "Cancel", backgroundColor: slytherinColor, fontColor: slytherinFontColor)
-        button.addTarget(self, action: #selector(cancelTapped), for: .touchUpInside)
+        button.addTarget(nil, action: #selector(cancelTapped), for: .touchUpInside)
         return button
     }()
     
     let exitGameConfirm: GameButton = {
         let button = GameButton(title: "Exit", backgroundColor: gryffindorColor, fontColor: gryffindorFontColor)
-        button.addTarget(self, action: #selector(confirmTapped), for: .touchUpInside)
+        button.addTarget(nil, action: #selector(confirmTapped), for: .touchUpInside)
         return button
     }()
     
@@ -271,10 +271,7 @@ class SurvivalQuestionViewController: UIViewController, GADInterstitialDelegate,
     func setupViews() {
 
         playBackgroundVideo()
-        
-        let backButtonImageConfig = UIImage.SymbolConfiguration(pointSize: 25, weight: .light, scale: .large)
-        let backButtonImage = UIImage(systemName: backButtonSymbol, withConfiguration: backButtonImageConfig)
-        
+
         backButton.setImage(backButtonImage, for: .normal)
         view.addSubview(backButton)
         backButton.anchor(top: view.safeAreaLayoutGuide.topAnchor, left: view.leftAnchor, bottom: nil, right: nil, paddingTop: 5, paddingLeft: 5, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
@@ -411,11 +408,8 @@ class SurvivalQuestionViewController: UIViewController, GADInterstitialDelegate,
         UIView.animate(withDuration: 0.5) {
             self.correctAnswerView.alpha = popUpViewAlpha
         }
-        
-        let backButtonImageConfig = UIImage.SymbolConfiguration(pointSize: 25, weight: .light, scale: .large)
-        let backButtonImage = UIImage(systemName: closePopupSymbol, withConfiguration: backButtonImageConfig)
-        
-        extraLifeExitButton.setImage(backButtonImage, for: .normal)
+
+        extraLifeExitButton.setImage(exitButtonImage, for: .normal)
         view.addSubview(extraLifeExitButton)
         extraLifeExitButton.anchor(top: correctAnswerView.topAnchor, left: correctAnswerView.leftAnchor, bottom: nil, right: nil, paddingTop: 5, paddingLeft: 5, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
         

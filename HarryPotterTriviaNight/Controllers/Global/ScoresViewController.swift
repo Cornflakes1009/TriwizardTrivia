@@ -28,7 +28,7 @@ class ScoresViewController: UIViewController, MFMailComposeViewControllerDelegat
         button.isEnabled = true
         button.tintColor = backButtonColor
         button.setTitleColor(whiteColor, for: .normal)
-        button.addTarget(self, action: #selector(backTapped), for: .touchUpInside)
+        button.addTarget(nil, action: #selector(backTapped), for: .touchUpInside)
         return button
     }()
     
@@ -78,9 +78,25 @@ class ScoresViewController: UIViewController, MFMailComposeViewControllerDelegat
         return label
     }()
     
+    let totalCorrectWordsLabel: UILabel = {
+        let label = UILabel()
+        label.font = scoreViewFont
+        label.textColor = whiteColor
+        label.text = "Words Correctly Guessed: \(totalCorrectWords)"
+        return label
+    }()
+    
+    let totalNumberOfWordsLabel: UILabel = {
+        let label = UILabel()
+        label.font = scoreViewFont
+        label.textColor = whiteColor
+        label.text = "Words Guessed: \(totalNumberOfWords)"
+        return label
+    }()
+    
     let emailButton: GameButton = {
         let button = GameButton(title: "Email", backgroundColor: gryffindorColor, fontColor: gryffindorFontColor)
-        button.addTarget(self, action: #selector(emailTapped), for: .touchUpInside)
+        button.addTarget(nil, action: #selector(emailTapped), for: .touchUpInside)
         return button
     }()
     
@@ -114,9 +130,7 @@ class ScoresViewController: UIViewController, MFMailComposeViewControllerDelegat
     func setupViews() {
         
         playBackgroundVideo()
-        
-        let backButtonImageConfig = UIImage.SymbolConfiguration(pointSize: 25, weight: .light, scale: .large)
-        let backButtonImage = UIImage(systemName: backButtonSymbol, withConfiguration: backButtonImageConfig)
+
         
         backButton.setImage(backButtonImage, for: .normal)
         view.addSubview(backButton)
@@ -134,7 +148,7 @@ class ScoresViewController: UIViewController, MFMailComposeViewControllerDelegat
     // MARK:- StackView
     var stackView = UIStackView()
     func setupStackView() {
-        stackView = UIStackView(arrangedSubviews: [totalNumberCorrectLabel, totalNumberOfQuestionsLabel, numOfGamesPlayedLabel, percentageLabel])
+        stackView = UIStackView(arrangedSubviews: [totalNumberCorrectLabel, totalNumberOfQuestionsLabel, numOfGamesPlayedLabel, percentageLabel, totalCorrectWordsLabel, totalNumberOfWordsLabel])
         stackView.distribution = .fillEqually
         stackView.axis = .vertical
         let stackViewHeight = screenHeight * 0.5

@@ -43,14 +43,16 @@ class SurvivalResultsViewController: UIViewController {
         return label
     }()
     
-    let percentageLabel: UILabel = {
-        let label = UILabel()
-        return label
+    let shareButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.tintColor = whiteColor
+        button.addTarget(nil, action: #selector(shareTapped), for: .touchUpInside)
+        return button
     }()
     
     let restartButton: GameButton = {
         let button = GameButton(title: "Back to Menu", backgroundColor: gryffindorColor, fontColor: gryffindorFontColor)
-        button.addTarget(self, action: #selector(restartTapped), for: .touchUpInside)
+        button.addTarget(nil, action: #selector(restartTapped), for: .touchUpInside)
         return button
     }()
     
@@ -81,9 +83,6 @@ class SurvivalResultsViewController: UIViewController {
     
     // MARK:- Setting up the UI
     func setupUI() {
-//        view.addSubview(background)
-//        background.anchor(top: view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
-        
         playBackgroundVideo()
         
         view.addSubview(gameOverLabel)
@@ -94,11 +93,26 @@ class SurvivalResultsViewController: UIViewController {
         scoreLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         scoreLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
         
+        let shareButtonImageConfig = UIImage.SymbolConfiguration(pointSize: 75, weight: .medium, scale: .large)
+        let shareButtonImage = UIImage(systemName: shareButtonSymbol, withConfiguration: shareButtonImageConfig)
+        
+        shareButton.setImage(shareButtonImage, for: .normal)
+        view.addSubview(shareButton)
+        shareButton.anchor(top: scoreLabel.bottomAnchor, left: nil, bottom: nil, right: nil, paddingTop: 20, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 75, height: 75)
+        shareButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        
         view.addSubview(restartButton)
         restartButton.anchor(top: nil, left: view.leftAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 20, paddingBottom: -20, paddingRight: 20, width: 0, height: buttonHeight)
     }
     
     // MARK:- Button Functions
+    @objc func shareTapped() {
+        let items = ["Look at my score! \(soloScore)/\(soloQuestionList.count) \n\n\(appStoreLink)"]
+        let ac = UIActivityViewController(activityItems: items as [Any], applicationActivities: nil)
+        vibrate()
+        present(ac, animated: true)
+    }
+    
     @objc func restartTapped() {
         resetGame()
         self.navigationController?.popToRootViewController(animated: true)

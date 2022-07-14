@@ -26,7 +26,7 @@ class ViewController: UIViewController {
         button.isEnabled = true
         button.tintColor = backButtonColor
         button.setTitleColor(whiteColor, for: .normal)
-        button.addTarget(self, action: #selector(backTapped), for: .touchUpInside)
+        button.addTarget(nil, action: #selector(backTapped), for: .touchUpInside)
         return button
     }()
     
@@ -46,9 +46,6 @@ class ViewController: UIViewController {
             headlineLabel.font = headlineLabel.font.withSize(48)
             directionsLabel.font = instructionLabelFont
         }
-        
-        let backButtonImageConfig = UIImage.SymbolConfiguration(pointSize: 25, weight: .light, scale: .large)
-        let backButtonImage = UIImage(systemName: backButtonSymbol, withConfiguration: backButtonImageConfig)
         
         backButton.setImage(backButtonImage, for: .normal)
         view.addSubview(backButton)

@@ -3475,7 +3475,7 @@
  },
  {
    "category": "Harry Potter",
-   "question": "Who kils Nagini?",
+   "question": "Who kills Nagini?",
    "answer": 3,
    "0": "Harry Potter",
    "1": "Ronald Weasley",
@@ -5694,7 +5694,7 @@
    "0": "A bottle of whiskey",
    "1": "A stone ring",
    "2": "A bludger",
-   "3": "A necklace."
+   "3": "A necklace"
  },
  {
    "category": "Harry Potter",

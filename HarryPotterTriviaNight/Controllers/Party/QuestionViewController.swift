@@ -40,7 +40,7 @@ class QuestionViewController: UIViewController, GADInterstitialDelegate {
         button.isEnabled = true
         button.tintColor = backButtonColor
         button.setTitleColor(whiteColor, for: .normal)
-        button.addTarget(self, action: #selector(backTapped), for: .touchUpInside)
+        button.addTarget(nil, action: #selector(backTapped), for: .touchUpInside)
         return button
     }()
     
@@ -98,7 +98,7 @@ class QuestionViewController: UIViewController, GADInterstitialDelegate {
         button.titleLabel?.layer.shadowOpacity = 1.0
         button.titleLabel?.layer.shadowOffset = CGSize(width: 4, height: 4)
         button.titleLabel?.layer.masksToBounds = false
-        button.addTarget(self, action: #selector(cancelTapped), for: .touchUpInside)
+        button.addTarget(nil, action: #selector(cancelTapped), for: .touchUpInside)
         return button
     }()
     
@@ -119,7 +119,7 @@ class QuestionViewController: UIViewController, GADInterstitialDelegate {
         button.titleLabel?.layer.shadowOpacity = 1.0
         button.titleLabel?.layer.shadowOffset = CGSize(width: 4, height: 4)
         button.titleLabel?.layer.masksToBounds = false
-        button.addTarget(self, action: #selector(confirmTapped), for: .touchUpInside)
+        button.addTarget(nil, action: #selector(confirmTapped), for: .touchUpInside)
         return button
     }()
     
@@ -185,9 +185,6 @@ class QuestionViewController: UIViewController, GADInterstitialDelegate {
         teamLabel.layer.shadowOpacity = 1.0
         teamLabel.layer.shadowOffset = CGSize(width: 4, height: 4)
         teamLabel.layer.masksToBounds = false
-        
-        let backButtonImageConfig = UIImage.SymbolConfiguration(pointSize: 25, weight: .light, scale: .large)
-        let backButtonImage = UIImage(systemName: backButtonSymbol, withConfiguration: backButtonImageConfig)
         
         backButton.setImage(backButtonImage, for: .normal)
         view.addSubview(backButton)

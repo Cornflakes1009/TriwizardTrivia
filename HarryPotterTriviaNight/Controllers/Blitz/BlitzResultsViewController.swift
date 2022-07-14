@@ -43,14 +43,16 @@ class BlitzResultsViewController: UIViewController {
         return label
     }()
     
-    let percentageLabel: UILabel = {
-        let label = UILabel()
-        return label
+    let shareButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.tintColor = whiteColor
+        button.addTarget(nil, action: #selector(shareTapped), for: .touchUpInside)
+        return button
     }()
     
     let restartButton: GameButton = {
         let button = GameButton(title: "Back to Menu", backgroundColor: gryffindorColor, fontColor: gryffindorFontColor)
-        button.addTarget(self, action: #selector(restartTapped), for: .touchUpInside)
+        button.addTarget(nil, action: #selector(restartTapped), for: .touchUpInside)
         return button
     }()
     
@@ -92,8 +94,21 @@ class BlitzResultsViewController: UIViewController {
         scoreLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         scoreLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
         
+        shareButton.setImage(shareButtonImage, for: .normal)
+        view.addSubview(shareButton)
+        shareButton.anchor(top: scoreLabel.bottomAnchor, left: nil, bottom: nil, right: nil, paddingTop: 20, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 75, height: 75)
+        shareButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        
         view.addSubview(restartButton)
         restartButton.anchor(top: nil, left: view.leftAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 20, paddingBottom: -20, paddingRight: 20, width: 0, height: buttonHeight)
+    }
+    
+    // MARK: - Button Actions
+    @objc func shareTapped() {
+        let items = ["Look at my score! \(soloScore)/\(soloQuestionList.count) \n\n\(appStoreLink)"]
+        let ac = UIActivityViewController(activityItems: items as [Any], applicationActivities: nil)
+        vibrate()
+        present(ac, animated: true)
     }
     
     @objc func restartTapped() {
