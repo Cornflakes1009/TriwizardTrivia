@@ -103,5 +103,6 @@ func resetGame() {
 
 
 // MARK: - Languages
-// en - English
-// 
+// en       - English
+// es       - Spanish
+// es419    - Latin Spanish

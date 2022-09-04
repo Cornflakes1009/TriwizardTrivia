@@ -1,0 +1,57 @@
+
+/* Class = "UIViewController"; title = "toRulesAndCredits"; ObjectID = "1bF-d8-42G"; */
+"1bF-d8-42G.title" = "toRulesAndCredits";
+
+/* Class = "UIButton"; normalTitle = "Begin!"; ObjectID = "5bJ-YD-x4o"; */
+"5bJ-YD-x4o.normalTitle" = "Begin!";
+
+/* Class = "UIButton"; normalTitle = "Slytherin"; ObjectID = "A4N-gJ-eQf"; */
+"A4N-gJ-eQf.normalTitle" = "Slytherin";
+
+/* Class = "UIButton"; normalTitle = "Hufflepuff"; ObjectID = "CwJ-AB-eeC"; */
+"CwJ-AB-eeC.normalTitle" = "Hufflepuff";
+
+/* Class = "UIButton"; normalTitle = "Back to Menu"; ObjectID = "Fsy-oJ-GHj"; */
+"Fsy-oJ-GHj.normalTitle" = "Back to Menu";
+
+/* Class = "UILabel"; text = "Final Scores"; ObjectID = "GdK-MD-vPW"; */
+"GdK-MD-vPW.text" = "Final Scores";
+
+/* Class = "UIButton"; normalTitle = "Next Question!"; ObjectID = "KEV-nM-U94"; */
+"KEV-nM-U94.normalTitle" = "Next Question!";
+
+/* Class = "UILabel"; text = "Team Label"; ObjectID = "KFm-43-TGQ"; */
+"KFm-43-TGQ.text" = "Team Label";
+
+/* Class = "UIButton"; normalTitle = "Ravenclaw"; ObjectID = "MkE-po-SN4"; */
+"MkE-po-SN4.normalTitle" = "Ravenclaw";
+
+/* Class = "UILabel"; text = "Answer Label"; ObjectID = "NDf-WP-dYG"; */
+"NDf-WP-dYG.text" = "Answer Label";
+
+/* Class = "UILabel"; text = "Select at least two houses."; ObjectID = "Sgi-IJ-5pZ"; */
+"Sgi-IJ-5pZ.text" = "Select at least two houses.";
+
+/* Class = "UISegmentedControl"; aDx-1m-fLZ.segmentTitles[0] = "Rules"; ObjectID = "aDx-1m-fLZ"; */
+"aDx-1m-fLZ.segmentTitles[0]" = "Rules";
+
+/* Class = "UISegmentedControl"; aDx-1m-fLZ.segmentTitles[1] = "Credits"; ObjectID = "aDx-1m-fLZ"; */
+"aDx-1m-fLZ.segmentTitles[1]" = "Credits";
+
+/* Class = "UIButton"; normalTitle = "Gryffindor"; ObjectID = "dAI-nJ-Twm"; */
+"dAI-nJ-Twm.normalTitle" = "Gryffindor";
+
+/* Class = "UILabel"; text = "Triwizard Trivia"; ObjectID = "ljX-3I-641"; */
+"ljX-3I-641.text" = "Triwizard Trivia";
+
+/* Class = "UIButton"; normalTitle = "Correct"; ObjectID = "qhx-qt-i9l"; */
+"qhx-qt-i9l.normalTitle" = "Correct";
+
+/* Class = "UIButton"; normalTitle = "Incorrect"; ObjectID = "rIx-U8-MDh"; */
+"rIx-U8-MDh.normalTitle" = "Incorrect";
+
+/* Class = "UILabel"; text = "Question Label"; ObjectID = "tPn-QS-3ze"; */
+"tPn-QS-3ze.text" = "Question Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "ylp-56-E3S"; */
+"ylp-56-E3S.text" = "Label";
