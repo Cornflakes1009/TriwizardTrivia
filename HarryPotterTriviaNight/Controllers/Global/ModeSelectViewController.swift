@@ -39,7 +39,7 @@ class ModeSelectViewController: UIViewController {
     
     let instructionLabel: UILabel = {
         let label = UILabel()
-        label.text = "Select a Game Mode"
+        label.text = NSLocalizedString("Select a Game Mode", comment: "")
         label.font = instructionLabelFont
         label.textAlignment = .center
         label.textColor = .white

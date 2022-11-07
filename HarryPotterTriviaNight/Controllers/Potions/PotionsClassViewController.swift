@@ -25,6 +25,7 @@ class PotionsClassViewController: UIViewController {
     private var currentWordArray = [String]()
     private var wordCountForAds = 0
     private let cauldronArray = ["cauldron1", "cauldron2", "cauldron3", "cauldron4", "cauldron5", "cauldron6", "cauldron7"]
+    private let specialCharacters = [".", ",", ":", ";", "-", "'"]
     private var wrongGuesses = 0
 
     //MARK:- UI
@@ -382,8 +383,13 @@ class PotionsClassViewController: UIViewController {
         
         for char in word {
             if char != " " {
-                underscoreString += " _ "
-                underscoreArray.append(" _ ")
+                if specialCharacters.contains(String(char)) {
+                    underscoreString += String(char)
+                    underscoreArray.append(String(char))
+                } else {
+                    underscoreString += " _ "
+                    underscoreArray.append(" _ ")
+                }
             } else {
                 underscoreString += "  "
                 underscoreArray.append("  ")

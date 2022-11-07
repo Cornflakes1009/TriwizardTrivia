@@ -17,12 +17,12 @@ let closePopupSymbol        =   "xmark.square"
 let popUpBackgroundImage    =   UIImage(named: "sorting_hat")
 
 // MARK: - Button Image Configurations
-let backButtonImageConfig = UIImage.SymbolConfiguration(pointSize: 25, weight: .light, scale: .large)
-let backButtonImage = UIImage(systemName: backButtonSymbol, withConfiguration: backButtonImageConfig)
-let shareButtonImageConfig = UIImage.SymbolConfiguration(pointSize: 75, weight: .medium, scale: .large)
-let shareButtonImage = UIImage(systemName: shareButtonSymbol, withConfiguration: shareButtonImageConfig)
-let exitButtonImageConfig = UIImage.SymbolConfiguration(pointSize: 25, weight: .light, scale: .large)
-let exitButtonImage = UIImage(systemName: closePopupSymbol, withConfiguration: exitButtonImageConfig)
+let backButtonImageConfig   = UIImage.SymbolConfiguration(pointSize: 25, weight: .light, scale: .large)
+let backButtonImage         = UIImage(systemName: backButtonSymbol, withConfiguration: backButtonImageConfig)
+let shareButtonImageConfig  = UIImage.SymbolConfiguration(pointSize: 75, weight: .medium, scale: .large)
+let shareButtonImage        = UIImage(systemName: shareButtonSymbol, withConfiguration: shareButtonImageConfig)
+let exitButtonImageConfig   = UIImage.SymbolConfiguration(pointSize: 25, weight: .light, scale: .large)
+let exitButtonImage         = UIImage(systemName: closePopupSymbol, withConfiguration: exitButtonImageConfig)
 
 // MARK: - Audio
 let buttonClick             =   URL(fileURLWithPath: Bundle.main.path(forResource: "buttonClick", ofType: "mp3")!)

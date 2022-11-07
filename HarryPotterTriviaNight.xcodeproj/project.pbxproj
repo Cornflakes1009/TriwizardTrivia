@@ -80,7 +80,6 @@
 		D916452723F146E500CCBD71 /* RulesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RulesViewController.xib; sourceTree = "<group>"; };
 		D916452B23F1471F00CCBD71 /* CreditsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsViewController.swift; sourceTree = "<group>"; };
 		D916452C23F1471F00CCBD71 /* CreditsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreditsViewController.xib; sourceTree = "<group>"; };
-		D92475DF287F9B8F0094D1CB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D92475E1287F9CDC0094D1CB /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		D92475E2287F9CDD0094D1CB /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Main.strings; sourceTree = "<group>"; };
 		D92475E3287F9CDD0094D1CB /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -105,6 +104,7 @@
 		D945B8FA22B6E91D0087E171 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D945B90122B9C99C0087E171 /* ParryHotter.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ParryHotter.ttf; sourceTree = "<group>"; };
 		D967AFF22782D44D00A4B29D /* buttonClick.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = buttonClick.mp3; sourceTree = "<group>"; };
+		D972797328E0D11D00416071 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D97AB16622BB1A2900124CAC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D97AB16822BDAB2200124CAC /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		D97AB16A22BDEAF500124CAC /* QuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
@@ -535,9 +535,9 @@
 		D92475E0287F9B8F0094D1CB /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				D92475DF287F9B8F0094D1CB /* en */,
 				D92475E3287F9CDD0094D1CB /* es */,
 				D92475E6287F9D180094D1CB /* es-419 */,
+				D972797328E0D11D00416071 /* en */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -698,7 +698,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 5.0;
+				MARKETING_VERSION = 5.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.harolddavidson.TriwizardTrivia;
 				PRODUCT_NAME = TriwizardTrivia;
 				SWIFT_VERSION = 5.0;
@@ -719,7 +719,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 5.0;
+				MARKETING_VERSION = 5.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.harolddavidson.TriwizardTrivia;
 				PRODUCT_NAME = TriwizardTrivia;
 				SWIFT_VERSION = 5.0;
