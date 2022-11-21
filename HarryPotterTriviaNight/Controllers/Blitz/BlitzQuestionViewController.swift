@@ -75,13 +75,13 @@ class BlitzQuestionViewController: UIViewController, GADInterstitialDelegate, GA
         return image
     }()
     
-    // MARK:- Banner View
+    // MARK: - Banner View
     let bannerView: GADBannerView = {
         let bannerView = GADBannerView()
         return bannerView
     }()
     
-    // MARK:- Answer Buttons
+    // MARK: - Answer Buttons
     let optionZeroButton: GameButton = {
         let button = GameButton(title: "", backgroundColor: gryffindorColor, fontColor: gryffindorFontColor)
         button.titleLabel?.font = answerFont
@@ -114,7 +114,7 @@ class BlitzQuestionViewController: UIViewController, GADInterstitialDelegate, GA
         return button
     }()
     
-    // MARK:- Ready View
+    // MARK: - Ready View
     let explanationView: UIView = {
         let view = UIView()
         view.backgroundColor = .black
@@ -140,7 +140,7 @@ class BlitzQuestionViewController: UIViewController, GADInterstitialDelegate, GA
         return button
     }()
 
-    // MARK:- Correct Answer View
+    // MARK: - Correct Answer View
     let correctAnswerView: UIView = {
         let view = UIView()
         view.backgroundColor = .black
@@ -162,7 +162,7 @@ class BlitzQuestionViewController: UIViewController, GADInterstitialDelegate, GA
     
     let correctAnswerLabel: UILabel = {
         let label = UILabel()
-        label.text = "\(allQuestionList[questionIndex].answer)"
+        label.text = "\(soloQuestionList[soloQuestionIndex].answer)"
         label.font = popupLabelFont
         label.numberOfLines = 0
         label.textAlignment = .center
@@ -192,7 +192,7 @@ class BlitzQuestionViewController: UIViewController, GADInterstitialDelegate, GA
         return button
     }()
     
-    // MARK:- Exit Confirmation
+    // MARK: - Exit Confirmation
     let exitConfirmationView: UIView = {
         let view = UIView()
         view.backgroundColor = .black
@@ -224,7 +224,7 @@ class BlitzQuestionViewController: UIViewController, GADInterstitialDelegate, GA
         return button
     }()
     
-    // MARK:- Lifecycle Methods
+    // MARK: - Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -259,7 +259,7 @@ class BlitzQuestionViewController: UIViewController, GADInterstitialDelegate, GA
         }
     }
     
-    // MARK:- Setup Views
+    // MARK: - Setup Views
     private func setupViews() {
         
         playBackgroundVideo()
@@ -311,7 +311,7 @@ class BlitzQuestionViewController: UIViewController, GADInterstitialDelegate, GA
         player!.seek(to: CMTime.zero)
     }
     
-    // MARK:- StackView
+    // MARK: - StackView
     var stackView = UIStackView()
     private func setupStackView() {
         stackView = UIStackView(arrangedSubviews: [optionZeroButton, optionOneButton, optionTwoButton, optionThreeButton])
@@ -326,7 +326,7 @@ class BlitzQuestionViewController: UIViewController, GADInterstitialDelegate, GA
         stackView.anchor(top: nil, left: view.leftAnchor, bottom: bannerView.topAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 20, paddingBottom: -30, paddingRight: 20, width: 0, height: stackViewHeight)
     }
     
-    // MARK:- Explanation View
+    // MARK: - Explanation View
     private func addExplanationView() {
         view.addSubview(explanationView)
         explanationView.anchor(top: view.safeAreaLayoutGuide.topAnchor, left: view.leftAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, right: view.rightAnchor, paddingTop: 10, paddingLeft: 10, paddingBottom: -10, paddingRight: 10, width: 0, height: 0)
@@ -346,7 +346,7 @@ class BlitzQuestionViewController: UIViewController, GADInterstitialDelegate, GA
         readyButton.anchor(top: nil, left: explanationView.leftAnchor, bottom: explanationView.bottomAnchor, right: explanationView.rightAnchor, paddingTop: 0, paddingLeft: 20, paddingBottom: -20, paddingRight: 20, width: 0, height: buttonHeight)
     }
     
-    // MARK:- Exit View
+    // MARK: - Exit View
     private func presentBackConfirmationsView() {
         backButton.isEnabled = false
         view.addSubview(exitConfirmationView)
@@ -367,7 +367,7 @@ class BlitzQuestionViewController: UIViewController, GADInterstitialDelegate, GA
         }
     }
     
-    // MARK:- Exit StackView
+    // MARK: - Exit StackView
     var exitStackView = UIStackView()
     private func setupExitStackView() {
         exitStackView = UIStackView(arrangedSubviews: [exitGameCancel, exitGameConfirm])
@@ -383,16 +383,17 @@ class BlitzQuestionViewController: UIViewController, GADInterstitialDelegate, GA
     }
     
     private func updateUI() {
-        questionLabel.text = "\(allQuestionList[questionIndex].question)"
-        optionZeroButton.setTitle(allQuestionList[questionIndex].optionZero, for: .normal)
-        optionOneButton.setTitle(allQuestionList[questionIndex].optionOne, for: .normal)
-        optionTwoButton.setTitle(allQuestionList[questionIndex].optionTwo, for: .normal)
-        optionThreeButton.setTitle(allQuestionList[questionIndex].optionThree, for: .normal)
+        questionLabel.text = "\(soloQuestionList[soloQuestionIndex].question)"
+        questionNumberLabel.text = "\(soloQuestionIndex + 1)/\(soloQuestionList.count)"
         
-        questionNumberLabel.text = "\(questionIndex + 1)/\(allQuestionList.count)"
+        optionZeroButton.setTitle(soloQuestionList[soloQuestionIndex].optionZero, for: .normal)
+        optionOneButton.setTitle(soloQuestionList[soloQuestionIndex].optionOne, for: .normal)
+        optionTwoButton.setTitle(soloQuestionList[soloQuestionIndex].optionTwo, for: .normal)
+        optionThreeButton.setTitle(soloQuestionList[soloQuestionIndex].optionThree, for: .normal)
+
     }
     
-    // MARK:- Show Rewarded Ad Answer View
+    // MARK: - Show Rewarded Ad Answer View
     private func showRewardedAdAnswerView() {
         nextQuestionButton.removeFromSuperview()
         backButton.isEnabled = false
@@ -402,16 +403,7 @@ class BlitzQuestionViewController: UIViewController, GADInterstitialDelegate, GA
             self.correctAnswerView.alpha = popUpViewAlpha
         }
         
-        let currentCorrectAnswer = allQuestionList[questionIndex].answer
-        if currentCorrectAnswer == 0 {
-            correctAnswerLabel.text = "\(allQuestionList[questionIndex].optionZero)"
-        } else if currentCorrectAnswer == 1 {
-            correctAnswerLabel.text = "\(allQuestionList[questionIndex].optionOne)"
-        } else if currentCorrectAnswer == 2 {
-            correctAnswerLabel.text = "\(allQuestionList[questionIndex].optionTwo)"
-        } else {
-            correctAnswerLabel.text = "\(allQuestionList[questionIndex].optionThree)"
-        }
+        correctAnswerLabel.text = soloQuestionList[soloQuestionIndex].answer
         
         correctAnswerView.addSubview(popUpBackground)
         popUpBackground.anchor(top: correctAnswerView.topAnchor, left: correctAnswerView.leftAnchor, bottom: correctAnswerView.bottomAnchor, right: correctAnswerView.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
@@ -435,7 +427,7 @@ class BlitzQuestionViewController: UIViewController, GADInterstitialDelegate, GA
         extraLifeButton.anchor(top: nil, left: correctAnswerView.leftAnchor, bottom: correctAnswerView.bottomAnchor, right: correctAnswerView.rightAnchor, paddingTop: 0, paddingLeft: 20, paddingBottom: -20, paddingRight: 20, width: 0, height: buttonHeight)
     }
     
-    // MARK:- handle the completion of watching rewarded ad
+    // MARK: - handle the completion of watching rewarded ad
     internal func rewardedAd(_ rewardedAd: GADRewardedAd, userDidEarn reward: GADAdReward) {
         UIView.animate(withDuration: 1) {
             self.correctAnswerView.alpha = 0
@@ -448,7 +440,7 @@ class BlitzQuestionViewController: UIViewController, GADInterstitialDelegate, GA
         createAndLoadRewardedAd()
     }
     
-    // MARK:- Show Correct Answer View
+    // MARK: - Show Correct Answer View
     private func showCorrectAnswer() {
         //extraLifeButton.removeFromSuperview()
         backButton.isEnabled = false
@@ -458,17 +450,8 @@ class BlitzQuestionViewController: UIViewController, GADInterstitialDelegate, GA
             self.correctAnswerView.alpha = popUpViewAlpha
         }
         
-        let currentCorrectAnswer = allQuestionList[questionIndex].answer
-        if currentCorrectAnswer == 0 {
-            correctAnswerLabel.text = "\(allQuestionList[questionIndex].optionZero)"
-        } else if currentCorrectAnswer == 1 {
-            correctAnswerLabel.text = "\(allQuestionList[questionIndex].optionOne)"
-        } else if currentCorrectAnswer == 2 {
-            correctAnswerLabel.text = "\(allQuestionList[questionIndex].optionTwo)"
-        } else {
-            correctAnswerLabel.text = "\(allQuestionList[questionIndex].optionThree)"
-        }
-        
+        correctAnswerLabel.text = soloQuestionList[soloQuestionIndex].answer
+
         correctAnswerView.addSubview(popUpBackground)
         popUpBackground.anchor(top: correctAnswerView.topAnchor, left: correctAnswerView.leftAnchor, bottom: correctAnswerView.bottomAnchor, right: correctAnswerView.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
         popUpBackground.centerXAnchor.constraint(equalTo: correctAnswerView.centerXAnchor).isActive = true
@@ -487,7 +470,7 @@ class BlitzQuestionViewController: UIViewController, GADInterstitialDelegate, GA
         nextQuestionButton.anchor(top: nil, left: correctAnswerView.leftAnchor, bottom: correctAnswerView.bottomAnchor, right: correctAnswerView.rightAnchor, paddingTop: 0, paddingLeft: 20, paddingBottom: -20, paddingRight: 20, width: 0, height: buttonHeight)
     }
     
-    // MARK:- AdMob Functions
+    // MARK: - AdMob Functions
     private func createAd() -> GADInterstitial {
         let inter = GADInterstitial(adUnitID: adUnitID)
         inter.delegate = self
@@ -513,11 +496,11 @@ class BlitzQuestionViewController: UIViewController, GADInterstitialDelegate, GA
         bannerView.load(GADRequest())
     }
     
-    // MARK:- Check if Answer Tapped is Correct
-    private func checkIfCorrect(buttonNumber: Int) {
+    // MARK: - Check if Answer Tapped is Correct
+    private func checkIfCorrect(buttonTextValue: String) {
         totalNumberOfQuestions += 1
         defaults.setValue(totalNumberOfQuestions, forKey: "totalNumberOfQuestions")
-        if buttonNumber == allQuestionList[questionIndex].answer {
+        if buttonTextValue == soloQuestionList[soloQuestionIndex].answer {
             totalNumberOfCorrect += 1
             defaults.setValue(totalNumberOfCorrect, forKey: "totalNumberOfCorrect")
             correctlyAnswered += 1
@@ -526,8 +509,8 @@ class BlitzQuestionViewController: UIViewController, GADInterstitialDelegate, GA
             showCorrectAnswer()
         }
         
-        if questionIndex + 1 != allQuestionList.count {
-            questionIndex += 1
+        if soloQuestionIndex + 1 != soloQuestionList.count {
+            soloQuestionIndex += 1
             updateUI()
         } else {
             if (interstitial.isReady) {
@@ -540,7 +523,7 @@ class BlitzQuestionViewController: UIViewController, GADInterstitialDelegate, GA
         }
     }
     
-    // MARK:- Timer
+    // MARK: - Timer
     private func startTimer() {
         timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: (#selector(BlitzQuestionViewController.updateTimer)), userInfo: nil, repeats: true)
     }
@@ -556,7 +539,7 @@ class BlitzQuestionViewController: UIViewController, GADInterstitialDelegate, GA
         }
     }
 
-    // MARK:- Button Actions
+    // MARK: - Button Actions
     @objc func readyTapped() {
         // starting the game timer
         startTimer()
@@ -574,13 +557,13 @@ class BlitzQuestionViewController: UIViewController, GADInterstitialDelegate, GA
     @objc func answerTapped(_ sender: UIButton!) {
         // check if selected button has correct answer, if not, present a view with correct answer
         if sender == optionZeroButton {
-            checkIfCorrect(buttonNumber: 0)
+            checkIfCorrect(buttonTextValue: sender.titleLabel?.text ?? "")
         } else if sender == optionOneButton {
-            checkIfCorrect(buttonNumber: 1)
+            checkIfCorrect(buttonTextValue: sender.titleLabel?.text ?? "")
         } else if sender == optionTwoButton {
-            checkIfCorrect(buttonNumber: 2)
+            checkIfCorrect(buttonTextValue: sender.titleLabel?.text ?? "")
         } else if sender == optionThreeButton {
-            checkIfCorrect(buttonNumber: 3)
+            checkIfCorrect(buttonTextValue: sender.titleLabel?.text ?? "")
         }
         vibrate()
     }

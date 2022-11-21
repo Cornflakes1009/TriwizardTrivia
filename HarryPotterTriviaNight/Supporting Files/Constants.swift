@@ -28,7 +28,7 @@ let exitButtonImage         = UIImage(systemName: closePopupSymbol, withConfigur
 let buttonClick             =   URL(fileURLWithPath: Bundle.main.path(forResource: "buttonClick", ofType: "mp3")!)
 var buttonAudio             =   AVAudioPlayer()
 
-// MARK:- Fonts
+// MARK: - Fonts
 var titleLabelFont          =   UIFont(name: "ParryHotter", size: 30)
 var instructionLabelFont    =   UIFont(name: "Papyrus", size: 25)
 var scoreViewFont           =   UIFont(name: "Papyrus", size: 15)

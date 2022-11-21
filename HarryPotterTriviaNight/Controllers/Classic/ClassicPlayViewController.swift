@@ -134,7 +134,7 @@ class ClassicPlayViewController: UIViewController, GADInterstitialDelegate {
         return button
     }()
     
-    // MARK:- Exit View
+    // MARK: - Exit View
     let exitConfirmationView: UIView = {
         let view = UIView()
         view.backgroundColor = .black
@@ -219,7 +219,7 @@ class ClassicPlayViewController: UIViewController, GADInterstitialDelegate {
         return bannerView
     }()
     
-    // MARK:- Lifecycle Methods
+    // MARK: - Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
@@ -313,16 +313,7 @@ class ClassicPlayViewController: UIViewController, GADInterstitialDelegate {
         popUpBackground.centerXAnchor.constraint(equalTo: correctAnswerView.centerXAnchor).isActive = true
         popUpBackground.centerYAnchor.constraint(equalTo: correctAnswerView.centerYAnchor).isActive = true
         
-        let currentCorrectAnswer = soloQuestionList[soloQuestionIndex].answer
-        if currentCorrectAnswer == 0 {
-            correctAnswerLabel.text = "\(soloQuestionList[soloQuestionIndex].optionZero)"
-        } else if currentCorrectAnswer == 1 {
-            correctAnswerLabel.text = "\(soloQuestionList[soloQuestionIndex].optionOne)"
-        } else if currentCorrectAnswer == 2 {
-            correctAnswerLabel.text = "\(soloQuestionList[soloQuestionIndex].optionTwo)"
-        } else {
-            correctAnswerLabel.text = "\(soloQuestionList[soloQuestionIndex].optionThree)"
-        }
+        correctAnswerLabel.text = soloQuestionList[soloQuestionIndex].answer
         
         correctAnswerView.addSubview(correctAnswerTitleLabel)
         correctAnswerTitleLabel.anchor(top: correctAnswerView.topAnchor, left: correctAnswerView.leftAnchor, bottom: nil, right: correctAnswerView.rightAnchor, paddingTop: 20, paddingLeft: 20, paddingBottom: 0, paddingRight: 20, width: 0, height: 0)
@@ -337,11 +328,11 @@ class ClassicPlayViewController: UIViewController, GADInterstitialDelegate {
         nextQuestionButton.anchor(top: nil, left: correctAnswerView.leftAnchor, bottom: correctAnswerView.bottomAnchor, right: correctAnswerView.rightAnchor, paddingTop: 0, paddingLeft: 20, paddingBottom: -20, paddingRight: 20, width: 0, height: buttonHeight)
     }
     
-    func checkIfCorrect(buttonNumber: Int) {
+    func checkIfCorrect(buttonTextValue: String) {
         totalNumberOfQuestions += 1
         defaults.setValue(totalNumberOfQuestions, forKey: "totalNumberOfQuestions")
         
-        if buttonNumber == soloQuestionList[soloQuestionIndex].answer {
+        if buttonTextValue == soloQuestionList[soloQuestionIndex].answer {
             soloScore += 1
             totalNumberOfCorrect += 1
             defaults.setValue(totalNumberOfCorrect, forKey: "totalNumberOfCorrect")
@@ -437,14 +428,15 @@ class ClassicPlayViewController: UIViewController, GADInterstitialDelegate {
     
     @objc func answerTapped(_ sender: UIButton!) {
         // check if selected button has correct answer, if not, present a view with correct answer
+
         if sender == optionZeroButton {
-            checkIfCorrect(buttonNumber: 0)
+            checkIfCorrect(buttonTextValue: sender.titleLabel?.text ?? "")
         } else if sender == optionOneButton {
-            checkIfCorrect(buttonNumber: 1)
+            checkIfCorrect(buttonTextValue: sender.titleLabel?.text ?? "")
         } else if sender == optionTwoButton {
-            checkIfCorrect(buttonNumber: 2)
+            checkIfCorrect(buttonTextValue: sender.titleLabel?.text ?? "")
         } else if sender == optionThreeButton {
-            checkIfCorrect(buttonNumber: 3)
+            checkIfCorrect(buttonTextValue: sender.titleLabel?.text ?? "")
         }
         vibrate()
     }

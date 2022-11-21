@@ -61,7 +61,7 @@ class ResultsViewController: UIViewController, UITableViewDelegate, UITableViewD
         self.navigationController?.popToRootViewController(animated: true)
     }
     
-    // MARK:- Lifecycle Methods
+    // MARK: - Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         

@@ -37,7 +37,7 @@ class BlitzResultsViewController: UIViewController {
     
     let scoreLabel: UILabel = {
         let label = UILabel()
-        label.text = "\(correctlyAnswered)/\(allQuestionList.count)"
+        label.text = "\(correctlyAnswered)/\(soloQuestionList.count)"
         label.textColor = whiteColor
         label.font = finalScoreLabelFont
         return label
@@ -56,7 +56,7 @@ class BlitzResultsViewController: UIViewController {
         return button
     }()
     
-    // MARK:- Lifecycle Methods
+    // MARK: - Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
@@ -81,7 +81,7 @@ class BlitzResultsViewController: UIViewController {
         player!.seek(to: CMTime.zero)
     }
     
-    // MARK:- Setup Views
+    // MARK: - Setup Views
     func setupUI() {
 
         playBackgroundVideo()

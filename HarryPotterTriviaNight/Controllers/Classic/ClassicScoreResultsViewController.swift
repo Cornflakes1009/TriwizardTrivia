@@ -88,7 +88,7 @@ class ClassicScoreResultsViewController: UIViewController{
         return button
     }()
     
-    // MARK:- Lifecycle Methods
+    // MARK: - Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -115,7 +115,7 @@ class ClassicScoreResultsViewController: UIViewController{
         player!.seek(to: CMTime.zero)
     }
     
-    // MARK:- Setup Views
+    // MARK: - Setup Views
     func setupViews() {
         playBackgroundVideo()
         
@@ -129,9 +129,6 @@ class ClassicScoreResultsViewController: UIViewController{
         scoreLabel.anchor(top: nil, left: nil, bottom: nil, right: nil, paddingTop: 0, paddingLeft: 20, paddingBottom: 0, paddingRight: 20, width: UIScreen.main.bounds.size.width, height: 50)
         scoreLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         scoreLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
-        
-        let shareButtonImageConfig = UIImage.SymbolConfiguration(pointSize: 75, weight: .medium, scale: .large)
-        let shareButtonImage = UIImage(systemName: shareButtonSymbol, withConfiguration: shareButtonImageConfig)
         
         shareButton.setImage(shareButtonImage, for: .normal)
         view.addSubview(shareButton)

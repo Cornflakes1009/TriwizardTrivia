@@ -8,8 +8,8 @@
 import UIKit
 
 
-// MARK:- This file isn't in use
-// MARK:-
+// MARK: - This file isn't in use
+// MARK: -
 
 class RulesAndCreditsViewController: UIViewController {
     

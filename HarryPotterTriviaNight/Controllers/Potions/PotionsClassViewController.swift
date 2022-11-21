@@ -28,7 +28,7 @@ class PotionsClassViewController: UIViewController {
     private let specialCharacters = [".", ",", ":", ";", "-", "'"]
     private var wrongGuesses = 0
 
-    //MARK:- UI
+    //MARK: - UI
     private var topButtons = [UIButton]()
     private var middleButtons = [UIButton]()
     private var bottomButtons = [UIButton]()
@@ -84,7 +84,7 @@ class PotionsClassViewController: UIViewController {
         return image
     }()
     
-    // MARK:- Exit Confirmation
+    // MARK: - Exit Confirmation
     private let popUpBackground: UIImageView = {
         let image = UIImageView()
         image.image = popUpBackgroundImage
@@ -125,7 +125,7 @@ class PotionsClassViewController: UIViewController {
         return button
     }()
     
-    // MARK:- Exit View
+    // MARK: - Exit View
     private func presentBackConfirmationsView() {
         backButton.isEnabled = false
         view.addSubview(exitConfirmationView)

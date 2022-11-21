@@ -3693,10 +3693,10 @@
    "category": "Harry Potter",
    "question": "Which platform and at what station does the Hogwarts Express depart?",
    "answer": 0,
-   "0": "Platform 9 3/4 & Kings Cross",
-   "1": "Platform 7 3/4 & Kings Cross",
-   "2": "Platform 9 3/4 & Cambridge",
-   "3": "Platform 7 3/4 & Cambridge"
+   "0": "Plat. 9 3/4 & Kings Cross",
+   "1": "Plat. 7 3/4 & Kings Cross",
+   "2": "Plat. 9 3/4 & Cambridge",
+   "3": "Plat. 7 3/4 & Cambridge"
  },
  {
    "category": "Harry Potter",
@@ -3745,12 +3745,12 @@
  },
  {
    "category": "Harry Potter",
-   "question": "Which potion ingredients does Snape find missing during Harry's fourth year at Hogwarts?",
+   "question": "Which potion ingredients does Snape find missing during Harry's fourth year at Hogwarts? Boomslang skin and ___?",
    "answer": 2,
-   "0": "Boomsland skin & gillyweed",
-   "1": "Lacewing flies & gillyweed",
-   "2": "Boomslang skin & lacewing flies",
-   "3": "Gillyweed & a bezoar"
+   "0": "Gillyweed",
+   "1": "Fluxweed",
+   "2": "Lacewing flies",
+   "3": "A bezoar"
  },
  {
    "category": "Harry Potter",
@@ -5924,7 +5924,7 @@
  {
    "category": "Harry Potter",
    "question": "Who retrieves the Sword of Gryffindor from the frozen lake?",
-   "answer": 0,
+   "answer": 1,
    "0": "Harry Potter",
    "1": "Ron Weasley",
    "2": "Hermione Granger",

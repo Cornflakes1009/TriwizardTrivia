@@ -5,6 +5,8 @@
 //  Created by HaroldDavidson on 10/30/20.
 //  Copyright © 2020 HaroldDavidson. All rights reserved.
 //
+// Used in Classic, Blitz, and Survival
+//
 
 import Foundation
 
@@ -14,13 +16,13 @@ var soloQuestionIndex = 0
 class SoloQuestion {
     let category: String
     let question: String
-    let answer: Int
+    let answer: String
     let optionZero: String
     let optionOne: String
     let optionTwo: String
     let optionThree: String
     
-    init(category: String, question: String, answer: Int, optionZero: String, optionOne: String, optionTwo: String, optionThree: String) {
+    init(category: String, question: String, answer: String, optionZero: String, optionOne: String, optionTwo: String, optionThree: String) {
         self.category = category
         self.question = question
         self.answer = answer
@@ -31,7 +33,7 @@ class SoloQuestion {
     }
 }
 
-func convertSoloJSON(jsonToRead: String, numberOfQuestions: Int) {
+func convertSoloJSON(jsonToRead: String, numberOfQuestions: Int = 0) {
     // clearing out the questionArr before converting JSON
     var questionArr = [SoloQuestion]()
     
@@ -50,26 +52,34 @@ func convertSoloJSON(jsonToRead: String, numberOfQuestions: Int) {
             // assigning the values in the JSON to local variables
             guard let category      = questionAndAnswer["category"] as? String else { return }
             guard let question      = questionAndAnswer["question"] as? String else { return }
-            guard let answer        = questionAndAnswer["answer"] as? Int else { return }
+            guard let answerIndex   = questionAndAnswer["answer"] as? Int else { return }
             guard let optionZero    = questionAndAnswer["0"] as? String else { return }
             guard let optionOne     = questionAndAnswer["1"] as? String else { return }
             guard let optionTwo     = questionAndAnswer["2"] as? String else { return }
             guard let optionThree   = questionAndAnswer["3"] as? String else { return }
             
+            var answers = [optionZero, optionOne, optionTwo, optionThree]
+            let answer = answers[answerIndex]
+            answers.shuffle()
+            
             // creating a new instance of the Question object
-            let qa = SoloQuestion(category: category, question: question, answer: answer, optionZero: optionZero, optionOne: optionOne, optionTwo: optionTwo, optionThree: optionThree)
+            let qa = SoloQuestion(category: category, question: question, answer: answer, optionZero: answers[0], optionOne: answers[1], optionTwo: answers[2], optionThree: answers[3])
             
             // appending the recently converted JSON object to an array of Question objects to pull questions from
             questionArr.append(qa)
             
         } // end of the for in loop
         
-        // picking 15 questions per team
-        for _ in 1...numberOfQuestions {
-            let randomNum = (Int(arc4random_uniform(UInt32(questionArr.count))))
-            soloQuestionList.append(questionArr[randomNum])
-            questionArr.remove(at: randomNum)
+        // getting specified number of questions
+        questionArr.shuffle()
+        
+        if numberOfQuestions != 0 {
+            soloQuestionList = Array(questionArr[..<numberOfQuestions])
+        } else {
+            soloQuestionList = questionArr
         }
+        
+        
         
     } catch {
         print(error)

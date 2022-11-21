@@ -37,7 +37,7 @@ class SurvivalResultsViewController: UIViewController {
     
     let scoreLabel: UILabel = {
         let label = UILabel()
-        label.text = "\(correctlyAnswered)/\(allQuestionList.count)"
+        label.text = "\(correctlyAnswered)/\(soloQuestionList.count)"
         label.textColor = whiteColor
         label.font = finalScoreLabelFont
         return label
@@ -56,7 +56,7 @@ class SurvivalResultsViewController: UIViewController {
         return button
     }()
     
-    // MARK:- Lifecycle Methods
+    // MARK: - Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
@@ -81,7 +81,7 @@ class SurvivalResultsViewController: UIViewController {
         player!.seek(to: CMTime.zero)
     }
     
-    // MARK:- Setting up the UI
+    // MARK: - Setting up the UI
     func setupUI() {
         playBackgroundVideo()
         
@@ -93,9 +93,6 @@ class SurvivalResultsViewController: UIViewController {
         scoreLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         scoreLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
         
-        let shareButtonImageConfig = UIImage.SymbolConfiguration(pointSize: 75, weight: .medium, scale: .large)
-        let shareButtonImage = UIImage(systemName: shareButtonSymbol, withConfiguration: shareButtonImageConfig)
-        
         shareButton.setImage(shareButtonImage, for: .normal)
         view.addSubview(shareButton)
         shareButton.anchor(top: scoreLabel.bottomAnchor, left: nil, bottom: nil, right: nil, paddingTop: 20, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 75, height: 75)
@@ -105,7 +102,7 @@ class SurvivalResultsViewController: UIViewController {
         restartButton.anchor(top: nil, left: view.leftAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 20, paddingBottom: -20, paddingRight: 20, width: 0, height: buttonHeight)
     }
     
-    // MARK:- Button Functions
+    // MARK: - Button Functions
     @objc func shareTapped() {
         let items = ["Look at my score! \(soloScore)/\(soloQuestionList.count) \n\n\(appStoreLink)"]
         let ac = UIActivityViewController(activityItems: items as [Any], applicationActivities: nil)

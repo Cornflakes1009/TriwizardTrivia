@@ -52,7 +52,7 @@ class QuestionViewController: UIViewController, GADInterstitialDelegate {
         return label
     }()
     
-    // MARK:- Exit View
+    // MARK: - Exit View
     let exitConfirmationView: UIView = {
         let view = UIView()
         view.backgroundColor = .black
@@ -135,7 +135,7 @@ class QuestionViewController: UIViewController, GADInterstitialDelegate {
     
     var answeredCorrectly = false
     
-    // MARK:- Lifecycle Methods
+    // MARK: - Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -226,7 +226,7 @@ class QuestionViewController: UIViewController, GADInterstitialDelegate {
         player!.seek(to: CMTime.zero)
     }
     
-    // MARK:- UI Functions
+    // MARK: - UI Functions
     func updateUI() {
         if(questionIndex == (teams.count * 15)) { // teams.count * 15
             
@@ -298,14 +298,14 @@ class QuestionViewController: UIViewController, GADInterstitialDelegate {
         exitStackView.anchor(top: nil, left: nil, bottom: nil, right: nil, paddingTop: 0, paddingLeft: 20, paddingBottom: 0, paddingRight: 20, width: exitStackViewWidth, height: buttonHeight)
     }
     
-    // MARK:- AdMob Function
+    // MARK: - AdMob Function
     func createAd() -> GADInterstitial {
         let inter = GADInterstitial(adUnitID: adUnitID)
         inter.load(GADRequest())
         return inter
     }
     
-    // MARK:- Button Functions
+    // MARK: - Button Functions
     @IBAction func correctTapped(_ sender: Any) {
         vibrate()
         correctButton.backgroundColor = #colorLiteral(red: 0.4352941215, green: 0.4431372583, blue: 0.4745098054, alpha: 1)

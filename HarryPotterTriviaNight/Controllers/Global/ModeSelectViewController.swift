@@ -88,9 +88,7 @@ class ModeSelectViewController: UIViewController {
         return button
     }()
     
-    // MARK:- Horizontal Scroll View items
-
-    
+    // MARK: - Horizontal Scroll View items
     let creditsButton: TextButton = {
         let button = TextButton(title: "Credits", fontColor: whiteColor)
         button.addTarget(nil, action: #selector(creditsTapped), for: .touchUpInside)
@@ -241,14 +239,14 @@ class ModeSelectViewController: UIViewController {
     }
     
     @objc func survivalTapped() {
-        convertAllJSON(jsonToRead: "harryPotterSoloQuestions")
+        convertSoloJSON(jsonToRead: "harryPotterSoloQuestions")
         let vc = SurvivalQuestionViewController()
         self.navigationController?.pushViewController(vc, animated: true)
         vibrate()
     }
     
     @objc func blitzTapped() {
-        convertAllJSON(jsonToRead: "harryPotterSoloQuestions")
+        convertSoloJSON(jsonToRead: "harryPotterSoloQuestions")
         let vc = BlitzQuestionViewController()
         self.navigationController?.pushViewController(vc, animated: true)
         vibrate()

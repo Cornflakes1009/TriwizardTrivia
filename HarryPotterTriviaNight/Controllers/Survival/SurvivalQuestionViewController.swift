@@ -13,7 +13,7 @@ import GoogleMobileAds
 class SurvivalQuestionViewController: UIViewController, GADInterstitialDelegate, GADRewardedAdDelegate {
     
     var player: AVPlayer?
-    // MARK:- handle the completion and dismissal of rewarded ad
+    // MARK: - handle the completion and dismissal of rewarded ad
     func rewardedAd(_ rewardedAd: GADRewardedAd, userDidEarn reward: GADAdReward) {
         UIView.animate(withDuration: 1) {
             self.correctAnswerView.alpha = 0
@@ -28,13 +28,13 @@ class SurvivalQuestionViewController: UIViewController, GADInterstitialDelegate,
         createAndLoadRewardedAd()
     }
     
-    // MARK:- Local Variables
+    // MARK: - Local Variables
     var timer = Timer()
     var time: Double = 15
     var interstitial: GADInterstitial!
     var rewardedAd: GADRewardedAd?
     
-    // MARK:- Views
+    // MARK: - Views
     let background: UIImageView = {
         let image = UIImageView()
         image.image = backgroundImage
@@ -88,13 +88,13 @@ class SurvivalQuestionViewController: UIViewController, GADInterstitialDelegate,
         return image
     }()
     
-    // MARK:- Banner View
+    // MARK: - Banner View
     let bannerView: GADBannerView = {
         let bannerView = GADBannerView()
         return bannerView
     }()
     
-    // MARK:- Answer Buttons
+    // MARK: - Answer Buttons
     let optionZeroButton: GameButton = {
         let button = GameButton(title: "", backgroundColor: gryffindorColor, fontColor: gryffindorFontColor)
         button.titleLabel?.font = answerFont
@@ -127,7 +127,7 @@ class SurvivalQuestionViewController: UIViewController, GADInterstitialDelegate,
         return button
     }()
     
-    // MARK:- Correct Answer View
+    // MARK: - Correct Answer View
     let explanationView: UIView = {
         let view = UIView()
         view.backgroundColor = .black
@@ -154,7 +154,7 @@ class SurvivalQuestionViewController: UIViewController, GADInterstitialDelegate,
         return button
     }()
 
-    // MARK:- Correct Answer View
+    // MARK: - Correct Answer View
     let correctAnswerView: UIView = {
         let view = UIView()
         view.backgroundColor = .black
@@ -176,7 +176,7 @@ class SurvivalQuestionViewController: UIViewController, GADInterstitialDelegate,
     
     let correctAnswerLabel: UILabel = {
         let label = UILabel()
-        label.text = "\(allQuestionList[questionIndex].answer)"
+        label.text = "\(soloQuestionList[soloQuestionIndex].answer)"
         label.font = popupLabelFont
         label.numberOfLines = 0
         label.textAlignment = .center
@@ -200,7 +200,7 @@ class SurvivalQuestionViewController: UIViewController, GADInterstitialDelegate,
         return button
     }()
     
-    // MARK:- Exit Confirmation
+    // MARK: - Exit Confirmation
     let exitConfirmationView: UIView = {
         let view = UIView()
         view.backgroundColor = .black
@@ -232,7 +232,7 @@ class SurvivalQuestionViewController: UIViewController, GADInterstitialDelegate,
         return button
     }()
     
-    // MARK:- Lifecycle Methods
+    // MARK: - Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -267,7 +267,7 @@ class SurvivalQuestionViewController: UIViewController, GADInterstitialDelegate,
         }
     }
     
-    // MARK:- Setup Views
+    // MARK: - Setup Views
     func setupViews() {
 
         playBackgroundVideo()
@@ -319,7 +319,7 @@ class SurvivalQuestionViewController: UIViewController, GADInterstitialDelegate,
         player!.seek(to: CMTime.zero)
     }
     
-    // MARK:- StackView
+    // MARK: - StackView
     var stackView = UIStackView()
     func setupStackView() {
         stackView = UIStackView(arrangedSubviews: [optionZeroButton, optionOneButton, optionTwoButton, optionThreeButton])
@@ -334,7 +334,7 @@ class SurvivalQuestionViewController: UIViewController, GADInterstitialDelegate,
         stackView.anchor(top: nil, left: view.leftAnchor, bottom: bannerView.topAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 20, paddingBottom: -30, paddingRight: 20, width: 0, height: stackViewHeight)
     }
     
-    // MARK:- Explanation View
+    // MARK: - Explanation View
     func addExplanationView() {
         view.addSubview(explanationView)
         explanationView.anchor(top: view.safeAreaLayoutGuide.topAnchor, left: view.leftAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, right: view.rightAnchor, paddingTop: 10, paddingLeft: 10, paddingBottom: -10, paddingRight: 10, width: 0, height: 0)
@@ -354,7 +354,7 @@ class SurvivalQuestionViewController: UIViewController, GADInterstitialDelegate,
         readyButton.anchor(top: nil, left: explanationView.leftAnchor, bottom: explanationView.bottomAnchor, right: explanationView.rightAnchor, paddingTop: 0, paddingLeft: 20, paddingBottom: -20, paddingRight: 20, width: 0, height: buttonHeight)
     }
     
-    // MARK:- Exit View
+    // MARK: - Exit View
     private func presentBackConfirmationsView() {
         backButton.isEnabled = false
         view.addSubview(exitConfirmationView)
@@ -375,7 +375,7 @@ class SurvivalQuestionViewController: UIViewController, GADInterstitialDelegate,
         }
     }
     
-    // MARK:- Exit StackView
+    // MARK: - Exit StackView
     var exitStackView = UIStackView()
     func setupExitStackView() {
         exitStackView = UIStackView(arrangedSubviews: [exitGameCancel, exitGameConfirm])
@@ -391,16 +391,16 @@ class SurvivalQuestionViewController: UIViewController, GADInterstitialDelegate,
     }
     
     func updateUI() {
-        questionLabel.text = "\(allQuestionList[questionIndex].question)"
-        optionZeroButton.setTitle(allQuestionList[questionIndex].optionZero, for: .normal)
-        optionOneButton.setTitle(allQuestionList[questionIndex].optionOne, for: .normal)
-        optionTwoButton.setTitle(allQuestionList[questionIndex].optionTwo, for: .normal)
-        optionThreeButton.setTitle(allQuestionList[questionIndex].optionThree, for: .normal)
+        questionLabel.text = "\(soloQuestionList[soloQuestionIndex].question)"
+        questionNumberLabel.text = "\(soloQuestionIndex + 1)/\(soloQuestionList.count)"
         
-        questionNumberLabel.text = "\(questionIndex + 1)/\(allQuestionList.count)"
+        optionZeroButton.setTitle(soloQuestionList[soloQuestionIndex].optionZero, for: .normal)
+        optionOneButton.setTitle(soloQuestionList[soloQuestionIndex].optionOne, for: .normal)
+        optionTwoButton.setTitle(soloQuestionList[soloQuestionIndex].optionTwo, for: .normal)
+        optionThreeButton.setTitle(soloQuestionList[soloQuestionIndex].optionThree, for: .normal)
     }
     
-    // MARK:- Show Correct Answer View
+    // MARK: - Show Correct Answer View
     func showCorrectAnswer() {
         backButton.isEnabled = false
         view.addSubview(correctAnswerView)
@@ -413,16 +413,7 @@ class SurvivalQuestionViewController: UIViewController, GADInterstitialDelegate,
         view.addSubview(extraLifeExitButton)
         extraLifeExitButton.anchor(top: correctAnswerView.topAnchor, left: correctAnswerView.leftAnchor, bottom: nil, right: nil, paddingTop: 5, paddingLeft: 5, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
         
-        let currentCorrectAnswer = allQuestionList[questionIndex].answer
-        if currentCorrectAnswer == 0 {
-            correctAnswerLabel.text = "\(allQuestionList[questionIndex].optionZero)"
-        } else if currentCorrectAnswer == 1 {
-            correctAnswerLabel.text = "\(allQuestionList[questionIndex].optionOne)"
-        } else if currentCorrectAnswer == 2 {
-            correctAnswerLabel.text = "\(allQuestionList[questionIndex].optionTwo)"
-        } else {
-            correctAnswerLabel.text = "\(allQuestionList[questionIndex].optionThree)"
-        }
+        correctAnswerLabel.text = soloQuestionList[soloQuestionIndex].answer
         
         correctAnswerView.addSubview(popUpBackground)
         popUpBackground.anchor(top: correctAnswerView.topAnchor, left: correctAnswerView.leftAnchor, bottom: correctAnswerView.bottomAnchor, right: correctAnswerView.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
@@ -442,7 +433,7 @@ class SurvivalQuestionViewController: UIViewController, GADInterstitialDelegate,
         extraLifeButton.anchor(top: nil, left: correctAnswerView.leftAnchor, bottom: correctAnswerView.bottomAnchor, right: correctAnswerView.rightAnchor, paddingTop: 0, paddingLeft: 20, paddingBottom: -20, paddingRight: 20, width: 0, height: buttonHeight)
     }
     
-    // MARK:- AdMob Functions
+    // MARK: - AdMob Functions
     func createAd() -> GADInterstitial {
         let inter = GADInterstitial(adUnitID: adUnitID)
         inter.delegate = self
@@ -468,11 +459,11 @@ class SurvivalQuestionViewController: UIViewController, GADInterstitialDelegate,
         bannerView.load(GADRequest())
     }
     
-    // MARK:- Check if Answer Tapped is Correct
-    func checkIfCorrect(buttonNumber: Int) {
+    // MARK: - Check if Answer Tapped is Correct
+    func checkIfCorrect(buttonTextValue: String) {
         totalNumberOfQuestions += 1
         defaults.setValue(totalNumberOfQuestions, forKey: "totalNumberOfQuestions")
-        if buttonNumber == allQuestionList[questionIndex].answer {
+        if buttonTextValue == soloQuestionList[soloQuestionIndex].answer {
             totalNumberOfCorrect += 1
             defaults.setValue(totalNumberOfCorrect, forKey: "totalNumberOfCorrect")
             correctlyAnswered += 1
@@ -484,8 +475,8 @@ class SurvivalQuestionViewController: UIViewController, GADInterstitialDelegate,
             timer.invalidate()
         }
         
-        if questionIndex + 1 != allQuestionList.count {
-            questionIndex += 1
+        if soloQuestionIndex + 1 != soloQuestionList.count {
+            soloQuestionIndex += 1
             updateUI()
         } else {
             timer.invalidate()
@@ -499,7 +490,7 @@ class SurvivalQuestionViewController: UIViewController, GADInterstitialDelegate,
         }
     }
     
-    // MARK:- Timer
+    // MARK: - Timer
     func startTimer() {
         timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: (#selector(SurvivalQuestionViewController.updateTimer)), userInfo: nil, repeats: true)
     }
@@ -515,7 +506,7 @@ class SurvivalQuestionViewController: UIViewController, GADInterstitialDelegate,
         }
     }
 
-    // MARK:- Button Actions
+    // MARK: - Button Actions
     @objc func readyTapped() {
         // starting the game timer
         startTimer()
@@ -533,13 +524,13 @@ class SurvivalQuestionViewController: UIViewController, GADInterstitialDelegate,
     @objc func answerTapped(_ sender: UIButton!) {
         // check if selected button has correct answer, if not, present a view with correct answer
         if sender == optionZeroButton {
-            checkIfCorrect(buttonNumber: 0)
+            checkIfCorrect(buttonTextValue: sender.titleLabel?.text ?? "")
         } else if sender == optionOneButton {
-            checkIfCorrect(buttonNumber: 1)
+            checkIfCorrect(buttonTextValue: sender.titleLabel?.text ?? "")
         } else if sender == optionTwoButton {
-            checkIfCorrect(buttonNumber: 2)
+            checkIfCorrect(buttonTextValue: sender.titleLabel?.text ?? "")
         } else if sender == optionThreeButton {
-            checkIfCorrect(buttonNumber: 3)
+            checkIfCorrect(buttonTextValue: sender.titleLabel?.text ?? "")
         }
         vibrate()
     }

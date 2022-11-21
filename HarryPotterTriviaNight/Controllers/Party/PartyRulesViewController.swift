@@ -92,7 +92,7 @@ class PartyRulesViewController: UIViewController {
         return button
     }()
     
-    // MARK:- Lifecycle Methods
+    // MARK: - Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -117,7 +117,7 @@ class PartyRulesViewController: UIViewController {
         player!.seek(to: CMTime.zero)
     }
     
-    // MARK:- Setup Views
+    // MARK: - Setup Views
     func setupViews() {
 //        view.addSubview(backgroundImage)
 //        backgroundImage.anchor(top: view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)

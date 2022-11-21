@@ -43,8 +43,6 @@ func convertHangmanonJSON(jsonToRead: String) {
         
         hangmanWordList.shuffle()
         
-        //hangmanWordList = [hangmanWordList[0], hangmanWordList[1], hangmanWordList[2]]
-        
     } catch {
         print(error)
     }

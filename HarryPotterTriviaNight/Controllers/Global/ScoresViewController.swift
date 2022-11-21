@@ -13,7 +13,8 @@ import AVFoundation
 class ScoresViewController: UIViewController, MFMailComposeViewControllerDelegate {
 
     var player: AVPlayer?
-    let percentageAnsweredCorrectly = round(Double(totalNumberOfCorrect) / Double(totalNumberOfQuestions) * 100)
+    let triviaPercentage = Int(round(Double(totalNumberOfCorrect) / Double(totalNumberOfQuestions) * 100))
+    let wordPercentage = Int(round(Double(totalCorrectWords) / Double(totalNumberOfWords) * 100))
     
     let backgroundImage: UIImageView = {
         let image = UIImageView()
@@ -32,7 +33,7 @@ class ScoresViewController: UIViewController, MFMailComposeViewControllerDelegat
         return button
     }()
     
-    // MARK:- Scores
+    // MARK: - Scores
     let titleLabel: UILabel = {
         let label = UILabel()
         label.text = "Scores"
@@ -51,7 +52,7 @@ class ScoresViewController: UIViewController, MFMailComposeViewControllerDelegat
         let label = UILabel()
         label.font = scoreViewFont
         label.textColor = whiteColor
-        label.text = "Questions Answered: \(totalNumberOfQuestions)"
+        label.text = "Trivia Answered: \(totalNumberOfQuestions)"
         return label
     }()
     
@@ -59,11 +60,11 @@ class ScoresViewController: UIViewController, MFMailComposeViewControllerDelegat
         let label = UILabel()
         label.font = scoreViewFont
         label.textColor = whiteColor
-        label.text = "Correctly Answered: \(totalNumberOfCorrect)"
+        label.text = "Trivia Correct: \(totalNumberOfCorrect)"
         return label
     }()
     
-    let percentageLabel: UILabel = {
+    let triviaPercentageLabel: UILabel = {
         let label = UILabel()
         label.font = scoreViewFont
         label.textColor = whiteColor
@@ -74,7 +75,7 @@ class ScoresViewController: UIViewController, MFMailComposeViewControllerDelegat
         let label = UILabel()
         label.font = scoreViewFont
         label.textColor = whiteColor
-        label.text = "Games Played: \(numOfGamesPlayed)"
+        label.text = "Rounds Played: \(numOfGamesPlayed)"
         return label
     }()
     
@@ -82,7 +83,7 @@ class ScoresViewController: UIViewController, MFMailComposeViewControllerDelegat
         let label = UILabel()
         label.font = scoreViewFont
         label.textColor = whiteColor
-        label.text = "Words Correctly Guessed: \(totalCorrectWords)"
+        label.text = "Words Correct: \(totalCorrectWords)"
         return label
     }()
     
@@ -94,13 +95,20 @@ class ScoresViewController: UIViewController, MFMailComposeViewControllerDelegat
         return label
     }()
     
+    let wordsPercentageLabel: UILabel = {
+        let label = UILabel()
+        label.font = scoreViewFont
+        label.textColor = whiteColor
+        return label
+    }()
+    
     let emailButton: GameButton = {
         let button = GameButton(title: "Email", backgroundColor: gryffindorColor, fontColor: gryffindorFontColor)
         button.addTarget(nil, action: #selector(emailTapped), for: .touchUpInside)
         return button
     }()
     
-    // MARK:- Lifecycle Methods
+    // MARK: - Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -145,25 +153,22 @@ class ScoresViewController: UIViewController, MFMailComposeViewControllerDelegat
         emailButton.anchor(top: nil, left: view.leftAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 20, paddingBottom: -20, paddingRight: 20, width: 0, height: buttonHeight)
     }
     
-    // MARK:- StackView
+    // MARK: - StackView
     var stackView = UIStackView()
     func setupStackView() {
-        stackView = UIStackView(arrangedSubviews: [totalNumberCorrectLabel, totalNumberOfQuestionsLabel, numOfGamesPlayedLabel, percentageLabel, totalCorrectWordsLabel, totalNumberOfWordsLabel])
+        stackView = UIStackView(arrangedSubviews: [totalNumberOfQuestionsLabel, totalNumberCorrectLabel, triviaPercentageLabel, numOfGamesPlayedLabel, totalNumberOfWordsLabel, totalCorrectWordsLabel, wordsPercentageLabel])
         stackView.distribution = .fillEqually
         stackView.axis = .vertical
         let stackViewHeight = screenHeight * 0.5
         
-        if percentageAnsweredCorrectly.isNaN {
-            percentageLabel.text = "Percent Correct: N/A"
-        } else {
-            percentageLabel.text = "Percent Correct: \(percentageAnsweredCorrectly)%"
-        }
+        triviaPercentageLabel.text = triviaPercentage == 0 ? "Trivia % Correct: N/A" : "Trivia % Correct: \(triviaPercentage)%"
+        wordsPercentageLabel.text = wordPercentage == 0 ? "Words % Correct: N/A" : "Words % Correct: \(wordPercentage)%"
         
         view.addSubview(stackView)
         stackView.anchor(top: titleLabel.bottomAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 5, paddingLeft: 20, paddingBottom: 0, paddingRight: 20, width: 0, height: stackViewHeight)
     }
     
-    // MARK:- Email Functions
+    // MARK: - Email Functions
     func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
         controller.dismiss(animated: true)
     }
