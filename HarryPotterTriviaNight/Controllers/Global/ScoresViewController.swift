@@ -13,8 +13,8 @@ import AVFoundation
 class ScoresViewController: UIViewController, MFMailComposeViewControllerDelegate {
 
     var player: AVPlayer?
-    let triviaPercentage = Int(round(Double(totalNumberOfCorrect) / Double(totalNumberOfQuestions) * 100))
-    let wordPercentage = Int(round(Double(totalCorrectWords) / Double(totalNumberOfWords) * 100))
+    var triviaPercentage = 0
+    var wordPercentage = 0
     
     let backgroundImage: UIImageView = {
         let image = UIImageView()
@@ -111,6 +111,20 @@ class ScoresViewController: UIViewController, MFMailComposeViewControllerDelegat
     // MARK: - Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // verifying that both percentages can be calculated. If values = NaN, app will crash.
+        if !(round(Double(totalNumberOfCorrect) / Double(totalNumberOfQuestions) * 100)).isNaN {
+            triviaPercentage = Int(round(Double(totalNumberOfCorrect) / Double(totalNumberOfQuestions) * 100))
+        } else {
+            triviaPercentage = 0
+        }
+        
+        if !(round(Double(totalCorrectWords) / Double(totalNumberOfWords) * 100)).isNaN {
+            wordPercentage = Int(round(Double(totalCorrectWords) / Double(totalNumberOfWords) * 100))
+        } else {
+            wordPercentage = 0
+        }
+        
         
         setupViews()
     }

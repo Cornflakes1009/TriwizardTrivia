@@ -6,7 +6,6 @@ target 'HarryPotterTriviaNight' do
   use_frameworks!
 
   # Pods for HarryPotterTriviaNight
-  pod 'Firebase/Core'
-  pod 'Firebase/AdMob'
-
+    pod ‘Firebase/Core’
+    pod ‘Firebase/AdMob’
 end
