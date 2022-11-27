@@ -256,12 +256,14 @@ class SurvivalQuestionViewController: UIViewController, GADInterstitialDelegate,
     }
     
     @objc func appMovedToBackground() {
+        player?.pause()
         if time < 15 {
             timer.invalidate()
         }
     }
     
     @objc func appMovedToForeground() {
+        player?.play()
         if time < 15 {
             startTimer()
         }

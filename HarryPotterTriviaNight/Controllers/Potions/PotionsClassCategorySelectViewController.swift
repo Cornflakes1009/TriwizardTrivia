@@ -53,6 +53,18 @@ class PotionsClassCategorySelectViewController: UIViewController {
 
         setupViews()
         configureTableView()
+        
+        let notificationCenter = NotificationCenter.default
+            notificationCenter.addObserver(self, selector: #selector(appMovedToBackground), name: UIApplication.willResignActiveNotification, object: nil)
+        notificationCenter.addObserver(self, selector: #selector(appMovedToForeground), name: UIApplication.willEnterForegroundNotification, object: nil)
+    }
+    
+    @objc func appMovedToBackground() {
+        player?.pause()
+    }
+    
+    @objc func appMovedToForeground() {
+        player?.play()
     }
     
     // MARK: - Setting Up the Views

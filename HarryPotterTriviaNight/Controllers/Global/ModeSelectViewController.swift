@@ -128,6 +128,10 @@ class ModeSelectViewController: UIViewController {
         survivalButton.titleLabel?.font         = buttonFont
         blitzButton.titleLabel?.font            = buttonFont
         fantasticBeastsButton.titleLabel?.font  = buttonFont
+        
+        let notificationCenter = NotificationCenter.default
+            notificationCenter.addObserver(self, selector: #selector(appMovedToBackground), name: UIApplication.willResignActiveNotification, object: nil)
+        notificationCenter.addObserver(self, selector: #selector(appMovedToForeground), name: UIApplication.willEnterForegroundNotification, object: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -139,6 +143,14 @@ class ModeSelectViewController: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         player?.pause()
+    }
+    
+    @objc func appMovedToBackground() {
+        player?.pause()
+    }
+    
+    @objc func appMovedToForeground() {
+        player?.play()
     }
     
     // MARK: - Setting Up Views

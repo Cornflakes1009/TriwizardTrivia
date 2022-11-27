@@ -87,6 +87,10 @@ class ClassicQuestionSelectionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let notificationCenter = NotificationCenter.default
+            notificationCenter.addObserver(self, selector: #selector(appMovedToBackground), name: UIApplication.willResignActiveNotification, object: nil)
+        notificationCenter.addObserver(self, selector: #selector(appMovedToForeground), name: UIApplication.willEnterForegroundNotification, object: nil)
+        
         setupViews()
     }
     
@@ -96,6 +100,14 @@ class ClassicQuestionSelectionViewController: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         player?.pause()
+    }
+    
+    @objc func appMovedToBackground() {
+        player?.pause()
+    }
+    
+    @objc func appMovedToForeground() {
+        player?.play()
     }
     
     func setupViews() {

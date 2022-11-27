@@ -125,8 +125,19 @@ class ScoresViewController: UIViewController, MFMailComposeViewControllerDelegat
             wordPercentage = 0
         }
         
-        
         setupViews()
+        
+        let notificationCenter = NotificationCenter.default
+            notificationCenter.addObserver(self, selector: #selector(appMovedToBackground), name: UIApplication.willResignActiveNotification, object: nil)
+        notificationCenter.addObserver(self, selector: #selector(appMovedToForeground), name: UIApplication.willEnterForegroundNotification, object: nil)
+    }
+    
+    @objc func appMovedToBackground() {
+        player?.pause()
+    }
+    
+    @objc func appMovedToForeground() {
+        player?.play()
     }
     
     // MARK: - Background Video
