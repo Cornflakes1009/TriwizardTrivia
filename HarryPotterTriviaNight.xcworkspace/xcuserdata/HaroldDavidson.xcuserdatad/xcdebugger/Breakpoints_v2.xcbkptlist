@@ -180,5 +180,930 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B7D21EE8-FF2E-408E-8C89-8B6BDA0E9E47"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HarryPotterTriviaNight/Controllers/Global/ModeSelectViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "119"
+            endingLineNumber = "119"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "47189B1D-E068-47EF-A58C-1DCE0447005D"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HarryPotterTriviaNight/Supporting Files/ConfigureVaryingSizes.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
+            landmarkName = "varyForScreenSizes(screenHeight:)"
+            landmarkType = "9">
+            <Locations>
+               <Location
+                  uuid = "47189B1D-E068-47EF-A58C-1DCE0447005D - c6344f24d45cea63"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TriwizardTrivia.varyForScreenSizes(screenHeight: CoreGraphics.CGFloat) -&gt; ()"
+                  moduleName = "TriwizardTrivia"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/HaroldDavidson/Desktop/Programming/iOS/Personal/TriwizardTrivia/HarryPotterTriviaNight/Supporting%20Files/ConfigureVaryingSizes.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "59"
+                  endingLineNumber = "59"
+                  offsetFromSymbolStart = "236">
+               </Location>
+               <Location
+                  uuid = "47189B1D-E068-47EF-A58C-1DCE0447005D - c6344f24d45cea63"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TriwizardTrivia.varyForScreenSizes(screenHeight: CoreGraphics.CGFloat) -&gt; ()"
+                  moduleName = "TriwizardTrivia"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/HaroldDavidson/Desktop/Programming/iOS/Personal/TriwizardTrivia/HarryPotterTriviaNight/Supporting%20Files/ConfigureVaryingSizes.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "59"
+                  endingLineNumber = "59"
+                  offsetFromSymbolStart = "84">
+               </Location>
+               <Location
+                  uuid = "47189B1D-E068-47EF-A58C-1DCE0447005D - c6344f24d45cea63"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TriwizardTrivia.varyForScreenSizes(screenHeight: CoreGraphics.CGFloat) -&gt; ()"
+                  moduleName = "TriwizardTrivia"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/HaroldDavidson/Desktop/Programming/iOS/Personal/TriwizardTrivia/HarryPotterTriviaNight/Supporting%20Files/ConfigureVaryingSizes.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "59"
+                  endingLineNumber = "59"
+                  offsetFromSymbolStart = "100">
+               </Location>
+               <Location
+                  uuid = "47189B1D-E068-47EF-A58C-1DCE0447005D - c6344f24d45cea63"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TriwizardTrivia.varyForScreenSizes(screenHeight: CoreGraphics.CGFloat) -&gt; ()"
+                  moduleName = "TriwizardTrivia"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/HaroldDavidson/Desktop/Programming/iOS/Personal/TriwizardTrivia/HarryPotterTriviaNight/Supporting%20Files/ConfigureVaryingSizes.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "59"
+                  endingLineNumber = "59"
+                  offsetFromSymbolStart = "103">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "120B600C-6F1D-49F1-B1EB-BB22DFB1BC7F"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HarryPotterTriviaNight/Supporting Files/ConfigureVaryingSizes.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
+            landmarkName = "varyForScreenSizes(screenHeight:)"
+            landmarkType = "9">
+            <Locations>
+               <Location
+                  uuid = "120B600C-6F1D-49F1-B1EB-BB22DFB1BC7F - c6344f24d45ce9ad"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TriwizardTrivia.varyForScreenSizes(screenHeight: CoreGraphics.CGFloat) -&gt; ()"
+                  moduleName = "TriwizardTrivia"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/HaroldDavidson/Desktop/Programming/iOS/Personal/TriwizardTrivia/HarryPotterTriviaNight/Supporting%20Files/ConfigureVaryingSizes.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "65"
+                  endingLineNumber = "65"
+                  offsetFromSymbolStart = "949">
+               </Location>
+               <Location
+                  uuid = "120B600C-6F1D-49F1-B1EB-BB22DFB1BC7F - c6344f24d45ce9ad"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TriwizardTrivia.varyForScreenSizes(screenHeight: CoreGraphics.CGFloat) -&gt; ()"
+                  moduleName = "TriwizardTrivia"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/HaroldDavidson/Desktop/Programming/iOS/Personal/TriwizardTrivia/HarryPotterTriviaNight/Supporting%20Files/ConfigureVaryingSizes.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "65"
+                  endingLineNumber = "65"
+                  offsetFromSymbolStart = "797">
+               </Location>
+               <Location
+                  uuid = "120B600C-6F1D-49F1-B1EB-BB22DFB1BC7F - c6344f24d45ce9ad"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TriwizardTrivia.varyForScreenSizes(screenHeight: CoreGraphics.CGFloat) -&gt; ()"
+                  moduleName = "TriwizardTrivia"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/HaroldDavidson/Desktop/Programming/iOS/Personal/TriwizardTrivia/HarryPotterTriviaNight/Supporting%20Files/ConfigureVaryingSizes.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "65"
+                  endingLineNumber = "65"
+                  offsetFromSymbolStart = "813">
+               </Location>
+               <Location
+                  uuid = "120B600C-6F1D-49F1-B1EB-BB22DFB1BC7F - c6344f24d45ce9ad"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TriwizardTrivia.varyForScreenSizes(screenHeight: CoreGraphics.CGFloat) -&gt; ()"
+                  moduleName = "TriwizardTrivia"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/HaroldDavidson/Desktop/Programming/iOS/Personal/TriwizardTrivia/HarryPotterTriviaNight/Supporting%20Files/ConfigureVaryingSizes.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "65"
+                  endingLineNumber = "65"
+                  offsetFromSymbolStart = "816">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5C5562C1-057B-451F-B158-DD15F1BE2494"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HarryPotterTriviaNight/Supporting Files/ConfigureVaryingSizes.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "71"
+            endingLineNumber = "71"
+            landmarkName = "varyForScreenSizes(screenHeight:)"
+            landmarkType = "9">
+            <Locations>
+               <Location
+                  uuid = "5C5562C1-057B-451F-B158-DD15F1BE2494 - c6344f24d45ce897"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TriwizardTrivia.varyForScreenSizes(screenHeight: CoreGraphics.CGFloat) -&gt; ()"
+                  moduleName = "TriwizardTrivia"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/HaroldDavidson/Desktop/Programming/iOS/Personal/TriwizardTrivia/HarryPotterTriviaNight/Supporting%20Files/ConfigureVaryingSizes.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "71"
+                  endingLineNumber = "71"
+                  offsetFromSymbolStart = "1665">
+               </Location>
+               <Location
+                  uuid = "5C5562C1-057B-451F-B158-DD15F1BE2494 - c6344f24d45ce897"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TriwizardTrivia.varyForScreenSizes(screenHeight: CoreGraphics.CGFloat) -&gt; ()"
+                  moduleName = "TriwizardTrivia"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/HaroldDavidson/Desktop/Programming/iOS/Personal/TriwizardTrivia/HarryPotterTriviaNight/Supporting%20Files/ConfigureVaryingSizes.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "71"
+                  endingLineNumber = "71"
+                  offsetFromSymbolStart = "1513">
+               </Location>
+               <Location
+                  uuid = "5C5562C1-057B-451F-B158-DD15F1BE2494 - c6344f24d45ce897"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TriwizardTrivia.varyForScreenSizes(screenHeight: CoreGraphics.CGFloat) -&gt; ()"
+                  moduleName = "TriwizardTrivia"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/HaroldDavidson/Desktop/Programming/iOS/Personal/TriwizardTrivia/HarryPotterTriviaNight/Supporting%20Files/ConfigureVaryingSizes.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "71"
+                  endingLineNumber = "71"
+                  offsetFromSymbolStart = "1529">
+               </Location>
+               <Location
+                  uuid = "5C5562C1-057B-451F-B158-DD15F1BE2494 - c6344f24d45ce897"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TriwizardTrivia.varyForScreenSizes(screenHeight: CoreGraphics.CGFloat) -&gt; ()"
+                  moduleName = "TriwizardTrivia"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/HaroldDavidson/Desktop/Programming/iOS/Personal/TriwizardTrivia/HarryPotterTriviaNight/Supporting%20Files/ConfigureVaryingSizes.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "71"
+                  endingLineNumber = "71"
+                  offsetFromSymbolStart = "1532">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1706A260-F85A-4591-B832-CB00087FD07A"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HarryPotterTriviaNight/Supporting Files/ConfigureVaryingSizes.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "77"
+            endingLineNumber = "77"
+            landmarkName = "varyForScreenSizes(screenHeight:)"
+            landmarkType = "9">
+            <Locations>
+               <Location
+                  uuid = "1706A260-F85A-4591-B832-CB00087FD07A - c6344f24d45c97d1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TriwizardTrivia.varyForScreenSizes(screenHeight: CoreGraphics.CGFloat) -&gt; ()"
+                  moduleName = "TriwizardTrivia"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/HaroldDavidson/Desktop/Programming/iOS/Personal/TriwizardTrivia/HarryPotterTriviaNight/Supporting%20Files/ConfigureVaryingSizes.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "77"
+                  endingLineNumber = "77"
+                  offsetFromSymbolStart = "2381">
+               </Location>
+               <Location
+                  uuid = "1706A260-F85A-4591-B832-CB00087FD07A - c6344f24d45c97d1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TriwizardTrivia.varyForScreenSizes(screenHeight: CoreGraphics.CGFloat) -&gt; ()"
+                  moduleName = "TriwizardTrivia"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/HaroldDavidson/Desktop/Programming/iOS/Personal/TriwizardTrivia/HarryPotterTriviaNight/Supporting%20Files/ConfigureVaryingSizes.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "77"
+                  endingLineNumber = "77"
+                  offsetFromSymbolStart = "2229">
+               </Location>
+               <Location
+                  uuid = "1706A260-F85A-4591-B832-CB00087FD07A - c6344f24d45c97d1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TriwizardTrivia.varyForScreenSizes(screenHeight: CoreGraphics.CGFloat) -&gt; ()"
+                  moduleName = "TriwizardTrivia"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/HaroldDavidson/Desktop/Programming/iOS/Personal/TriwizardTrivia/HarryPotterTriviaNight/Supporting%20Files/ConfigureVaryingSizes.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "77"
+                  endingLineNumber = "77"
+                  offsetFromSymbolStart = "2245">
+               </Location>
+               <Location
+                  uuid = "1706A260-F85A-4591-B832-CB00087FD07A - c6344f24d45c97d1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TriwizardTrivia.varyForScreenSizes(screenHeight: CoreGraphics.CGFloat) -&gt; ()"
+                  moduleName = "TriwizardTrivia"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/HaroldDavidson/Desktop/Programming/iOS/Personal/TriwizardTrivia/HarryPotterTriviaNight/Supporting%20Files/ConfigureVaryingSizes.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "77"
+                  endingLineNumber = "77"
+                  offsetFromSymbolStart = "2248">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "25D85611-2793-4D65-8BFF-E4E048193629"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HarryPotterTriviaNight/Supporting Files/ConfigureVaryingSizes.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "83"
+            endingLineNumber = "83"
+            landmarkName = "varyForScreenSizes(screenHeight:)"
+            landmarkType = "9">
+            <Locations>
+               <Location
+                  uuid = "25D85611-2793-4D65-8BFF-E4E048193629 - c6344f24d45c971b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TriwizardTrivia.varyForScreenSizes(screenHeight: CoreGraphics.CGFloat) -&gt; ()"
+                  moduleName = "TriwizardTrivia"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/HaroldDavidson/Desktop/Programming/iOS/Personal/TriwizardTrivia/HarryPotterTriviaNight/Supporting%20Files/ConfigureVaryingSizes.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "83"
+                  endingLineNumber = "83"
+                  offsetFromSymbolStart = "3097">
+               </Location>
+               <Location
+                  uuid = "25D85611-2793-4D65-8BFF-E4E048193629 - c6344f24d45c971b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TriwizardTrivia.varyForScreenSizes(screenHeight: CoreGraphics.CGFloat) -&gt; ()"
+                  moduleName = "TriwizardTrivia"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/HaroldDavidson/Desktop/Programming/iOS/Personal/TriwizardTrivia/HarryPotterTriviaNight/Supporting%20Files/ConfigureVaryingSizes.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "83"
+                  endingLineNumber = "83"
+                  offsetFromSymbolStart = "2945">
+               </Location>
+               <Location
+                  uuid = "25D85611-2793-4D65-8BFF-E4E048193629 - c6344f24d45c971b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TriwizardTrivia.varyForScreenSizes(screenHeight: CoreGraphics.CGFloat) -&gt; ()"
+                  moduleName = "TriwizardTrivia"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/HaroldDavidson/Desktop/Programming/iOS/Personal/TriwizardTrivia/HarryPotterTriviaNight/Supporting%20Files/ConfigureVaryingSizes.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "83"
+                  endingLineNumber = "83"
+                  offsetFromSymbolStart = "2961">
+               </Location>
+               <Location
+                  uuid = "25D85611-2793-4D65-8BFF-E4E048193629 - c6344f24d45c971b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TriwizardTrivia.varyForScreenSizes(screenHeight: CoreGraphics.CGFloat) -&gt; ()"
+                  moduleName = "TriwizardTrivia"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/HaroldDavidson/Desktop/Programming/iOS/Personal/TriwizardTrivia/HarryPotterTriviaNight/Supporting%20Files/ConfigureVaryingSizes.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "83"
+                  endingLineNumber = "83"
+                  offsetFromSymbolStart = "2964">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "46DD2A6F-4CEA-4145-A0D0-44C931CBB2AE"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HarryPotterTriviaNight/Supporting Files/ConfigureVaryingSizes.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "89"
+            endingLineNumber = "89"
+            landmarkName = "varyForScreenSizes(screenHeight:)"
+            landmarkType = "9">
+            <Locations>
+               <Location
+                  uuid = "46DD2A6F-4CEA-4145-A0D0-44C931CBB2AE - c6344f24d45c9645"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TriwizardTrivia.varyForScreenSizes(screenHeight: CoreGraphics.CGFloat) -&gt; ()"
+                  moduleName = "TriwizardTrivia"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/HaroldDavidson/Desktop/Programming/iOS/Personal/TriwizardTrivia/HarryPotterTriviaNight/Supporting%20Files/ConfigureVaryingSizes.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "89"
+                  endingLineNumber = "89"
+                  offsetFromSymbolStart = "3813">
+               </Location>
+               <Location
+                  uuid = "46DD2A6F-4CEA-4145-A0D0-44C931CBB2AE - c6344f24d45c9645"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TriwizardTrivia.varyForScreenSizes(screenHeight: CoreGraphics.CGFloat) -&gt; ()"
+                  moduleName = "TriwizardTrivia"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/HaroldDavidson/Desktop/Programming/iOS/Personal/TriwizardTrivia/HarryPotterTriviaNight/Supporting%20Files/ConfigureVaryingSizes.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "89"
+                  endingLineNumber = "89"
+                  offsetFromSymbolStart = "3661">
+               </Location>
+               <Location
+                  uuid = "46DD2A6F-4CEA-4145-A0D0-44C931CBB2AE - c6344f24d45c9645"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TriwizardTrivia.varyForScreenSizes(screenHeight: CoreGraphics.CGFloat) -&gt; ()"
+                  moduleName = "TriwizardTrivia"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/HaroldDavidson/Desktop/Programming/iOS/Personal/TriwizardTrivia/HarryPotterTriviaNight/Supporting%20Files/ConfigureVaryingSizes.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "89"
+                  endingLineNumber = "89"
+                  offsetFromSymbolStart = "3677">
+               </Location>
+               <Location
+                  uuid = "46DD2A6F-4CEA-4145-A0D0-44C931CBB2AE - c6344f24d45c9645"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TriwizardTrivia.varyForScreenSizes(screenHeight: CoreGraphics.CGFloat) -&gt; ()"
+                  moduleName = "TriwizardTrivia"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/HaroldDavidson/Desktop/Programming/iOS/Personal/TriwizardTrivia/HarryPotterTriviaNight/Supporting%20Files/ConfigureVaryingSizes.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "89"
+                  endingLineNumber = "89"
+                  offsetFromSymbolStart = "3680">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1AEBD52C-5DE2-42A8-B4C4-F27E9558767F"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HarryPotterTriviaNight/Supporting Files/ConfigureVaryingSizes.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "95"
+            endingLineNumber = "95"
+            landmarkName = "varyForScreenSizes(screenHeight:)"
+            landmarkType = "9">
+            <Locations>
+               <Location
+                  uuid = "1AEBD52C-5DE2-42A8-B4C4-F27E9558767F - c6344f24d45c958f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TriwizardTrivia.varyForScreenSizes(screenHeight: CoreGraphics.CGFloat) -&gt; ()"
+                  moduleName = "TriwizardTrivia"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/HaroldDavidson/Desktop/Programming/iOS/Personal/TriwizardTrivia/HarryPotterTriviaNight/Supporting%20Files/ConfigureVaryingSizes.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "95"
+                  endingLineNumber = "95"
+                  offsetFromSymbolStart = "4529">
+               </Location>
+               <Location
+                  uuid = "1AEBD52C-5DE2-42A8-B4C4-F27E9558767F - c6344f24d45c958f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TriwizardTrivia.varyForScreenSizes(screenHeight: CoreGraphics.CGFloat) -&gt; ()"
+                  moduleName = "TriwizardTrivia"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/HaroldDavidson/Desktop/Programming/iOS/Personal/TriwizardTrivia/HarryPotterTriviaNight/Supporting%20Files/ConfigureVaryingSizes.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "95"
+                  endingLineNumber = "95"
+                  offsetFromSymbolStart = "4377">
+               </Location>
+               <Location
+                  uuid = "1AEBD52C-5DE2-42A8-B4C4-F27E9558767F - c6344f24d45c958f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TriwizardTrivia.varyForScreenSizes(screenHeight: CoreGraphics.CGFloat) -&gt; ()"
+                  moduleName = "TriwizardTrivia"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/HaroldDavidson/Desktop/Programming/iOS/Personal/TriwizardTrivia/HarryPotterTriviaNight/Supporting%20Files/ConfigureVaryingSizes.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "95"
+                  endingLineNumber = "95"
+                  offsetFromSymbolStart = "4393">
+               </Location>
+               <Location
+                  uuid = "1AEBD52C-5DE2-42A8-B4C4-F27E9558767F - c6344f24d45c958f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TriwizardTrivia.varyForScreenSizes(screenHeight: CoreGraphics.CGFloat) -&gt; ()"
+                  moduleName = "TriwizardTrivia"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/HaroldDavidson/Desktop/Programming/iOS/Personal/TriwizardTrivia/HarryPotterTriviaNight/Supporting%20Files/ConfigureVaryingSizes.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "95"
+                  endingLineNumber = "95"
+                  offsetFromSymbolStart = "4396">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DD03EC3F-AE01-4315-83F2-8A7B38CA2F0B"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HarryPotterTriviaNight/Supporting Files/ConfigureVaryingSizes.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "101"
+            endingLineNumber = "101"
+            landmarkName = "varyForScreenSizes(screenHeight:)"
+            landmarkType = "9">
+            <Locations>
+               <Location
+                  uuid = "DD03EC3F-AE01-4315-83F2-8A7B38CA2F0B - c6344f24d45c94c9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TriwizardTrivia.varyForScreenSizes(screenHeight: CoreGraphics.CGFloat) -&gt; ()"
+                  moduleName = "TriwizardTrivia"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/HaroldDavidson/Desktop/Programming/iOS/Personal/TriwizardTrivia/HarryPotterTriviaNight/Supporting%20Files/ConfigureVaryingSizes.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "101"
+                  endingLineNumber = "101"
+                  offsetFromSymbolStart = "5245">
+               </Location>
+               <Location
+                  uuid = "DD03EC3F-AE01-4315-83F2-8A7B38CA2F0B - c6344f24d45c94c9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TriwizardTrivia.varyForScreenSizes(screenHeight: CoreGraphics.CGFloat) -&gt; ()"
+                  moduleName = "TriwizardTrivia"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/HaroldDavidson/Desktop/Programming/iOS/Personal/TriwizardTrivia/HarryPotterTriviaNight/Supporting%20Files/ConfigureVaryingSizes.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "101"
+                  endingLineNumber = "101"
+                  offsetFromSymbolStart = "5093">
+               </Location>
+               <Location
+                  uuid = "DD03EC3F-AE01-4315-83F2-8A7B38CA2F0B - c6344f24d45c94c9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TriwizardTrivia.varyForScreenSizes(screenHeight: CoreGraphics.CGFloat) -&gt; ()"
+                  moduleName = "TriwizardTrivia"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/HaroldDavidson/Desktop/Programming/iOS/Personal/TriwizardTrivia/HarryPotterTriviaNight/Supporting%20Files/ConfigureVaryingSizes.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "101"
+                  endingLineNumber = "101"
+                  offsetFromSymbolStart = "5109">
+               </Location>
+               <Location
+                  uuid = "DD03EC3F-AE01-4315-83F2-8A7B38CA2F0B - c6344f24d45c94c9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TriwizardTrivia.varyForScreenSizes(screenHeight: CoreGraphics.CGFloat) -&gt; ()"
+                  moduleName = "TriwizardTrivia"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/HaroldDavidson/Desktop/Programming/iOS/Personal/TriwizardTrivia/HarryPotterTriviaNight/Supporting%20Files/ConfigureVaryingSizes.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "101"
+                  endingLineNumber = "101"
+                  offsetFromSymbolStart = "5112">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F8DBA6AD-29FB-4575-8C46-4ABDE6169294"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HarryPotterTriviaNight/Supporting Files/ConfigureVaryingSizes.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "108"
+            endingLineNumber = "108"
+            landmarkName = "varyForScreenSizes(screenHeight:)"
+            landmarkType = "9">
+            <Locations>
+               <Location
+                  uuid = "F8DBA6AD-29FB-4575-8C46-4ABDE6169294 - c6344f24d45c93d0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TriwizardTrivia.varyForScreenSizes(screenHeight: CoreGraphics.CGFloat) -&gt; ()"
+                  moduleName = "TriwizardTrivia"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/HaroldDavidson/Desktop/Programming/iOS/Personal/TriwizardTrivia/HarryPotterTriviaNight/Supporting%20Files/ConfigureVaryingSizes.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "108"
+                  endingLineNumber = "108"
+                  offsetFromSymbolStart = "6094">
+               </Location>
+               <Location
+                  uuid = "F8DBA6AD-29FB-4575-8C46-4ABDE6169294 - c6344f24d45c93d0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TriwizardTrivia.varyForScreenSizes(screenHeight: CoreGraphics.CGFloat) -&gt; ()"
+                  moduleName = "TriwizardTrivia"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/HaroldDavidson/Desktop/Programming/iOS/Personal/TriwizardTrivia/HarryPotterTriviaNight/Supporting%20Files/ConfigureVaryingSizes.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "108"
+                  endingLineNumber = "108"
+                  offsetFromSymbolStart = "5942">
+               </Location>
+               <Location
+                  uuid = "F8DBA6AD-29FB-4575-8C46-4ABDE6169294 - c6344f24d45c93d0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TriwizardTrivia.varyForScreenSizes(screenHeight: CoreGraphics.CGFloat) -&gt; ()"
+                  moduleName = "TriwizardTrivia"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/HaroldDavidson/Desktop/Programming/iOS/Personal/TriwizardTrivia/HarryPotterTriviaNight/Supporting%20Files/ConfigureVaryingSizes.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "108"
+                  endingLineNumber = "108"
+                  offsetFromSymbolStart = "5958">
+               </Location>
+               <Location
+                  uuid = "F8DBA6AD-29FB-4575-8C46-4ABDE6169294 - c6344f24d45c93d0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TriwizardTrivia.varyForScreenSizes(screenHeight: CoreGraphics.CGFloat) -&gt; ()"
+                  moduleName = "TriwizardTrivia"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/HaroldDavidson/Desktop/Programming/iOS/Personal/TriwizardTrivia/HarryPotterTriviaNight/Supporting%20Files/ConfigureVaryingSizes.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "108"
+                  endingLineNumber = "108"
+                  offsetFromSymbolStart = "5961">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5D0CB336-F5E0-4969-AA5E-A03D8C6E4FBA"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HarryPotterTriviaNight/Supporting Files/ConfigureVaryingSizes.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "121"
+            endingLineNumber = "121"
+            landmarkName = "varyForScreenSizes(screenHeight:)"
+            landmarkType = "9">
+            <Locations>
+               <Location
+                  uuid = "5D0CB336-F5E0-4969-AA5E-A03D8C6E4FBA - c6344f24d45c9265"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TriwizardTrivia.varyForScreenSizes(screenHeight: CoreGraphics.CGFloat) -&gt; ()"
+                  moduleName = "TriwizardTrivia"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/HaroldDavidson/Desktop/Programming/iOS/Personal/TriwizardTrivia/HarryPotterTriviaNight/Supporting%20Files/ConfigureVaryingSizes.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "121"
+                  endingLineNumber = "121"
+                  offsetFromSymbolStart = "5644">
+               </Location>
+               <Location
+                  uuid = "5D0CB336-F5E0-4969-AA5E-A03D8C6E4FBA - c6344f24d45c9265"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TriwizardTrivia.varyForScreenSizes(screenHeight: CoreGraphics.CGFloat) -&gt; ()"
+                  moduleName = "TriwizardTrivia"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/HaroldDavidson/Desktop/Programming/iOS/Personal/TriwizardTrivia/HarryPotterTriviaNight/Supporting%20Files/ConfigureVaryingSizes.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "121"
+                  endingLineNumber = "121"
+                  offsetFromSymbolStart = "6525">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9CA28A3C-B699-477C-8937-8E66F979B370"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HarryPotterTriviaNight/Supporting Files/ConfigureVaryingSizes.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "137"
+            endingLineNumber = "137"
+            landmarkName = "varyForScreenSizes(screenHeight:)"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "EED9FEBA-82B1-4160-B7B9-E64BBFB170B7"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HarryPotterTriviaNight/Supporting Files/ConfigureVaryingSizes.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "153"
+            endingLineNumber = "153"
+            landmarkName = "varyForScreenSizes(screenHeight:)"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6E41E85C-5D1B-4D0F-AEDB-A3E6891D2C7F"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HarryPotterTriviaNight/Supporting Files/ConfigureVaryingSizes.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "161"
+            endingLineNumber = "161"
+            landmarkName = "varyForScreenSizes(screenHeight:)"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D7238269-39C1-4DBF-A199-B63549E25834"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HarryPotterTriviaNight/Supporting Files/ConfigureVaryingSizes.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "169"
+            endingLineNumber = "169"
+            landmarkName = "varyForScreenSizes(screenHeight:)"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CB0C21B4-A309-4DD9-9AA6-12B4EB7516BC"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HarryPotterTriviaNight/Supporting Files/ConfigureVaryingSizes.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "129"
+            endingLineNumber = "129"
+            landmarkName = "varyForScreenSizes(screenHeight:)"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "20E1FB77-E300-4D23-B940-85267DF31127"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HarryPotterTriviaNight/Supporting Files/ConfigureVaryingSizes.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "145"
+            endingLineNumber = "145"
+            landmarkName = "varyForScreenSizes(screenHeight:)"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "29E6E985-28B5-4586-8370-C57426A6673E"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HarryPotterTriviaNight/Supporting Files/ConfigureVaryingSizes.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "113"
+            endingLineNumber = "113"
+            landmarkName = "varyForScreenSizes(screenHeight:)"
+            landmarkType = "9">
+            <Locations>
+               <Location
+                  uuid = "29E6E985-28B5-4586-8370-C57426A6673E - c6344f24d45c937d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TriwizardTrivia.varyForScreenSizes(screenHeight: CoreGraphics.CGFloat) -&gt; ()"
+                  moduleName = "TriwizardTrivia"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/HaroldDavidson/Desktop/Programming/iOS/Personal/TriwizardTrivia/HarryPotterTriviaNight/Supporting%20Files/ConfigureVaryingSizes.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "113"
+                  endingLineNumber = "113"
+                  offsetFromSymbolStart = "6541">
+               </Location>
+               <Location
+                  uuid = "29E6E985-28B5-4586-8370-C57426A6673E - c6344f24d45c937d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TriwizardTrivia.varyForScreenSizes(screenHeight: CoreGraphics.CGFloat) -&gt; ()"
+                  moduleName = "TriwizardTrivia"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/HaroldDavidson/Desktop/Programming/iOS/Personal/TriwizardTrivia/HarryPotterTriviaNight/Supporting%20Files/ConfigureVaryingSizes.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "113"
+                  endingLineNumber = "113"
+                  offsetFromSymbolStart = "6552">
+               </Location>
+               <Location
+                  uuid = "29E6E985-28B5-4586-8370-C57426A6673E - c6344f24d45c937d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TriwizardTrivia.varyForScreenSizes(screenHeight: CoreGraphics.CGFloat) -&gt; ()"
+                  moduleName = "TriwizardTrivia"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/HaroldDavidson/Desktop/Programming/iOS/Personal/TriwizardTrivia/HarryPotterTriviaNight/Supporting%20Files/ConfigureVaryingSizes.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "113"
+                  endingLineNumber = "113"
+                  offsetFromSymbolStart = "6546">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

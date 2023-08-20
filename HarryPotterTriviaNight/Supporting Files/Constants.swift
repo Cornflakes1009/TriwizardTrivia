@@ -34,9 +34,9 @@ var instructionLabelFont    =   UIFont(name: "Papyrus", size: 25)
 var scoreViewFont           =   UIFont(name: "Papyrus", size: 15)
 var popupLabelFont          =   UIFont(name: "Papyrus", size: 20)
 var buttonFont              =   UIFont(name: "Harry P", size: 30)
-let answerFont              =   UIFont(name: "Harry P", size: 30)
+var answerFont              =   UIFont(name: "Harry P", size: 30)
 var textViewFont            =   UIFont(name: "Papyrus", size: 15)
-let finalScoreLabelFont     =   UIFont(name: "Harry P", size: 70)
+var finalScoreLabelFont     =   UIFont(name: "Harry P", size: 70)
 
 // MARK: - Colors
 let gryffindorColor         =   UIColor.rgb(red: 125, green: 25, blue: 21, alpha: 1)

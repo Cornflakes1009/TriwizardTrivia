@@ -691,7 +691,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 464PVQ34ND;
 				INFOPLIST_FILE = HarryPotterTriviaNight/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -702,8 +702,11 @@
 				MARKETING_VERSION = 5.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.harolddavidson.TriwizardTrivia;
 				PRODUCT_NAME = TriwizardTrivia;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -713,7 +716,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 464PVQ34ND;
 				INFOPLIST_FILE = HarryPotterTriviaNight/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -724,8 +727,11 @@
 				MARKETING_VERSION = 5.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.harolddavidson.TriwizardTrivia;
 				PRODUCT_NAME = TriwizardTrivia;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

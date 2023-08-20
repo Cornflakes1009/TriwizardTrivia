@@ -128,6 +128,9 @@ class ModeSelectViewController: UIViewController {
         survivalButton.titleLabel?.font         = buttonFont
         blitzButton.titleLabel?.font            = buttonFont
         fantasticBeastsButton.titleLabel?.font  = buttonFont
+        creditsButton.titleLabel?.font          = instructionLabelFont
+        scoresButton.titleLabel?.font           = instructionLabelFont
+        contactButton.titleLabel?.font          = instructionLabelFont
         
         let notificationCenter = NotificationCenter.default
             notificationCenter.addObserver(self, selector: #selector(appMovedToBackground), name: UIApplication.willResignActiveNotification, object: nil)

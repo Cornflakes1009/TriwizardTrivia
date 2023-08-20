@@ -138,7 +138,7 @@ class ClassicScoreResultsViewController: UIViewController{
         instructionLabel.anchor(top: titleLabel.bottomAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 20, paddingLeft: 20, paddingBottom: 0, paddingRight: 20, width: 0, height: 0)
         
         view.addSubview(scoreLabel)
-        scoreLabel.anchor(top: nil, left: nil, bottom: nil, right: nil, paddingTop: 0, paddingLeft: 20, paddingBottom: 0, paddingRight: 20, width: UIScreen.main.bounds.size.width, height: 50)
+        scoreLabel.anchor(top: nil, left: nil, bottom: nil, right: nil, paddingTop: 0, paddingLeft: 20, paddingBottom: 0, paddingRight: 20, width: UIScreen.main.bounds.size.width, height: 0)
         scoreLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         scoreLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
         
